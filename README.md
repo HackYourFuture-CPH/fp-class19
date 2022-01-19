@@ -3,7 +3,7 @@
  <img width=150px height=150px src="https://www.hackyourfuture.dk/static/logo-dark.svg" alt="Project logo"></a>
 </p>
 
-<h3 align="center"> Final project for Class19
+<h3 align="center"> Final project for Class19 - Plant Webshop :seedling: :cactus: :hibiscus: :sunflower: :herb: :potted_plant:	
 </h3>
 
 ---
