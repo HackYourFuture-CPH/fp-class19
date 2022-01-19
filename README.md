@@ -11,12 +11,11 @@
 ## 📝 Table of Contents
 
 - [About](#about)
-  - [Setting up the boilerplate](/setting-up-instructions.md)
-  - [Plan the project](/planning.md)
 - [Project's Calendar](#-projects-calendar)
 - [Class Daily Agenda](#-class-daily-agenda-)
 - [The Customer](#-the-customer)
   - [Business Glossary](/BusinessGlossary.md)
+  - [🖼 Wireframes](#-wireframes)
   - [Database Model Diagram](#️-database-model-diagram)
 - [Process](#-process-)
   - [Working with code](#-working-with-code)
@@ -36,18 +35,8 @@
 
 ## 🧐 About <a name = "about"></a>
 
-This repository is a boilerplate and set-up instructions for the Final Project.
+This repository is Class19's Final Project which is Plant Webshop
 
-To setup the boilerplate for a New Final project you MUST read this first [HERE](/setting-up-instructions.md)
-
-After the previous steps, you have new repository ready but you need plan the project,
-check [HERE](/planning.md) before you go more down.
-
-🚨Delete the About Topic from you new repository README.MD file  
-🚨Delete the instructions files:
-
-- [Setting up Instructions](/setting-up-instructions.md)
-- [Planning](/planning.md)
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -62,31 +51,42 @@ check [HERE](/planning.md) before you go more down.
 
 ## 📅 Project's Calendar
 
-_Add the dates for the project and study groups_
-_Class Dates_  
-_Study groups dates_
+- 31-Oct-2021 - 12:00 to 16:00
+- 07-Nov-2021 - 12:00 to 16:00
+- 14-Nov-2021 - 12:00 to 16:00
+- 21-Nov-2021 - 12:00 to 16:00
+- 28-Nov-2021 - 12:00 to 16:00
+- 05-Dec-2021 - 12:00 to 16:00
+- 12-Dec-2021- 12:00 to 16:00
+- 15-Dec-2021 - Graduation (Wednesday from 16:00 to 20:00)
+
+:computer::computer::computer: You are welcome to come every Wednesday from 12:00 to 16:00 and work together on the project.
 
 ## 🕛 Class Daily Agenda 🕓
 
-_Add the Class schedule for the project_
-
-- 12:00 - 13:30 - ...
-- 13:30 - 14:00 - ...
+- 12:00 - 13:30 - Presenting the week's topic
+- 13:30 - 14:00 - Student's Demos
 - 14:00 - 14:30 - Lunch
-- 14:30 - 16:00 - ...
+- 14:30 - 16:00 - Presenting next week's topic
 
 ## 👩🏻‍💼💡👨🏽‍💼 The Customer
 
-_Add here information about the customer/partner_
+The customer is a fictional plant shop that needs a webshop app to sell their plants online 
 
 #### 💼 Business Glossary
 
 _Add here information about the Business Glossary_
 [Business Glossary](/BusinessGlossary.md)
 
+#### 🖼 Wireframes
+
+Check the mockup here https://www.figma.com/file/yo4QT2EcPo83HAMI3ydMxb/HYF-Wireframes?node-id=4%3A1324
+
 #### 🗄️ Database Model Diagram
 
-_Add here the DB Model Diagram_ - Use https://dbdiagram.io/
+This is the DB Diagram boilerplate https://dbdiagram.io/d/616ae287940c4c4eec9881e3.
+
+We might need to change and/or add new tables and fields and if so we need to follow the instructions below.
 
 - [How to make changes on the diagram](/diagram.md)
 
