@@ -1,4 +1,3 @@
-import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import React from 'react';
 import ButtonComponent from './ButtonComponent';
@@ -12,18 +11,24 @@ export default {
   parameters: { actions: { argTypesRegex: '^on.*' } },
 };
 
+// storybook-controls works with spread, but `Prop spreading is forbidden eslint(react/jsx-props-no-spreading)`
+// eslint-disable-next-line
 export const AddBtnComponent = (args) => <ButtonComponent {...args} />;
 AddBtnComponent.args = {
   title: 'ADD',
   onClick: action('You have clicked the button'),
 };
 
+// storybook-controls works with spread, but `Prop spreading is forbidden eslint(react/jsx-props-no-spreading)`
+// eslint-disable-next-line
 export const ViewCartBtnComponent = (args) => <ButtonComponent {...args} />;
 ViewCartBtnComponent.args = {
   title: 'VIEW CART',
   onClick: action('You have clicked the button'),
 };
 
+// storybook-controls works with spread, but `Prop spreading is forbidden eslint(react/jsx-props-no-spreading)`
+// eslint-disable-next-line
 export const ContinueShoppingComponent = (args) => (
   <ButtonComponent {...args} />
 );

@@ -9,6 +9,7 @@ export default function ButtonComponent({
   size = 'md',
   color,
   border,
+  width,
 }) {
   let scale = 1;
   if (size === 'sm') scale = 0.75;
@@ -18,6 +19,7 @@ export default function ButtonComponent({
     padding: `${scale * 0.5}rem ${scale * 1}rem`,
     border,
     color,
+    width,
   };
   return (
     <button type="button" onClick={onClick} style={style} className="button">
@@ -33,6 +35,7 @@ ButtonComponent.propTypes = {
   backgroundColor: PropTypes.string,
   color: PropTypes.string,
   border: PropTypes.string,
+  width: PropTypes.string,
 };
 
 ButtonComponent.defaultProps = {
@@ -43,4 +46,5 @@ ButtonComponent.defaultProps = {
   size: 'md',
   color: 'white',
   border: 'none',
+  width: '600px',
 };
