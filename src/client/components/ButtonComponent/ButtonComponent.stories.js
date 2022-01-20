@@ -28,8 +28,8 @@ ViewCartBtnComponent.args = {
 };
 
 // storybook-controls works with spread, but `Prop spreading is forbidden eslint(react/jsx-props-no-spreading)`
-// eslint-disable-next-line
 export const ContinueShoppingComponent = (args) => (
+  // eslint-disable-next-line
   <ButtonComponent {...args} />
 );
 ContinueShoppingComponent.args = {
