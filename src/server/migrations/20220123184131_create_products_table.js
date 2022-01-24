@@ -15,20 +15,15 @@ exports.up = function (knex) {
         'pink',
         'orange',
       ])
-      .nullable()
       .defaultTo('unknown');
     table
       .enum('size', ['unknown', 's', 'sm', 'm', 'l', 'xl', 'xxl'])
-      .nullable()
       .defaultTo('unknown');
-    table.boolean('is_available').nullable().defaultTo(false);
-    table.integer('stock_amount').nullable().defaultTo(0);
-    table.boolean('is_on_discount').nullable().defaultTo(false);
-    table.integer('discount_percent').nullable().defaultTo(0);
-    table
-      .string('picture')
-      .nullable()
-      .defaultTo('https://via.placeholder.com/500x500');
+    table.boolean('is_available').defaultTo(false);
+    table.integer('stock_amount').defaultTo(0);
+    table.boolean('is_on_discount').defaultTo(false);
+    table.integer('discount_percent').defaultTo(0);
+    table.string('picture').defaultTo('https://via.placeholder.com/500x500');
     table.timestamp('created_at').defaultTo(knex.fn.now());
     table.timestamp('updated_at').defaultTo(knex.fn.now());
   });
