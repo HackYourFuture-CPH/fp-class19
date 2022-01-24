@@ -21,7 +21,8 @@ export default function SortComponent({ arrayToSort }) {
   }
   React.useEffect(() => {
     sortProducts(option);
-  }, [option, products, sortProducts]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [option]);
 
   return (
     <div className="sorting-div">
