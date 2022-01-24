@@ -5,23 +5,23 @@ import './SortComponent.styles.css';
 export default function SortComponent({ arrayToSort }) {
   const [products, setProducts] = React.useState(arrayToSort);
   const [option, setOption] = React.useState();
-  function sortProducts(option) {
-    if (option === 'AlphabeticallyAZ') {
+  function sortProducts(opt) {
+    if (opt === 'AlphabeticallyAZ') {
       setProducts(arrayToSort.sort((a, b) => b.name.localeCompare(a.name)));
     }
-    if (option === 'AlphabeticallyZA') {
+    if (opt === 'AlphabeticallyZA') {
       setProducts(arrayToSort.sort((a, b) => a.name.localeCompare(b.name)));
     }
-    if (option === 'PriceDescending') {
+    if (opt === 'PriceDescending') {
       setProducts(arrayToSort.sort((a, b) => a.price - b.price));
     }
-    if (option === 'PriceAscending') {
+    if (opt === 'PriceAscending') {
       setProducts(arrayToSort.sort((a, b) => b.price - a.price));
     }
   }
   React.useEffect(() => {
     sortProducts(option);
-  }, [option, products]);
+  }, [option, products, sortProducts]);
 
   return (
     <div className="sorting-div">

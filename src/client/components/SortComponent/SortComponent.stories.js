@@ -10,7 +10,7 @@ export default {
   },
 };
 
-// eslint-disable-next-line react/js-props-no-spreading
+// eslint-disable-next-line react/jsx-props-no-spreading
 const template = (args) => <SortComponent {...args} />;
 
 export const showSorting = template.bind({});
