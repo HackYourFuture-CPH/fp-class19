@@ -9,7 +9,6 @@ exports.seed = function (knex) {
           id: 1,
           name: 'Verbena bonariens',
           price: 78,
-          color: 'white',
           size: 's',
           is_available: true,
           stock_amount: 100,
