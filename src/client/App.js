@@ -22,6 +22,7 @@ function App() {
   return (
     <Router>
       <Header />
+      <Menu />
       <Switch>
         {/* Home page */}
         <Route exact path="/">
