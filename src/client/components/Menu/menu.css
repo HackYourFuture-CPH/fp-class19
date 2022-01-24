@@ -1,0 +1,14 @@
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  height: 70px;
+  background: green;
+  color: white;
+  text-transform: uppercase;
+}
+
+.menu-item {
+  padding: 0.3rem;
+}
