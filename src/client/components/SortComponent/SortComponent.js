@@ -42,10 +42,10 @@ export default function SortComponent({ arrayToSort }) {
       <div>
         {products.map((product) => {
           return (
-            <div key={product.id}>
+            <li key={product.id}>
               <h1>{product.name}</h1>
               <h3>{product.price}</h3>
-            </div>
+            </li>
           );
         })}
       </div>
