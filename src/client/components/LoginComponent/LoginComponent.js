@@ -1,15 +1,15 @@
 import React from 'react';
 import './LoginComponent.styles.css';
-import logo from './../../assets/images/logo.png';
-import goog from './../../assets/images/goog.png';
+import logo from '../../assets/images/logo.png';
+import goog from '../../assets/images/goog.png';
+import { Link } from 'react-router-dom';
 
 export default function LoginComponent() {
   return (
     <div className="container">
       <div className="form-box">
         <div className="header-form">
-          <img className="img" src={logo} />
-          <div className="image"></div>
+          <img className="img" src={logo} alt="logo" />
         </div>
         <div className="body-form">
           <form>
@@ -23,14 +23,12 @@ export default function LoginComponent() {
             <input type="text" className="form-control" />
 
             <div>
-              <a href="#">Forgot Password?</a>
+              <Link href="/reset-password">Forgot Password?</Link>
             </div>
             <button type="button" className="btn">
               Log In
             </button>
-            <div className="message"></div>
-
-            <img src={goog} />
+            <img src={goog} alt="google-signin" />
           </form>
         </div>
       </div>
