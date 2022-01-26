@@ -1,46 +1,36 @@
 import React from 'react';
 import './LoginComponent.styles.css';
-import hyf from './../../assets/images/hyf.png';
+import logo from './../../assets/images/logo.png';
+import goog from './../../assets/images/goog.png';
 
 export default function LoginComponent() {
   return (
     <div className="container">
       <div className="form-box">
         <div className="header-form">
-          <img src={hyf} />
+          <img className="img" src={logo} />
           <div className="image"></div>
         </div>
         <div className="body-form">
           <form>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">
-                  <i class="fa fa-user"></i>
-                </span>
-              </div>
-              <label className="label">Email</label>
-              <input type="text" className="form-control" />
+            <h3 className="heading">Log in</h3>
+            <label className="label">Email</label>
+            <br />
+            <input type="text" className="form-control" />
+
+            <label className="label">Paasword</label>
+            <br />
+            <input type="text" className="form-control" />
+
+            <div>
+              <a href="#">Forgot Password?</a>
             </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">
-                  <i class="fa fa-lock"></i>
-                </span>
-              </div>
-              <label className="label">Paasword</label>
-              <input type="text" className="form-control" />
-            </div>
-            <button type="button" className="btn btn-secondary btn-block">
-              LOGIN
+            <button type="button" className="btn">
+              Log In
             </button>
-            <div className="message">
-              <div>
-                <input type="checkbox" /> Remember ME
-              </div>
-              <div>
-                <a href="#">Forgot your password</a>
-              </div>
-            </div>
+            <div className="message"></div>
+
+            <img src={goog} />
           </form>
         </div>
       </div>
