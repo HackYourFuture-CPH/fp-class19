@@ -1,7 +1,7 @@
 import React from 'react';
 import './LoginComponent.styles.css';
-import logoPic from '../../assets/images/logo.png';
-import goog from '../../assets/images/goog.png';
+import LogoPic from '../../assets/images/logo.png';
+import Goog from '../../assets/images/goog.png';
 import { Link } from 'react-router-dom';
 
 export default function LoginComponent() {
@@ -9,7 +9,7 @@ export default function LoginComponent() {
     <div className="container">
       <div className="form-box">
         <div className="header-form">
-          <img className="img" src={logoPic} alt="logo" />
+          <img className="img" src={LogoPic} alt="logo" />
         </div>
         <div className="body-form">
           <form>
@@ -28,7 +28,7 @@ export default function LoginComponent() {
             <button type="button" className="btn">
               Log In
             </button>
-            <img src={goog} alt="google-signin" />
+            <img src={Goog} alt="google-signin" className="googleLogin" />
             <div>
               <p>
                 Don&apos;t have an account?

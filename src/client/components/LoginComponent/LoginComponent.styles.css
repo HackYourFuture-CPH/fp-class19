@@ -88,3 +88,8 @@ button {
 .createAct {
   color: #687808;
 }
+
+.googleLogin {
+  width: 100%;
+  height: auto;
+}
