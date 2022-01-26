@@ -39,16 +39,6 @@ export default function SortComponent({ arrayToSort }) {
         <option value="PriceDescending">Price ↓</option>
         <option value="PriceAscending">Price ↑</option>
       </select>
-      <div>
-        {products.map((product) => {
-          return (
-            <li key={product.id}>
-              <h1>{product.name}</h1>
-              <h3>{product.price}</h3>
-            </li>
-          );
-        })}
-      </div>
     </div>
   );
 }
