@@ -1,6 +1,6 @@
 import React from 'react';
 import './LoginComponent.styles.css';
-import logo from '../../assets/images/logo.png';
+import logoPic from '../../assets/images/logo.png';
 import goog from '../../assets/images/goog.png';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ export default function LoginComponent() {
     <div className="container">
       <div className="form-box">
         <div className="header-form">
-          <img className="img" src={logo} alt="logo" />
+          <img className="img" src={logoPic} alt="logo" />
         </div>
         <div className="body-form">
           <form>
