@@ -23,12 +23,18 @@ export default function LoginComponent() {
             <input type="text" className="form-control" />
 
             <div>
-              <Link href="/reset-password">Forgot Password?</Link>
+              <Link to="/reset-password">Forgot Password?</Link>
             </div>
             <button type="button" className="btn">
               Log In
             </button>
             <img src={goog} alt="google-signin" />
+            <div>
+              Don't have an account?
+              <Link className="createAct" to="/sign-up">
+                Create one here
+              </Link>
+            </div>
           </form>
         </div>
       </div>
