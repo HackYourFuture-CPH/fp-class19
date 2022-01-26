@@ -18,6 +18,7 @@ export default function Header() {
           <li>
             <Link to="/profile">Profile</Link>
           </li>
+
           <li>
             <button type="button" onClick={signOut}>
               Sign out

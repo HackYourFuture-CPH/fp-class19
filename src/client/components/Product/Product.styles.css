@@ -1,0 +1,12 @@
+.product-component {
+  background-color: white;
+  box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.product-add-button {
+  width: 30%;
+}
