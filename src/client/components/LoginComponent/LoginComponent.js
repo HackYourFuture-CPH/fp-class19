@@ -16,11 +16,11 @@ export default function LoginComponent() {
             <h3 className="heading">Log in</h3>
             <label className="label">Email</label>
             <br />
-            <input type="text" className="form-control" />
+            <input type="email" className="form-control" />
 
             <label className="label">Paasword</label>
             <br />
-            <input type="text" className="form-control" />
+            <input type="password" className="form-control" />
 
             <div>
               <Link to="/reset-password">Forgot Password?</Link>
