@@ -31,7 +31,7 @@ export default function LoginComponent() {
             <img src={goog} alt="google-signin" />
             <div>
               <p>
-                Don't have an account?
+                Don&apos;t have an account?
                 <Link className="createAct" to="/sign-up">
                   Create one here
                 </Link>
