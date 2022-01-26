@@ -30,10 +30,12 @@ export default function LoginComponent() {
             </button>
             <img src={goog} alt="google-signin" />
             <div>
-              Don't have an account?
-              <Link className="createAct" to="/sign-up">
-                Create one here
-              </Link>
+              <p>
+                Don't have an account?
+                <Link className="createAct" to="/sign-up">
+                  Create one here
+                </Link>
+              </p>
             </div>
           </form>
         </div>
