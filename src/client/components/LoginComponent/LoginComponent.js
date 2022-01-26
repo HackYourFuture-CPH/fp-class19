@@ -3,8 +3,13 @@ import './LoginComponent.styles.css';
 import LogoPic from '../../assets/images/logo.png';
 import Goog from '../../assets/images/goog.png';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 
 export default function LoginComponent() {
+  const [isShown, setIsShown] = React.useState(false);
+
   return (
     <div className="container">
       <div className="form-box">
@@ -17,10 +22,21 @@ export default function LoginComponent() {
             <label className="label">Email</label>
             <br />
             <input type="email" className="form-control" />
-
-            <label className="label">Paasword</label>
-            <br />
-            <input type="password" className="form-control" />
+            <div className="passDiv">
+              <label className="label">Paasword</label>
+              <br />
+              <span className="eyeIcon" onClick={() => setIsShown(!isShown)}>
+                {isShown ? (
+                  <FontAwesomeIcon icon={faEyeSlash} />
+                ) : (
+                  <FontAwesomeIcon icon={faEye} />
+                )}
+              </span>
+              <input
+                type={isShown ? 'text' : 'password'}
+                className="form-control inputPass"
+              />
+            </div>
 
             <div>
               <Link to="/reset-password">Forgot Password?</Link>

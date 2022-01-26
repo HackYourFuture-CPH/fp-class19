@@ -93,3 +93,22 @@ button {
   width: 100%;
   height: auto;
 }
+
+.eyeIcon {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  top: 8px;
+  right: 0;
+  padding-right: 70px;
+}
+
+.inputPass {
+  display: block;
+}
+
+.passDiv {
+  width: 100%;
+  position: relative;
+}
