@@ -8,7 +8,9 @@ import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 
 export default function LoginComponent() {
   const [isShown, setIsShown] = React.useState(false);
-
+  const changeShown = () => {
+    setIsShown(!isShown);
+  };
   return (
     <div className="container">
       <div className="form-box">
@@ -27,7 +29,7 @@ export default function LoginComponent() {
             <div className="passDiv">
               <label className="label">Password</label>
               <br />
-              <span className="eyeIcon" onClick={() => setIsShown(!isShown)}>
+              <span className="eyeIcon" onClick={changeShown}>
                 {isShown ? (
                   <FontAwesomeIcon icon={faEyeSlash} />
                 ) : (
