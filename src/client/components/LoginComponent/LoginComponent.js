@@ -1,7 +1,7 @@
 import React from 'react';
-import './LoginComponent.styles.css';
 import LogoPic from '*../../../src/client/assets/images/logo1.png';
 import Goog from '*../../../src/client/assets/images/goog.png';
+import './LoginComponent.styles.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
@@ -29,11 +29,11 @@ export default function LoginComponent() {
             <div className="passDiv">
               <label className="label">Password</label>
               <br />
-              <span className="eyeIcon" onClick={changeShown}>
+              <span className="eyeIcon">
                 {isShown ? (
-                  <FontAwesomeIcon icon={faEyeSlash} />
+                  <FontAwesomeIcon icon={faEyeSlash} onClick={changeShown} />
                 ) : (
-                  <FontAwesomeIcon icon={faEye} />
+                  <FontAwesomeIcon icon={faEye} onClick={changeShown} />
                 )}
               </span>
               <input
