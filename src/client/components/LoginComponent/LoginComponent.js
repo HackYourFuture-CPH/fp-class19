@@ -1,6 +1,6 @@
 import React from 'react';
-import LogoPic from '*../../../src/client/assets/images/logo1.png';
 import Goog from '*../../../src/client/assets/images/goog.png';
+import LogoPic from '*../../../src/client/assets/images/logo1.png';
 import './LoginComponent.styles.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,7 +15,7 @@ export default function LoginComponent() {
     <div className="container">
       <div className="form-box">
         <div className="header-form">
-          <img className="img" src={LogoPic} alt="logo" />
+          <img className="img" src={LogoPic} alt="logopic" />
         </div>
         <div className="body-form">
           <form>
@@ -48,9 +48,12 @@ export default function LoginComponent() {
             <button type="button" className="btn">
               Log In
             </button>
-            <Link to="/google-signin">
-              <img src={Goog} alt="google-signin" className="googleLogin" />
-            </Link>
+            <div>
+              <Link to="/google-signin">
+                <img src={Goog} alt="google-signin" className="googleLogin" />
+              </Link>
+            </div>
+
             <div>
               <p>
                 Don&apos;t have an account?
