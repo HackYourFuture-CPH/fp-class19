@@ -10,9 +10,8 @@ import { useAuthentication } from './hooks/useAuthentication';
 import Header from './components/Navigation/Header';
 import Profile from './containers/Profile';
 import Loader from './components/Loader';
-import Header from './components/Navigation/Pagination';
-import Header from './components/Posts';
-import axios from 'axios';
+import Pagination from './components/Navigation/Pagination';
+import Posts from './components/Posts';
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -47,7 +46,6 @@ function App() {
 
 
   return (
-    
     <Router>
       <Header />
       <Switch>
@@ -66,16 +64,13 @@ function App() {
           <Profile />
         </AuthenticatedRoute>
       </Switch>
-      
       <Posts posts={currentPosts} loading={loading} />
-    <Pagination
-      postsPerPage={postsPerPage}
-      totalPosts={posts.length}
-      paginate={paginate}
-    />
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={posts.length}
+        paginate={paginate}
+      />
     </Router>
-    
-    
   );
 }
 
