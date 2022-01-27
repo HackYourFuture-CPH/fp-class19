@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.page-margin {
+  margin: 1em;
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  font-size: 24px;
+  line-height: 3.5em;
+  color: #534e4e;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  color: black;
+  margin-top: 0;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  color: black;
+  margin-bottom: 0;
+  margin-top: 2em;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+a:hover {
+  color: grey;
+}
