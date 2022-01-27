@@ -4,8 +4,7 @@ import LogoPic from '*../../../src/client/assets/images/logo1.png';
 import Goog from '*../../../src/client/assets/images/goog.png';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 
 export default function LoginComponent() {
   const [isShown, setIsShown] = React.useState(false);
