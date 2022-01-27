@@ -1,16 +1,26 @@
 function handleAuthErrors({ code, message }) {
   switch (code) {
     case FIREBASE_ERROR_CODES.WRONG_PASSWORD:
+      /*eslint-disable  */
       return alert('Wrong password.');
+    /* eslint-enable */
     case FIREBASE_ERROR_CODES.WEAK_PASSWORD:
+      /*eslint-disable  */
       return alert('Your password is too weak.');
+    /* eslint-enable */
     case FIREBASE_ERROR_CODES.INVALID_EMAIL:
+      /*eslint-disable  */
       return alert(message);
+    /* eslint-enable */
     case FIREBASE_ERROR_CODES.USER_NOT_FOUND:
+      /*eslint-disable  */
       return alert(message);
+    /* eslint-enable */
 
     default:
+      /*eslint-disable  */
       return alert(message);
+    /* eslint-enable */
   }
 }
 
@@ -47,7 +57,9 @@ export async function resetPassword(auth, { email }) {
   try {
     await auth.sendPasswordResetEmail(email);
     // Password Reset Email Sent!
+    /*eslint-disable  */
     alert('Password Reset Email Sent!');
+    /* eslint-enable */
   } catch (error) {
     handleAuthErrors(error);
   }
