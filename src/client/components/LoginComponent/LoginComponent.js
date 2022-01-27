@@ -19,11 +19,14 @@ export default function LoginComponent() {
         <div className="body-form">
           <form>
             <h3 className="heading">Log in</h3>
-            <label className="label">Email</label>
+            <div>
+              <label className="label">Email</label>
+              <br />
+              <input type="email" className="form-control" />
+            </div>
             <br />
-            <input type="email" className="form-control" />
             <div className="passDiv">
-              <label className="label">Paasword</label>
+              <label className="label">Password</label>
               <br />
               <span className="eyeIcon" onClick={() => setIsShown(!isShown)}>
                 {isShown ? (
@@ -44,7 +47,9 @@ export default function LoginComponent() {
             <button type="button" className="btn">
               Log In
             </button>
-            <img src={Goog} alt="google-signin" className="googleLogin" />
+            <Link to="/google-signin">
+              <img src={Goog} alt="google-signin" className="googleLogin" />
+            </Link>
             <div>
               <p>
                 Don&apos;t have an account?
