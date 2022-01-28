@@ -8,15 +8,18 @@ export default function Menu() {
     <div className="menu">
       <ul>
         {menuItems?.map((menuItem) => {
+          const { name, to, className, style, activeStyle } = menuItem;
           return (
-            <NavLink
-              to={menuItem.to}
-              className="menu-item"
-              style={menuItem.style}
-              activeStyle={menuItem.activeStyle}
-            >
-              {menuItem.name}
-            </NavLink>
+            <li className="menu-item">
+              <NavLink
+                to={to}
+                className={' '}
+                style={style}
+                activeStyle={activeStyle}
+              >
+                {name}
+              </NavLink>
+            </li>
           );
         })}
       </ul>
