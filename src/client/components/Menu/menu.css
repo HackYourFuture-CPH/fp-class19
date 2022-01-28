@@ -1,17 +1,26 @@
 .menu {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 70px;
   background: green;
   color: white;
   text-transform: uppercase;
 }
 
-.menu .menu-item {
+.menu-list {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  width: 100%;
+}
+
+.menu-list-item-link {
   color: white;
-  padding: 1rem;
-  border: 1px solid black;
+  text-decoration: none;
+}
+
+.menu-list-item-link:hover {
+  color: black;
+  text-decoration: underline;
 }

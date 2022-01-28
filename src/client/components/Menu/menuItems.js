@@ -2,41 +2,37 @@ const menuItems = [
   {
     name: 'plants',
     to: '/plants',
-    className: 'menu-item',
-    style: { textDecoration: 'none' },
+    className: 'menu-list-item-link',
     activeStyle: {
       fontWeight: 'bold',
-      color: 'red',
+      color: 'yellow',
     },
   },
   {
     name: 'special offers',
     to: '/special-offers',
-    className: 'menu-item',
-    style: { textDecoration: 'none' },
+    className: 'menu-list-item-link',
     activeStyle: {
       fontWeight: 'bold',
-      color: 'red',
+      color: 'yellow',
     },
   },
   {
     name: 'about',
     to: '/about',
-    className: 'menu-item',
-    style: { textDecoration: 'none' },
+    className: 'menu-list-item-link',
     activeStyle: {
       fontWeight: 'bold',
-      color: 'red',
+      color: 'yellow',
     },
   },
   {
     name: 'contact',
     to: '/contact',
-    className: 'menu-item',
-    style: { textDecoration: 'none' },
+    className: 'menu-list-item-link',
     activeStyle: {
       fontWeight: 'bold',
-      color: 'red',
+      color: 'yellow',
     },
   },
 ];
