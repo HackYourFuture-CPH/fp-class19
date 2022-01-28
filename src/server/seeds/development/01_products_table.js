@@ -49,7 +49,7 @@ exports.seed = function (knex) {
         },
         {
           id: 4,
-          name: 'Verbena bonariens',
+          name: 'Verbena bonariens c.',
           price: 52,
           color: 'red',
           size: 'l',
@@ -189,7 +189,7 @@ exports.seed = function (knex) {
         },
         {
           id: 14,
-          name: 'Hesperantha c.',
+          name: 'Hesperantha',
           price: 78,
           color: 'green',
           size: 'm',
