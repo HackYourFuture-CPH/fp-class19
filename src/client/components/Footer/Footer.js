@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '*../../../src/client/assets/images/logo.png';
 import send from '*../../../src/client/assets/images/emailsend.png';
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -16,16 +17,16 @@ function Footer() {
           <li className="footer-list">
             <div className="footer-text">
               <h4>COMPANY</h4>
-              <a href="/About">About us</a>
+              <Link to="/About">About us</Link>
               <br />
-              <a href="/Contact">Contact us</a>
+              <Link to="/contact-us">Contact us</Link>
             </div>
           </li>
           <li className="footer-list">
             <div className="footer-text">
-              <a href="/sign-up">
+              <Link to="/sign-up">
                 <h4>CREATE ACCOUNT</h4>
-              </a>
+              </Link>
               <div className="footer-input">
                 <input type="text" placeholder="Your email" />
                 <img src={send} alt="email" />
@@ -37,5 +38,4 @@ function Footer() {
     </div>
   );
 }
-
 export default Footer;
