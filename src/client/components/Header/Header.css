@@ -1,0 +1,50 @@
+header {
+  width: 100%;
+}
+
+header .container {
+  background-color: #fff;
+  display: block;
+  padding-bottom: 2em;
+}
+
+header #login {
+  padding: 0.5em;
+}
+
+header .logo-icon {
+  float: left;
+  cursor: pointer;
+}
+
+header img {
+  height: 2em;
+  width: 2em;
+}
+
+header .logo-icon img {
+  height: 2.5em;
+  width: 5em;
+}
+
+header .icons {
+  float: left;
+  cursor: pointer;
+  margin-right: 0.5em;
+}
+
+header .login {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #687808;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0;
+  text-align: center;
+  text-decoration: none;
+}
+
+header .icons-right {
+  float: right;
+}
