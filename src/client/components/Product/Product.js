@@ -1,8 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Product.styles.css';
-import cart_bucket from './..\\..\\assets\\images\\cart_bucket.png';
-import heart from './..\\..\\assets\\images\\heart.png';
+import cartBucketImage from './..\\..\\assets\\images\\cart_bucket.png';
+import heartImage from './..\\..\\assets\\images\\heart.png';
+
+const cartBucket = {
+  src: cartBucketImage,
+  alt: 'shopping cart image',
+};
+
+const heart = {
+  src: heartImage,
+  alt: 'heart image',
+};
 
 export default function Product({
   image,
@@ -13,7 +23,7 @@ export default function Product({
 }) {
   return (
     <div className="product-container">
-      <img className="product-image" src={image} />
+      <img className="product-image" src={image.src} alt={image.alt} />
 
       <h2 className="product-name">{name}</h2>
 
@@ -27,7 +37,11 @@ export default function Product({
             onClick={onClick}
           >
             ADD
-            <img src={cart_bucket} className="vector-bucket" />
+            <img
+              src={cartBucket.src}
+              alt={cartBucket.alt}
+              className="vector-bucket"
+            />
           </button>
         </div>
 
@@ -37,7 +51,7 @@ export default function Product({
             type="button"
             onClick={addToFavorites}
           >
-            <img src={heart} className="favorite-button" />
+            <img src={heart.src} alt={heart.alt} className="favorite-button" />
           </button>
         </div>
       </div>
@@ -46,7 +60,7 @@ export default function Product({
 }
 
 Product.propTypes = {
-  image: PropTypes.object.isRequired,
+  image: PropTypes.objectOf(PropTypes.object).isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   onClick: PropTypes.func,
