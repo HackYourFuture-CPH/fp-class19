@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Product.styles.css';
-import cartBucketImage from './../../assets/images/cart_bucket.png';
-import heartImage from './../../assets/images/heart.png';
+import cartBucketImage from '../../assets/images/cart_bucket.png';
+import heartImage from '../../assets/images/heart.png';
 
 const cartBucket = {
   src: cartBucketImage,

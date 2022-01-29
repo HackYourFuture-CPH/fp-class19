@@ -4,7 +4,7 @@ import React from 'react';
 
 import Product from './Product';
 
-import imageFile from './../../assets/images/image 4.png';
+import imageFile from '../../assets/images/image 4.png';
 
 const image = {
   src: imageFile,
