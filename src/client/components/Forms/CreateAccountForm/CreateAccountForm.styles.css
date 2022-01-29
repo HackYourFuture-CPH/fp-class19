@@ -1,4 +1,4 @@
-.createAccount {
+.create-account-container {
   background-color: #f6f8eb;
   color: var(--black);
   display: flex;
@@ -8,12 +8,12 @@
   padding-bottom: 25px;
 }
 
-.createAccount h1 {
+.create-account-container h1 {
   text-align: center;
   font-size: 1.6rem;
 }
 
-.createAccount h2 {
+.create-account-container h2 {
   text-transform: uppercase;
   padding-top: 25px;
   font-size: 1.2rem;
@@ -21,7 +21,7 @@
   margin: auto;
 }
 
-.createAccount label {
+.create-account-container label {
   display: block;
   margin-inline: auto;
   margin-block: 15px;
@@ -29,7 +29,7 @@
   width: 85%;
 }
 
-.createAccount input {
+.create-account-container input {
   width: 100%;
   display: block;
   border-radius: 3px;
@@ -37,7 +37,17 @@
   padding: 5px;
 }
 
-.inputContainer {
+.create-account-button {
+  width: 175px;
+  margin: 0 auto;
+  border-radius: 3px;
+  padding: 10px;
+  background-color: #687808;
+  color: #fff;
+  border: none;
+}
+
+.show-hide-password-container {
   display: flex;
   justify-content: space-between;
   margin-inline: auto;
@@ -48,17 +58,17 @@
   padding-right: 5px;
 }
 
-.inputContainer input {
+.show-hide-password-container input {
   border: none;
   padding: 5px;
 }
 
-.createAccount input:focus {
+.create-account-container input:focus {
   outline: 2px solid #808080;
   border: none;
 }
 
-.inputContainer input:focus {
+.show-hide-password-container input:focus {
   outline: none;
   border: none;
   box-shadow: none;

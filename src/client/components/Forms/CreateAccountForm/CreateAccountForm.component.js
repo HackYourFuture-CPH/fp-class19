@@ -34,7 +34,7 @@ export default function CreateAccount({ onSubmit }) {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div className="createAccount">
+        <div className="create-account-container">
           <h1>Create Account</h1>
           <h2>Log in details</h2>
           <label htmlFor="email">
@@ -49,7 +49,7 @@ export default function CreateAccount({ onSubmit }) {
           </label>
           <label htmlFor="password">
             Password
-            <div className="inputContainer">
+            <div className="show-hide-password-container">
               <input
                 type={passwordShown ? 'text' : 'password'}
                 name="password"
@@ -65,7 +65,7 @@ export default function CreateAccount({ onSubmit }) {
           </label>
           <label htmlFor="password">
             Confirm Password
-            <div className="inputContainer">
+            <div className="show-hide-password-container">
               <input
                 type={confirmPasswordShown ? 'text' : 'password'}
                 name="password"
@@ -80,7 +80,7 @@ export default function CreateAccount({ onSubmit }) {
             </div>
           </label>
         </div>
-        <div className="createAccount">
+        <div className="create-account-container">
           <h2>Contact details</h2>
           <label htmlFor="fullName">
             Full name
@@ -145,7 +145,9 @@ export default function CreateAccount({ onSubmit }) {
               required
             />
           </label>
-          <button type="submit">Create account</button>
+          <button className="create-account-button" type="submit">
+            Create account
+          </button>
         </div>
       </form>
     </>
