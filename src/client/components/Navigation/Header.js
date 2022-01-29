@@ -43,9 +43,6 @@ export default function Header() {
         <li>
           <Link to="/reset-password">Reset password</Link>
         </li>
-        <li>
-          <Link to="/about-us">About us</Link>
-        </li>
       </ul>
     </nav>
   );
