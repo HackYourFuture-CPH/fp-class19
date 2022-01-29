@@ -18,9 +18,14 @@
 .menu-list-item-link {
   color: white;
   text-decoration: none;
+  transition: ease-in-out 0.2s;
 }
 
 .menu-list-item-link:hover {
   color: black;
+}
+
+.active {
+  color: blue;
   text-decoration: underline;
 }
