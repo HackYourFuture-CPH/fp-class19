@@ -10,7 +10,7 @@ import { useAuthentication } from './hooks/useAuthentication';
 import Header from './components/Navigation/Header';
 import Profile from './containers/Profile';
 import Loader from './components/Loader';
-import AboutUs from './components/AboutUs/aboutus.component';
+import AboutUs from './components/AboutUs/AboutUs.component';
 
 function App() {
   const { isLoading } = useAuthentication();
