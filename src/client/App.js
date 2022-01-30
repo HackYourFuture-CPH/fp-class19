@@ -11,6 +11,7 @@ import Header from './components/Navigation/Header';
 import Profile from './containers/Profile';
 import Loader from './components/Loader';
 import LogIn from './components/LoginComponent/LoginComponent';
+import Menu from './components/Menu/Menu';
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -22,6 +23,7 @@ function App() {
   return (
     <Router>
       <Header />
+      <Menu />
       <Switch>
         {/* Home page */}
         <Route exact path="/">
