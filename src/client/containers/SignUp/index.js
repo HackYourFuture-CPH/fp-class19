@@ -21,6 +21,7 @@ export default function SignUpContainer() {
     });
     if (!doesPasswordsMatch) {
       setIsLoading(false);
+
       alert("Passwords doesn't match"); // eslint-disable-line no-alert
       return;
     }
