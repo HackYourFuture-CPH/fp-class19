@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './menu.css';
 import { NavLink } from 'react-router-dom';
+import Menu from './Menu';
 
 export default function MenuItem({ name, link }) {
   return (
@@ -11,3 +13,8 @@ export default function MenuItem({ name, link }) {
     </li>
   );
 }
+
+MenuItem.propTypes = {
+  name: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+};
