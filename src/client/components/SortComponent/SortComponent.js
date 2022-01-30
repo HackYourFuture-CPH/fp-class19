@@ -2,26 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './SortComponent.styles.css';
 
-export default function SortComponent({ arrayToSort }) {
+export default function SortComponent({ products, setSortedProducts }) {
   const [option, setOption] = React.useState();
   function sortProducts(opt) {
     if (opt === 'AlphabeticallyAZ') {
-      return arrayToSort.sort((a, b) => b.name.localeCompare(a.name));
+      return products.sort((a, b) => a.name.localeCompare(b.name));
     }
     if (opt === 'AlphabeticallyZA') {
-      return arrayToSort.sort((a, b) => a.name.localeCompare(b.name));
+      return products.sort((a, b) => b.name.localeCompare(a.name));
     }
     if (opt === 'PriceDescending') {
-      return arrayToSort.sort((a, b) => a.price - b.price);
+      return products.sort((a, b) => a.price - b.price);
     }
     if (opt === 'PriceAscending') {
-      return arrayToSort.sort((a, b) => b.price - a.price);
+      return products.sort((a, b) => b.price - a.price);
     }
   }
   React.useEffect(() => {
-    sortProducts(option);
+    if (!option) {
+      setSortedProducts(products);
+    } else {
+      console.log('sorting with', option);
+      setSortedProducts([...sortProducts(option)]);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [option]);
+  }, [option, setSortedProducts]);
 
   return (
     <div className="sorting-div">

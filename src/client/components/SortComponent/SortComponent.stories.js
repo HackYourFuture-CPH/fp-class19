@@ -11,12 +11,27 @@ export default {
 };
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const template = (args) => <SortComponent {...args} />;
+const template = ({ products }) => {
+  const [sortedProducts, setSortedProducts] = React.useState(products);
+  return (
+    <>
+      <SortComponent
+        products={products}
+        setSortedProducts={setSortedProducts}
+      />
+      {sortedProducts.map((product, index) => (
+        <li key={index}>
+          {product.name} - DKK {product.price}
+        </li>
+      ))}
+    </>
+  );
+};
 
 export const showSorting = template.bind({});
 
 showSorting.args = {
-  arrayToSort: [
+  products: [
     {
       id: 1,
       name: 'Verbena bonariens',
