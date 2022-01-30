@@ -7,7 +7,7 @@ import SignUp from './containers/SignUp';
 import ResetPassword from './containers/ResetPassword';
 import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
 import { useAuthentication } from './hooks/useAuthentication';
-import Header from './components/Navigation/Header';
+import { Header } from './components/Header/Header';
 import Profile from './containers/Profile';
 import Loader from './components/Loader';
 import Menu from './components/Menu/Menu';
