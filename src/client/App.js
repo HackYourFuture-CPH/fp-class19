@@ -11,6 +11,7 @@ import Header from './components/Navigation/Header';
 import Profile from './containers/Profile';
 import Loader from './components/Loader';
 import Menu from './components/Menu/Menu';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -39,6 +40,7 @@ function App() {
           <Profile />
         </AuthenticatedRoute>
       </Switch>
+      <Footer />
     </Router>
   );
 }
