@@ -86,16 +86,16 @@
   font-weight: bolder;
 }
 
-.login-component .createAct {
+.login-component .create-act {
   color: #687808;
 }
 
-.login-component .googleLogin {
+.login-component .google-login {
   width: 100%;
   height: auto;
 }
 
-.login-component .eyeIcon {
+.login-component .eye-icon {
   display: flex;
   align-items: center;
   position: absolute;
@@ -105,11 +105,11 @@
   padding-right: 5px;
 }
 
-.login-component .inputPass {
+.login-component .input-pass {
   display: block;
 }
 
-.login-component .passDiv {
+.login-component .pass-div {
   width: 100%;
   position: relative;
 }

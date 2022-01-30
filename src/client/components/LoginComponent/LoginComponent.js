@@ -26,10 +26,10 @@ export default function LoginComponent() {
               <input type="email" className="form-control" />
             </div>
             <br />
-            <div className="passDiv">
+            <div className="pass-div">
               <label className="label">Password</label>
               <br />
-              <span className="eyeIcon">
+              <span className="eye-icon">
                 {isShown ? (
                   <FontAwesomeIcon icon={faEye} onClick={changeShown} />
                 ) : (
@@ -38,7 +38,7 @@ export default function LoginComponent() {
               </span>
               <input
                 type={isShown ? 'text' : 'password'}
-                className="form-control inputPass"
+                className="form-control input-pass"
               />
             </div>
 
@@ -50,14 +50,14 @@ export default function LoginComponent() {
             </button>
             <div>
               <Link to="/google-signin">
-                <img src={Goog} alt="google-signin" className="googleLogin" />
+                <img src={Goog} alt="google-signin" className="google-login" />
               </Link>
             </div>
 
             <div>
               <p>
                 Don&apos;t have an account?
-                <Link className="createAct" to="/sign-up">
+                <Link className="create-act" to="/sign-up">
                   Create one here
                 </Link>
               </p>
