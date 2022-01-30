@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import LoginComponent from './LoginComponent';
 
@@ -11,4 +12,8 @@ export default {
   parameters: { actions: { argTypesRegex: '^on.*' } },
 };
 
-export const Component = () => <LoginComponent />;
+export const Component = () => (
+  <BrowserRouter>
+    <LoginComponent />
+  </BrowserRouter>
+);
