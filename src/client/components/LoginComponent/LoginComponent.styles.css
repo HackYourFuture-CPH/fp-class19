@@ -8,12 +8,13 @@
 
 .login-component .label {
   color: #000;
+  margin-left: 10%;
 }
 
 .login-component .form-box {
   width: 400px;
   height: 450px;
-  background-color: #ececdb;
+  background-color: #f6f8eb;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -27,7 +28,7 @@
 }
 
 .login-component button {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
@@ -64,17 +65,18 @@
 }
 
 .login-component .form-control {
-  width: 100%;
+  width: 80%;
+  margin-left: 10%;
 }
 
 .login-component .btn {
   background: #687808;
   color: #ffff;
-  width: 40%;
+  width: 50%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 30px;
+  height: 40px;
   border: 0;
 }
 
@@ -88,11 +90,13 @@
 
 .login-component .create-act {
   color: #687808;
+  text-decoration: none;
 }
 
 .login-component .google-login {
-  width: 100%;
+  width: 70%;
   height: auto;
+  margin-left: 15%;
 }
 
 .login-component .eye-icon {
@@ -102,7 +106,7 @@
   height: 100%;
   top: 8px;
   right: 0;
-  padding-right: 5px;
+  padding-right: 43px;
 }
 
 .login-component .input-pass {
@@ -116,4 +120,17 @@
 
 .login-component .body-box {
   align-items: center;
+}
+
+.login-component .forgot-pw {
+  text-decoration: none;
+  font-size: 50%;
+  color: #000;
+  font-weight: bold;
+  margin-left: 10%;
+}
+
+.login-component p {
+  text-align: center;
+  font-size: 0.7em;
 }
