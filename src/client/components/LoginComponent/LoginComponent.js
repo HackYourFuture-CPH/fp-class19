@@ -31,9 +31,9 @@ export default function LoginComponent() {
               <br />
               <span className="eyeIcon">
                 {isShown ? (
-                  <FontAwesomeIcon icon={faEyeSlash} onClick={changeShown} />
-                ) : (
                   <FontAwesomeIcon icon={faEye} onClick={changeShown} />
+                ) : (
+                  <FontAwesomeIcon icon={faEyeSlash} onClick={changeShown} />
                 )}
               </span>
               <input
