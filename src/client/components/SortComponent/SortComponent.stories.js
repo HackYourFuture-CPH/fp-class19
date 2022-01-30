@@ -11,6 +11,7 @@ export default {
 };
 
 const template = ({ products }) => {
+  // eslint-disable-next-line
   const [sortedProducts, setSortedProducts] = useState(products);
   return (
     <>
