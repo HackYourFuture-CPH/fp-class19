@@ -48,7 +48,7 @@ export default function SortComponent({ products, setSortedProducts }) {
 }
 
 SortComponent.propTypes = {
-  arrayToSort: PropTypes.arrayOf(
+  products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
       name: PropTypes.string,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import SortComponent from './SortComponent';
 
@@ -10,17 +10,16 @@ export default {
   },
 };
 
-// eslint-disable-next-line react/jsx-props-no-spreading
 const template = ({ products }) => {
-  const [sortedProducts, setSortedProducts] = React.useState(products);
+  const [sortedProducts, setSortedProducts] = useState(products);
   return (
     <>
       <SortComponent
         products={products}
         setSortedProducts={setSortedProducts}
       />
-      {sortedProducts.map((product, index) => (
-        <li key={index}>
+      {sortedProducts.map((product) => (
+        <li key={product.id}>
           {product.name} - DKK {product.price}
         </li>
       ))}
