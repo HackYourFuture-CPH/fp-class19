@@ -21,9 +21,8 @@ export default function SignUpContainer() {
     });
     if (!doesPasswordsMatch) {
       setIsLoading(false);
-      /*eslint-disable  */
-      alert("Passwords doesn't match");
-      /* eslint-enable */
+
+      alert("Passwords doesn't match"); // eslint-disable-line no-alert
       return;
     }
     const isSignedUp = await signUp({ email, password });
