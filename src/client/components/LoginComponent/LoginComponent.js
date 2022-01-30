@@ -12,7 +12,7 @@ export default function LoginComponent() {
     setIsShown(!isShown);
   };
   return (
-    <div className="container">
+    <div className="login-component">
       <div className="form-box">
         <div className="header-form">
           <img className="img" src={LogoPic} alt="logopic" />

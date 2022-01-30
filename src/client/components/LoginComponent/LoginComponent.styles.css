@@ -1,4 +1,4 @@
-.container {
+.login-component {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,11 +6,11 @@
   width: 100%;
 }
 
-.container .label {
+.login-component .label {
   color: #000;
 }
 
-.container .form-box {
+.login-component .form-box {
   width: 400px;
   height: 450px;
   background-color: #ececdb;
@@ -22,52 +22,52 @@
   align-items: center;
 }
 
-.container .header-form {
+.login-component .header-form {
   margin-bottom: 15px;
 }
 
-.container button {
+.login-component button {
   margin-top: 40px;
   margin-bottom: 10px;
 }
 
-.container .message {
+.login-component .message {
   display: flex;
   justify-content: space-between;
 }
 
-.container .social {
+.login-component .social {
   display: flex;
   justify-content: space-around;
   padding: 30px;
 }
 
-.container .social i {
+.login-component .social i {
   font-size: 35px;
 }
 
-.container .social i:hover {
+.login-component .social i:hover {
   color: red;
   cursor: pointer;
 }
 
-.container .img {
+.login-component .img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   height: 50px;
 }
 
-.container .heading {
+.login-component .heading {
   text-align: center;
   color: #000;
 }
 
-.container .form-control {
+.login-component .form-control {
   width: 100%;
 }
 
-.container .btn {
+.login-component .btn {
   background: #687808;
   color: #ffff;
   width: 40%;
@@ -78,7 +78,7 @@
   border: 0;
 }
 
-.container .form-control2 {
+.login-component .form-control2 {
   border: 0;
   width: 80%;
   height: 25px;
@@ -86,16 +86,16 @@
   font-weight: bolder;
 }
 
-.container .createAct {
+.login-component .createAct {
   color: #687808;
 }
 
-.container .googleLogin {
+.login-component .googleLogin {
   width: 100%;
   height: auto;
 }
 
-.container .eyeIcon {
+.login-component .eyeIcon {
   display: flex;
   align-items: center;
   position: absolute;
@@ -105,15 +105,15 @@
   padding-right: 5px;
 }
 
-.container .inputPass {
+.login-component .inputPass {
   display: block;
 }
 
-.container .passDiv {
+.login-component .passDiv {
   width: 100%;
   position: relative;
 }
 
-.container .body-box {
+.login-component .body-box {
   align-items: center;
 }
