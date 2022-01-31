@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Spinner({ scale, color }) {
+export default function Loader({ scale, color }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -188,12 +188,12 @@ export default function Spinner({ scale, color }) {
   );
 }
 
-Spinner.propTypes = {
+Loader.propTypes = {
   scale: PropTypes.number,
   color: PropTypes.string,
 };
 
-Spinner.defaultProps = {
+Loader.defaultProps = {
   scale: 1,
   color: '#687808',
 };
