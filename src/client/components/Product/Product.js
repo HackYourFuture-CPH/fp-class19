@@ -18,6 +18,7 @@ export default function Product({
   image,
   name,
   price,
+  currency,
   onClick,
   addToFavorites,
 }) {
@@ -27,7 +28,9 @@ export default function Product({
 
       <h2 className="product-name">{name}</h2>
 
-      <h2 className="product-price">{price}</h2>
+      <h2 className="product-price">
+        {price} {currency}
+      </h2>
 
       <div className="add-fav-button">
         <div>
@@ -62,7 +65,8 @@ export default function Product({
 Product.propTypes = {
   image: PropTypes.objectOf(PropTypes.object).isRequired,
   name: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  currency: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   addToFavorites: PropTypes.func,
 };
