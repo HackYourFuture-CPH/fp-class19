@@ -1,3 +1,7 @@
 import React from 'react';
-
-export const Home = () => <section className="home">Final project!</section>;
+import SpecialOfferBanner from '../../components/SpecialOfferBanner/Specialoffer';
+export const Home = () => (
+  <section className="home">
+    <SpecialOfferBanner />
+  </section>
+);

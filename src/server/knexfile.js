@@ -15,6 +15,9 @@ module.exports = {
     seeds: {
       directory: path.join(__dirname, '/seeds/development'),
     },
+    migrations: {
+      directory: path.join(__dirname, '/migrations/'),
+    },
   },
   production: {
     client: 'mysql2',

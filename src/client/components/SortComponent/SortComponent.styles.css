@@ -1,0 +1,8 @@
+.sorting-div .sort-options {
+  width: 130px;
+  z-index: 1800;
+  background: #687808;
+  height: 33px;
+  overflow: hidden;
+  outline: none;
+}
