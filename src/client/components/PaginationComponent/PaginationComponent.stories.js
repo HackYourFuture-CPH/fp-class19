@@ -12,9 +12,11 @@ export default {
 const template = (args) => {
   // eslint-disable-next-line
   const [propProducts, setPropProducts] = useState(args.products);
+  // eslint-disable-next-line
   const [currentRange, setCurrentRange] = useState(
     args.products.slice(0, args.productsPerPage),
   );
+  // eslint-disable-next-line
   React.useEffect(() => {
     setCurrentRange(propProducts.slice(0, args.productsPerPage));
   }, [propProducts, args.productsPerPage]);
@@ -25,6 +27,7 @@ const template = (args) => {
           {product.name} - DKK {product.price}
         </li>
       ))}
+      // eslint-disable-next-line
       <PaginationComponent onPageChange={(range) => setCurrentRange(range)} {...args}/>
     </>
   );
