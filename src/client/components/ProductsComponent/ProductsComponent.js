@@ -1,7 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ProductsComponent.styles.css';
-// import Product from '../ProductComponent/ProductComponent';
+import Product from '../Product/Product';
+import SortComponent from '../SortComponent/SortComponent';
 
-export default function ProductsComponent() {
-  return <div className="productsComponent"></div>;
+export default function ProductsComponent({ products }) {
+  const [sortedProducts, setSortedProducts] = useState(products);
+
+  const addFavorites = () => {
+    console.log('added to favorites');
+  };
+  const addToCart = () => {
+    console.log('added to cart');
+  };
+  return (
+    <div className="productsComponent">
+      <SortComponent
+        products={products}
+        setSortedProducts={setSortedProducts}
+      />
+      {sortedProducts.map((product) => (
+        <li key={product.id}>
+          <Product
+            image={product.picture}
+            name={product.name}
+            price={product.price}
+            currency={'DKK'}
+            onClick={addToCart}
+            addToFavorites={addFavorites}
+          />
+        </li>
+      ))}
+    </div>
+  );
 }
