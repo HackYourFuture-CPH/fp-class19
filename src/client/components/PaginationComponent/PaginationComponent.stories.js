@@ -27,7 +27,7 @@ const template = (args) => {
           {product.name} - DKK {product.price}
         </li>
       ))}
-      {// eslint-disable-next-line}
+      {/* eslint-disable-next-line*/}
       <PaginationComponent onPageChange={(range) => setCurrentRange(range)} {...args}/>
     </>
   );
