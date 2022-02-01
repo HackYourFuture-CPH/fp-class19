@@ -6,6 +6,16 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: Roboto;
+  src: url('../client/assets/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: DancingScript;
+  src: url('../client/assets/fonts/DancingScript-Regular.ttf');
+}
+
 html,
 body {
   padding: 0;
