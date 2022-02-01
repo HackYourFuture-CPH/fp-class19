@@ -1,0 +1,136 @@
+.login-component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.login-component .label {
+  color: #000;
+  margin-left: 10%;
+}
+
+.login-component .form-box {
+  width: 400px;
+  height: 450px;
+  background-color: #f6f8eb;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 2%;
+  align-items: center;
+}
+
+.login-component .header-form {
+  margin-bottom: 15px;
+}
+
+.login-component button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.login-component .message {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-component .social {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.login-component .social i {
+  font-size: 35px;
+}
+
+.login-component .social i:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.login-component .img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+}
+
+.login-component .heading {
+  text-align: center;
+  color: #000;
+}
+
+.login-component .form-control {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.login-component .btn {
+  background: #687808;
+  color: #ffff;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  border: 0;
+}
+
+.login-component .form-control2 {
+  border: 0;
+  width: 80%;
+  height: 25px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.login-component .create-act {
+  color: #687808;
+  text-decoration: none;
+}
+
+.login-component .google-login {
+  width: 70%;
+  height: auto;
+  margin-left: 15%;
+}
+
+.login-component .eye-icon {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  top: 8px;
+  right: 0;
+  padding-right: 43px;
+}
+
+.login-component .input-pass {
+  display: block;
+}
+
+.login-component .pass-div {
+  width: 100%;
+  position: relative;
+}
+
+.login-component .body-box {
+  align-items: center;
+}
+
+.login-component .forgot-pw {
+  text-decoration: none;
+  font-size: 50%;
+  color: #000;
+  font-weight: bold;
+  margin-left: 10%;
+}
+
+.login-component p {
+  text-align: center;
+  font-size: 0.7em;
+}

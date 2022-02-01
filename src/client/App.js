@@ -10,6 +10,7 @@ import { useAuthentication } from './hooks/useAuthentication';
 import { Header } from './components/Header/Header';
 import Profile from './containers/Profile';
 import Loader from './components/Loader';
+import LogIn from './components/LoginComponent/LoginComponent';
 import Menu from './components/Menu/Menu';
 import Footer from './components/Footer/Footer';
 
@@ -34,6 +35,7 @@ function App() {
         <SignIn exact path="/sign-in" />
         <SignUp exact path="/sign-up" />
         <ResetPassword exact path="/reset-password" />
+        <LogIn exact path="/log-in" />
 
         {/* All routes below are authenticated routes - a user must login first */}
         <AuthenticatedRoute exact path="/profile">
