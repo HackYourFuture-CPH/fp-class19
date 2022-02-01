@@ -16,7 +16,7 @@
     "db:clean": "cd ./src/server/ && knex migrate:rollback",
     "db:setup": "cd ./src/server/ && knex migrate:latest && knex seed:run",
     "db:reset": "npm run db:clean && npm run db:setup",
-    "storybook": "cd ./src/client/ && start-storybook -p 3007",
+    "storybook": "start-storybook -p 6006 -s public",
     "test": "jest",
     "test:watch": "jest --watch",
     "code:check": "npm run code:lint && npm run code:format -- --check",
@@ -24,7 +24,8 @@
     "code:lint": "eslint --ext .js,.jsx,.ts,.tsx \"src/\"",
     "code:format": "prettier \"./src/**/**.{js,jsx,ts,tsx}\"",
     "code:check:rules": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
-    "knex": "knex --cwd ./src/server"
+    "knex": "knex --cwd ./src/server",
+    "build-storybook": "build-storybook -s public"
   },
   "author": "Shanawaz Islam",
   "license": "MIT",
@@ -74,8 +75,11 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.1.14",
-    "@storybook/addon-essentials": "^6.1.14",
+    "@storybook/addon-actions": "^6.4.16",
+    "@storybook/addon-essentials": "^6.4.16",
+    "@storybook/addon-links": "^6.4.16",
+    "@storybook/node-logger": "^6.4.16",
+    "@storybook/preset-create-react-app": "^3.2.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "case-sensitive-paths-webpack-plugin": "^2.3.0",
@@ -115,5 +119,17 @@
     "*.{js}": "eslint",
     "*.{js,css,md}": "prettier --write",
     "*.css": "stylelint --fix"
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
   }
 }
