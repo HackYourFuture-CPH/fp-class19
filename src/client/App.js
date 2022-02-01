@@ -23,7 +23,6 @@ function App() {
 
   return (
     <Router>
-      <Loader />
       <Header />
       <Menu />
       <Switch>
