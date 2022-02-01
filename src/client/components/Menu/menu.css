@@ -1,0 +1,31 @@
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: green;
+  color: white;
+  text-transform: uppercase;
+}
+
+.menu-list {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  width: 100%;
+}
+
+.menu-list-item-link {
+  color: white;
+  text-decoration: none;
+  transition: ease-in-out 0.2s;
+}
+
+.menu-list-item-link:hover {
+  color: black;
+}
+
+.active {
+  color: blue;
+  text-decoration: underline;
+}

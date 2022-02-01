@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.contact-margin {
+  margin: 1em;
+}
+
+.contact-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  font-size: 24px;
+  line-height: 3.5em;
+  color: #534e4e;
+}
+
+.contact-content-p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  color: black;
+  margin-top: 0;
+}
+
+.contact-content-h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  color: black;
+  margin-bottom: 0;
+  margin-top: 2em;
+}
+
+.contact-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+}
+
+.contact-alink:link {
+  text-decoration: none;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.contact-alink:hover {
+  color: grey;
+}
