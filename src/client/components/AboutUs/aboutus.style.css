@@ -1,0 +1,14 @@
+.aboutus-content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+}
+
+@media (max-width: 400px) {
+  .aboutus-image {
+    width: 250px;
+  }
+}
