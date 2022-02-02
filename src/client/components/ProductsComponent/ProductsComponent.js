@@ -13,23 +13,28 @@ export default function ProductsComponent({ products }) {
     console.log('added to cart');
   };
   return (
-    <div className="productsComponent">
+    <div className="products-component">
       <SortComponent
         products={products}
         setSortedProducts={setSortedProducts}
       />
-      {sortedProducts.map((product) => (
-        <li key={product.id}>
-          <Product
-            image={product.picture}
-            name={product.name}
-            price={product.price}
-            currency={'DKK'}
-            onClick={addToCart}
-            addToFavorites={addFavorites}
-          />
-        </li>
-      ))}
+
+      <div>
+        <ul className="product-list">
+          {sortedProducts.map((product) => (
+            <li key={product.id} className="product-item">
+              <Product
+                image={product.picture}
+                name={product.name}
+                price={product.price}
+                currency={'DKK'}
+                onClick={addToCart}
+                addToFavorites={addFavorites}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
