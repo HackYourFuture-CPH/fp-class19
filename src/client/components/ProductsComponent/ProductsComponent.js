@@ -27,7 +27,6 @@ export default function ProductsComponent({ products }) {
                 image={product.picture}
                 name={product.name}
                 price={product.price}
-                currency={'DKK'}
                 onClick={addToCart}
                 addToFavorites={addFavorites}
               />
