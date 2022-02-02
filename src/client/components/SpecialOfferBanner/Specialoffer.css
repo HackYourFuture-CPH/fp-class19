@@ -1,31 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.top-image {
+  display: flex;
+}
+
 .top-image img {
   width: 100%;
 }
 
 .offer-banner {
-  position: relative;
+  /* position: relative;
   padding: 8em;
-  margin-top: -9em;
+  margin-top: -9em; */
   width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  /* align-items: stretch;
+  justify-content: center;
+  align-content: center; */
+
+  padding-inline: 5rem;
+  margin-bottom: 3rem;
+}
+
+.offer-banner h4 {
+  font-family: 'Roboto', sans-serif;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.offer-banner1 {
+  background-image: url('../../assets/images/image_27.png');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 130px;
+}
+
+.special-offer-link-container {
+  display: flex;
 }
 
 .offer-banner1 a {
-  position: absolute;
+  font-family: 'Inter', sans-serif;
   text-decoration: none;
-  top: 55%;
-  left: 43%;
-  color: black;
-  font-weight: bolder;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  background-color: rgb(218, 214, 214);
-  opacity: 0.8;
-  font-size: 16px;
-  padding: 12px 24px;
-  border: none;
-  cursor: pointer;
+  background: #fff;
+  opacity: 0.75;
   border-radius: 5px;
-  text-align: center;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 15px 60px;
 }
 
 .offer-banner1 a:hover {
@@ -45,11 +84,12 @@
 
 @media (min-width: 481px) and (max-width: 768px) {
   .offer-banner {
-    margin-left: -5em;
+    padding: unset;
   }
 
   .offer-banner1 img {
-    width: 500px;
+    /* width: 500px;
+    height: auto; */
   }
 
   h4 {
@@ -57,18 +97,14 @@
   }
 
   .offer-banner1 a {
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    font-size: 10px;
+    font-size: 12px;
     padding: 4px 8px;
   }
 }
 
-@media (min-width: 400px) and (max-width: 480px) {
+@media (max-width: 400px) {
   .offer-banner {
-    margin-left: -7.8em;
+    padding: unset;
   }
 
   .offer-banner1 img {
@@ -81,10 +117,6 @@
   }
 
   .offer-banner1 a {
-    top: 55%;
-    left: 80%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     font-size: 12px;
     padding: 4px 8px;
   }

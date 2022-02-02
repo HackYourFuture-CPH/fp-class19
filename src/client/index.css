@@ -16,6 +16,11 @@
   src: url('../client/assets/fonts/DancingScript-Regular.ttf');
 }
 
+@font-face {
+  font-family: Inter;
+  src: url('../client/assets/fonts/Inter-Medium.ttf');
+}
+
 html,
 body {
   padding: 0;
