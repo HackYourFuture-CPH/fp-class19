@@ -33,7 +33,7 @@ export default function FavouriteList({ productList }) {
                     <div
                       style={{
                         display:
-                          product.discount != 0 ? 'inline-block' : 'none',
+                          product.discount !== 0 ? 'inline-block' : 'none',
                       }}
                       className="discount"
                     >
@@ -42,8 +42,8 @@ export default function FavouriteList({ productList }) {
                   </div>
                   <div className="name-counter-container">
                     <div className="product_name">{product.name}</div>
-                    <br></br>
-                    <br></br>
+                    <br />
+                    <br />
 
                     <div className="counter-section">
                       <div className="qty-text">QTY</div>
@@ -51,6 +51,7 @@ export default function FavouriteList({ productList }) {
                         <button
                           className="counter-button"
                           onClick={handleClick2}
+                          type="button"
                         >
                           -
                         </button>
@@ -60,6 +61,7 @@ export default function FavouriteList({ productList }) {
                         <button
                           className="counter-button"
                           onClick={handleClick1}
+                          type="button"
                         >
                           +
                         </button>
@@ -71,6 +73,7 @@ export default function FavouriteList({ productList }) {
                       <button
                         className="close-button"
                         onClick={action('You have clicked the close button')}
+                        type="button"
                       >
                         X
                       </button>
@@ -79,7 +82,7 @@ export default function FavouriteList({ productList }) {
                       <div
                         style={{
                           display:
-                            product.discount != 0 ? 'inline-block' : 'none',
+                            product.discount !== 0 ? 'inline-block' : 'none',
                           'text-decoration': 'line-through',
                         }}
                       >
@@ -88,7 +91,7 @@ export default function FavouriteList({ productList }) {
                       <div
                         style={{
                           display:
-                            product.discount == 0 ? 'inline-block' : 'none',
+                            product.discount === 0 ? 'inline-block' : 'none',
                         }}
                       >
                         {product.currency} {product.price}
@@ -96,7 +99,7 @@ export default function FavouriteList({ productList }) {
                       <div
                         style={{
                           display:
-                            product.discount != 0 ? 'inline-block' : 'none',
+                            product.discount !== 0 ? 'inline-block' : 'none',
                         }}
                       >
                         &nbsp;&nbsp;{product.currency}{' '}
@@ -111,6 +114,7 @@ export default function FavouriteList({ productList }) {
                         onClick={action(
                           'You have clicked the add to cart button',
                         )}
+                        type="button"
                       >
                         {' '}
                         ADD TO CART
@@ -119,7 +123,7 @@ export default function FavouriteList({ productList }) {
                   </div>
                 </div>
               </li>
-              <div className="line"></div>
+              <div className="line" />
             </div>
           );
         })}
@@ -130,9 +134,4 @@ export default function FavouriteList({ productList }) {
 
 FavouriteList.propTypes = {
   productList: PropTypes.objectOf(PropTypes.object).isRequired,
-};
-
-FavouriteList.defaultProps = {
-  closeOrder: null,
-  addToCart: null,
 };
