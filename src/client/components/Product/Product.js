@@ -24,7 +24,7 @@ export default function Product({
 }) {
   return (
     <div className="product-container">
-      <img className="product-image" src={image.src} alt={image.alt} />
+      <img className="product-image" src={image} alt={name} />
 
       <h2 className="product-name">{name}</h2>
 
@@ -63,10 +63,10 @@ export default function Product({
 }
 
 Product.propTypes = {
-  image: PropTypes.objectOf(PropTypes.object).isRequired,
+  image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  currency: PropTypes.string.isRequired,
+  currency: PropTypes.string,
   onClick: PropTypes.func,
   addToFavorites: PropTypes.func,
 };
@@ -74,4 +74,5 @@ Product.propTypes = {
 Product.defaultProps = {
   onClick: null,
   addToFavorites: null,
+  currency: 'DKK',
 };
