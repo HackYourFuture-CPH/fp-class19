@@ -40,8 +40,8 @@ export default function SortComponent({ products, setSortedProducts }) {
         </option>
         <option value="AlphabeticallyAZ">A-Z</option>
         <option value="AlphabeticallyZA">Z-A</option>
-        <option value="PriceDescending">Price ↓</option>
-        <option value="PriceAscending">Price ↑</option>
+        <option value="PriceDescending">Price ↑</option>
+        <option value="PriceAscending">Price ↓</option>
       </select>
     </div>
   );
