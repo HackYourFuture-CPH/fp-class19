@@ -19,6 +19,32 @@ h2 {
   justify-content: space-around;
 }
 
+.image-discount-box {
+  position: relative;
+}
+
+.discount {
+  border: none;
+  background: #fff;
+
+  /* height: 30px;
+  width: 30px;
+  text-align: center;  */
+
+  margin-top: 5px;
+  margin-right: 5px;
+  padding-right: 2px;
+  padding-top: 2px;
+  position: absolute;
+  right: 0%; /* horizontal alignment */
+  top: 0%; /* vertical alignment */
+}
+
+.discounted_price {
+  display: flex;
+  flex-direction: row;
+}
+
 .line {
   height: 1px;
   background: #9c0;

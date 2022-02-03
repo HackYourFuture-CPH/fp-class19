@@ -22,12 +22,23 @@ export default function FavouriteList({ productList }) {
             <div>
               <li>
                 <div className="product_container">
-                  <div>
-                    <img
-                      className="product_image"
-                      src={product.image.src}
-                      alt={product.image.alt}
-                    />
+                  <div className="image-discount-box">
+                    <div>
+                      <img
+                        className="product_image"
+                        src={product.image.src}
+                        alt={product.image.alt}
+                      />
+                    </div>
+                    <div
+                      style={{
+                        display:
+                          product.discount != 0 ? 'inline-block' : 'none',
+                      }}
+                      className="discount"
+                    >
+                      {product.discount}%
+                    </div>
                   </div>
                   <div className="name-counter-container">
                     <div className="product_name">{product.name}</div>
@@ -39,18 +50,18 @@ export default function FavouriteList({ productList }) {
                       <div>
                         <button
                           className="counter-button"
-                          onClick={handleClick1}
+                          onClick={handleClick2}
                         >
-                          +
+                          -
                         </button>
                       </div>
                       <div className="counter-box">{counter}</div>
                       <div>
                         <button
                           className="counter-button"
-                          onClick={handleClick2}
+                          onClick={handleClick1}
                         >
-                          -
+                          +
                         </button>
                       </div>
                     </div>
@@ -64,8 +75,35 @@ export default function FavouriteList({ productList }) {
                         X
                       </button>
                     </div>
-                    <div>
-                      {product.currency} {product.price}
+                    <div className="discounted_price">
+                      <div
+                        style={{
+                          display:
+                            product.discount != 0 ? 'inline-block' : 'none',
+                          'text-decoration': 'line-through',
+                        }}
+                      >
+                        {product.currency} {product.price}
+                      </div>
+                      <div
+                        style={{
+                          display:
+                            product.discount == 0 ? 'inline-block' : 'none',
+                        }}
+                      >
+                        {product.currency} {product.price}
+                      </div>
+                      <div
+                        style={{
+                          display:
+                            product.discount != 0 ? 'inline-block' : 'none',
+                        }}
+                      >
+                        &nbsp;&nbsp;{product.currency}{' '}
+                        {Math.round(
+                          product.price * (1 - product.discount / 100),
+                        )}
+                      </div>
                     </div>
                     <div>
                       <button
@@ -91,12 +129,6 @@ export default function FavouriteList({ productList }) {
 }
 
 FavouriteList.propTypes = {
-  image: PropTypes.objectOf(PropTypes.object).isRequired,
-  name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  currency: PropTypes.string.isRequired,
-  closeOrder: PropTypes.func,
-  addToCart: PropTypes.func,
   productList: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 

@@ -33,36 +33,35 @@ const productList = [
     image: image1,
     name: 'Verbena bonariens',
     currency: 'DKK',
-    price: '78',
+    price: 78,
+    discount: '',
   },
   {
     image: image2,
     name: 'Rosa pink',
     currency: 'DKK',
-    price: '78',
+    price: 78,
+    discount: '',
   },
   {
     image: image3,
     name: 'Anthurium pink',
     currency: 'DKK',
-    price: '78',
+    price: 78,
+    discount: '',
   },
   {
     image: image4,
     name: 'Anthurium pink',
     currency: 'DKK',
-    price: '78',
+    price: 78,
+    discount: 20,
   },
 ];
 
 export default {
   title: 'Components / FavouriteList Component',
   component: FavouriteList,
-  argTypes: {
-    addToCart: { action: 'clicked' },
-    closeOrder: { action: 'clicked' },
-  },
-  parameters: { actions: { argTypesRegex: '^on.*' } },
 };
 
 export const Component = () => <FavouriteList productList={productList} />;
