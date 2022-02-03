@@ -9,7 +9,7 @@ export default function Menu() {
         <MenuItem name="Plants" link="/plants" />
         <MenuItem name="Special Offers" link="/special-offers" />
         <MenuItem name="About" link="/about-us" />
-        <MenuItem name="Contact" link="/contact" />
+        <MenuItem name="Contact" link="/contact-us" />
       </ul>
     </div>
   );
