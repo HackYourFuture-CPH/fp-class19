@@ -12,8 +12,9 @@ import Profile from './containers/Profile';
 import Loader from './components/Loader';
 import LogIn from './components/LoginComponent/LoginComponent';
 import Menu from './components/Menu/Menu';
+import AboutUs from './components/AboutUs/Aboutus';
 import Footer from './components/Footer/Footer';
-import Contact from './components/contact-page/Contact';
+import ContactPage from './components/contact-page/Contact';
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -36,9 +37,9 @@ function App() {
         <SignIn exact path="/sign-in" />
         <SignUp exact path="/sign-up" />
         <ResetPassword exact path="/reset-password" />
-        <Contact exact path="/contact-us" />
+        <ContactPage exact path="/contact-us" />
         <LogIn exact path="/log-in" />
-
+        <AboutUs exact path="/about-us" />
         {/* All routes below are authenticated routes - a user must login first */}
         <AuthenticatedRoute exact path="/profile">
           <Profile />
