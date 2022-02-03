@@ -1,5 +1,5 @@
-import { number, text } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+/* import { number, text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions'; */
 import React from 'react';
 
 import FavouriteList from './FavouriteList';

@@ -2,12 +2,6 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { action } from '@storybook/addon-actions';
 import './FavouriteList.styles.css';
-import closeButtonImage from '../../assets/images/close_button.png';
-
-const closeButton = {
-  src: closeButtonImage,
-  alt: 'circle image',
-};
 
 export default function FavouriteList({ productList }) {
   const [counter, setCounter] = useState(0);
@@ -103,6 +97,7 @@ FavouriteList.propTypes = {
   currency: PropTypes.string.isRequired,
   closeOrder: PropTypes.func,
   addToCart: PropTypes.func,
+  productList: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
 FavouriteList.defaultProps = {
