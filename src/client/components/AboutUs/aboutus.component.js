@@ -23,7 +23,7 @@ function index() {
         style={{
           fontFamily: 'DancingScript',
           fontSize: '24px',
-          marginTop: '2rem',
+          marginTop: '5rem',
           paddingInline: '10rem',
           textAlign: 'center',
         }}
