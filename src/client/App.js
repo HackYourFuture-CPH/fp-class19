@@ -9,7 +9,7 @@ import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
 import { useAuthentication } from './hooks/useAuthentication';
 import { Header } from './components/Header/Header';
 import Profile from './containers/Profile';
-import Loader from './components/Loader';
+import Loader from './components/Loader/Loader.component';
 import LogIn from './components/LoginComponent/LoginComponent';
 import Menu from './components/Menu/Menu';
 import Footer from './components/Footer/Footer';
