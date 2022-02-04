@@ -18,7 +18,7 @@ function Footer() {
           <ul className="right-part-footer">
             <li className="footer-list">
               <div className="footer-text">
-                <p>COMPANY</p>
+                <p>Company</p>
                 <Link to="/about-us">About us</Link>
                 <br />
                 <Link to="/contact-us">Contact us</Link>
@@ -26,8 +26,12 @@ function Footer() {
             </li>
             <li className="footer-list">
               <div className="footer-text">
-                <Link to="/sign-up">
-                  <p>CREATE ACCOUNT</p>
+                <Link to="/sign-up" style={{ textAlign: 'left' }}>
+                  <p>
+                    Create
+                    <br />
+                    Account
+                  </p>
                 </Link>
                 <div className="footer-input">
                   <input type="text" placeholder="Your email" />
