@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '*../../../src/client/assets/images/Logo.png';
+import logo from '*../../../src/client/assets/images/logo.png';
 import send from '*../../../src/client/assets/images/emailsend.png';
 import './Footer.css';
 import { Link } from 'react-router-dom';
@@ -19,7 +19,7 @@ function Footer() {
             <li className="footer-list">
               <div className="footer-text">
                 <p>COMPANY</p>
-                <Link to="/About">About us</Link>
+                <Link to="/about-us">About us</Link>
                 <br />
                 <Link to="/contact-us">Contact us</Link>
               </div>

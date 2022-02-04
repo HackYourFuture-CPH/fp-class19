@@ -1,6 +1,6 @@
 import React from 'react';
 import Goog from '../../assets/images/goog.png';
-import LogoPic from '../../assets/images/Logo.png';
+import LogoPic from '../../assets/images/logo.png';
 import './LoginComponent.styles.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
