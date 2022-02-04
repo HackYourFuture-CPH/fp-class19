@@ -3,7 +3,7 @@ footer {
   background-color: #687808;
   width: 100%;
   bottom: 0;
-  position: absolute;
+  position: relative;
   padding: 2px;
   color: white;
   padding-bottom: 5rem;
