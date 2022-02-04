@@ -12,17 +12,19 @@ function index() {
           fontSize: '24px',
           lineHeight: '28px',
           margin: '2rem',
+          color: '#534E4E',
+          paddingTop: '0.8rem',
         }}
       >
         {' '}
-        About us{' '}
+        ABOUT US{' '}
       </h1>
       <p
         style={{
           fontFamily: 'DancingScript',
           fontSize: '24px',
           marginTop: '2rem',
-          paddingInline: '1rem',
+          paddingInline: '10rem',
           textAlign: 'center',
         }}
       >
@@ -39,7 +41,7 @@ function index() {
         className="aboutus-image"
         src={aboutImage}
         alt="aboutImage"
-        style={{ margin: '3rem' }}
+        style={{ margin: '3rem', width: '390px', height: '305px' }}
       />
     </div>
   );
