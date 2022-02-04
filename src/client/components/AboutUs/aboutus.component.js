@@ -24,7 +24,7 @@ function index() {
           fontFamily: 'DancingScript',
           fontSize: '24px',
           marginTop: '5rem',
-          paddingInline: '10rem',
+          paddingInline: '1rem',
           textAlign: 'center',
         }}
       >
