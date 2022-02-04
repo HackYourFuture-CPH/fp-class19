@@ -44,7 +44,7 @@ nav {
   width: 25rem;
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .logo-icon {
     margin: unset;
   }
