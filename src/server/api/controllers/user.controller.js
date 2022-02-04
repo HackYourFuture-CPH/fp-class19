@@ -15,8 +15,8 @@ const getUserFavorites = async (user_id) => {
       .where({ user_id })
       .distinct();
     if (favorites.length === 0) {
-      // eslint-disable-next-line
       throw new Error(
+        // eslint-disable-next-line
         `The favorite products for user ${user_id} did not found`,
         404,
       );
