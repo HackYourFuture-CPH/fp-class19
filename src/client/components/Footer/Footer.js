@@ -35,7 +35,9 @@ function Footer() {
                 </Link>
                 <div className="footer-input">
                   <input type="text" placeholder="Your email" />
-                  <img src={send} alt="email" />
+                  <a href="mailto:example@yourdomain.com">
+                    <img src={send} alt="email" />
+                  </a>
                 </div>
               </div>
             </li>
