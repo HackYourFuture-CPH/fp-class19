@@ -13,9 +13,9 @@ export const Header = ({ isAuthenticated, username, link }) => {
   return (
     <nav>
       {/* LOGO */}
-      <div className="logo-icon">
+      <Link to="/" className="logo-icon">
         <img src={faLogo} alt="logout" />
-      </div>
+      </Link>
       {/* ICONS */}
       <div className="icons-right">
         <img className="icons" src={faShoppingCart} alt="shopping-cart" />
