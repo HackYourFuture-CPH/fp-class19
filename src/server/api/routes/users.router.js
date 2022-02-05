@@ -18,7 +18,7 @@ const usersController = require('../controllers/users.controller');
  *    parameters:
  *      - in: body
  *        name: user
- *        description: The module to create.
+ *        description: The use to create.
  *        schema:
  *          type: object
  *          required:
@@ -34,7 +34,7 @@ const usersController = require('../controllers/users.controller');
  *            full_name:
  *              type: string
  *            email:
- *              type: string
+ *              type: email
  *            address:
  *              type: string
  *            zipcode:
