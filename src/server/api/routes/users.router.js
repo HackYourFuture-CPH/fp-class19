@@ -32,26 +32,28 @@ const usersController = require('../controllers/users.controller');
 
  *          properties:
  *            full_name:
- *              type: string
+ *              type: John Dean
  *            email:
- *              type: email
+ *              type: john@dean.com
  *            address:
- *              type: string
+ *              type: Enghavevej 80
  *            zipcode:
- *              type: number
+ *              type: 2300
  *            city:
- *              type: string
+ *              type: Copenhagen
  *            country:
- *              type: string
+ *              type: Denmark
  *            created_at:
- *              type: string
+ *              type: 2022-01-31 12:05:47
  *              format: date-time
  *            
  *    responses:
- *      201:
+ *      200:
  *        description: user created
- *      5XX:
- *        description: Unexpected error.
+ *      400:
+ *        description: User request error.
+ *      500:
+ *        description: error with Database.
  */
 router.post('/', (req, res) => {
   usersController
