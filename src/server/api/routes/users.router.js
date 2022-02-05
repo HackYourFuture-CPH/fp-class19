@@ -10,56 +10,56 @@ const usersController = require('../controllers/users.controller');
  * /user:
  *  post:
  *    tags:
- *    - Users
- *    summary: Create a user
+ *    - User
+ *    summary: Add a user
  *    description:
- *      Will create a user.
+ *      Will add a user.
  *    produces: application/json
  *    parameters:
  *      - in: body
- *        name: user
- *        description: The use to create.
+ *        name: User
+ *        description: The user to add.
  *        schema:
  *          type: object
- *          required:
- *            - full_name
- *            - email
- *            - address
- *            - zipcode
- *            - city
- *            - country
- *            - created_at
-
- *          properties:
- *            full_name:
- *              type: John Dean
- *            email:
- *              type: john@dean.com
- *            address:
- *              type: Enghavevej 80
- *            zipcode:
- *              type: 2300
- *            city:
- *              type: Copenhagen
- *            country:
- *              type: Denmark
- *            
+ *          items:
+ *            $ref: '#/UserModel'
+ *          example:
+ *            { "full_name":  John Dean, "email": john@dean.com, "address" : Enghavevej 80, zipcode: 2300, "city": Copenhagen, "country" : Denmark }
+ *
  *    responses:
- *      200:
- *        description: user created
+ *      201:
+ *        description: User added
  *      400:
- *        description: User request error.
- *      500:
- *        description: error with Database.
+ *        description: Bad request
+ *      5XX:
+ *        description: Unexpected error.
+ *
+ *  UserModel:
+ *     type: object
+ *     properties:
+ *       full_name:
+ *         type: string
+ *       email:
+ *         type: string
+ *       address:
+ *         type: string
+ *       zipcode:
+ *         type: integer
+ *       city:
+ *         type: string
+ *       country:
+ *         type: string
  */
 router.post('/', (req, res) => {
   usersController
     .createUser(req.body)
-    .then((result) => res.json(result))
+    .then((result) => res.status(201).json(result))
     .catch((error) => {
-      console.log(error);
-
-      res.status(400).send('Bad request').end();
+      let responseMessage = '';
+      if (error.code === 'ER_DUP_ENTRY') {
+        responseMessage = 'Sorry, the user already exists';
+      }
+      res.status(400).send(responseMessage).end();
     });
 });
 
