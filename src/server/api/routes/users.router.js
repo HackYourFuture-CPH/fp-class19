@@ -43,9 +43,6 @@ const usersController = require('../controllers/users.controller');
  *              type: Copenhagen
  *            country:
  *              type: Denmark
- *            created_at:
- *              type: 2022-01-31 12:05:47
- *              format: date-time
  *            
  *    responses:
  *      200:
