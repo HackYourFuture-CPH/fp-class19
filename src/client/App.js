@@ -7,14 +7,14 @@ import SignUp from './containers/SignUp';
 import ResetPassword from './containers/ResetPassword';
 import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
 import { useAuthentication } from './hooks/useAuthentication';
-import { Header } from './components/Header/Header';
+import { Header } from './components/Header/Header.component';
 import Profile from './containers/Profile';
 import Loader from './components/Loader/Loader.component';
-import LogIn from './components/LoginComponent/LoginComponent';
-import Menu from './components/Menu/Menu';
-import Footer from './components/Footer/Footer';
-import Contact from './components/contact-page/Contact';
-import AboutUs from './components/AboutUs/aboutus.component';
+import LogIn from './components/LoginComponent/LoginComponent.component';
+import Menu from './components/Menu/Menu.component';
+import Footer from './components/Footer/Footer.component';
+import Contact from './components/ContactPage/ContactPage.component';
+import AboutUs from './components/AboutUs/AboutUs.component';
 
 function App() {
   const { isLoading } = useAuthentication();

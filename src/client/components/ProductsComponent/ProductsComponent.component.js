@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ProductsComponent.styles.css';
 import Product from '../Product/Product';
-import SortComponent from '../SortComponent/SortComponent';
+import SortComponent from '../SortComponent/SortComponent.component';
 
 export default function ProductsComponent({ products }) {
   const [sortedProducts, setSortedProducts] = useState(products);
