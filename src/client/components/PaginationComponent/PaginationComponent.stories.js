@@ -28,7 +28,10 @@ const template = (args) => {
         </li>
       ))}
       {/* eslint-disable-next-line */}
-      <PaginationComponent onPageChange={(range) => setCurrentRange(range)} {...args}/>
+      <PaginationComponent
+        onPageChange={(range) => setCurrentRange(range)}
+        {...args}
+      />
     </>
   );
 };
