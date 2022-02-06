@@ -22,22 +22,22 @@ export function initFirebase() {
   }
 
   const auth = firebase.auth();
-  const db = firebase.database();
-  const firestore = firebase.firestore();
+  // const db = firebase.database();
+  // const firestore = firebase.firestore();
 
   /**
    * Connect to firestore emulator if running locally
    */
-  if (window.location.hostname === 'localhost') {
-    firestore.settings({
-      host: 'localhost:8080',
-      ssl: false,
-    });
-  }
+  // if (window.location.hostname === 'localhost') {
+  //   firestore.settings({
+  //     host: 'localhost:8080',
+  //     ssl: false,
+  //   });
+  // }
 
   return {
     auth,
-    db,
-    firestore,
+    // db,
+    // firestore,
   };
 }

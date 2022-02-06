@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../../index.css';
 
 import { Link } from 'react-router-dom';
 import './Header.css';
@@ -11,28 +12,24 @@ import faShoppingCart from '../../assets/images/shopping-cart.png';
 export const Header = ({ isAuthenticated, username, link }) => {
   return (
     <nav>
-      <header>
-        <div className="container">
-          {/* LOGO */}
-          <div className="logo-icon">
-            <img src={faLogo} alt="logout" />
-          </div>
-          {/* ICONS */}
-          <div className="icons-right">
-            <img className="icons" src={faHeart} alt="favorite" />
-            <img className="icons" src={faShoppingCart} alt="shopping-cart" />
-            <img className="icons" src={faUser} alt="login" />
+      {/* LOGO */}
+      <Link to="/" className="logo-icon">
+        <img src={faLogo} alt="logout" />
+      </Link>
+      {/* ICONS */}
+      <div className="icons-right">
+        <img className="icons" src={faShoppingCart} alt="shopping-cart" />
+        <img className="icons" src={faHeart} alt="favorite" />
+        <img className="icons" src={faUser} alt="login" />
 
-            {isAuthenticated ? (
-              <div className="login icons">Hello {username}</div>
-            ) : (
-              <Link className="login icons" to={link}>
-                Log In
-              </Link>
-            )}
-          </div>
-        </div>
-      </header>
+        {isAuthenticated ? (
+          <div className="login icons"> Hello {username}</div>
+        ) : (
+          <Link className="login icons" to={link}>
+            Log In
+          </Link>
+        )}
+      </div>
     </nav>
   );
 };

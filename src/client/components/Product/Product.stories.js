@@ -6,11 +6,6 @@ import Product from './Product';
 
 import imageFile from '../../assets/images/image_4.png';
 
-const image = {
-  src: imageFile,
-  alt: 'sample image',
-};
-
 export default {
   title: 'Components / Product Component',
   component: Product,
@@ -23,7 +18,7 @@ export default {
 
 export const Component = () => (
   <Product
-    image={image}
+    image={imageFile}
     name={text('Name', 'Test Image')}
     price={number('Price', 20)}
     currency={text('Currency', 'DKK')}

@@ -1,0 +1,19 @@
+.products-component .sorting-div {
+  width: fit-content;
+  margin-right: 2%;
+  margin-left: auto;
+}
+
+.products-component .product-list {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-left: -40px;
+}
+
+.products-component .product-item {
+  flex: 1 0 21%;
+  margin: 1%;
+}
