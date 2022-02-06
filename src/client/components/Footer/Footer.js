@@ -14,25 +14,32 @@ function Footer() {
               <img src={logo} alt="logo" />
             </div>
           </li>
-          <li className="footer-list">
-            <div className="footer-text">
-              <h4>COMPANY</h4>
-              <Link to="/About">About us</Link>
-              <br />
-              <Link to="/contact-us">Contact us</Link>
-            </div>
-          </li>
-          <li className="footer-list">
-            <div className="footer-text">
-              <Link to="/sign-up">
-                <h4>CREATE ACCOUNT</h4>
-              </Link>
-              <div className="footer-input">
-                <input type="text" placeholder="Your email" />
-                <img src={send} alt="email" />
+
+          <ul className="right-part-footer">
+            <li className="footer-list">
+              <div className="footer-text">
+                <p>Company</p>
+                <Link to="/about-us">About us</Link>
+                <br />
+                <Link to="/contact-us">Contact us</Link>
               </div>
-            </div>
-          </li>
+            </li>
+            <li className="footer-list">
+              <div className="footer-text">
+                <Link to="/sign-up" style={{ textAlign: 'left' }}>
+                  <p>
+                    Create
+                    <br />
+                    Account
+                  </p>
+                </Link>
+                <div className="footer-input">
+                  <input type="text" placeholder="Your email" />
+                  <img src={send} alt="email" />
+                </div>
+              </div>
+            </li>
+          </ul>
         </ul>
       </footer>
     </div>

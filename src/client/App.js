@@ -9,11 +9,12 @@ import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
 import { useAuthentication } from './hooks/useAuthentication';
 import { Header } from './components/Header/Header';
 import Profile from './containers/Profile';
-import Loader from './components/Loader';
+import Loader from './components/Loader/Loader.component';
 import LogIn from './components/LoginComponent/LoginComponent';
 import Menu from './components/Menu/Menu';
 import Footer from './components/Footer/Footer';
 import Contact from './components/contact-page/Contact';
+import AboutUs from './components/AboutUs/aboutus.component';
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -36,6 +37,7 @@ function App() {
         <SignIn exact path="/sign-in" />
         <SignUp exact path="/sign-up" />
         <ResetPassword exact path="/reset-password" />
+        <AboutUs exact path="/about-us" />
         <Contact exact path="/contact-us" />
         <LogIn exact path="/log-in" />
 

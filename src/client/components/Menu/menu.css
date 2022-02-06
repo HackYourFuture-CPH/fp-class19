@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  background: green;
+  background: #687808;
   color: white;
   text-transform: uppercase;
 }
@@ -19,13 +19,39 @@
   color: white;
   text-decoration: none;
   transition: ease-in-out 0.2s;
+  font-size: 1.3rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
 }
 
 .menu-list-item-link:hover {
   color: black;
 }
 
-.active {
-  color: blue;
-  text-decoration: underline;
+@media (max-width: 768px) {
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    padding: unset;
+  }
+
+  li {
+    margin: 0.7rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    padding: unset;
+  }
+
+  li {
+    margin: 0.5rem;
+  }
 }
