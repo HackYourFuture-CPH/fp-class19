@@ -200,6 +200,6 @@ Loader.propTypes = {
 
 Loader.defaultProps = {
   scale: 1,
-  color: '#ff1493',
+  color: '#F08080',
   withText: true,
 };
