@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import ResetPassword from '../../components/Forms/ResetPassword.component';
+import ResetPassword from '../../components/Forms/ResetPassword';
 import Loader from '../../components/Loader/Loader.component';
 import { useFirebase } from '../../firebase/FirebaseContext';
 
