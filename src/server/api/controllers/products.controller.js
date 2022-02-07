@@ -6,6 +6,11 @@ const getProducts = async () => {
   return knex('products');
 };
 
+const getDiscountProducts = async () => {
+  return knex('products').where('products.is_on_discount', '=', '1');
+};
+
 module.exports = {
   getProducts,
+  getDiscountProducts,
 };
