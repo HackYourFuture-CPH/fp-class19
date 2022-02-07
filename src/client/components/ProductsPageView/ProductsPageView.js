@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Pagination from '../PaginationComponent/PaginationComponent';
 import Product from '../Product/Product';
 import SortComponent from '../SortComponent/SortComponent';
+import PropTypes from 'prop-types';
+import './ProductsPageView.styles.css';
 
 export default function ProductsPageView({ products, productsPerPage }) {
   const [sortedProducts, setSortedProducts] = useState(products);
@@ -20,11 +22,13 @@ export default function ProductsPageView({ products, productsPerPage }) {
   React.useEffect(() => {
     setCurrentRange(sortedProducts.slice(0, productsPerPage));
   }, [sortedProducts, productsPerPage]);
+
   return (
-    <div className="products-page">
+    <div className="products-page-view">
       <SortComponent
         products={products}
         setSortedProducts={setSortedProducts}
+        className="sorting-div"
       />
 
       <div>

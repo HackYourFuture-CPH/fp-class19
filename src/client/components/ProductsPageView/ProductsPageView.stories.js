@@ -12,18 +12,16 @@ export default {
 
 const template = ({ products, productsPerPage }) => {
   return (
-    <>
-      <ProductsPageComponent
-        products={products}
-        productsPerPage={productsPerPage}
-      />
-    </>
+    <ProductsPageComponent
+      products={products}
+      productsPerPage={productsPerPage}
+    />
   );
 };
 
-export const showSorting = template.bind({});
+export const showProducts = template.bind({});
 
-showSorting.args = {
+showProducts.args = {
   products: [
     {
       id: 1,
