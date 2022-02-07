@@ -2,21 +2,13 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './PaginationComponent.styles.css';
 
-const PaginationComponent = ({
-  products,
-  productsPerPage,
-  onPageChange,
-}) => {
+const PaginationComponent = ({ products, productsPerPage, onPageChange }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const pageNumberLimit = 6;
   const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(6);
   const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
   const pages = [];
-  for (
-    let i = 1;
-    i <= Math.ceil(products.length / productsPerPage);
-    i += 1
-  ) {
+  for (let i = 1; i <= Math.ceil(products.length / productsPerPage); i += 1) {
     pages.push(i);
   }
   const getCurrentProducts = (page) => {
@@ -81,7 +73,7 @@ const PaginationComponent = ({
       </button>
     );
   }
-  
+
   return (
     <>
       <nav className="pagination">
@@ -89,7 +81,7 @@ const PaginationComponent = ({
           type="button"
           onClick={() => onPageChange(handlePrevBtn())}
           disabled={currentPage === 1}
-          className='arrows'
+          className="arrows"
         >
           &#9664;
         </button>
@@ -100,7 +92,7 @@ const PaginationComponent = ({
           type="button"
           onClick={() => onPageChange(handleNextBtn())}
           disabled={currentPage === pages.length}
-          className='arrows'
+          className="arrows"
         >
           &#9654;
         </button>

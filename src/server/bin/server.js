@@ -13,7 +13,9 @@ const { logger } = require('../api/lib/utils/winston');
  * Get port from environment and store in Express.
  * 8090 is used as a proxy in development mode to have both nodejs and webpack-server running
  */
+const host = process.env.API_HOST || '127.0.0.1';
 const port = parseInt(process.env.PORT, 10) || process.env.API_PORT;
+app.set('host', host);
 app.set('port', port);
 
 /**

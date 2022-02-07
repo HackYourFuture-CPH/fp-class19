@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { Home } from './containers/Home/Home';
+import LandingPage from './containers/LandingPage/LandingPage.Container';
 import SignIn from './containers/SignIn';
 import SignUp from './containers/SignUp';
 import ResetPassword from './containers/ResetPassword';
@@ -15,6 +15,8 @@ import Menu from './components/Menu/Menu';
 import Footer from './components/Footer/Footer';
 import Contact from './components/contact-page/Contact';
 import AboutUs from './components/AboutUs/aboutus.component';
+
+import './hooks/useProducts';
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -30,7 +32,7 @@ function App() {
       <Switch>
         {/* Home page */}
         <Route exact path="/">
-          <Home />
+          <LandingPage />
         </Route>
 
         {/* Anonymous pages */}
