@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Loader.style.css';
+import './loader-component.css';
 
 export default function Loader({ scale, color, withText }) {
   return (

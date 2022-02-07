@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../index.css';
-import './AboutUs.styles.css';
+import './aboutus.style.css';
 import aboutImage from '../../assets/images/image26.png';
 
 function index() {
