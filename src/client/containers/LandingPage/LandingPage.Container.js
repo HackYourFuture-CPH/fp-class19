@@ -1,7 +1,7 @@
 import React from 'react';
 import './LandingPage.Style.css';
 import { useProducts } from '../../hooks/useProducts';
-import ProductsComponent from '../../components/ProductsComponent/ProductsComponent';
+import ProductsComponent from '../../components/ProductsComponent/ProductsComponent.component';
 
 function LandingPage() {
   const { products, isLoading, error } = useProducts();

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ProductsComponent.styles.css';
-import Product from '../Product/Product';
+import Product from '../Product/Product.component';
 import SortComponent from '../SortComponent/SortComponent.component';
 
 export default function ProductsComponent({ products }) {
