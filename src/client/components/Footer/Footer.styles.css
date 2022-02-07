@@ -49,8 +49,6 @@ footer ul {
 
 .footer-input {
   position: relative;
-
-  /* color: white; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,23 +80,17 @@ footer ul {
 
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-
-  /* color: white; */
   opacity: 1; /* Firefox */
   z-index: 3;
 }
 
 ::-ms-input-placeholder {
   /* Microsoft Edge */
-
-  /* color: white; */
   z-index: 3;
 }
 
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-
-  /* color: white; */
   z-index: 3;
 }
 

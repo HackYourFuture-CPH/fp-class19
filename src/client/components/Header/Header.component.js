@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../../index.css';
 
 import { Link } from 'react-router-dom';
-import './Header.css';
+import './Header.styles.css';
 import faLogo from '../../assets/images/logo.png';
 import faUser from '../../assets/images/user-login.png';
 import faHeart from '../../assets/images/favorite-icon.png';

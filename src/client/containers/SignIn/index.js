@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import SignIn from '../../components/Forms/SignIn';
+import SignIn from '../../components/Forms/SignIn.component';
 import Loader from '../../components/Loader/Loader.component';
 import { useFirebase } from '../../firebase/FirebaseContext';
 
