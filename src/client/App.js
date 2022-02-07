@@ -15,7 +15,7 @@ import Menu from './components/Menu/Menu.component';
 import Footer from './components/Footer/Footer.component';
 import Contact from './components/ContactPage/ContactPage.component';
 
-import AboutUs from './components/AboutUs/AboutUs.component';
+import AboutUs from './components/AboutUs/aboutus.component';
 
 import './hooks/useProducts';
 
