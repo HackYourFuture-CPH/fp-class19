@@ -7,16 +7,12 @@ import SignUp from './containers/SignUp';
 import ResetPassword from './containers/ResetPassword';
 import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
 import { useAuthentication } from './hooks/useAuthentication';
-import { Header } from './components/Header/Header';
 import Profile from './containers/Profile';
 import Loader from './components/Loader/Loader.component';
 import LogIn from './components/LoginComponent/LoginComponent';
-import Menu from './components/Menu/Menu';
-import Footer from './components/Footer/Footer';
-import Contact from './components/contact-page/Contact';
-import AboutUs from './components/AboutUs/aboutus.component';
 
 import './hooks/useProducts';
+import ContactUsPage from './containers/ContactUsPage/ContactUsPage.Container';
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -27,20 +23,20 @@ function App() {
 
   return (
     <Router>
-      <Header />
-      <Menu />
       <Switch>
         {/* Home page */}
         <Route exact path="/">
           <LandingPage />
+        </Route>
+        {/* Contact page */}
+        <Route exact path="/contact-us">
+          <ContactUsPage />
         </Route>
 
         {/* Anonymous pages */}
         <SignIn exact path="/sign-in" />
         <SignUp exact path="/sign-up" />
         <ResetPassword exact path="/reset-password" />
-        <AboutUs exact path="/about-us" />
-        <Contact exact path="/contact-us" />
         <LogIn exact path="/log-in" />
 
         {/* All routes below are authenticated routes - a user must login first */}
@@ -48,7 +44,6 @@ function App() {
           <Profile />
         </AuthenticatedRoute>
       </Switch>
-      <Footer />
     </Router>
   );
 }
