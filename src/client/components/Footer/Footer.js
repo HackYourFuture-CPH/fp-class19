@@ -18,7 +18,7 @@ function Footer() {
           <ul className="right-part-footer">
             <li className="footer-list">
               <div className="footer-text">
-                <p>Company</p>
+                <p style={{ color: 'white' }}>Company</p>
                 <Link to="/about-us">About us</Link>
                 <br />
                 <Link to="/contact-us">Contact us</Link>
