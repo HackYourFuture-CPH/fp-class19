@@ -1,13 +1,8 @@
 import React from 'react';
 import LogoPic from '../../assets/images/logo.png';
 import './RecoverPassword.styles.css';
-import { Link } from 'react-router-dom';
 
 export default function RecoverPasswordComponent() {
-  const [isShown, setIsShown] = React.useState(false);
-  const changeShown = () => {
-    setIsShown(!isShown);
-  };
   return (
     <div className="recover-password-component">
       <div className="form-box">
@@ -27,7 +22,6 @@ export default function RecoverPasswordComponent() {
             </button>
             <br />
             <br />
-            <div></div>
           </form>
         </div>
       </div>
