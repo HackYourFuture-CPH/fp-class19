@@ -39,3 +39,5 @@ Header.propTypes = {
   username: PropTypes.node.isRequired,
   link: PropTypes.node.isRequired,
 };
+
+export default Header;
