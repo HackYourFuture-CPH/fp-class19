@@ -22,4 +22,20 @@
 .confirmation-page .btn {
   margin-top: 1rem;
   margin-left: 40%;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  color: white;
+  background-color: #687808;
+}
+.confirmation-page .btn2 {
+  margin-top: 1rem;
+  margin-left: 40%;
+  border: 1;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  background-color: white;
+  color: #687808;
 }
