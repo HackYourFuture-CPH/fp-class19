@@ -20,7 +20,7 @@ function OrderConfirmationPage() {
       <div className="btn">
         <ButtonComponent
           label="CONTINUE SHOPPING"
-          primary="true"
+          primary={true}
           backgroundColor="#687808"
           onClick={() => {
             window.location.href = '/';
