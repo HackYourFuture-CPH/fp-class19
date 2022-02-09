@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   border: none;
+  text-align: center;
 }
 
 .confirmation-page .wrapper h3 {
