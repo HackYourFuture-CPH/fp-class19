@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '*../../../src/client/assets/images/logo.png';
 import send from '*../../../src/client/assets/images/emailsend.png';
-import './Footer.styles.css';
+import './Footer.css';
 import { Link } from 'react-router-dom';
 
 function Footer() {
@@ -18,7 +18,7 @@ function Footer() {
           <ul className="right-part-footer">
             <li className="footer-list">
               <div className="footer-text">
-                <p>Company</p>
+                <p style={{ color: 'white' }}>Company</p>
                 <Link to="/about-us">About us</Link>
                 <br />
                 <Link to="/contact-us">Contact us</Link>

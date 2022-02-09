@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Button.styles.css';
+import './Button.css';
 /**
  * Primary UI component for user interaction
  */
