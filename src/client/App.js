@@ -13,6 +13,7 @@ import LogIn from './components/LoginComponent/LoginComponent';
 
 import './hooks/useProducts';
 import AboutUsPage from './containers/AboutUsPage/AboutUsPage.Container';
+import ContactUsPage from './containers/ContactUsPage/ContactUsPage.Container';
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -32,6 +33,11 @@ function App() {
         <Route exact path="/about-us">
           <AboutUsPage />
         </Route>
+        {/* Contact page */}
+        <Route exact path="/contact-us">
+          <ContactUsPage />
+        </Route>
+
         {/* Anonymous pages */}
         <SignIn exact path="/sign-in" />
         <SignUp exact path="/sign-up" />
