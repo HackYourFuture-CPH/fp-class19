@@ -22,7 +22,20 @@ const getProducts = async (req) => {
 };
 
 const getDiscountProducts = async () => {
-  return knex('products').where('products.is_on_discount', '=', '1');
+  return knex('products')
+    .select(
+      'id',
+      'name',
+      'price',
+      'color',
+      'size',
+      'is_available',
+      'stock_amount',
+      'is_on_discount',
+      'discount_percent',
+      'picture',
+    )
+    .where('products.is_on_discount', '=', '1');
 };
 
 module.exports = {
