@@ -1,6 +1,5 @@
 import React from 'react';
 import './OrderConfirmationPage.Style.css';
-import ButtonComponent from '../../components/Button/Button';
 
 function OrderConfirmationPage() {
   return <div className="confirmation-page">
@@ -14,25 +13,15 @@ function OrderConfirmationPage() {
           </p>
         </div>
       </div>
-      <div className="btn">
-        <ButtonComponent
-          label="CONTINUE SHOPPING"
-          primary={true}
-          backgroundColor="#687808"
-          onClick={() => {
+      
+        <button onClick={() => {
             window.location.href = '/';
-          }}
-        />
-      </div>
-<div className="btn">
-        <ButtonComponent
-          label="REVIEW ORDER"
-          backgroundColor="#fff"
-          onClick={() => {
-            window.location.href = '/order';
-          }}
-        />
-      </div>
+          }} className="btn">CONTINUE SHOPPING</button>
+      
+
+<button onClick={() => {
+            window.location.href = '/';
+          }} className="btn2">REVIEW ORDER</button>
     </div>;
 }
 
