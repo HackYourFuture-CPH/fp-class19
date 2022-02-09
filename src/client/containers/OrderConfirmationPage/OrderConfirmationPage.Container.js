@@ -3,7 +3,7 @@ import './OrderConfirmationPage.Style.css';
 import ButtonComponent from '../../components/Button/Button';
 
 function OrderConfirmationPage() {
-  return <div className="confirmationPage">
+  return <div className="confirmation-page">
       <div className="wrapper">
         <div>
           <h3>ORDER CONFIRMATION</h3>
