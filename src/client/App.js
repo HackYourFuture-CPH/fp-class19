@@ -13,7 +13,7 @@ import LogIn from './components/LoginComponent/LoginComponent';
 
 import './hooks/useProducts';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.Container';
-import OrderConfirmationPage from './containers/OrderConfirmationPage/COrderConfirmationPage.Container';
+import OrderConfirmationPage from './containers/OrderConfirmationPage/OrderConfirmationPage.Container';
 
 function App() {
   const { isLoading } = useAuthentication();
