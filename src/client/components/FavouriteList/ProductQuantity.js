@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import './FavouriteList.styles.css';
 
 const ProductQuantity = ({ product }) => {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
   const handleClick1 = () => {
     setCounter(counter + 1);
   };
 
   const handleClick2 = () => {
-    setCounter(counter - 1);
+    if (counter > 1) {
+      setCounter(counter - 1);
+    } else {
+      setCounter(1);
+    }
   };
   return (
     <div className="name-counter-container">
