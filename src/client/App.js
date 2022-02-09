@@ -13,6 +13,7 @@ import LogIn from './components/LoginComponent/LoginComponent';
 
 import './hooks/useProducts';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.Container';
+import OrderConfirmationPage from './containers/OrderConfirmationPage/COrderConfirmationPage.Container';
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -31,6 +32,9 @@ function App() {
         {/* Contact page */}
         <Route exact path="/contact-us">
           <ContactUsPage />
+        </Route>
+<Route exact path="/order-confirmation">
+          <OrderConfirmationPage />
         </Route>
 
         {/* Anonymous pages */}
