@@ -38,10 +38,12 @@ module.exports = {
     publicPath: '/',
     historyApiFallback: true,
     port: parseInt(process.env.CLIENT_PORT, 10),
-    host: '0.0.0.0',
-    open: process.env.OPEN_BROWSER === 'true' ? true : false,
+    host: process.env.CLIENT_HOST || '127.0.0.1',
+    open: process.env.OPEN_BROWSER === 'true',
     proxy: {
-      '/api': `http://localhost:${process.env.API_PORT}`,
+      '/api': `http://${process.env.API_HOST || '127.0.0.1'}:${
+        process.env.API_PORT
+      }`,
     },
   },
   node: {
