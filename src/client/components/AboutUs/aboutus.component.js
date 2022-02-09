@@ -26,6 +26,7 @@ function AboutUs() {
           marginTop: '5rem',
           paddingInline: '1rem',
           textAlign: 'center',
+          color: 'black',
         }}
       >
         We at{' '}
