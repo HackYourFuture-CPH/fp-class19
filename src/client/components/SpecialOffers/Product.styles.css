@@ -3,8 +3,8 @@
   box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  width: 280px;
-  padding: 10px;
+  width: 273px;
+  padding: 8px;
 }
 
 .offer-product-name {
@@ -46,10 +46,6 @@
   background-color: #fff;
 }
 
-.offer-product-image {
-  width: fit-content;
-}
-
 .offer-product-price {
   text-decoration: line-through;
   padding-right: 2rem;
@@ -65,12 +61,16 @@
 .discount-box {
   position: absolute;
   top: 0;
-  right: 2px;
-  width: 5.5rem;
-  height: 5.5rem;
+  right: 0;
+  width: 88px;
+  height: 92px;
   background-color: #fff;
   opacity: 0.8;
   border: 1px solid #9b8d8d;
   font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.discount-box h3 {
   font-weight: 900;
 }

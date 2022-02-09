@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './Product.styles.css';
 import cartBucketImage from '../../assets/images/cart_bucket.png';
 import heartImage from '../../assets/images/heart.png';
+import font from '../../assets/fonts/Inter-Regular.ttf';
 
 const cartBucket = {
   src: cartBucketImage,
@@ -25,9 +26,20 @@ export default function Product({
   addToFavorites,
 }) {
   return (
-    <div className="offer-product-container">
+    <div
+      className="offer-product-container"
+      style={{
+        fontFamily: { font },
+      }}
+    >
       <div className="image-and-discount">
-        <img className="offer-product-image" src={image} alt={name} />
+        <img
+          className="offer-product-image"
+          src={image}
+          alt={name}
+          width={257}
+          height={226}
+        />
         <div className="discount-box">
           <h3>{discount}% OFF</h3>
         </div>
