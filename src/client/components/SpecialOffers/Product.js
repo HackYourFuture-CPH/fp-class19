@@ -25,27 +25,27 @@ export default function Product({
   addToFavorites,
 }) {
   return (
-    <div className="product-container">
+    <div className="offer-product-container">
       <div className="image-and-discount">
-        <img className="product-image" src={image} alt={name} />
+        <img className="offer-product-image" src={image} alt={name} />
         <div className="discount-box">
           <h3>{discount}% OFF</h3>
         </div>
       </div>
-      <h2 className="product-name">{name}</h2>
+      <h2 className="offer-product-name">{name}</h2>
       <div>
         <h2>
-          <span className="product-price">
+          <span className="offer-product-price">
             {price} {currency}
           </span>{' '}
           {discountPrice} {currency}
         </h2>
       </div>
 
-      <div className="add-fav-buttons">
+      <div className="offer-add-fav-buttons">
         <div>
           <button
-            className="product-add-button"
+            className="offer-product-add-button"
             type="button"
             onClick={onClick}
           >
@@ -53,18 +53,22 @@ export default function Product({
             <img
               src={cartBucket.src}
               alt={cartBucket.alt}
-              className="vector-bucket"
+              className="offer-vector-bucket"
             />
           </button>
         </div>
 
-        <div className="fav-button-div">
+        <div className="offer-fav-button-div">
           <button
-            className="favorite-button"
+            className="offer-favorite-button"
             type="button"
             onClick={addToFavorites}
           >
-            <img src={heart.src} alt={heart.alt} className="favorite-button" />
+            <img
+              src={heart.src}
+              alt={heart.alt}
+              className="offer-favorite-button"
+            />
           </button>
         </div>
       </div>
