@@ -5,13 +5,10 @@ import ButtonComponent from '../../components/Button/Button';
 function OrderConfirmationPage() {
   return <div className="confirmation-page">
       <div className="wrapper">
-        <div>
-          <h3>ORDER CONFIRMATION</h3>
-        </div>
         <div className="wrapper-content">
-          <p>
+          <h3>
             THANK YOU FOR YOUR ORDER
-          </p>
+          </h3>
           <p>
             We have sent a receipt to the email
           </p>
