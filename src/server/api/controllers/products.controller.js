@@ -21,6 +21,23 @@ const getProducts = async (req) => {
   return products;
 };
 
+const getDiscountProducts = async () => {
+  return knex('products')
+    .select(
+      'id',
+      'name',
+      'price',
+      'color',
+      'size',
+      'is_available',
+      'stock_amount',
+      'is_on_discount',
+      'discount_percent',
+      'picture',
+    )
+    .where('products.is_on_discount', '=', '1');
+};
+
 const getProductById = async (id) => {
   if (!id) {
     throw new HttpError('Id should be a number', 400);
@@ -49,7 +66,9 @@ const getProductById = async (id) => {
     return error.message;
   }
 };
+
 module.exports = {
   getProducts,
+  getDiscountProducts,
   getProductById,
 };

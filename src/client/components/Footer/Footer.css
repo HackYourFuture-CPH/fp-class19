@@ -49,8 +49,7 @@ footer ul {
 
 .footer-input {
   position: relative;
-
-  /* color: white; */
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,11 +57,13 @@ footer ul {
 
 .footer-input input {
   display: block;
-  background-color: #fff;
-  opacity: 0.3;
+  background-color: rgb(73, 128, 52);
+  opacity: 0.6;
   border-radius: 8px;
-  border: none;
+  border: 0.5px solid black;
   width: 255px;
+  color: white;
+  font-size: medium;
   height: 40px;
   z-index: 2;
   padding: 1rem;
@@ -83,7 +84,7 @@ footer ul {
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
 
-  /* color: white; */
+  color: white;
   opacity: 1; /* Firefox */
   z-index: 3;
 }
@@ -91,14 +92,14 @@ footer ul {
 ::-ms-input-placeholder {
   /* Microsoft Edge */
 
-  /* color: white; */
+  color: white;
   z-index: 3;
 }
 
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
 
-  /* color: white; */
+  color: white;
   z-index: 3;
 }
 
