@@ -12,6 +12,7 @@ import Loader from './components/Loader/Loader.component';
 import LogIn from './components/LoginComponent/LoginComponent';
 
 import './hooks/useProducts';
+import AboutUsPage from './containers/AboutUsPage/AboutUsPage.Container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.Container';
 
 function App() {
@@ -27,6 +28,10 @@ function App() {
         {/* Home page */}
         <Route exact path="/">
           <LandingPage />
+        </Route>
+        {/* AboutUs Page */}
+        <Route exact path="/about-us">
+          <AboutUsPage />
         </Route>
         {/* Contact page */}
         <Route exact path="/contact-us">
