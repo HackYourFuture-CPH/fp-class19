@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function UserCreationSuccess() {
+function UserCreationSuccess() {
   return (
     <div>
       Your account was successfully created, you can now head over and sign in
@@ -9,3 +9,5 @@ export default function UserCreationSuccess() {
 }
 
 UserCreationSuccess.propTypes = {};
+
+export { UserCreationSuccess };

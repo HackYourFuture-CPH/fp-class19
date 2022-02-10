@@ -1,8 +1,8 @@
 import React from 'react';
 import image from '../../assets/images/image26.png';
-import './ContactPage.styles.css';
+import './ContactUs.styles.css';
 
-function ContactPage() {
+function ContactUs() {
   return (
     <div className="contact-margin">
       <h1 className="contact-title">HAPPY TO HELP</h1>
@@ -69,4 +69,4 @@ function ContactPage() {
   );
 }
 
-export { ContactPage };
+export { ContactUs };

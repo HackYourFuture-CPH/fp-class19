@@ -4,7 +4,7 @@ import { SignIn } from '../../components/Forms/SignIn.component';
 import { Loader } from '../../components/Loader/Loader.component';
 import { useFirebase } from '../../firebase/FirebaseContext';
 
-export default function SignInContainer() {
+function SignInPage() {
   const [isLoading, setIsLoading] = useState(false);
   const { signIn } = useFirebase();
 
@@ -20,3 +20,5 @@ export default function SignInContainer() {
 
   return <SignIn onSubmit={onSubmit} />;
 }
+
+export { SignInPage };

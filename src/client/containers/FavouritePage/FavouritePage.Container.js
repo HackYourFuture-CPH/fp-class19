@@ -5,4 +5,4 @@ function FavouritePage() {
   return <div>Favourites</div>;
 }
 
-export default FavouritePage;
+export { FavouritePage };

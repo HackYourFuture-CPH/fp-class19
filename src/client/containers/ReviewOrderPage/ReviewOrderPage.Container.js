@@ -5,4 +5,4 @@ function ReviewOrderPage() {
   return <div>Review Order Page</div>;
 }
 
-export default ReviewOrderPage;
+export { ReviewOrderPage };

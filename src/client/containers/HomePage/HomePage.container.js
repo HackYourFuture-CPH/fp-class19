@@ -1,8 +1,12 @@
 import React from 'react';
-import SpecialOfferBanner from '../../components/SpecialOfferBanner/SpecialOfferBanner';
+import { SpecialOfferBanner } from '../../components/SpecialOfferBanner/SpecialOfferBanner.component';
 
-export const Home = () => (
-  <section className="home">
-    <SpecialOfferBanner />
-  </section>
-);
+function HomePage() {
+  return (
+    <section className="home">
+      <SpecialOfferBanner />
+    </section>
+  );
+}
+
+export { HomePage };

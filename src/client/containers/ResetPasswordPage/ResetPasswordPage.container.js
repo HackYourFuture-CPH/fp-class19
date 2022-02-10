@@ -4,7 +4,7 @@ import { ResetPassword } from '../../components/Forms/ResetPassword.component';
 import { Loader } from '../../components/Loader/Loader.component';
 import { useFirebase } from '../../firebase/FirebaseContext';
 
-export default function ResetPasswordContainer() {
+function ResetPasswordPage() {
   const [isLoading, setIsLoading] = useState(false);
   const { resetPassword } = useFirebase();
 
@@ -20,3 +20,5 @@ export default function ResetPasswordContainer() {
 
   return <ResetPassword onSubmit={onSubmit} />;
 }
+
+export { ResetPasswordPage };

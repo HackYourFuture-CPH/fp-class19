@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import UserCreationSuccess from '../../components/Success/UserCreationSuccess';
+import { UserCreationSuccess } from '../../components/UserCreationSuccess/UserCreationSuccess.component';
 import { SignUp } from '../../components/Forms/SignUp.component';
 import { Loader } from '../../components/Loader/Loader.component';
 import { useFirebase } from '../../firebase/FirebaseContext';
@@ -7,7 +7,7 @@ import { useFirebase } from '../../firebase/FirebaseContext';
 const getDoesPasswordsMatch = ({ password, passwordConfirm }) =>
   password === passwordConfirm;
 
-export default function SignUpContainer() {
+function SignUpPage() {
   const [isSuccessful, setIsSuccessful] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -40,3 +40,5 @@ export default function SignUpContainer() {
 
   return <SignUp onSubmit={onSubmit} />;
 }
+
+export { SignUpPage };

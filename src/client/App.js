@@ -1,17 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { LandingPage } from './containers/LandingPage/LandingPage.container';
-import SignIn from './containers/SignIn';
-import SignUp from './containers/SignUp';
-import ResetPassword from './containers/ResetPassword';
 import { AuthenticatedRoute } from './components/Auth/AuthenticatedRoute';
 import { useAuthentication } from './hooks/useAuthentication';
-import Profile from './containers/Profile';
+import { LandingPage } from './containers/LandingPage/LandingPage.container';
+import { SignInPage } from './containers/SignInPage/SignInPage.container';
+import { SignUpPage } from './containers/SignUpPage/SignUpPage.container';
+import { ResetPasswordPage } from './containers/ResetPasswordPage/ResetPasswordPage.container';
+import { ContactUsPage } from './containers/ContactUsPage/ContactUsPage.container';
+import { ProfilePage } from './containers/ProfilePage/ProfilePage.container';
 import { Loader } from './components/Loader/Loader.component';
 import { Login } from './components/Login/Login.component';
+
 import './hooks/useProducts';
-import { ContactUsPage } from './containers/ContactUsPage/ContactUsPage.container';
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -33,14 +34,14 @@ function App() {
         </Route>
 
         {/* Anonymous pages */}
-        <SignIn exact path="/sign-in" />
-        <SignUp exact path="/sign-up" />
-        <ResetPassword exact path="/reset-password" />
+        <SignInPage exact path="/sign-in" />
+        <SignUpPage exact path="/sign-up" />
+        <ResetPasswordPage exact path="/reset-password" />
         <Login exact path="/log-in" />
 
         {/* All routes below are authenticated routes - a user must login first */}
         <AuthenticatedRoute exact path="/profile">
-          <Profile />
+          <ProfilePage />
         </AuthenticatedRoute>
       </Switch>
     </Router>

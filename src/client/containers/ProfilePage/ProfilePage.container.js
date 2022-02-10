@@ -1,5 +1,7 @@
 import React from 'react';
 
-export default function Profile() {
+function ProfilePage() {
   return <div>This is your private profile</div>;
 }
+
+export { ProfilePage };

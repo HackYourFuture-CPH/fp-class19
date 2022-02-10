@@ -1,10 +1,10 @@
 import React from 'react';
-import ResetPassword from './index';
+import { ResetPasswordPage } from './ResetPasswordPage.container';
 
 export default { title: 'Containers / Reset password' };
 
 export const Component = () => (
   <>
-    <ResetPassword />
+    <ResetPasswordPage />
   </>
 );

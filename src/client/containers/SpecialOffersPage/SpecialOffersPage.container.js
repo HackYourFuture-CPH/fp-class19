@@ -1,8 +1,8 @@
 import React from 'react';
-import './SpecialOfferPage.styles.css';
+import './SpecialOffersPage.styles.css';
 
-function SpecialOfferPage() {
+function SpecialOffersPage() {
   return <div>Special Offers</div>;
 }
 
-export default SpecialOfferPage;
+export { SpecialOffersPage };

@@ -1,7 +1,7 @@
 import React from 'react';
 import './LandingPage.styles.css';
 import { useProducts } from '../../hooks/useProducts';
-import { ProductsComponent } from '../../components/Products/Products.component';
+import { Products } from '../../components/Products/Products.component';
 
 function LandingPage() {
   const { products, isLoading, error } = useProducts();
@@ -9,7 +9,7 @@ function LandingPage() {
   return (
     <div>
       {isLoading && <p>Products getting loaded...</p>}
-      {!isLoading && !error && <ProductsComponent products={products} />}
+      {!isLoading && !error && <Products products={products} />}
       {error && <h1>Error occurred while fetching products: {error}</h1>}
     </div>
   );
