@@ -50,7 +50,7 @@ export default function Product({
           <span className="offer-product-price">
             {price} {currency}
           </span>{' '}
-          {discountPrice} {currency}
+          {discountPrice.toFixed(2)} {currency}
         </h2>
       </div>
 
