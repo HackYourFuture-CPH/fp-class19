@@ -43,6 +43,31 @@ router.get('/', (req, res, next) => {
 
 /**
  * @swagger
+ * /products/on_discount:
+ *  get:
+ *    tags:
+ *    - Products
+ *    summary: Get Products on discount
+ *    description:
+ *      Will return all the Products on discount.
+ *    produces: application/json
+ *    responses:
+ *      200:
+ *        description: Successful request
+ *      5XX:
+ *        description: Unexpected error.
+ *      404:
+ *        description:  Bad request.
+ */
+router.get('/on_discount', (req, res, next) => {
+  productsController
+    .getDiscountProducts()
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
+/**
+ * @swagger
  * /products/{ID}:
  *  get:
  *    tags:
