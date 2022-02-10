@@ -20,11 +20,11 @@ export default function Product({
   discount,
   name,
   price,
-  discountPrice,
   currency,
   onClick,
   addToFavorites,
 }) {
+  const discountPrice = price - (price * discount) / 100;
   return (
     <div
       className="offer-product-container"
@@ -93,7 +93,6 @@ Product.propTypes = {
   discount: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  discountPrice: PropTypes.number.isRequired,
   currency: PropTypes.string,
   onClick: PropTypes.func,
   addToFavorites: PropTypes.func,

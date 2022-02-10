@@ -22,7 +22,6 @@ export const ProductModel = () => (
     discount={number('discount', 20)}
     name={text('Name', 'Crocosmia Mistral8')}
     price={number('Price', 85)}
-    discountPrice={number('discountPrice', 68)}
     currency={text('Currency', 'DKK')}
     onClick={action('You have clicked the add to cart button')}
     addToFavorites={action('You have clicked the add to favorites button')}
