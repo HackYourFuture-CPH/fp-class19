@@ -27,8 +27,8 @@ function AuthenticatedRoute({ children, ...rest }) {
   );
 }
 
-export default AuthenticatedRoute;
-
 AuthenticatedRoute.propTypes = {
   children: PropTypes.element.isRequired,
 };
+
+export { AuthenticatedRoute };

@@ -1,5 +1,5 @@
 import React from 'react';
-import './CreateAccountPage.Style.css';
+import './CreateAccountPage.styles.css';
 
 function CreateAccountPage() {
   return <div>Create Account Page</div>;

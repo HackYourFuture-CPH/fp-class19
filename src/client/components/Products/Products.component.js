@@ -1,8 +1,11 @@
-import React from 'react';
-import './ProductsView.styles.css';
-import Product from '../Product/Product';
+import React, { useState } from 'react';
+import './Products.styles.css';
+import { Product } from '../Product/Product.component';
+import { SortComponent } from '../Sort/Sort.component';
 
-function ProductsView({ products }) {
+function ProductsComponent({ products }) {
+  const [sortedProducts, setSortedProducts] = useState(products);
+
   const addFavorites = () => {
     console.log('added to favorites');
   };
@@ -10,10 +13,15 @@ function ProductsView({ products }) {
     console.log('added to cart');
   };
   return (
-    <div className="products-view">
+    <div className="products-component">
+      <SortComponent
+        products={products}
+        setSortedProducts={setSortedProducts}
+      />
+
       <div>
         <ul className="product-list">
-          {products.map((product) => (
+          {sortedProducts.map((product) => (
             <li key={product.id} className="product-item">
               <Product
                 image={product.picture}
@@ -30,4 +38,4 @@ function ProductsView({ products }) {
   );
 }
 
-export { ProductsView };
+export { ProductsComponent };

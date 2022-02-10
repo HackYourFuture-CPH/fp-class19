@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import Pagination from '../PaginationComponent/PaginationComponent';
+import Pagination from '../Pagination/Pagination';
 import Product from '../Product/Product';
-import SortComponent from '../SortComponent/SortComponent';
+import SortComponent from '../Sort/Sort';
 import PropTypes from 'prop-types';
 import './ProductsPageView.styles.css';
-
-export default function ProductsPageView({ products, productsPerPage }) {
+function ProductsPageView({ products, productsPerPage }) {
   const [sortedProducts, setSortedProducts] = useState(products);
 
   const addFavorites = () => {
@@ -64,3 +63,5 @@ ProductsPageView.propTypes = {
   ).isRequired,
   productsPerPage: PropTypes.number.isRequired,
 };
+
+export { ProductsPageView };

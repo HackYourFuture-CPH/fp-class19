@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export default function ResetPassword({ onSubmit }) {
+function ResetPassword({ onSubmit }) {
   const [email, setEmail] = useState('');
   const handleEmailInput = (e) => setEmail(e.target.value);
   const handleSubmit = (e) => {
@@ -28,3 +28,5 @@ export default function ResetPassword({ onSubmit }) {
 ResetPassword.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
+
+export { ResetPassword };

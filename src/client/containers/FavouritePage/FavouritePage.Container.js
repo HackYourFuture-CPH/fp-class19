@@ -1,5 +1,5 @@
 import React from 'react';
-import './FavouritePage.Style.css';
+import './FavouritePage.styles.css';
 
 function FavouritePage() {
   return <div>Favourites</div>;

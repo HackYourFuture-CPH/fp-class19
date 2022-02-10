@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './loader-component.css';
+import './Loader.styles.css';
 
-export default function Loader({ scale, color, withText }) {
+function Loader({ scale, color, withText }) {
   return (
     <div className="loader-component">
       <svg
@@ -203,3 +203,5 @@ Loader.defaultProps = {
   color: '#F08080',
   withText: true,
 };
+
+export { Loader };

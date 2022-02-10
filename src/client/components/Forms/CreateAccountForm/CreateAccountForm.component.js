@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 import './CreateAccountForm.styles.css';
 
-export default function CreateAccount({ onSubmit }) {
+function CreateAccount({ onSubmit }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
@@ -157,3 +157,5 @@ export default function CreateAccount({ onSubmit }) {
 CreateAccount.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
+
+export { CreateAccount };
