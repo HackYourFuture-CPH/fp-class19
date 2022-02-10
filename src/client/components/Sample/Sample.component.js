@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Sample.styles.css';
 
-function SampleComponent({ title, onClick, children }) {
+function Sample({ title, onClick, children }) {
   return (
     <div className="sample-component">
       <h2>{title}</h2>
@@ -15,15 +15,15 @@ function SampleComponent({ title, onClick, children }) {
   );
 }
 
-SampleComponent.propTypes = {
+Sample.propTypes = {
   title: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   children: PropTypes.node,
 };
 
-SampleComponent.defaultProps = {
+Sample.defaultProps = {
   onClick: null,
   children: null,
 };
 
-export { SampleComponent };
+export { Sample };

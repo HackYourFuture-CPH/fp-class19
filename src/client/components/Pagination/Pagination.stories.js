@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import PaginationComponent from './Pagination';
+import { Pagination } from './Pagination.component';
 
 export default {
-  title: 'Components / Pagination Component',
-  component: PaginationComponent,
+  title: 'Components / Pagination',
+  component: Pagination,
   argTypes: {
     products: { control: '' },
   },
@@ -28,16 +28,13 @@ const template = (args) => {
         </li>
       ))}
       {/* eslint-disable */}
-      <PaginationComponent
-        onPageChange={(range) => setCurrentRange(range)}
-        {...args}
-      />
+      <Pagination onPageChange={(range) => setCurrentRange(range)} {...args} />
       {/* eslint-enable */}
     </>
   );
 };
 
-export const Pagination = template.bind({});
+export const PaginationDefault = template.bind({});
 Pagination.args = {
   products: [
     {

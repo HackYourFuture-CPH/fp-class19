@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Sort.styles.css';
 
-function SortComponent({ products, setSortedProducts }) {
+function Sort({ products, setSortedProducts }) {
   const [option, setOption] = React.useState();
   function sortProducts(opt) {
     if (opt === 'AlphabeticallyAZ') {
@@ -47,7 +47,7 @@ function SortComponent({ products, setSortedProducts }) {
   );
 }
 
-SortComponent.propTypes = {
+Sort.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
@@ -57,4 +57,4 @@ SortComponent.propTypes = {
   ).isRequired,
 };
 
-export { SortComponent };
+export { Sort };

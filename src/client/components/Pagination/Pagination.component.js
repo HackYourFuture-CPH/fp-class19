@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Pagination.styles.css';
 
-function PaginationComponent({ products, productsPerPage, onPageChange }) {
+function Pagination({ products, productsPerPage, onPageChange }) {
   const [currentPage, setCurrentPage] = useState(1);
   const pageNumberLimit = 6;
   const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(6);
@@ -101,7 +101,7 @@ function PaginationComponent({ products, productsPerPage, onPageChange }) {
   );
 }
 
-PaginationComponent.propTypes = {
+Pagination.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
@@ -112,8 +112,8 @@ PaginationComponent.propTypes = {
   onPageChange: PropTypes.func.isRequired,
 };
 
-PaginationComponent.defaultProps = {
+Pagination.defaultProps = {
   productsPerPage: 6,
 };
 
-export { PaginationComponent };
+export { Pagination };

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './FavouriteList.styles.css';
-import ProductImage from './ProductImage.component';
-import ProductQuantity from './ProductQuantity.component';
-import ProductCart from './ProductCart.component';
+import { ProductImage } from './ProductImage.component';
+import { ProductQuantity } from './ProductQuantity.component';
+import { ProductCart } from './ProductCart.component';
 
 function FavouriteList({ productList }) {
   return (

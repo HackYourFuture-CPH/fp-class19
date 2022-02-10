@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './Products.styles.css';
 import { Product } from '../Product/Product.component';
-import { SortComponent } from '../Sort/Sort.component';
+import { Sort } from '../Sort/Sort.component';
 
-function ProductsComponent({ products }) {
+function Products({ products }) {
   const [sortedProducts, setSortedProducts] = useState(products);
 
   const addFavorites = () => {
@@ -14,10 +14,7 @@ function ProductsComponent({ products }) {
   };
   return (
     <div className="products-component">
-      <SortComponent
-        products={products}
-        setSortedProducts={setSortedProducts}
-      />
+      <Sort products={products} setSortedProducts={setSortedProducts} />
 
       <div>
         <ul className="product-list">
@@ -38,4 +35,4 @@ function ProductsComponent({ products }) {
   );
 }
 
-export { ProductsComponent };
+export { Products };

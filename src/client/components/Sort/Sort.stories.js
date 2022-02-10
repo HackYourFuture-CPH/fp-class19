@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import SortComponent from './Sort';
+import { Sort } from './Sort.component';
 
 export default {
   title: 'Components / Sort Component',
-  component: SortComponent,
+  component: Sort,
   argTypes: {
     products: { control: '' },
   },
@@ -15,10 +15,7 @@ const template = ({ products }) => {
   const [sortedProducts, setSortedProducts] = useState(products);
   return (
     <>
-      <SortComponent
-        products={products}
-        setSortedProducts={setSortedProducts}
-      />
+      <Sort products={products} setSortedProducts={setSortedProducts} />
       {sortedProducts.map((product) => (
         <li key={product.id}>
           {product.name} - DKK {product.price}

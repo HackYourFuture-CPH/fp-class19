@@ -1,10 +1,10 @@
 import React from 'react';
 
-import ProductsComponent from './Products';
+import { Products } from './Products.component';
 
 export default {
   title: 'Components / Products Component',
-  component: ProductsComponent,
+  component: Products,
   argTypes: {
     products: { control: '' },
   },
@@ -13,7 +13,7 @@ export default {
 const template = ({ products }) => {
   return (
     <>
-      <ProductsComponent products={products} />
+      <Products products={products} />
     </>
   );
 };

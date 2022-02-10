@@ -16,4 +16,4 @@ function ContactUsPage() {
   );
 }
 
-export default ContactUsPage;
+export { ContactUsPage };
