@@ -37,7 +37,6 @@
 
 This repository is Class19's Final Project which is Plant Webshop
 
-
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [React](https://reactjs.org/) - Web Framework
@@ -71,7 +70,7 @@ This repository is Class19's Final Project which is Plant Webshop
 
 ## 👩🏻‍💼💡👨🏽‍💼 The Customer
 
-The customer is a fictional plant shop that needs a webshop app to sell their plants online 
+The customer is a fictional plant shop that needs a webshop app to sell their plants online
 
 #### 💼 Business Glossary
 
@@ -104,14 +103,14 @@ We might need to change and/or add new tables and fields and if so we need to fo
 Generally there are 2 types of components: _presentational_ and _container_ components. Please review the differences below:
 
 |                       | Presentational components                           | Container components                                                                                                                                                      |
-| --------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
 | Also known as         | "dumb" components, functional stateless components  | "smart" components, stateful components                                                                                                                                   |
 | Lives in this folder  | `/components`                                       | `/containers`                                                                                                                                                             |
 | Purpose               | Determines what a component looks like              | Determines how the applications works                                                                                                                                     |
 | Communication         | Can only communicate by receiving and passing props | Can communicate via props, can call APIs, can manipulate the DOM with REFs, etc.                                                                                          |
 | Markup                | Contains most of the markup for the application     | Should generally have as little markup as possible. A container `<div>` or an `<ul>` tag is ok, but if you need more, consider making a separate presentational component |
 | Storybook             | Can easily be mocked in Storybook                   | Cannot easily be mocked in Storybook, would require mocking API calls, etc.                                                                                               |
-| Can have side effects | No                                                  | Yes                                                                                                                                                                       |  |
+| Can have side effects | No                                                  | Yes                                                                                                                                                                       |     |
 
 #### A note about React Hooks
 
