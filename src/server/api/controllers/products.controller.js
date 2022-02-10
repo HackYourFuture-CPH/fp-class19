@@ -27,7 +27,20 @@ const getProductById = async (id) => {
   }
 
   try {
-    const products = await knex('products').select('products.*').where({ id });
+    const products = await knex('products')
+      .select(
+        'id',
+        'name',
+        'price',
+        'color',
+        'size',
+        'is_available',
+        'stock_amount',
+        'is_on_discount',
+        'discount_percent',
+        'picture',
+      )
+      .where({ id });
     if (products.length === 0) {
       throw new Error(`incorrect entry with the id of ${id}`, 404);
     }
