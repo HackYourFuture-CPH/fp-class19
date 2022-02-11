@@ -3,6 +3,7 @@ import './OrderConfirmationPage.Style.css';
 
 function OrderConfirmationPage() {
   return <div className="confirmation-page">
+    <div className="inner-div">
       <div className="wrapper">
         <div className="wrapper-content">
           <h3>
@@ -13,8 +14,9 @@ function OrderConfirmationPage() {
           </p>
         </div>
       </div>
-      
-        <button onClick={() => {
+      <div className="wrapper2">
+      <div className="wrapper-content2">
+      <button onClick={() => {
             window.location.href = '/';
           }} className="btn">CONTINUE SHOPPING</button>
       
@@ -22,7 +24,10 @@ function OrderConfirmationPage() {
 <button onClick={() => {
             window.location.href = '/';
           }} className="btn2">REVIEW ORDER</button>
-    </div>;
+      </div>
+      </div>
+    </div>
+    </div>
 }
 
 export default OrderConfirmationPage;
