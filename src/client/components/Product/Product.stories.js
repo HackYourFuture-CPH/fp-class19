@@ -2,7 +2,7 @@ import { number, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import React from 'react';
 
-import Product from './Product';
+import Product from './Product.component';
 
 import imageFile from '../../assets/images/image_4.png';
 

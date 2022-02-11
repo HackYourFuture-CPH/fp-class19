@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import '../../index.css';
 
 import { Link } from 'react-router-dom';
-import './Header.css';
+import './Header.styles.css';
 import faLogo from '../../assets/images/logo.png';
 import faUser from '../../assets/images/user-login.png';
 import faHeart from '../../assets/images/favorite-icon.png';
 import faShoppingCart from '../../assets/images/shopping-cart.png';
 
-const Header = ({ isAuthenticated, username, link }) => {
+export default function Header({ isAuthenticated, username, link }) {
   return (
     <nav>
       {/* LOGO */}
@@ -32,11 +32,10 @@ const Header = ({ isAuthenticated, username, link }) => {
       </div>
     </nav>
   );
-};
+}
 
 Header.propTypes = {
   isAuthenticated: PropTypes.node.isRequired,
   username: PropTypes.node.isRequired,
   link: PropTypes.node.isRequired,
 };
-export default Header;

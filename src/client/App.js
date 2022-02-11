@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import LandingPage from './containers/LandingPage/LandingPage.Container';
+import LandingPage from './containers/LandingPage/LandingPage.container';
 import SignIn from './containers/SignIn';
 import SignUp from './containers/SignUp';
 import ResetPassword from './containers/ResetPassword';
@@ -9,11 +9,11 @@ import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
 import { useAuthentication } from './hooks/useAuthentication';
 import Profile from './containers/Profile';
 import Loader from './components/Loader/Loader.component';
-import LogIn from './components/LoginComponent/LoginComponent';
+import LogIn from './components/Login/Login.component';
 
 import './hooks/useProducts';
-import AboutUsPage from './containers/AboutUsPage/AboutUsPage.Container';
-import ContactUsPage from './containers/ContactUsPage/ContactUsPage.Container';
+import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
+import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
 
 function App() {
   const { isLoading } = useAuthentication();

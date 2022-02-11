@@ -1,11 +1,11 @@
 import React from 'react';
-import './AboutUsPage.Style.css';
-import Header from '../../components/Header/Header';
-import Menu from '../../components/Menu/Menu';
-import AboutUs from '../../components/AboutUs/aboutus.component';
-import Footer from '../../components/Footer/Footer';
+import './AboutUsPage.styles.css';
+import Header from '../../components/Header/Header.component';
+import Menu from '../../components/Menu/Menu.component';
+import AboutUs from '../../components/AboutUs/AboutUs.component';
+import Footer from '../../components/Footer/Footer.component';
 
-function AboutUsPage() {
+export default function AboutUsPage() {
   return (
     <div>
       <Header />
@@ -15,5 +15,3 @@ function AboutUsPage() {
     </div>
   );
 }
-
-export default AboutUsPage;
