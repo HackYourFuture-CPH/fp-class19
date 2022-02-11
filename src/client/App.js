@@ -1,12 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import { useAuthentication } from './hooks/useAuthentication';
 import LandingPage from './containers/LandingPage/LandingPage.container';
 import SignIn from './containers/SignIn';
 import SignUp from './containers/SignUp';
 import ResetPassword from './containers/ResetPassword';
 import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
-import { useAuthentication } from './hooks/useAuthentication';
 import Profile from './containers/Profile';
 import Loader from './components/Loader/Loader.component';
 import LogIn from './components/Login/Login.component';
