@@ -2,7 +2,14 @@ import React from 'react';
 import './AboutUsPage.styles.css';
 
 function AboutUsPage() {
-  return <div>About Us</div>;
+  return (
+    <div>
+      <Header />
+      <Menu />
+      <AboutUs />
+      <Footer />
+    </div>
+  );
 }
 
 export { AboutUsPage };

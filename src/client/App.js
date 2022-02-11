@@ -28,6 +28,10 @@ function App() {
         <Route exact path="/">
           <LandingPage />
         </Route>
+        {/* AboutUs Page */}
+        <Route exact path="/about-us">
+          <AboutUsPage />
+        </Route>
         {/* Contact page */}
         <Route exact path="/contact-us">
           <ContactUsPage />
