@@ -14,10 +14,10 @@ const addToFavorites = async (body) => {
   };
 };
 
-const deleteFromFavorites = async (user_id, product_id) => {
+const deleteFromFavorites = async (userId, productId) => {
   console.log('delete');
   return knex('favorites')
-    .where({ user_id: user_id, product_id: product_id })
+    .where({ user_id: userId, product_id: productId })
     .del();
 };
 
