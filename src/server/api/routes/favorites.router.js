@@ -13,7 +13,7 @@ const favoritesController = require('../controllers/favorites.controller');
  *    - Favorites
  *    summary: Add a product to favorites for a user
  *    description:
- *      Will add a product to favorites for a user.
+ *      Will add a product to favorites of a user.
  *    produces: application/json
  *    parameters:
  *      - in: body
@@ -37,7 +37,7 @@ const favoritesController = require('../controllers/favorites.controller');
  *    responses:
  *      201:
  *        description: added to favorites
- *      5XX:
+ *      400:
  *        description: Unexpected error.
  */
 router.post('/add', (req, res) => {
@@ -53,44 +53,39 @@ router.post('/add', (req, res) => {
 
 /**
  * @swagger
- * /favorites/delete:
- *  post:
+ * /favorites/:
+ *  delete:
  *    tags:
  *    - Favorites
- *    summary: Delete a product from favorites from a user
+ *    summary: Delete a favorites product for a user
  *    description:
- *      Will delete a favorite product for a user.
+ *      Will delete a product for a user.
  *    produces: application/json
  *    parameters:
- *      - in: body
- *        name: favorite
- *        description: delete the product for a user from favorites.
- *
- *        schema:
- *          type: object
- *          required:
- *            - user_id
- *            - product_id
+ *      - in: query
+ *        name: user_id
+ *        description: ID of the user to delete.
  *
  *
- *          properties:
- *            user_id:
- *              type: integer
- *            product_id:
- *              type: integer
+ *      - in: query
+ *        name: product_id
+ *        description: ID of the product to delete.
  *    responses:
  *      200:
- *        description: product deleted from favorites
- *      5XX:
+ *        description: product deleted for a user from favorites
+ *      404:
  *        description: Unexpected error.
  */
-router.post('/delete', (req, res) => {
+router.delete('/', (req, res) => {
+  console.log('Going to delete the favorite product of a user');
+  console.log(req.query.user_id);
+  console.log(req.query.product_id);
   favoritesController
-    .deleteFromFavorites(req.body)
+    .deleteFromFavorites(req.query.user_id, req.query.product_id)
     .then((result) => {
       console.log(result);
-      // If result is equal to undefined, then that means the product id or user id does not exist
-      if (result === undefined) {
+      // If result is equal to 0, then that means the product id or user id does not exist
+      if (result === 0) {
         res
           .status(404)
           .send('The product ID or user Id you provided does not exist.');

@@ -1,6 +1,5 @@
 const knex = require('../../config/db');
 const moment = require('moment-timezone');
-//const HttpError = require('../lib/utils/http-error');
 
 const addToFavorites = async (body) => {
   console.log('in add');
@@ -15,10 +14,10 @@ const addToFavorites = async (body) => {
   };
 };
 
-const deleteFromFavorites = async (body) => {
+const deleteFromFavorites = async (user_id, product_id) => {
   console.log('delete');
-  await knex('favorites')
-    .where({ user_id: body.user_id, product_id: body.product_id })
+  return knex('favorites')
+    .where({ user_id: user_id, product_id: product_id })
     .del();
 };
 
