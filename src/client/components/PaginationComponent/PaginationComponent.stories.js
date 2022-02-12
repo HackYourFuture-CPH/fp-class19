@@ -22,17 +22,11 @@ const template = (args) => {
   }, [propProducts, args.productsPerPage]);
   return (
     <>
-      {currentRange.map((product) => (
-        <li key={product.id}>
-          {product.name} - DKK {product.price}
-        </li>
-      ))}
       {/* eslint-disable */}
       <PaginationComponent
         onPageChange={(range) => setCurrentRange(range)}
         {...args}
       />
-      {/* eslint-enable */}
     </>
   );
 };
@@ -331,3 +325,7 @@ Pagination.args = {
   ],
   productsPerPage: 12,
 };
+
+{
+  /* eslint-enable */
+}

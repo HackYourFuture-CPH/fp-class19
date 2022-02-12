@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './PaginationComponent.styles.css';
+import ProductsView from '../ProductsView/ProductsView';
 
-const PaginationComponent = ({ products, productsPerPage, onPageChange }) => {
+const PaginationComponent = ({ products, productsPerPage }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const pageNumberLimit = 6;
-  const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(6);
+  const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5);
   const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
   const pages = [];
   for (let i = 1; i <= Math.ceil(products.length / productsPerPage); i += 1) {
@@ -30,7 +31,7 @@ const PaginationComponent = ({ products, productsPerPage, onPageChange }) => {
         <button
           type="button"
           key={number}
-          onClick={() => onPageChange(paginate(number))}
+          onClick={() => paginate(number)}
           className={currentPage === number ? 'active' : null}
         >
           {number}
@@ -58,7 +59,7 @@ const PaginationComponent = ({ products, productsPerPage, onPageChange }) => {
   let pageIncrementBtn = null;
   if (pages.length > maxPageNumberLimit) {
     pageIncrementBtn = (
-      <button type="button" onClick={() => onPageChange(handleNextBtn())}>
+      <button type="button" onClick={() => handleNextBtn()}>
         {' '}
         &hellip;
       </button>
@@ -67,7 +68,7 @@ const PaginationComponent = ({ products, productsPerPage, onPageChange }) => {
   let pageDecrementBtn = null;
   if (minPageNumberLimit >= 1) {
     pageDecrementBtn = (
-      <button type="button" onClick={() => onPageChange(handlePrevBtn())}>
+      <button type="button" onClick={() => handlePrevBtn()}>
         {' '}
         &hellip;
       </button>
@@ -76,10 +77,11 @@ const PaginationComponent = ({ products, productsPerPage, onPageChange }) => {
 
   return (
     <>
-      <nav className="pagination">
+      <ProductsView products={getCurrentProducts(currentPage)} />
+      <section className="pagination">
         <button
           type="button"
-          onClick={() => onPageChange(handlePrevBtn())}
+          onClick={() => handlePrevBtn()}
           disabled={currentPage === 1}
           className="arrows"
         >
@@ -90,13 +92,13 @@ const PaginationComponent = ({ products, productsPerPage, onPageChange }) => {
         {pageIncrementBtn}
         <button
           type="button"
-          onClick={() => onPageChange(handleNextBtn())}
+          onClick={() => handleNextBtn()}
           disabled={currentPage === pages.length}
           className="arrows"
         >
           &#9654;
         </button>
-      </nav>
+      </section>
     </>
   );
 };
@@ -109,7 +111,6 @@ PaginationComponent.propTypes = {
     }),
   ).isRequired,
   productsPerPage: PropTypes.number,
-  onPageChange: PropTypes.func.isRequired,
 };
 
 PaginationComponent.defaultProps = {
