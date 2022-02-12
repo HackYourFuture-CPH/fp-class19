@@ -3,7 +3,7 @@ import '../../index.css';
 import './aboutus.style.css';
 import aboutImage from '../../assets/images/image26.png';
 
-function index() {
+function AboutUs() {
   return (
     <div className="aboutus-content-container">
       <h1
@@ -26,6 +26,7 @@ function index() {
           marginTop: '5rem',
           paddingInline: '1rem',
           textAlign: 'center',
+          color: 'black',
         }}
       >
         We at{' '}
@@ -47,4 +48,4 @@ function index() {
   );
 }
 
-export default index;
+export default AboutUs;
