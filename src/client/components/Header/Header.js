@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../index.css';
-
 import { Link } from 'react-router-dom';
 import './Header.css';
 import faLogo from '../../assets/images/logo.png';
@@ -39,4 +37,5 @@ Header.propTypes = {
   username: PropTypes.node.isRequired,
   link: PropTypes.node.isRequired,
 };
+
 export default Header;

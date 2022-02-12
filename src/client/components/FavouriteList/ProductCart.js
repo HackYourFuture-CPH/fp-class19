@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line
 import { action } from '@storybook/addon-actions';
 import './FavouriteList.styles.css';
 
