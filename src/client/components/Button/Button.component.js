@@ -1,10 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Button.css';
+import './Button.styles.css';
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
+export default function Button({
+  primary,
+  backgroundColor,
+  size,
+  label,
+  ...props
+}) {
   const mode = primary
     ? 'storybook-button--primary'
     : 'storybook-button--secondary';
@@ -22,7 +28,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
       {label}
     </button>
   );
-};
+}
 Button.propTypes = {
   /**
    * Is this the principal call to action on the page?

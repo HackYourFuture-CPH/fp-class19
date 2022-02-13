@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import PaginationComponent from './PaginationComponent';
+import Pagination from './Pagination.component';
 
 export default {
   title: 'Components / Pagination Component',
-  component: PaginationComponent,
+  component: Pagination,
   argTypes: {
     products: { control: '' },
   },
@@ -37,7 +37,7 @@ const template = (args) => {
   );
 };
 
-export const Pagination = template.bind({});
+export const PaginationComponent = template.bind({});
 Pagination.args = {
   products: [
     {

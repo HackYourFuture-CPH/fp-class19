@@ -1,10 +1,10 @@
 import React from 'react';
 
-import ProductsPageComponent from './ProductsPageView';
+import ProductsPageView from './ProductsPageView.component';
 
 export default {
   title: 'Components / ProductsPage Component',
-  component: ProductsPageComponent,
+  component: ProductsPageView,
   argTypes: {
     products: { control: '' },
   },
@@ -12,10 +12,7 @@ export default {
 
 const template = ({ products, productsPerPage }) => {
   return (
-    <ProductsPageComponent
-      products={products}
-      productsPerPage={productsPerPage}
-    />
+    <ProductsPageView products={products} productsPerPage={productsPerPage} />
   );
 };
 

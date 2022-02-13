@@ -1,10 +1,10 @@
 import React from 'react';
 import logo from '../../assets/images/logo.png';
 import send from '../../assets/images/emailsend.png';
-import './Footer.css';
+import './Footer.styles.css';
 import { Link } from 'react-router-dom';
 
-function Footer() {
+export default function Footer() {
   return (
     <div>
       <footer>
@@ -45,4 +45,3 @@ function Footer() {
     </div>
   );
 }
-export default Footer;

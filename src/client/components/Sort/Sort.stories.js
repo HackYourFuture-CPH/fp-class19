@@ -1,26 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import ProductsComponent from './ProductsComponent';
+import SortComponent from './Sort.component';
 
 export default {
-  title: 'Components / Products Component',
-  component: ProductsComponent,
+  title: 'Components / Sort Component',
+  component: SortComponent,
   argTypes: {
     products: { control: '' },
   },
 };
 
 const template = ({ products }) => {
+  // eslint-disable-next-line
+  const [sortedProducts, setSortedProducts] = useState(products);
   return (
     <>
-      <ProductsComponent products={products} />
+      <SortComponent
+        products={products}
+        setSortedProducts={setSortedProducts}
+      />
+      {sortedProducts.map((product) => (
+        <li key={product.id}>
+          {product.name} - DKK {product.price}
+        </li>
+      ))}
     </>
   );
 };
 
-export const showProducts = template.bind({});
+export const showSorting = template.bind({});
 
-showProducts.args = {
+showSorting.args = {
   products: [
     {
       id: 1,
