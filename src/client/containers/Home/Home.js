@@ -1,5 +1,5 @@
 import React from 'react';
-import SpecialOfferBanner from '../../components/SpecialOfferBanner/SpecialOfferBanner';
+import SpecialOfferBanner from '../../components/SpecialOfferBanner/SpecialOfferBanner.component';
 
 export default function Home() {
   return (
