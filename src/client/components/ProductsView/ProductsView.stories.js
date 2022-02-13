@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductsView from './ProductsView';
+import ProductsView from './ProductsView.component';
 
 export default {
   title: 'Components / ProductsView',

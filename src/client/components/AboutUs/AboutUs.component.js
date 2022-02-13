@@ -1,9 +1,9 @@
 import React from 'react';
 import '../../index.css';
-import './aboutus.style.css';
+import './AboutUs.styles.css';
 import aboutImage from '../../assets/images/image26.png';
 
-function AboutUs() {
+export default function AboutUs() {
   return (
     <div className="aboutus-content-container">
       <h1
@@ -47,5 +47,3 @@ function AboutUs() {
     </div>
   );
 }
-
-export default AboutUs;

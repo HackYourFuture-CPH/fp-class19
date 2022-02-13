@@ -1,8 +1,6 @@
 import React from 'react';
-import './OrderConfirmationPage.Style.css';
+import './OrderConfirmationPage.styles.css';
 
-function OrderConfirmationPage() {
+export default function OrderConfirmationPage() {
   return <div>Order Confirmation Page</div>;
 }
-
-export default OrderConfirmationPage;

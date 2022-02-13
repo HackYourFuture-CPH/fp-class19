@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './ProductsComponent.styles.css';
-import Product from '../Product/Product';
-import SortComponent from '../SortComponent/SortComponent';
+import './Products.styles.css';
+import Product from '../Product/Product.component';
+import Sort from '../Sort/Sort.component';
 
-export default function ProductsComponent({ products }) {
+export default function Products({ products }) {
   const [sortedProducts, setSortedProducts] = useState(products);
 
   const addFavorites = () => {
@@ -14,10 +14,7 @@ export default function ProductsComponent({ products }) {
   };
   return (
     <div className="products-component">
-      <SortComponent
-        products={products}
-        setSortedProducts={setSortedProducts}
-      />
+      <Sort products={products} setSortedProducts={setSortedProducts} />
 
       <div>
         <ul className="product-list">
