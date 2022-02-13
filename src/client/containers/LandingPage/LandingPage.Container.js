@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import './LandingPage.Style.css';
 import { useProducts } from '../../hooks/useProducts';
 import Loader from '../../components/Loader/Loader.component';
-import Header from '../../components/Header/Header';
-import Menu from '../../components/Menu/Menu';
 import SpecialOfferBanner from '../../components/SpecialOfferBanner/Specialoffer';
-import Footer from '../../components/Footer/Footer';
 import PaginationComponent from '../../components/PaginationComponent/PaginationComponent';
 import SortComponent from '../../components/SortComponent/SortComponent';
 
@@ -15,8 +12,6 @@ function LandingPage() {
 
   return (
     <div className="landingPageContaier">
-      <Header />
-      <Menu />
       <SpecialOfferBanner />
       {isLoading && <Loader />}
       {!isLoading && !error && (
@@ -29,7 +24,6 @@ function LandingPage() {
         </div>
       )}
       {error && <h1>Error occurred while fetching products: {error}</h1>}
-      <Footer />
     </div>
   );
 }
