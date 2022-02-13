@@ -1,7 +1,6 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-
-import { Header } from './Header';
+import Header from './Header.component';
 
 export default { title: 'Components / Header' };
 

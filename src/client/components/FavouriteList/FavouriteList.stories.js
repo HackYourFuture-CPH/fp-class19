@@ -2,7 +2,7 @@
 import { action } from '@storybook/addon-actions'; */
 import React from 'react';
 
-import FavouriteList from './FavouriteList';
+import FavouriteList from './FavouriteList.component';
 
 import imageFile1 from '../../assets/images/image_4.png';
 import imageFile2 from '../../assets/images/image_30.png';

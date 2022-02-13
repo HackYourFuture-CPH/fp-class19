@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './SortComponent.styles.css';
+import './Sort.styles.css';
 
-export default function SortComponent({ products, setSortedProducts }) {
+export default function Sort({ products, setSortedProducts }) {
   const [option, setOption] = React.useState();
   function sortProducts(opt) {
     if (opt === 'AlphabeticallyAZ') {
@@ -47,7 +47,7 @@ export default function SortComponent({ products, setSortedProducts }) {
   );
 }
 
-SortComponent.propTypes = {
+Sort.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,

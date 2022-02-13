@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Pagination from '../PaginationComponent/PaginationComponent';
-import Product from '../Product/Product';
-import SortComponent from '../SortComponent/SortComponent';
+import Pagination from '../Pagination/Pagination.component';
+import Product from '../Product/Product.component';
+import Sort from '../Sort/Sort.component';
 import PropTypes from 'prop-types';
 import './ProductsPageView.styles.css';
 
@@ -25,7 +25,7 @@ export default function ProductsPageView({ products, productsPerPage }) {
 
   return (
     <div className="products-page-view">
-      <SortComponent
+      <Sort
         products={products}
         setSortedProducts={setSortedProducts}
         className="sorting-div"
@@ -54,6 +54,7 @@ export default function ProductsPageView({ products, productsPerPage }) {
     </div>
   );
 }
+
 ProductsPageView.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
