@@ -1,6 +1,6 @@
-import * as firebase from 'firebase';
+import { getApps, initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
 
-import 'firebase/auth';
 import 'firebase/database';
 import 'firebase/firestore';
 import 'firebase/functions';
@@ -17,11 +17,11 @@ const configuration = {
 };
 
 export function initFirebase() {
-  if (!firebase.apps.length) {
-    firebase.initializeApp(configuration);
+  if (!getApps().length) {
+    initializeApp(configuration);
   }
 
-  const auth = firebase.auth();
+  const auth = getAuth();
   // const db = firebase.database();
   // const firestore = firebase.firestore();
 
