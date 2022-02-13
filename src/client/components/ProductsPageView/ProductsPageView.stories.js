@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/camelcase */
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import ProductsPageView from './ProductsPageView.component';
 
 export default {
@@ -310,4 +311,14 @@ showProducts.args = {
     },
   ],
   productsPerPage: 3,
+};
+
+template.propTypes = {
+  products: PropTypes.arrayOf(PropTypes.shape({})),
+  productsPerPage: PropTypes.shape({}),
+};
+
+template.defaultProps = {
+  products: null,
+  productsPerPage: null,
 };
