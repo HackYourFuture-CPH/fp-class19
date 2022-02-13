@@ -31,7 +31,7 @@ const getUserById = async (id) => {
       .select('users.id as id', 'full_name', 'email', 'address')
       .where({ id });
     if (users.length === 0) {
-      throw new Error(`incorrect entry with the id of ${id}`, 404);
+      throw new Error(`Incorrect entry.Id ${id} does not exist`, 404);
     }
     return users;
   } catch (error) {
@@ -55,7 +55,7 @@ const getUserFavorites = async (user_id) => {
     if (favorites.length === 0) {
       throw new Error(
         // eslint-disable-next-line
-        `The favorite products for user ${user_id} did not found`,
+        `The favorite products for user ${user_id} is not found`,
         404,
       );
     }

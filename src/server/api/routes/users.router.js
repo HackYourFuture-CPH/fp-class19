@@ -86,6 +86,8 @@ router.post('/', (req, res) => {
  *        description: Successful request
  *      5XX:
  *        description: Unexpected error.
+ *      404:
+ *        description: Incorrect entry. ID does not exist
  */
 router.get('/:id', (req, res, next) => {
   usersController
@@ -120,7 +122,7 @@ router.get('/:id', (req, res, next) => {
  *      400:
  *        description: Bad request. Incorrect user id.
  *      404:
- *        description: The favorite products for the specified user_id did not found
+ *        description: The favorite products for the specified user_id is not found
  */
 router.get('/:id/favorites/', (req, res, next) => {
   usersController
