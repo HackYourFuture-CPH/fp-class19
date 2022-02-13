@@ -56,6 +56,7 @@ const editUser = async (userId, updatedUser) => {
     zipcode: updatedUser.zipcode,
     city: updatedUser.city,
     country: updatedUser.country,
+    mobile: updatedUser.mobile,
     updated_at: moment().format(),
   });
 };
