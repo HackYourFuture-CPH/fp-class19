@@ -44,7 +44,24 @@ const getUserFavorites = async (user_id) => {
   }
 };
 
+const editUser = async (userId, updatedUser) => {
+  if (isNaN(userId) || !userId) {
+    throw new HttpError('User Id should be a number', 400);
+  }
+
+  return knex('users').where({ id: userId }).update({
+    full_name: updatedUser.full_name,
+    email: updatedUser.email,
+    address: updatedUser.address,
+    zipcode: updatedUser.zipcode,
+    city: updatedUser.city,
+    country: updatedUser.country,
+    updated_at: moment().format(),
+  });
+};
+
 module.exports = {
   createUser,
   getUserFavorites,
+  editUser,
 };
