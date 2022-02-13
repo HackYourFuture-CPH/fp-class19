@@ -8,10 +8,7 @@ import Footer from '../../components/Footer/Footer.component';
 export default function AboutUsPage() {
   return (
     <div>
-      <Header />
-      <Menu />
       <AboutUs />
-      <Footer />
     </div>
   );
 }

@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../index.css';
-
 import { Link } from 'react-router-dom';
 import './Header.styles.css';
 import faLogo from '../../assets/images/logo.png';
@@ -35,7 +33,12 @@ export default function Header({ isAuthenticated, username, link }) {
 }
 
 Header.propTypes = {
-  isAuthenticated: PropTypes.node.isRequired,
-  username: PropTypes.node.isRequired,
-  link: PropTypes.node.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
+  username: PropTypes.string,
+  link: PropTypes.string,
+};
+
+Header.defaultProps = {
+  username: 'username',
+  link: '/log-in',
 };

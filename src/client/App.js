@@ -9,7 +9,6 @@ import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
 import Profile from './containers/Profile';
 import Loader from './components/Loader/Loader.component';
 import LogIn from './components/Login/Login.component';
-
 import './hooks/useProducts';
 import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
@@ -23,6 +22,8 @@ function App() {
 
   return (
     <Router>
+      <Header />
+      <Menu />
       <Switch>
         {/* Home page */}
         <Route exact path="/">
@@ -48,6 +49,7 @@ function App() {
           <Profile />
         </AuthenticatedRoute>
       </Switch>
+      <Footer />
     </Router>
   );
 }
