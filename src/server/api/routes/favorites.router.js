@@ -18,6 +18,7 @@ const favoritesController = require('../controllers/favorites.controller');
  *    parameters:
  *      - in: body
  *        name: favorite
+ *
  *        description: The product to add in favorites of a user.
  *        schema:
  *          type: object
@@ -52,7 +53,7 @@ router.post('/add', (req, res) => {
 
 /**
  * @swagger
- * /favorites/delete:
+ * /favorites:
  *  delete:
  *    tags:
  *    - Favorites
@@ -64,12 +65,16 @@ router.post('/add', (req, res) => {
  *      - in: query
  *        name: user_id
  *        type: integer
+ *        required:
+ *            - user_id
  *        description: ID of the user to delete.
  *
  *
  *      - in: query
  *        name: product_id
  *        type: integer
+ *        required:
+ *            - product_id
  *        description: ID of the product to delete.
  *    responses:
  *      200:
@@ -78,7 +83,7 @@ router.post('/add', (req, res) => {
  *        description: The product ID or user Id you provided does not exist
  *
  */
-router.delete('/delete', (req, res) => {
+router.delete('/', (req, res) => {
   console.log('Going to delete the favorite product of a user');
   console.log(req.query.user_id);
   console.log(req.query.product_id);
