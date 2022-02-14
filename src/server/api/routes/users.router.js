@@ -86,8 +86,10 @@ router.post('/', (req, res) => {
  *        description: Successful request
  *      5XX:
  *        description: Unexpected error.
+ *      400:
+ *        description: Bad request. Invalid user id
  *      404:
- *        description: Incorrect entry. ID does not exist
+ *        description: Specified ID does not exist
  */
 router.get('/:id', (req, res, next) => {
   usersController
