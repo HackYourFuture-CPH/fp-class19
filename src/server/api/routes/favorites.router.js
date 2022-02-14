@@ -11,34 +11,33 @@ const favoritesController = require('../controllers/favorites.controller');
  *  post:
  *    tags:
  *    - Favorites
- *    summary: Add a product to favorites for a user
+ *    summary: Add a product to favorites of a user
  *    description:
  *      Will add a product to favorites of a user.
  *    produces: application/json
  *    parameters:
  *      - in: body
  *        name: favorite
- *        description: The product to add in favorites.
+ *        description: The product to add in favorites of a user.
  *        schema:
  *          type: object
- *          required:
- *            - user_id
- *            - product_id
- *
- *
+ *          example:
+ *            {"user_id":2,
+ *             "product_id":3}
  *          properties:
- *            user_id:
- *              type: integer
- *            product_id:
- *              type: integer
- *
- *
+ *             user_id:
+ *               type: integer
+ *             product_id:
+ *               type: integer
  *
  *    responses:
- *      201:
+ *      200:
  *        description: added to favorites
  *      400:
- *        description: Unexpected error.
+ *        description: Bad Request.
+ *
+ *
+ *
  */
 router.post('/add', (req, res) => {
   favoritesController
@@ -53,30 +52,33 @@ router.post('/add', (req, res) => {
 
 /**
  * @swagger
- * /favorites/:
+ * /favorites/delete:
  *  delete:
  *    tags:
  *    - Favorites
- *    summary: Delete a favorites product for a user
+ *    summary: Delete a favorite product for a user
  *    description:
- *      Will delete a product for a user.
+ *      Will delete a favorite product of a user.
  *    produces: application/json
  *    parameters:
  *      - in: query
  *        name: user_id
+ *        type: integer
  *        description: ID of the user to delete.
  *
  *
  *      - in: query
  *        name: product_id
+ *        type: integer
  *        description: ID of the product to delete.
  *    responses:
  *      200:
  *        description: product deleted for a user from favorites
  *      404:
- *        description: Unexpected error.
+ *        description: The product ID or user Id you provided does not exist
+ *
  */
-router.delete('/', (req, res) => {
+router.delete('/delete', (req, res) => {
   console.log('Going to delete the favorite product of a user');
   console.log(req.query.user_id);
   console.log(req.query.product_id);
