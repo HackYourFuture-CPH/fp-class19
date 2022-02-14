@@ -50,14 +50,14 @@ This repository is Class19's Final Project which is Plant Webshop
 
 ## 📅 Project's Calendar
 
-- 31-Oct-2021 - 12:00 to 16:00
-- 07-Nov-2021 - 12:00 to 16:00
-- 14-Nov-2021 - 12:00 to 16:00
-- 21-Nov-2021 - 12:00 to 16:00
-- 28-Nov-2021 - 12:00 to 16:00
-- 05-Dec-2021 - 12:00 to 16:00
-- 12-Dec-2021- 12:00 to 16:00
-- 15-Dec-2021 - Graduation (Wednesday from 16:00 to 20:00)
+- 23-Jan-2022 - 12:00 to 16:00
+- 30-Jan-2022 - 12:00 to 16:00 
+- 06-Feb-2022 - 12:00 to 16:00
+- 13-Feb-2022 - 12:00 to 16:00
+- 27-Feb-2022 - 12:00 to 16:00
+- 06-Mar-2022 - 12:00 to 16:00
+- 13-Mar-2022- 12:00 to 16:00
+- 09-Mar-2022 - Graduation (Wednesday from 16:00 to 20:00)
 
 :computer::computer::computer: You are welcome to come every Wednesday from 12:00 to 16:00 and work together on the project.
 
