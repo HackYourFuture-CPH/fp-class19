@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from '*../../../src/client/assets/images/logo.png';
-import send from '*../../../src/client/assets/images/emailsend.png';
+import logo from '../../assets/images/logo.png';
+import send from '../../assets/images/emailsend.png';
 import './Footer.styles.css';
 import { Link } from 'react-router-dom';
 
