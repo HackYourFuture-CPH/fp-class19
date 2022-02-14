@@ -141,7 +141,11 @@
   border: none;
   background-color: #fff;
   padding: 5px 5px;
-  font-weight: bold;
+  font-weight: 900;
   cursor: pointer;
   text-align: center;
+}
+
+.login-component .img2 {
+  float: left;
 }
