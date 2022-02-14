@@ -52,7 +52,9 @@ export default function LoginComponent() {
             <br />
             <div>
               <Link to="/google-signin">
-                <img src={Goog} alt="google-signin" className="google-login" />
+                <button type="button" className="btn2">
+                  Log In with Google
+                </button>
               </Link>
             </div>
 
