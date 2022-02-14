@@ -1,5 +1,5 @@
 import React from 'react';
-import Goog from '../../assets/images/goog.png';
+import Goog from '../../assets/images/google.svg';
 import LogoPic from '../../assets/images/logo.png';
 import './LoginComponent.styles.css';
 import { Link } from 'react-router-dom';
@@ -53,6 +53,7 @@ export default function LoginComponent() {
             <div>
               <Link to="/google-signin">
                 <button type="button" className="btn2">
+                  <img className="img2" src={Goog} alt="googlepic" />
                   Log In with Google
                 </button>
               </Link>
