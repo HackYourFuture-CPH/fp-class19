@@ -197,7 +197,7 @@ exports.seed = function (knex) {
           stock_amount: 100,
           is_on_discount: false,
           discount_percent: 0,
-          picture: 'src/client/assets/images/image_23.png',
+          picture: 'src/client/assets/images/image_30.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
         },
