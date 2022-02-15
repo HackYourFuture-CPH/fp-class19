@@ -39,7 +39,6 @@ const ordersController = require('../controllers/orders.controller');
  *      5XX:
  *        description: Unexpected error.
  */
-
 router.post('/', (req, res, next) => {
   ordersController
     .newOrder(req.body)
