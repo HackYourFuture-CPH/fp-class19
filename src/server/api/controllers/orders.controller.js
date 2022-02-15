@@ -6,7 +6,8 @@ const newOrder = async (data) => {
   let orderId;
   await knex('orders')
     .insert({ user_id: data.user_id,
-            created_at: moment(Date.now()).format(),})
+            created_at: moment(Date.now()).format(),
+            status: created})
     .returning('id')
     .then((id) => {
       [orderId] = id;
