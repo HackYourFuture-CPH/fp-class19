@@ -5,7 +5,8 @@ const HttpError = require('../lib/utils/http-error');
 const newOrder = async (data) => {
   let orderId;
   await knex('orders')
-    .insert({ user_id: data.user_id })
+    .insert({ user_id: data.user_id,
+            created_at: moment(Date.now()).format(),})
     .returning('id')
     .then((id) => {
       [orderId] = id;
