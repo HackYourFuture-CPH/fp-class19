@@ -1,3 +1,17 @@
-div {
-  color: #687808;
+.page404 {
+  text-align: center;
+}
+
+.page404 .btn {
+  background: #687808;
+  color: #ffff;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  border: 0;
+}
+
+.page404 .link {
+  text-decoration: none;
 }
