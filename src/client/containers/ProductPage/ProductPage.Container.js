@@ -1,8 +1,6 @@
 import React from 'react';
-import './ProductPage.Style.css';
+import './ProductPage.styles.css';
 
-function ProductPage() {
+export default function ProductPage() {
   return <div>Product Page</div>;
 }
-
-export default ProductPage;

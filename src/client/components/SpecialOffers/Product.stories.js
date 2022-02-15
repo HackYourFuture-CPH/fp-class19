@@ -2,7 +2,7 @@ import { number, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import React from 'react';
 
-import Product from './Product';
+import Product from './Product.component';
 
 import imageFile from '../../assets/images/image_28.png';
 
@@ -22,7 +22,6 @@ export const ProductModel = () => (
     discount={number('discount', 20)}
     name={text('Name', 'Crocosmia Mistral8')}
     price={number('Price', 85)}
-    discountPrice={number('discountPrice', 68)}
     currency={text('Currency', 'DKK')}
     onClick={action('You have clicked the add to cart button')}
     addToFavorites={action('You have clicked the add to favorites button')}

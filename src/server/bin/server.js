@@ -7,7 +7,7 @@
 const debug = require('debug')('http');
 const http = require('http');
 const app = require('../app');
-const { logger } = require('../api/lib/utils/winston');
+const { logger } = require('../api/lib/utils/winston.js');
 
 /**
  * Get port from environment and store in Express.

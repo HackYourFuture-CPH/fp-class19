@@ -1,3 +1,5 @@
+// nicer output
+const chalk = require('chalk');
 // const winston = require('winston');
 const appRoot = require('app-root-path');
 const moment = require('moment-timezone');
@@ -5,9 +7,6 @@ const JSON = require('circular-json');
 const { createLogger, format, transports } = require('winston');
 
 const { combine, label, printf } = format;
-
-// nicer output
-const chalk = require('chalk');
 
 const styles = {
   log: chalk.bold,
