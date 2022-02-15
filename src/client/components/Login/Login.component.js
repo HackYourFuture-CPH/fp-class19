@@ -55,9 +55,7 @@ export default function Login() {
                 <button type="button" className="btn2">
                   <img
                     className="img2"
-                    src={
-                      'https://user-images.githubusercontent.com/81093589/153756548-dc0a4dea-edae-4836-8a4b-c0aece44111b.svg'
-                    }
+                    src="https://user-images.githubusercontent.com/81093589/153756548-dc0a4dea-edae-4836-8a4b-c0aece44111b.svg"
                     alt="googlepic"
                   />
                   Log In with Google
