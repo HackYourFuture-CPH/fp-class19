@@ -17,22 +17,14 @@ import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
 
 function App() {
-  const { isLoading, isAuthenticated } = useAuthentication();
+  const { isLoading } = useAuthentication();
 
   if (isLoading) {
-    return (
-      <>
-        <h1>
-          isAuthenticated={isAuthenticated ? 'logged in' : 'how dare you!'}
-        </h1>
-        <Loader />
-      </>
-    );
+    return <Loader />;
   }
 
   return (
     <Router>
-      <h1>isAuthenticated={isAuthenticated ? 'logged in' : 'how dare you!'}</h1>
       <Header />
       <Menu />
       <Switch>
