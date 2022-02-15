@@ -1,16 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Goog from '../../assets/images/goog.png';
 import LogoPic from '../../assets/images/logo.png';
 import './Login.styles.css';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
+import { useFirebase } from '../../firebase/FirebaseContext';
+import Loader from '../Loader/Loader.component';
+import { useAuthentication } from '../../hooks/useAuthentication';
 
 export default function Login() {
-  const [isShown, setIsShown] = React.useState(false);
+  const { isAuthenticated } = useAuthentication();
+  const [isLoading, setIsLoading] = useState(false);
+  const { signIn } = useFirebase();
+
+  const [passwordVisible, makePasswordVisible] = React.useState(false);
   const changeShown = () => {
-    setIsShown(!isShown);
+    makePasswordVisible(!passwordVisible);
   };
+
+  const onLoginFormSubmit = async (event) => {
+    const formData = new FormData(event.currentTarget);
+    event.preventDefault();
+
+    const email = formData.get('email');
+    const password = formData.get('password');
+
+    setIsLoading(true);
+
+    await signIn({ email, password });
+
+    setIsLoading(false);
+  };
+
+  if (isAuthenticated) {
+    return <Redirect />;
+  }
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <div className="login-component">
       <div className="form-box">
@@ -18,26 +48,33 @@ export default function Login() {
           <img className="img" src={LogoPic} alt="logopic" />
         </div>
         <div className="body-form">
-          <form>
+          <form onSubmit={onLoginFormSubmit}>
             <h3 className="heading">Log in</h3>
             <div>
               <label className="label">Email</label>
               <br />
-              <input type="email" className="form-control" />
+              <input
+                name="email"
+                required
+                type="email"
+                className="form-control"
+              />
             </div>
             <br />
             <div className="pass-div">
               <label className="label">Password</label>
               <br />
               <span className="eye-icon">
-                {isShown ? (
+                {passwordVisible ? (
                   <FontAwesomeIcon icon={faEye} onClick={changeShown} />
                 ) : (
                   <FontAwesomeIcon icon={faEyeSlash} onClick={changeShown} />
                 )}
               </span>
               <input
-                type={isShown ? 'text' : 'password'}
+                name="password"
+                required
+                type={passwordVisible ? 'text' : 'password'}
                 className="form-control input-pass"
               />
             </div>
@@ -46,7 +83,7 @@ export default function Login() {
                 Forgot Password?
               </Link>
             </div>
-            <button type="button" className="btn">
+            <button type="submit" className="btn">
               Log In
             </button>
             <br />

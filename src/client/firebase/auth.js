@@ -1,3 +1,11 @@
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+  signOut as firebaseSignout,
+} from 'firebase/auth';
+
 function handleAuthErrors({ code, message }) {
   switch (code) {
     case FIREBASE_ERROR_CODES.WRONG_PASSWORD:
@@ -24,27 +32,27 @@ const FIREBASE_ERROR_CODES = {
  *
  * @param {email, password} (sign in user)
  */
-export async function signIn(auth, { email, password }) {
+export async function signIn({ email, password }) {
   try {
-    await auth.signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(getAuth(), email, password);
   } catch (error) {
     handleAuthErrors(error);
   }
 }
 
-export async function signUp(auth, { email, password }) {
+export async function signUp({ email, password }) {
   try {
-    await auth.createUserWithEmailAndPassword(email, password);
+    await createUserWithEmailAndPassword(getAuth(), email, password);
     return true;
   } catch (error) {
     handleAuthErrors(error);
   }
 }
 
-export async function resetPassword(auth, { email }) {
+export async function resetPassword({ email }) {
   // [START sendpasswordemail]
   try {
-    await auth.sendPasswordResetEmail(email);
+    await sendPasswordResetEmail(getAuth(), email);
     // Password Reset Email Sent!
     alert('Password Reset Email Sent!'); // eslint-disable-line no-alert
   } catch (error) {
@@ -53,6 +61,6 @@ export async function resetPassword(auth, { email }) {
   // [END sendpasswordemail];
 }
 
-export function signOut(auth) {
-  auth.signOut();
+export function signOut() {
+  firebaseSignout(getAuth());
 }

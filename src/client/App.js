@@ -17,14 +17,22 @@ import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
 
 function App() {
-  const { isLoading } = useAuthentication();
+  const { isLoading, isAuthenticated } = useAuthentication();
 
   if (isLoading) {
-    return <Loader />;
+    return (
+      <>
+        <h1>
+          isAuthenticated={isAuthenticated ? 'logged in' : 'how dare you!'}
+        </h1>
+        <Loader />
+      </>
+    );
   }
 
   return (
     <Router>
+      <h1>isAuthenticated={isAuthenticated ? 'logged in' : 'how dare you!'}</h1>
       <Header />
       <Menu />
       <Switch>
@@ -45,7 +53,7 @@ function App() {
         <SignIn exact path="/sign-in" />
         <SignUp exact path="/sign-up" />
         <ResetPassword exact path="/reset-password" />
-        <LogIn exact path="/log-in" />
+        <LogIn exact path="/login" />
 
         {/* All routes below are authenticated routes - a user must login first */}
         <AuthenticatedRoute exact path="/profile">
