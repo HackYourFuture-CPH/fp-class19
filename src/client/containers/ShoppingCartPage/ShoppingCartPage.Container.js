@@ -1,8 +1,6 @@
 import React from 'react';
-import './ShoppingCartPage.Style.css';
+import './ShoppingCartPage.styles.css';
 
-function ShoppingCartPage() {
+export default function ShoppingCartPage() {
   return <div>Shopping Cart Page</div>;
 }
-
-export default ShoppingCartPage;

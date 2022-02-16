@@ -1,8 +1,6 @@
 import React from 'react';
-import './ReviewOrderPage.Style.css';
+import './ReviewOrderPage.styles.css';
 
-function ReviewOrderPage() {
+export default function ReviewOrderPage() {
   return <div>Review Order Page</div>;
 }
-
-export default ReviewOrderPage;
