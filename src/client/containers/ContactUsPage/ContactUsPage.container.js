@@ -8,7 +8,10 @@ import ContactPage from '../../components/Contact/Contact.component';
 export default function ContactUsPage() {
   return (
     <div>
+      <Header />
+      <Menu />
       <ContactPage />
+      <Footer />
     </div>
   );
 }
