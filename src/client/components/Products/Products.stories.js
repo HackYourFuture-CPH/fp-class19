@@ -1,44 +1,27 @@
-import React, { useState } from 'react';
-import PaginationComponent from './PaginationComponent';
+/* eslint-disable @typescript-eslint/camelcase */
+import React from 'react';
+import ProductsComponent from './Products.component';
 
 export default {
-  title: 'Components / Pagination Component',
-  component: PaginationComponent,
+  title: 'Components / Products Component',
+  component: ProductsComponent,
   argTypes: {
     products: { control: '' },
   },
 };
 
-const template = (args) => {
-  // eslint-disable-next-line
-  const [propProducts, setPropProducts] = useState(args.products);
-  // eslint-disable-next-line
-  const [currentRange, setCurrentRange] = useState(
-    args.products.slice(0, args.productsPerPage),
-  );
-  // eslint-disable-next-line
-  React.useEffect(() => {
-    setCurrentRange(propProducts.slice(0, args.productsPerPage));
-  }, [propProducts, args.productsPerPage]);
+// eslint-disable-next-line react/prop-types
+const template = ({ products }) => {
   return (
     <>
-      {currentRange.map((product) => (
-        <li key={product.id}>
-          {product.name} - DKK {product.price}
-        </li>
-      ))}
-      {/* eslint-disable */}
-      <PaginationComponent
-        onPageChange={(range) => setCurrentRange(range)}
-        {...args}
-      />
-      {/* eslint-enable */}
+      <ProductsComponent products={products} />
     </>
   );
 };
 
-export const Pagination = template.bind({});
-Pagination.args = {
+export const showProducts = template.bind({});
+
+showProducts.args = {
   products: [
     {
       id: 1,
@@ -329,5 +312,4 @@ Pagination.args = {
       picture: 'https://via.placeholder.com/500x500',
     },
   ],
-  productsPerPage: 12,
 };

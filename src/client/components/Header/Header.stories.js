@@ -1,15 +1,8 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import Header from './Header';
+import Header from './Header.component';
 
-export default {
-  title: 'Components / Header',
-  component: Header,
-  argTypes: {
-    onClick: { action: 'clicked' },
-  },
-  parameters: { actions: { argTypesRegex: '^on.*' } },
-};
+export default { title: 'Components / Header' };
 
 export const HeaderBar = () => (
   <MemoryRouter>

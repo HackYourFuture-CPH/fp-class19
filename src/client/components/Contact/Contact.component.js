@@ -1,6 +1,6 @@
 import React from 'react';
 import image from '../../assets/images/image26.png';
-import './contact.css';
+import './Contact.styles.css';
 
 export default function ContactPage() {
   return (

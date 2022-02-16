@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import LoginComponent from './LoginComponent';
+import Login from './Login.component';
 
 export default {
   title: 'Components / Login Component',
-  component: LoginComponent,
+  component: Login,
   argTypes: {
     onClick: { action: 'clicked' },
   },
@@ -14,6 +14,6 @@ export default {
 
 export const Component = () => (
   <BrowserRouter>
-    <LoginComponent />
+    <Login />
   </BrowserRouter>
 );
