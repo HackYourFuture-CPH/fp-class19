@@ -1,8 +1,6 @@
 import React from 'react';
-import './LogInPage.Style.css';
+import './LogInPage.styles.css';
 
-function LogInPage() {
+export default function LogInPage() {
   return <div>Log In</div>;
 }
-
-export default LogInPage;
