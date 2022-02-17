@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Product from '../Product/Product.component';
 import './CarouselStyle.css';
 
-export default function Carousel ({ products, show }){
+export default function Carousel ({ products, show }) {
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [length, setLength] = useState(products.length);
   const [touchPosition, setTouchPosition] = useState(null);
@@ -64,7 +65,7 @@ export default function Carousel ({ products, show }){
               transform: `translateX(-${currentIndex * (100 / show)}%)`,
             }}
           >
-            {Product.map(({ id, picture, name, price }) => (
+            {products.map(({ id, picture, name, price }) => (
               <Product
                 key={id}
                 image={picture}
