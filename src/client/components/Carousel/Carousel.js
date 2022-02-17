@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Product from '../Product/Product.component';
 import './CarouselStyle.css';
-import typeScript './typeScript';
-const Carousel = ({ products, show }) => {
+
+export default function Carousel ({ products, show }){
   const [currentIndex, setCurrentIndex] = useState(0);
   const [length, setLength] = useState(products.length);
   const [touchPosition, setTouchPosition] = useState(null);
@@ -85,5 +85,3 @@ const Carousel = ({ products, show }) => {
     </div>
   );
 };
-
-export default Carousel;
