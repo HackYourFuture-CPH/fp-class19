@@ -10,7 +10,7 @@ function Page404() {
       <img src={page404} alt="404" />
       <br />
       <br />
-      <div>Oops! The page you are looking for does not exist</div>
+      <div className="alert">Oops! The page you are looking for does not exist</div>
       <br />
       <Link to="/" className="link">
         <button type="button" className="btn">
