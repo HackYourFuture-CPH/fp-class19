@@ -1,10 +1,10 @@
 import React from 'react';
-import logo from '*../../../src/client/assets/images/logo.png';
-import send from '*../../../src/client/assets/images/emailsend.png';
-import './Footer.css';
+import logo from '../../assets/images/logo.png';
+import send from '../../assets/images/emailsend.png';
+import './Footer.styles.css';
 import { Link } from 'react-router-dom';
 
-function Footer() {
+export default function Footer() {
   return (
     <div>
       <footer>
@@ -26,7 +26,7 @@ function Footer() {
             </li>
             <li className="footer-list">
               <div className="footer-text">
-                <Link to="/sign-up" style={{ textAlign: 'left' }}>
+                <Link to="/log-in" style={{ textAlign: 'left' }}>
                   <p>
                     Create
                     <br />
@@ -34,7 +34,7 @@ function Footer() {
                   </p>
                 </Link>
                 <div className="footer-input">
-                  <input type="text" placeholder="Your email" />
+                  <input name="email" type="email" placeholder="Your email" />
                   <img src={send} alt="email" />
                 </div>
               </div>
@@ -45,4 +45,3 @@ function Footer() {
     </div>
   );
 }
-export default Footer;

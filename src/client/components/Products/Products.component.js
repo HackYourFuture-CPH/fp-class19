@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
-import './ProductsComponent.styles.css';
-import Product from '../Product/Product';
-import SortComponent from '../SortComponent/SortComponent';
+import PropTypes from 'prop-types';
+import './Products.styles.css';
+import Product from '../Product/Product.component';
+import Sort from '../Sort/Sort.component';
 
-export default function ProductsComponent({ products }) {
+export default function Products({ products }) {
   const [sortedProducts, setSortedProducts] = useState(products);
 
   const addFavorites = () => {
+    // eslint-disable-next-line no-console
     console.log('added to favorites');
   };
   const addToCart = () => {
+    // eslint-disable-next-line no-console
     console.log('added to cart');
   };
   return (
     <div className="products-component">
-      <SortComponent
-        products={products}
-        setSortedProducts={setSortedProducts}
-      />
+      <Sort products={products} setSortedProducts={setSortedProducts} />
 
       <div>
         <ul className="product-list">
@@ -37,3 +37,15 @@ export default function ProductsComponent({ products }) {
     </div>
   );
 }
+
+Products.propTypes = {
+  products: PropTypes.shape({
+    picture: PropTypes.string,
+    name: PropTypes.string,
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  }),
+};
+
+Products.defaultProps = {
+  products: null,
+};

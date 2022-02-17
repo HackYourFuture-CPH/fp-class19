@@ -1,12 +1,12 @@
 import React from 'react';
 import Goog from '../../assets/images/goog.png';
 import LogoPic from '../../assets/images/logo.png';
-import './LoginComponent.styles.css';
+import './Login.styles.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 
-export default function LoginComponent() {
+export default function Login() {
   const [isShown, setIsShown] = React.useState(false);
   const changeShown = () => {
     setIsShown(!isShown);

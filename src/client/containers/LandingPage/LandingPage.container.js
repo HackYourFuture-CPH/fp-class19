@@ -1,18 +1,16 @@
 import React from 'react';
-import './LandingPage.Style.css';
+import './LandingPage.styles.css';
 import { useProducts } from '../../hooks/useProducts';
-import ProductsComponent from '../../components/ProductsComponent/ProductsComponent';
+import Products from '../../components/Products/Products.component';
 
-function LandingPage() {
+export default function LandingPage() {
   const { products, isLoading, error } = useProducts();
 
   return (
     <div>
       {isLoading && <p>Products getting loaded...</p>}
-      {!isLoading && !error && <ProductsComponent products={products} />}
+      {!isLoading && !error && <Products products={products} />}
       {error && <h1>Error occurred while fetching products: {error}</h1>}
     </div>
   );
 }
-
-export default LandingPage;

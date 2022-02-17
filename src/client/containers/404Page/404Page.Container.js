@@ -1,8 +1,8 @@
 import React from 'react';
-import './404Page.Style.css';
+import './404Page.styles.css';
 
-function Page404Container() {
+function Page404() {
   return <div>404 Page</div>;
 }
 
-export default Page404Container;
+export default Page404;

@@ -1,9 +1,9 @@
 require('dotenv').config({ path: '../../.env' });
 
-const winston = require('./../api/lib/utils/winston').logger;
+const winston = require('../api/lib/utils/winston.js').logger;
 
 // db setup
-const dbOptions = require('./../knexfile')[process.env.NODE_ENV];
+const dbOptions = require('../knexfile')[process.env.NODE_ENV];
 
 // create connection
 const knex = require('knex')(dbOptions);
