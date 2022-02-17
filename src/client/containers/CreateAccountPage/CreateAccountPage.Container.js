@@ -1,8 +1,6 @@
 import React from 'react';
-import './CreateAccountPage.Style.css';
+import './CreateAccountPage.styles.css';
 
-function CreateAccountPage() {
+export default function CreateAccountPage() {
   return <div>Create Account Page</div>;
 }
-
-export default CreateAccountPage;

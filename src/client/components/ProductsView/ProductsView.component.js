@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProductsView.styles.css';
-import Product from '../Product/Product';
+import Product from '../Product/Product.component';
 
 export default function ProductsView({ products }) {
   const addFavorites = () => {

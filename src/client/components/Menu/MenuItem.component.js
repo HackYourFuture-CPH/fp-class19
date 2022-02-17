@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './menu.css';
+import './Menu.styles.css';
 import { NavLink } from 'react-router-dom';
 
 export default function MenuItem({ name, link }) {
