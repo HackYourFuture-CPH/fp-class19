@@ -26,7 +26,7 @@ export default function Footer() {
             </li>
             <li className="footer-list">
               <div className="footer-text">
-                <Link to="/log-in" style={{ textAlign: 'left' }}>
+                <Link to="/sign-up" style={{ textAlign: 'left' }}>
                   <p>
                     Create
                     <br />
@@ -34,7 +34,7 @@ export default function Footer() {
                   </p>
                 </Link>
                 <div className="footer-input">
-                  <input name="email" type="email" placeholder="Your email" />
+                  <input type="text" placeholder="Your email" />
                   <img src={send} alt="email" />
                 </div>
               </div>
