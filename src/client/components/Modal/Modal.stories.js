@@ -10,6 +10,7 @@ export const tryToLogIn = Template.bind({});
 tryToLogIn.args = {
   text: 'Kindly check your email to reset your password',
   cornerClose: true,
+  btnLabel: 'Try To Log-In Again',
 };
 // export const addedTocart = Template.bind({});
 // tryToLogIn.args = {
@@ -20,7 +21,6 @@ tryToLogIn.args = {
 // export const createdAccount = Template.bind({});
 // tryToLogIn.args = {
 //   text: 'Your Account has been created. ',
-
 //   cornerClose: 'true',
 
 // };

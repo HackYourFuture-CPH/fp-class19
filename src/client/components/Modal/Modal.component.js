@@ -3,7 +3,7 @@ import './Modal.css';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button.component';
 
-export default function Modal({ text, cornerClose, btn }) {
+export default function Modal({ text, cornerClose, btnLabel }) {
   const [isOpen, setIsOpen] = useState(false);
   const openAndCloseModal = () => {
     setIsOpen(!isOpen);
@@ -23,13 +23,7 @@ export default function Modal({ text, cornerClose, btn }) {
             </button>
           )}
           <p className="modal-text">{text}</p>
-          {btn && (
-            <Button
-              primary="true"
-              label="Button"
-              onClick={() => console.log('empty')}
-            ></Button>
-          )}
+          <Button primary="true" label={btnLabel}></Button>
         </div>
       )}
     </div>
@@ -40,8 +34,6 @@ Modal.propTypes = {
   // show: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired,
   cornerClose: PropTypes.bool.isRequired,
-  btn: PropTypes.bool,
+  btnLabel: PropTypes.string.isRequired,
 };
-Modal.defaultProps = {
-  btn: true,
-};
+Modal.defaultProps = {};
