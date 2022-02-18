@@ -1,11 +1,14 @@
 require('dotenv').config();
 const path = require('path');
+// eslint-disable-next-line import/no-extraneous-dependencies
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const fs = require('fs');
+
 const appDirectory = fs.realpathSync(process.cwd());
-const resolveAppPath = (relativePath) => path.resolve(appDirectory, relativePath);
+const resolveAppPath = (relativePath) =>
+  path.resolve(appDirectory, relativePath);
 
 const outputDirectory = 'dist';
 

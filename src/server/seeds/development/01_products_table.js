@@ -4,7 +4,7 @@ exports.seed = function (knex) {
     .del()
     .then(() =>
       // Inserts seed entries
-       knex('products').insert([
+      knex('products').insert([
         {
           id: 1,
           name: 'Verbena bonariens',
@@ -239,7 +239,7 @@ exports.seed = function (knex) {
           stock_amount: 100,
           is_on_discount: true,
           discount_percent: 20,
-          picture: 'image_26.png',
+          picture: 'image_21.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
         },
@@ -267,7 +267,7 @@ exports.seed = function (knex) {
           stock_amount: 100,
           is_on_discount: true,
           discount_percent: 20,
-          picture: 'image_29.png',
+          picture: 'image_19.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
         },
@@ -341,7 +341,7 @@ exports.seed = function (knex) {
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
         },
-      ])
+      ]),
     )
     .catch((error) => {
       console.error(error);

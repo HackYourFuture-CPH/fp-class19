@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const HttpError = require('./api/lib/utils/http-error');
-const { logger } = require('./api/lib/utils/winston');
+/* const { logger } = require('./api/lib/utils/winston'); */
 
 const buildPath = path.join(__dirname, '../../dist');
 
@@ -21,8 +21,9 @@ admin.initializeApp(); // Might need to add service key env.
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, '../public/assets/images')));
-app.use(express.static(buildPath));
+app.use(express.static(path.join(__dirname, '../../public/assets/images')));
+app.use(express.static(path.join(__dirname, '../../dist')));
+/* app.use(express.static(buildPath)); */
 
 // Enable when Firebase admin is added
 // app.use(authenticate);
@@ -32,8 +33,8 @@ app.locals.ENV_DEVELOPMENT = process.env.NODE_ENV === 'development';
 
 app.disable('x-powered-by');
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(morgan('dev', {stream: logger.stream}));
-/* app.use(morgan('dev')); */
+/* app.use(morgan('dev', { stream: logger.stream })); */
+app.use(morgan('dev'));
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(
   bodyParser.urlencoded({
