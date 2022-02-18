@@ -12,12 +12,14 @@ tryToLogIn.args = {
   cornerClose: true,
   btnLabel: 'Try To Log-In Again',
 };
-// export const addedTocart = Template.bind({});
-// tryToLogIn.args = {
-//   text: 'ADDED TO THE CART',
-//   cornerClose: 'true',
+export const addedTocart = Template.bind({});
+addedTocart.args = {
+  text: 'ADDED TO THE CART',
+  btnLabel: 'VIEW CART',
+  cornerClose: false,
 
-// };
+  secondBtn: true,
+};
 // export const createdAccount = Template.bind({});
 // tryToLogIn.args = {
 //   text: 'Your Account has been created. ',
