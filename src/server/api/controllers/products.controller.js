@@ -23,7 +23,12 @@ const getProducts = async (req) => {
     sortOrder = 'asc';
   }
 
-  if (isNaN(limit) || isNaN(offset)) {
+  if (
+    isNaN(limit) ||
+    isNaN(offset) ||
+    'asc desc'.indexOf(sortOrder) === -1 ||
+    'price name'.indexOf(sortKey) === -1
+  ) {
     throw new HttpError('Type or value of parameters is incorrect', 400);
   }
 
