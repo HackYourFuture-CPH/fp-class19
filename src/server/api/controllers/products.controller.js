@@ -8,7 +8,7 @@ const getProducts = async (req) => {
   let products = knex('products');
 
   if (!limit) {
-    limit = 12;
+    limit = 10;
   }
 
   if (!offset) {
