@@ -38,7 +38,7 @@ export default function Products({ products }) {
   );
 }
 
-Products.propTypes = {
+/* Products.propTypes = {
   products: PropTypes.shape({
     picture: PropTypes.string,
     name: PropTypes.string,
@@ -49,3 +49,4 @@ Products.propTypes = {
 Products.defaultProps = {
   products: null,
 };
+ */

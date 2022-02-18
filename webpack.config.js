@@ -3,13 +3,16 @@ const path = require('path');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const fs = require('fs');
+const appDirectory = fs.realpathSync(process.cwd());
+const resolveAppPath = (relativePath) => path.resolve(appDirectory, relativePath);
 
 const outputDirectory = 'dist';
 
 module.exports = {
   entry: ['babel-polyfill', './src/client/index.js'],
   output: {
-    path: path.join(__dirname, outputDirectory),
+    path: resolveAppPath(outputDirectory),
     filename: 'bundle.js',
   },
   module: {
@@ -26,7 +29,7 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        test: /\.(png|woff|woff2|eot|ttf|svg|jpg)$/,
         use: [
           {
             loader: 'url-loader',
@@ -42,7 +45,17 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
   },
   devServer: {
-    // publicPath: '/',
+    // publicPath: '/', <<- deprecated ?
+    static: [
+      {
+        directory: resolveAppPath('public'),
+        publicPath: '/',
+      },
+      {
+        directory: resolveAppPath('public/assets/images'),
+        publicPath: '/',
+      },
+    ],
     historyApiFallback: true,
     port: parseInt(process.env.CLIENT_PORT, 10),
     host: process.env.CLIENT_HOST || '127.0.0.1',
@@ -60,8 +73,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
-      favicon: './public/favicon.ico',
+      template: resolveAppPath('public/index.html'),
+      favicon: resolveAppPath('public/favicon.ico'),
     }),
     new CaseSensitivePathsPlugin(),
     new Dotenv({
