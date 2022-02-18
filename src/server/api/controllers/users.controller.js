@@ -28,7 +28,7 @@ const getUserById = async (id) => {
 
   try {
     const users = await knex('users')
-      .select('users.id as id', 'full_name', 'email', 'address')
+      .select('users.id as id', 'full_name', 'email', 'mobile', 'address')
       .where({ id });
     if (users.length === 0) {
       throw new Error(`Incorrect entry.Id ${id} does not exist`, 404);
