@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './FavouriteList.styles.css';
 
 const ProductImage = ({ product }) => {
@@ -22,4 +23,16 @@ const ProductImage = ({ product }) => {
     </div>
   );
 };
+
+ProductImage.propTypes = {
+  product: PropTypes.shape({
+    discount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    image: PropTypes.string,
+  }),
+};
+
+ProductImage.defaultProps = {
+  product: null,
+};
+
 export default ProductImage;

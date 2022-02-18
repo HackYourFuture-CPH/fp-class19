@@ -1,8 +1,6 @@
 import React from 'react';
-import './ForgotPasswordPage.Style.css';
+import './ForgotPasswordPage.styles.css';
 
-function ForgotPasswordPage() {
+export default function ForgotPasswordPage() {
   return <div>Forgot Password</div>;
 }
-
-export default ForgotPasswordPage;
