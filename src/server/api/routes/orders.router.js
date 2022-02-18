@@ -10,7 +10,7 @@ const ordersController = require('../controllers/orders.controller');
 
 /**
  * @swagger
- * /orders/{ID}:
+ * /orders/?user=user_id:
  *  get:
  *    tags:
  *    - Orders
@@ -19,22 +19,24 @@ const ordersController = require('../controllers/orders.controller');
  *      Will return all orders for specific user.
  *    produces: application/json
  *    parameters:
- *     - in: path
- *       name: UID
+ *     - in: query
+ *       name: user
  *       schema:
  *         type: integer
  *         required: true
- *         description: The ID of the user to get orders
+ *         description: Get all orders of specific user with user_id
  *
  *    responses:
  *      200:
  *        description: Successful request
+ *      400:
+ *        description: Bad request
  *      5XX:
  *        description: Unexpected error.
  */
-router.get('/:id', (req, res, next) => {
+router.get('/', (req, res, next) => {
   ordersController
-    .getOrderByUserId(req.params.id)
+    .getOrderByUserId(req.query.user)
     .then((result) => res.json(result))
     .catch(next);
 });
