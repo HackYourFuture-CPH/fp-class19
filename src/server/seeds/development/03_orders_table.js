@@ -1,42 +1,42 @@
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('order_items')
+  return knex('orders')
     .del()
     .then(() =>
       // Inserts seed entries
-      knex('order_items').insert([
+      knex('orders').insert([
         {
-          order_id: 1,
-          product_id: 1,
-          quantity: 1,
+          id: 1,
+          user_id: 1,
+          status: 'NEW',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
         },
         {
-          order_id: 2,
-          product_id: 2,
-          quantity: 2,
+          id: 2,
+          user_id: 2,
+          status: 'NEW',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
         },
         {
-          order_id: 3,
-          product_id: 3,
-          quantity: 3,
+          id: 3,
+          user_id: 3,
+          status: 'NEW',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
         },
         {
-          order_id: 4,
-          product_id: 4,
-          quantity: 4,
+          id: 4,
+          user_id: 4,
+          status: 'NEW',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
         },
         {
-          order_id: 5,
-          product_id: 5,
-          quantity: 5,
+          id: 5,
+          user_id: 5,
+          status: 'NEW',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
         },

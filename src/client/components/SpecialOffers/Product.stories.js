@@ -16,8 +16,8 @@ export default {
   parameters: { actions: { argTypesRegex: '^on.*' } },
 };
 
-export const ProductModel = () => (
-  <Product
+export function ProductModel() {
+  return <Product
     image={imageFile}
     discount={number('discount', 20)}
     name={text('Name', 'Crocosmia Mistral8')}
@@ -26,4 +26,4 @@ export const ProductModel = () => (
     onClick={action('You have clicked the add to cart button')}
     addToFavorites={action('You have clicked the add to favorites button')}
   />
-);
+}
