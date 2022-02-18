@@ -23,7 +23,7 @@ const getUsers = async () => {
 };
 const getUserById = async (id) => {
   if (!id) {
-    throw new HttpError('Id should be a number', 400);
+    throw new HttpError('Bad request. Id should be a number', 400);
   }
 
   try {
@@ -31,7 +31,7 @@ const getUserById = async (id) => {
       .select('users.id as id', 'full_name', 'email', 'mobile', 'address')
       .where({ id });
     if (users.length === 0) {
-      throw new Error(`Incorrect entry.Id ${id} does not exist`, 404);
+      throw new Error(`Specified ID does not existt`, 404);
     }
     return users;
   } catch (error) {
