@@ -4,7 +4,7 @@ const moment = require('moment-timezone');
 
 const getOrderByUserId = async (user_id) => {
   if (!user_id) {
-    throw new HttpError('Id should be a number', 400);
+    throw new HttpError('There is no Order for the user', 400);
   }
 
   try {
