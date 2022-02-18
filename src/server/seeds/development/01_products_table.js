@@ -1,4 +1,9 @@
 exports.seed = function (knex) {
+  
+  return knex('favorites').del()
+    .then(function () {
+  return knex('order_items').del()
+    .then(function () {
   // Deletes ALL existing entries
   return knex('products')
     .del()
@@ -343,6 +348,8 @@ exports.seed = function (knex) {
         },
       ]);
     })
+  })
+})
     .catch((error) => {
       console.error(error);
     });
