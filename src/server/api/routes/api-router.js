@@ -8,6 +8,7 @@ const productsRouter = require('./products.router');
 const usersRouter = require('./users.router');
 const orderRouter = require('./orders.router');
 
+const favoritesRouter = require('./favorites.router');
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
@@ -36,5 +37,6 @@ router.use('/modules', modulesRouter);
 router.use('/products', productsRouter);
 router.use('/user', usersRouter);
 router.use('/orders', orderRouter);
+router.use('/favorites', favoritesRouter);
 
 module.exports = router;
