@@ -1,6 +1,11 @@
 import React from 'react';
 import './ForgotPasswordPage.styles.css';
+import RecoverPassword from '../../components/RecoverPassword/RecoverPassword.component.js';
 
 export default function ForgotPasswordPage() {
-  return <div>Forgot Password</div>;
+  return (
+    <div>
+      <RecoverPassword />
+    </div>
+  );
 }
