@@ -68,7 +68,6 @@ function onListening() {
   const addr = server.address();
   const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
   debug(`Listening on ${bind}`);
-  logger.info(
-    `Server Listening on ${bind} (use port ${process.env.CLIENT_PORT}/api as a proxy)`,
-  );
+  logger.info(`   🚀  Server started at: http://${host}:${port}  🚀   \n⬅️️ 🏃 Use http://${host}:${process.env.CLIENT_PORT}/api as a proxy     ⬅️️ 🏃\n
+  `);
 }

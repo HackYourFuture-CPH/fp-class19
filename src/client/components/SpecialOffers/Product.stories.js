@@ -16,14 +16,16 @@ export default {
   parameters: { actions: { argTypesRegex: '^on.*' } },
 };
 
-export const ProductModel = () => (
-  <Product
-    image={imageFile}
-    discount={number('discount', 20)}
-    name={text('Name', 'Crocosmia Mistral8')}
-    price={number('Price', 85)}
-    currency={text('Currency', 'DKK')}
-    onClick={action('You have clicked the add to cart button')}
-    addToFavorites={action('You have clicked the add to favorites button')}
-  />
-);
+export function ProductModel() {
+  return (
+    <Product
+      image={imageFile}
+      discount={number('discount', 20)}
+      name={text('Name', 'Crocosmia Mistral8')}
+      price={number('Price', 85)}
+      currency={text('Currency', 'DKK')}
+      onClick={action('You have clicked the add to cart button')}
+      addToFavorites={action('You have clicked the add to favorites button')}
+    />
+  );
+}

@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
+// eslint-disable-next-line import/no-extraneous-dependencies
 const chalk = require('chalk');
 
 const styles = {
   log: chalk.bold,
-  info: chalk.bold.blue,
+  info: chalk.bold.white.bgRed,
   error: chalk.bold.red,
   warn: chalk.bold.yellow,
   success: chalk.bold.green,

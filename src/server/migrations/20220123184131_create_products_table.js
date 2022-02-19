@@ -1,5 +1,5 @@
 exports.up = function (knex) {
-  return knex.schema.createTable('products', function (table) {
+  return knex.schema.createTable('products', (table) => {
     table.increments();
     table.string('name').notNullable().unique();
     table.integer('price').notNullable();
@@ -25,7 +25,7 @@ exports.up = function (knex) {
     table.integer('stock_amount').notNullable().defaultTo(0);
     table.boolean('is_on_discount').notNullable().defaultTo(false);
     table.integer('discount_percent').notNullable().defaultTo(0);
-    table.string('picture').defaultTo('https://via.placeholder.com/500x500');
+    table.string('picture').defaultTo('default.png');
     table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
     table.timestamp('updated_at').notNullable().defaultTo(knex.fn.now());
   });
