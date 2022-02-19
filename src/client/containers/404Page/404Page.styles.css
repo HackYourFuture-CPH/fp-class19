@@ -3,7 +3,13 @@
   margin-top: 50px;
   margin-bottom: 70px;
 }
-
+.page404 .image-div {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.page404 .btn-div {
+  margin-top: 5%;
+}
 .page404 .btn {
   background: #687808;
   color: #ffff;
@@ -12,11 +18,9 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
   font-size: 130%;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .page404 .link {
@@ -25,6 +29,5 @@
 .page404 .alert {
   color: black;
   font-size: 24px;
-  font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
 }

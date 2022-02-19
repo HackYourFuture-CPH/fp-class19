@@ -6,18 +6,17 @@ import { Link } from 'react-router-dom';
 function Page404() {
   return (
     <div className="page404">
-      <br />
+      <div className='image-div'>
       <img src={page404} alt="404" />
-      <br />
-      <br />
+      </div>
       <div className="alert">Oops! The page you are looking for does not exist</div>
-      <br />
+      <div className='btn-div'>
       <Link to="/" className="link">
         <button type="button" className="btn">
           RETURN TO STORE
         </button>
       </Link>
-      <br />
+      </div>
     </div>
   );
 }
