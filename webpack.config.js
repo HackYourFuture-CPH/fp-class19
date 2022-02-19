@@ -4,18 +4,13 @@ const path = require('path');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const fs = require('fs');
-
-const appDirectory = fs.realpathSync(process.cwd());
-const resolveAppPath = (relativePath) =>
-  path.resolve(appDirectory, relativePath);
 
 const outputDirectory = 'dist';
 
 module.exports = {
   entry: ['babel-polyfill', './src/client/index.js'],
   output: {
-    path: resolveAppPath(outputDirectory),
+    path: path.join(__dirname, outputDirectory),
     filename: 'bundle.js',
   },
   module: {
@@ -51,11 +46,11 @@ module.exports = {
     // publicPath: '/', <<- deprecated ?
     static: [
       {
-        directory: resolveAppPath('public'),
+        directory: path.join(__dirname, 'public'),
         publicPath: '/',
       },
       {
-        directory: resolveAppPath('public/assets/images'),
+        directory: path.join(__dirname, 'public', 'assets', 'images'),
         publicPath: '/',
       },
     ],
@@ -76,8 +71,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: resolveAppPath('public/index.html'),
-      favicon: resolveAppPath('public/favicon.ico'),
+      template: './public/index.html',
+      favicon: './public/favicon.ico',
     }),
     new CaseSensitivePathsPlugin(),
     new Dotenv({
