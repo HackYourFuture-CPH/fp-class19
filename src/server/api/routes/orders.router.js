@@ -10,7 +10,7 @@ const ordersController = require('../controllers/orders.controller');
 
 /**
  * @swagger
- * /orders/?user=user_id:
+ * /orders?user=user_id:
  *  get:
  *    tags:
  *    - Orders
@@ -29,16 +29,16 @@ const ordersController = require('../controllers/orders.controller');
  *    responses:
  *      200:
  *        description: Successful request
- *      400:
- *        description: Bad request
+ *      404:
+ *        description: incorrect entry with the provided id
  *      5XX:
  *        description: Unexpected error.
  */
-router.get('/', (req, res, next) => {
+router.get('/', (req, res) => {
   ordersController
     .getOrderByUserId(req.query.user)
     .then((result) => res.json(result))
-    .catch(next);
+    .catch((error) => console.log(error));
 });
 
 module.exports = router;
