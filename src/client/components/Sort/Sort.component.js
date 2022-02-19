@@ -37,10 +37,18 @@ export default function Sort({ products, setSortedProducts }) {
         <option value="DEFAULT" disabled hidden>
           SORT BY
         </option>
-        <option value="AlphabeticallyAZ">A-Z</option>
-        <option value="AlphabeticallyZA">Z-A</option>
-        <option value="PriceDescending">Price ↑</option>
-        <option value="PriceAscending">Price ↓</option>
+        <option className="sort-value" value="AlphabeticallyAZ">
+          A-Z
+        </option>
+        <option className="sort-value" value="AlphabeticallyZA">
+          Z-A
+        </option>
+        <option className="sort-value" value="PriceDescending">
+          Price ↑
+        </option>
+        <option className="sort-value" value="PriceAscending">
+          Price ↓
+        </option>
       </select>
     </div>
   );

@@ -1,13 +1,13 @@
 /* eslint-disable prefer-arrow-callback */
 exports.seed = function(knex) {
     return knex('order_items').del()
-    .then(function () {
+    .then(()=> 
     // Deletes ALL existing entries
-    return knex('orders')
+     knex('orders')
         .del()
-        .then(function() {
+        .then(()=> 
             // Inserts seed entries
-            return knex('orders').insert([{
+             knex('orders').insert([{
                     id:1,
                     user_id: 1,
                     created_at: knex.fn.now(),
@@ -31,7 +31,8 @@ exports.seed = function(knex) {
                     created_at: knex.fn.now(),
                     status: 'NEW',
                 },
-            ]);
-        });
-    });
+            ]),
+        ));
+    
+
 };
