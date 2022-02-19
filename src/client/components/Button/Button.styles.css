@@ -17,9 +17,9 @@
   background-color: transparent;
   border: 2px solid #687808;
   box-shadow: rgba(0, 0, 0, 0.15) 0 0 0 1px inset;
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  right: 0;
+  right: 0; */
 }
 
 .storybook-button--small {
