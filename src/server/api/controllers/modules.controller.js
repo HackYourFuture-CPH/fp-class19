@@ -5,8 +5,7 @@ const knex = require('../../config/db');
 const HttpError = require('../lib/utils/http-error');
 const moment = require('moment-timezone');
 
-const getModules = async () =>
-  knex('modules').select('modules.id', 'modules.title');
+const getModules = async () => knex('modules').select('modules.id', 'modules.title');
 
 const getModuleById = async (id) => {
   if (!id) {
@@ -42,8 +41,12 @@ const editModule = async (moduleId, updatedModule) => {
     });
 };
 
+<<<<<<< HEAD
 const deleteModule = async (modulesId) =>
   knex('modules').where({ id: modulesId }).del();
+=======
+const deleteModule = async (modulesId) => knex('modules').where({ id: modulesId }).del();
+>>>>>>> origin
 
 const createModule = async (body) => {
   await knex('modules').insert({

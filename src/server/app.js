@@ -76,6 +76,8 @@ app.use('/api', (req, res) => {
   res.redirect(`${process.env.API_PATH}/documentation`);
 });
 
+app.use('/static', express.static(path.join(__dirname, '../client/assets')));
+
 app.use('*', (req, res) => {
   res.sendFile(path.join(`${buildPath}/index.html`));
 });

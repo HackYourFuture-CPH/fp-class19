@@ -4,9 +4,15 @@ exports.seed = function (knex) {
   // Deletes ALL existing entries
   return knex('modules')
     .del()
+<<<<<<< HEAD
     .then(() =>
       // Inserts seed entries
       knex('modules').insert([
+=======
+    .then(() => 
+      // Inserts seed entries
+       knex('modules').insert([
+>>>>>>> origin
         {
           id: 1,
           title: 'Javascript 2',
@@ -21,6 +27,10 @@ exports.seed = function (knex) {
           endDate: '2020-05-08 00:00:00',
           classid: 'class01',
         },
+<<<<<<< HEAD
       ]),
+=======
+      ])
+>>>>>>> origin
     );
 };

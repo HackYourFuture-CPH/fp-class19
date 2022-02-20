@@ -40,6 +40,34 @@ exports.seed = function (knex) {
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
         },
+        {
+          id: 6,
+          user_id: 1,
+          status: 'NEW',
+          created_at: knex.fn.now(),
+          updated_at: knex.fn.now(),
+        },
+        {
+          id: 7,
+          user_id: 2,
+          status: 'INPROGRESS',
+          created_at: knex.fn.now(),
+          updated_at: knex.fn.now(),
+        },
+        {
+          id: 8,
+          user_id: 3,
+          status: 'CANCELLED',
+          created_at: knex.fn.now(),
+          updated_at: knex.fn.now(),
+        },
+        {
+          id: 9,
+          user_id: 4,
+          status: 'NEW',
+          created_at: knex.fn.now(),
+          updated_at: knex.fn.now(),
+        },
       ]),
     )
     .catch((error) => {

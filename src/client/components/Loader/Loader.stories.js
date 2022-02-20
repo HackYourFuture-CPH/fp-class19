@@ -4,4 +4,6 @@ import Loader from './Loader.component';
 
 export default { title: 'Components / Loader' };
 
-export const Spinner = () => <Loader />;
+export function Spinner() {
+  return <Loader />
+}
