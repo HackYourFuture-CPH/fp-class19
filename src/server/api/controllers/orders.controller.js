@@ -3,10 +3,10 @@ const HttpError = require('../lib/utils/http-error');
 // const moment = require('moment-timezone');
 
 const getOrderByUserId = async (user_id) => {
+  if (isNaN(user_id)) {
+    throw new HttpError('The ID should be a number', 400);
+  }
   try {
-    if (isNaN(user_id)) {
-      throw new HttpError('The ID should be a number', 400);
-    }
     const orders = await knex('orders')
       .select(
         'orders.user_id',
@@ -22,9 +22,6 @@ const getOrderByUserId = async (user_id) => {
       .groupBy('orders.id')
       .count('orders.id as nr_of_items');
 
-    if (orders.length === 0) {
-      throw new Error(`incorrect entry with the id of ${user_id}`, 404);
-    }
     return orders;
   } catch (error) {
     return error.message;

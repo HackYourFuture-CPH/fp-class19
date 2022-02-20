@@ -34,11 +34,17 @@ const ordersController = require('../controllers/orders.controller');
  *      5XX:
  *        description: Unexpected error.
  */
-router.get('/', (req, res) => {
+router.get('/', (req, res, next) => {
   ordersController
     .getOrderByUserId(req.query.user)
-    .then((result) => res.json(result))
-    .catch((error) => console.log(error));
+    .then((result) => {
+      if (result.length === 0) {
+        res.status(404).send('The user ID you provided does not exist');
+      } else {
+        return res.json(result);
+      }
+    })
+    .catch(next);
 });
 
 module.exports = router;
