@@ -3,23 +3,33 @@ const HttpError = require('../lib/utils/http-error');
 // const moment = require('moment-timezone');
 
 const getProducts = async (req) => {
+  let { limit, offset, sortKey, sortOrder } = req.query;
+  const allowedSortKeys = new Set(['name', 'price']);
+  const allowedSortOrders = new Set(['asc', 'desc']);
+
+  limit = limit || 10;
+
+  offset = offset || 0;
+
+  sortKey = sortKey || 'name';
+
+  sortOrder = sortOrder || 'asc';
+
+  console.log(sortKey, allowedSortKeys.has(sortKey));
+
+  const invalidParams =
+    isNaN(limit) ||
+    limit <= 0 ||
+    isNaN(offset) ||
+    offset < 0 ||
+    !allowedSortKeys.has(sortKey) ||
+    !allowedSortOrders.has(sortOrder);
+
+  if (invalidParams) {
+    throw new HttpError('Type or value of parameters is incorrect', 400);
+  }
+
   try {
-    let { limit, offset, sortKey, sortOrder } = req.query;
-
-    limit = limit || 10;
-
-    offset = offset || 0;
-
-    sortKey = sortKey || 'name';
-
-    sortOrder = sortOrder || 'asc';
-
-    const invalidParams = isNaN(limit) || isNaN(offset);
-
-    if (invalidParams) {
-      throw new HttpError('Type or value of parameters is incorrect', 400);
-    }
-
     const products = knex('products')
       .limit(limit)
       .offset(offset)
