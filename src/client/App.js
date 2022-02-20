@@ -1,18 +1,21 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
-import LandingPage from './containers/LandingPage/LandingPage.Container';
+import { useAuthentication } from './hooks/useAuthentication';
+import LandingPage from './containers/LandingPage/LandingPage.container';
 import SignIn from './containers/SignIn';
 import SignUp from './containers/SignUp';
 import ResetPassword from './containers/ResetPassword';
 import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
-import { useAuthentication } from './hooks/useAuthentication';
 import Profile from './containers/Profile';
 import Loader from './components/Loader/Loader.component';
-import LogIn from './components/LoginComponent/LoginComponent';
-
+import Header from './components/Header/Header.component';
+import Menu from './components/Menu/Menu.component';
+import LogIn from './components/Login/Login.component';
+import Footer from './components/Footer/Footer.component';
 import './hooks/useProducts';
-import ContactUsPage from './containers/ContactUsPage/ContactUsPage.Container';
+import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
+import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
+import ForgotPasswordPage from './containers/ForgotPasswordPage/ForgotPasswordPage.container';
 import OrderConfirmationPage from './containers/OrderConfirmationPage/OrderConfirmationPage.Container';
 
 function App() {
@@ -24,16 +27,22 @@ function App() {
 
   return (
     <Router>
+      <Header />
+      <Menu />
       <Switch>
         {/* Home page */}
         <Route exact path="/">
           <LandingPage />
         </Route>
+        {/* AboutUs Page */}
+        <Route exact path="/about-us">
+          <AboutUsPage />
+        </Route>
         {/* Contact page */}
         <Route exact path="/contact-us">
           <ContactUsPage />
         </Route>
-<Route exact path="/order-confirmation">
+        <Route exact path="/order-confirmation">
           <OrderConfirmationPage />
         </Route>
 
@@ -42,12 +51,14 @@ function App() {
         <SignUp exact path="/sign-up" />
         <ResetPassword exact path="/reset-password" />
         <LogIn exact path="/log-in" />
+        <ForgotPasswordPage exact path="/forgot-password" />
 
         {/* All routes below are authenticated routes - a user must login first */}
         <AuthenticatedRoute exact path="/profile">
           <Profile />
         </AuthenticatedRoute>
       </Switch>
+      <Footer />
     </Router>
   );
 }
