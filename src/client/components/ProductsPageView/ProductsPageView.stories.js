@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/camelcase */
+/* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
 import ProductsPageView from './ProductsPageView.component';
@@ -11,11 +11,9 @@ export default {
   },
 };
 
-const template = ({ products, productsPerPage }) => {
-  return (
+const template = ({ products, productsPerPage }) => (
     <ProductsPageView products={products} productsPerPage={productsPerPage} />
   );
-};
 
 export const showProducts = template.bind({});
 
