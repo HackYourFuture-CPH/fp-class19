@@ -1,13 +1,20 @@
 exports.up = function (knex) {
   return knex.schema.createTable('favorites', (table) => {
-    table.integer('user_id').notNullable().unsigned().references('users.id');
+    table.increments();
+    table
+      .integer('user_id')
+      .notNullable()
+      .unsigned()
+      .references('users.id')
+      .onDelete('CASCADE');
     table
       .integer('product_id')
       .notNullable()
       .unsigned()
-      .references('products.id');
-    table.timestamp('created_at').defaultTo(knex.fn.now()).notNullable();
-    table.primary(['product_id', 'user_id']);
+      .references('products.id')
+      .onDelete('CASCADE');
+    table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
+    table.timestamp('updated_at').notNullable().defaultTo(knex.fn.now());
   });
 };
 
