@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Pagination.styles.css';
+import { useProducts } from '../../hooks/useProducts';
+import ProductsView from '../ProductsView/ProductsView.component';
 
-export default function Pagination({
-  products,
-  productsPerPage,
-  onPageChange,
-}) {
+export default function Pagination({ productsPerPage }) {
   const [currentPage, setCurrentPage] = useState(1);
   const pageNumberLimit = 6;
   const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(6);
   const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
+  const { products, isLoading, loadMoreProducts } = useProducts();
   const pages = [];
   for (let i = 1; i <= Math.ceil(products.length / productsPerPage); i += 1) {
     pages.push(i);
@@ -34,7 +33,7 @@ export default function Pagination({
         <button
           type="button"
           key={number}
-          onClick={() => onPageChange(paginate(number))}
+          onClick={() => paginate(number)}
           className={currentPage === number ? 'active' : null}
         >
           {number}
@@ -45,6 +44,7 @@ export default function Pagination({
   });
   const handleNextBtn = () => {
     setCurrentPage(currentPage + 1);
+    loadMoreProducts();
     if (currentPage + 1 > maxPageNumberLimit) {
       setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
       setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit);
@@ -62,8 +62,7 @@ export default function Pagination({
   let pageIncrementBtn = null;
   if (pages.length > maxPageNumberLimit) {
     pageIncrementBtn = (
-      <button type="button" onClick={() => onPageChange(handleNextBtn())}>
-        {' '}
+      <button type="button" onClick={() => handleNextBtn()}>
         &hellip;
       </button>
     );
@@ -71,8 +70,7 @@ export default function Pagination({
   let pageDecrementBtn = null;
   if (minPageNumberLimit >= 1) {
     pageDecrementBtn = (
-      <button type="button" onClick={() => onPageChange(handlePrevBtn())}>
-        {' '}
+      <button type="button" onClick={() => handlePrevBtn()}>
         &hellip;
       </button>
     );
@@ -80,10 +78,11 @@ export default function Pagination({
 
   return (
     <>
-      <nav className="pagination">
+      <ProductsView products={getCurrentProducts(currentPage)} />
+      <div className="pagination">
         <button
           type="button"
-          onClick={() => onPageChange(handlePrevBtn())}
+          onClick={() => handlePrevBtn()}
           disabled={currentPage === 1}
           className="arrows"
         >
@@ -94,13 +93,13 @@ export default function Pagination({
         {pageIncrementBtn}
         <button
           type="button"
-          onClick={() => onPageChange(handleNextBtn())}
-          disabled={currentPage === pages.length}
+          onClick={() => handleNextBtn()}
+          disabled={isLoading}
           className="arrows"
         >
           &#9654;
         </button>
-      </nav>
+      </div>
     </>
   );
 }
@@ -111,9 +110,8 @@ Pagination.propTypes = {
       id: PropTypes.number,
       name: PropTypes.string,
     }),
-  ).isRequired,
+  ),
   productsPerPage: PropTypes.number,
-  onPageChange: PropTypes.func.isRequired,
 };
 
 Pagination.defaultProps = {
