@@ -13,9 +13,9 @@ export default {
   parameters: { actions: { argTypesRegex: '^on.*' } },
 };
 
-export const Component = () => (
-  <Sample
+export function Component() {
+  return <Sample
     title={text('Title', 'Test title')}
     onClick={action('You have clicked the button')}
   />
-);
+}

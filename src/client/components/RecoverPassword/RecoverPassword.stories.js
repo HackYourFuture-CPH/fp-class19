@@ -12,8 +12,10 @@ export default {
   parameters: { actions: { argTypesRegex: '^on.*' } },
 };
 
-export const Component = () => (
+const template = () => (
   <BrowserRouter>
     <RecoverPasswordComponent />
   </BrowserRouter>
 );
+
+export const defaultView = template.bind({});

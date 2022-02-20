@@ -4,7 +4,7 @@ module.exports = {
     {
       files: ['**/seeds/**/*.js', '**/controllers/**/*.js'],
       rules: {
-        '@typescript-eslint/camelcase': 'off',
+        camelcase: 'off',
       },
     },
   ],
