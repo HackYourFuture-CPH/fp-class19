@@ -43,6 +43,7 @@ export async function signIn({ email, password }) {
 export async function signUp({ email, password }) {
   try {
     await createUserWithEmailAndPassword(getAuth(), email, password);
+    addUserToDatabase(auth.currentUser.uid);
     return true;
   } catch (error) {
     handleAuthErrors(error);
@@ -63,4 +64,36 @@ export async function resetPassword({ email }) {
 
 export function signOut() {
   firebaseSignout(getAuth());
+}
+
+export async function signInWithGoogle(auth, provider) {
+  try {
+    await auth.signInWithPopup(provider);
+    addUserToDatabase(auth.currentUser.uid);
+    localStorage.setItem('user', JSON.stringify(auth.currentUser));
+  } catch (error) {
+    handleAuthErrors(error);
+  }
+}
+function addUserToDatabase(userId) {
+  fetch(`api/users/${userId}`)
+    .then(async (res) => res.json())
+    .then((data) => {
+      // if not present add new user id to database
+      if (!data[0]) {
+        fetch('api/users', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ id: userId }),
+        }).catch((e) => {
+          throw new Error('Could not add user to Database:', e.message);
+        });
+      }
+    })
+    .catch((e) => {
+      throw new Error('Could not check if user present in Database:', e);
+    });
 }

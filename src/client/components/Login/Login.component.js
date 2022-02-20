@@ -12,7 +12,7 @@ import { useAuthentication } from '../../hooks/useAuthentication';
 export default function Login() {
   const { isAuthenticated } = useAuthentication();
   const [isLoading, setIsLoading] = useState(false);
-  const { signIn } = useFirebase();
+  const { signIn, signInWithGoogle } = useFirebase();
 
   const [passwordVisible, makePasswordVisible] = React.useState(false);
   const changeShown = () => {
@@ -31,6 +31,11 @@ export default function Login() {
     await signIn({ email, password });
 
     setIsLoading(false);
+  };
+
+  const handleLogin = async () => {
+    history.push('/');
+    await signInWithGoogle();
   };
 
   if (isAuthenticated) {
@@ -88,9 +93,9 @@ export default function Login() {
             </button>
             <br />
             <div>
-              <Link to="/google-signin">
+              <button onClick={handleLogin}>
                 <img src={Goog} alt="google-signin" className="google-login" />
-              </Link>
+              </button>
             </div>
 
             <div>

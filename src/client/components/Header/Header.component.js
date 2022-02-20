@@ -35,7 +35,7 @@ export default function Header() {
             <div className="login icons"> Hello {user.email}</div>
           </>
         ) : (
-          <Link className="login icons" to="/login">
+          <Link className="login icons" to="/log-in">
             Log In
           </Link>
         )}
@@ -52,5 +52,5 @@ Header.propTypes = {
 
 Header.defaultProps = {
   username: 'username',
-  link: '/login',
+  link: '/log-in',
 };
