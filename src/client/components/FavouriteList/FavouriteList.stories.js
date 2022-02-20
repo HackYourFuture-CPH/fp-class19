@@ -64,4 +64,6 @@ export default {
   component: FavouriteList,
 };
 
-export const Component = () => <FavouriteList productList={productList} />;
+export function Component() {
+  return <FavouriteList productList={productList} />
+}
