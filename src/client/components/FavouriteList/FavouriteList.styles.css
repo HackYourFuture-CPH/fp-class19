@@ -1,4 +1,4 @@
-h2 {
+.heading_div h2 {
   margin-left: 230px;
 }
 
@@ -47,7 +47,7 @@ h2 {
 
 .line {
   height: 1px;
-  background: #9c0;
+  background: #687808;
   margin: 0 30px 40px 30px;
 }
 
@@ -61,7 +61,7 @@ li {
 }
 
 .product_name {
-  color: #9c0;
+  color: #687808;
 }
 
 .name-counter-container {
@@ -79,7 +79,7 @@ li {
 }
 
 .counter-box {
-  border: 2px solid #9c0;
+  border: 2px solid #687808;
   width: 60px;
   height: 20px;
   text-align: center;
@@ -114,7 +114,7 @@ li {
 .add_cart_button .close-button {
   border-radius: 50%;
   margin-top: 0;
-  color: #053d09;
+  color: #687808;
   background-color: #fff;
   justify-content: normal;
 }

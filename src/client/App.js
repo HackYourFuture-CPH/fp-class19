@@ -15,6 +15,7 @@ import Footer from './components/Footer/Footer.component';
 import './hooks/useProducts';
 import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
+import ForgotPasswordPage from './containers/ForgotPasswordPage/ForgotPasswordPage.container';
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -45,7 +46,8 @@ function App() {
         <SignIn exact path="/sign-in" />
         <SignUp exact path="/sign-up" />
         <ResetPassword exact path="/reset-password" />
-        <LogIn exact path="/login" />
+        <LogIn exact path="/log-in" />
+        <ForgotPasswordPage exact path="/forgot-password" />
 
         {/* All routes below are authenticated routes - a user must login first */}
         <AuthenticatedRoute exact path="/profile">
