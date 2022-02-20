@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './OfferProductModel.styles.css';
 import cartBucketImage from '../../assets/images/cart_bucket.png';
 import heartImage from '../../assets/images/heart.png';
+import font from '../../assets/fonts/Inter-Regular.ttf';
 
 const cartBucket = {
   src: cartBucketImage,
@@ -25,7 +26,12 @@ export default function OfferProduct({
 }) {
   const discountPrice = price - (price * discount) / 100;
   return (
-    <div className="offer-product-container">
+    <div
+      className="offer-product-container"
+      style={{
+        fontFamily: { font },
+      }}
+    >
       <div className="image-and-discount">
         <img
           className="offer-product-image"
@@ -38,17 +44,16 @@ export default function OfferProduct({
           <h3>{discount}% OFF</h3>
         </div>
       </div>
-      <div className="offer-product-name-price">
-        <h2 className="offer-product-name">{name}</h2>
-        <div>
-          <h2>
-            <span className="offer-product-price">
-              {price} {currency}
-            </span>{' '}
-            {discountPrice.toFixed(2)} {currency}
-          </h2>
-        </div>
+      <h2 className="offer-product-name">{name}</h2>
+      <div>
+        <h2>
+          <span className="offer-product-price">
+            {price} {currency}
+          </span>{' '}
+          {discountPrice.toFixed(2)} {currency}
+        </h2>
       </div>
+
       <div className="offer-add-fav-buttons">
         <div>
           <button
