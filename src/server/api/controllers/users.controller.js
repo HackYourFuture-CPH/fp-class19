@@ -6,6 +6,7 @@ const createUser = async (body) => {
   await knex('users').insert({
     full_name: body.full_name,
     email: body.email,
+    mobile: body.mobile,
     address: body.address,
     zipcode: body.zipcode,
     city: body.city,
@@ -18,9 +19,8 @@ const createUser = async (body) => {
   };
 };
 
-const getUsers = async () => {
-  return knex('users');
-};
+const getUsers = async () => knex('users');
+
 const getUserById = async (id) => {
   if (!id) {
     throw new HttpError('Bad request. Id should be a number', 400);
