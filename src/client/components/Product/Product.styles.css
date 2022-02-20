@@ -1,14 +1,15 @@
 .product-container {
-  background-color: white;
+  background-color: #ffffff;
   box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 273px;
+  height: 397;
   padding: 10px;
 }
 
 .product-name {
-  color: #36723a;
+  color: #687808;
   margin-bottom: 5px;
 }
 
@@ -22,8 +23,8 @@
 }
 
 .product-add-button {
-  background: #36723a;
-  color: #fff;
+  background: #687808;
+  color: #ffffff;
   font-size: 25px;
   padding-bottom: 5px;
 }
@@ -34,13 +35,19 @@
 }
 
 .vector-bucket {
-  color: #fff;
+  color: #ffffff;
   margin-left: 20px;
   padding-top: 5px;
 }
 
 .favorite-button {
   border: none;
-  color: #053d09;
-  background-color: #fff;
+  color: #687808;
+  background-color: #ffffff;
+}
+.product-image {
+  width: 257px;
+  height: 226px;
+  top: 316px;
+  left: 1051px;
 }

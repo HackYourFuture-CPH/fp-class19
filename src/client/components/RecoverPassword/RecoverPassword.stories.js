@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import RecoverPasswordComponent from './RecoverPassword';
+import RecoverPasswordComponent from './RecoverPassword.component';
 
 export default {
   title: 'Components / RecoverPassword Component',

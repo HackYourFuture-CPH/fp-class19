@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Product from '../Product/Product.component';
 import './CarouselStyle.css';
 
-export default function Carousel ({ products, show }) {
 
+export default function Carousel({ products, show }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [length, setLength] = useState(products.length);
   const [touchPosition, setTouchPosition] = useState(null);
@@ -81,4 +81,4 @@ export default function Carousel ({ products, show }) {
       </div>
     </div>
   );
-};
+}
