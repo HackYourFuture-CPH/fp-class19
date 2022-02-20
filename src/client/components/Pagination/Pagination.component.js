@@ -7,7 +7,7 @@ import ProductsView from '../ProductsView/ProductsView.component';
 export default function Pagination({ productsPerPage }) {
   const [currentPage, setCurrentPage] = useState(1);
   const pageNumberLimit = 8;
-  const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(6);
+  const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(8);
   const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
   const { products, loadMoreProducts, isLoading, totalCount } = useProducts({
     sortKey: 'name',
@@ -46,8 +46,12 @@ export default function Pagination({ productsPerPage }) {
     return null;
   });
   const handleNextBtn = () => {
-    setCurrentPage(currentPage + 1);
-    loadMoreProducts();
+    if (products.length !== totalCount) {
+      loadMoreProducts();
+    }
+    if (currentPage < (totalCount/productsPerPage)) {
+      setCurrentPage(currentPage + 1);
+    }
     if (currentPage + 1 > maxPageNumberLimit) {
       setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
       setMinPageNumberLimit(minPageNumberLimit + pageNumberLimit);
@@ -97,7 +101,7 @@ export default function Pagination({ productsPerPage }) {
         <button
           type="button"
           onClick={() => handleNextBtn()}
-          disabled={products.length === totalCount}
+          disabled={isLoading}
           className="arrows"
         >
           &#9654;
@@ -108,12 +112,6 @@ export default function Pagination({ productsPerPage }) {
 }
 
 Pagination.propTypes = {
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      name: PropTypes.string,
-    }),
-  ),
   productsPerPage: PropTypes.number,
 };
 

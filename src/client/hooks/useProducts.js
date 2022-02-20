@@ -8,7 +8,7 @@ const fetchProducts = (limit, offset, sortKey, sortOrder) => {
 export const useProducts = (
   { sortKey, sortOrder } = { sortKey: 'name', sortOrder: 'asc' },
 ) => {
-  const PRODUCT_PER_PAGE = 8;
+  const PRODUCT_PER_PAGE = 12;
   const [products, setProducts] = useState([]);
   const [totalCount, setTotalCount] = useState();
   const [isLoading, setLoading] = useState(false);
