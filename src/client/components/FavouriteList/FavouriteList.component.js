@@ -8,10 +8,9 @@ import ProductCart from './ProductCart';
 export default function FavouriteList({ productList }) {
   return (
     <>
-      <h2>Favourites</h2>
+      <h2 className="heading_div">Favourites</h2>
       <ul className="container">
-        {productList.map((product) => {
-          return (
+        {productList.map((product) => (
             <div>
               <li>
                 <div className="product_container">
@@ -25,8 +24,7 @@ export default function FavouriteList({ productList }) {
 
               <div className="line" />
             </div>
-          );
-        })}
+          ))}
       </ul>
     </>
   );

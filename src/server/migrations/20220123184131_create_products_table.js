@@ -1,5 +1,5 @@
 exports.up = function (knex) {
-  return knex.schema.createTable('products', function (table) {
+  return knex.schema.createTable('products', (table) => {
     table.increments();
     table.string('name').notNullable().unique();
     table.integer('price').notNullable();
