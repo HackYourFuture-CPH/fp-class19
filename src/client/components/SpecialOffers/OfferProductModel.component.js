@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Product.styles.css';
+import './OfferProductModel.styles.css';
 import cartBucketImage from '../../assets/images/cart_bucket.png';
 import heartImage from '../../assets/images/heart.png';
 
@@ -14,7 +14,7 @@ const heart = {
   alt: 'heart image',
 };
 
-export default function Product({
+export default function OfferProduct({
   image,
   discount,
   name,
@@ -83,7 +83,7 @@ export default function Product({
   );
 }
 
-Product.propTypes = {
+OfferProduct.propTypes = {
   image: PropTypes.string.isRequired,
   discount: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
@@ -93,7 +93,7 @@ Product.propTypes = {
   addToFavorites: PropTypes.func,
 };
 
-Product.defaultProps = {
+OfferProduct.defaultProps = {
   onClick: null,
   addToFavorites: null,
   currency: 'DKK',
