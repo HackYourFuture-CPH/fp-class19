@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import RecoverPasswordComponent from './RecoverPassword';
+import RecoverPasswordComponent from './RecoverPassword.component';
 
 export default {
   title: 'Components / RecoverPassword Component',
@@ -12,8 +12,8 @@ export default {
   parameters: { actions: { argTypesRegex: '^on.*' } },
 };
 
-export const Component = () => (
-  <BrowserRouter>
+export function Component() {
+  return <BrowserRouter>
     <RecoverPasswordComponent />
   </BrowserRouter>
-);
+}

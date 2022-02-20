@@ -1,5 +1,5 @@
 import React from 'react';
-import Product from '../SpecialOffers/Product.component';
+import Product from '../SpecialOffers/OfferProductModel.component';
 import './OfferProductsList.styles.css';
 
 export default function OfferProducts({ products }) {
