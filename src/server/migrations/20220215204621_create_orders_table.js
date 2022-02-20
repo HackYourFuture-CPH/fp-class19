@@ -2,7 +2,6 @@ exports.up = function (knex) {
   return knex.schema
     .createTable('orders', (table) => {
       table.increments('id').unsigned().primary();
-
       table.integer('user_id').notNullable().unsigned().references('users.id');
       table
         .enu('status', ['NEW', 'INPROGRESS', 'COMPLETED', 'CANCELLED'])

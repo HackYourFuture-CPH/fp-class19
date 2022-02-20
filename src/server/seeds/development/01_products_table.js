@@ -1,10 +1,15 @@
 exports.seed = function (knex) {
+  
+  return knex('favorites').del()
+    .then(() => {
+  knex('order_items').del()
+    .then(()=> 
   // Deletes ALL existing entries
-  return knex('products')
+   knex('products')
     .del()
-    .then(function () {
+    .then(() =>
       // Inserts seed entries
-      return knex('products').insert([
+       knex('products').insert([
         {
           id: 1,
           name: 'Verbena bonariens',
@@ -341,8 +346,10 @@ exports.seed = function (knex) {
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
         },
-      ]);
-    })
+      ])
+    )
+  )
+})
     .catch((error) => {
       console.error(error);
     });

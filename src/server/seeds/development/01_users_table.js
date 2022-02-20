@@ -1,10 +1,15 @@
 exports.seed = function (knex) {
+  
+  return knex('favorites').del()
+    .then(()=> {
+  knex('orders').del()
+      .then(()=> 
   // Deletes ALL existing entries
-  return knex('users')
+  knex('users')
     .del()
-    .then(function () {
+    .then(()=> 
       // Inserts seed entries
-      return knex('users').insert([
+      knex('users').insert([
         {
           id: 1,
           full_name: 'Test User1',
@@ -115,8 +120,10 @@ exports.seed = function (knex) {
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
         },
-      ]);
-    })
+      ])
+    )
+  )
+})
     .catch((error) => {
       console.error(error);
     });
