@@ -3,9 +3,9 @@ exports.seed = function (knex) {
   // Deletes ALL existing entries
   return knex('order_items')
     .del()
-    .then(function () {
+    .then(()=> 
       // Inserts seed entries
-      return knex('order_items').insert([
+       knex('order_items').insert([
         {
           order_id: 1,
           product_id: 1,
@@ -51,6 +51,6 @@ exports.seed = function (knex) {
           product_id: 12,
           quantity: 4,
         },
-      ]);
-    });
+      ])
+    );
 };
