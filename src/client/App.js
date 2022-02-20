@@ -15,11 +15,8 @@ import Footer from './components/Footer/Footer.component';
 import './hooks/useProducts';
 import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
-<<<<<<< HEAD
 import Page404Container from './containers/404Page/404Page.Container';
-=======
 import ForgotPasswordPage from './containers/ForgotPasswordPage/ForgotPasswordPage.container';
->>>>>>> 07b8d511c9e1e75155a41a6a5e8164e78804c2a8
 
 function App() {
   const { isLoading } = useAuthentication();
