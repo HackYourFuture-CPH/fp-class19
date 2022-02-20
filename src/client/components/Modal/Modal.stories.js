@@ -30,4 +30,5 @@ createdAccount.args = {
   text: 'Your Account has been created. ',
   cornerClose: false,
   btnFunction: testFunction,
+  btnLabel: 'Proceed to Log In',
 };

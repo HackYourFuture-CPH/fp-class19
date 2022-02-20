@@ -18,31 +18,47 @@ export default function Modal({
   };
   return (
     <div>
-      {!isOpen && <button onClick={openAndCloseModal} label="open modal" />}
+      {!isOpen && (
+        <button onClick={openAndCloseModal} label="open modal">
+          open modal
+        </button>
+      )}
       {isOpen && (
         <div className="modal-bg">
-          {cornerClose && (
-            <button
-              onClick={openAndCloseModal}
-              type="button"
-              className="closing-modal-button"
-            >
-              X
-            </button>
-          )}
-          <p className="modal-text">{text}</p>
-          {modalIcon && (
-            <img
-              className="add_to_cart_modal_icon"
-              src={addedToCart}
-              alt="add to cart approved"
-            />
-          )}
+          <div className="modal">
+            {cornerClose && (
+              <button
+                onClick={openAndCloseModal}
+                type="button"
+                className="closing-modal-button"
+              >
+                X
+              </button>
+            )}
+            <p className="modal-text">{text}</p>
+            {modalIcon && (
+              <img
+                className="add_to_cart_modal_icon"
+                src={addedToCart}
+                alt="add to cart approved"
+                style={{ margin: '20px' }}
+              />
+            )}
 
-          <Button primary="true" label={btnLabel} onClick={btnFunction} />
-          {secondBtn && (
-            <Button label="CONTINUE SHOPPING" onClick={secondBtnFunction} />
-          )}
+            <Button
+              primary={true}
+              label={btnLabel}
+              onClick={btnFunction}
+              style={{ margin: '20px' }}
+            />
+            {secondBtn && (
+              <Button
+                label="CONTINUE SHOPPING"
+                onClick={secondBtnFunction}
+                style={{ margin: '20px' }}
+              />
+            )}
+          </div>
         </div>
       )}
     </div>
