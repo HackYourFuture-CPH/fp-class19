@@ -32,8 +32,7 @@ export default function CreateAccount({ onSubmit }) {
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
         <div className="create-account-container">
           <h1>Create Account</h1>
           <h2>Log in details</h2>
@@ -150,7 +149,6 @@ export default function CreateAccount({ onSubmit }) {
           </button>
         </div>
       </form>
-    </>
   );
 }
 
