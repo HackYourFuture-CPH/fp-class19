@@ -16,6 +16,7 @@ import './hooks/useProducts';
 import SpecialOfferPage from './containers/SpecialOfferPage/SpecialOfferPage.Container';
 import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
+import ForgotPasswordPage from './containers/ForgotPasswordPage/ForgotPasswordPage.container';
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -51,6 +52,7 @@ function App() {
         <SignUp exact path="/sign-up" />
         <ResetPassword exact path="/reset-password" />
         <LogIn exact path="/log-in" />
+        <ForgotPasswordPage exact path="/forgot-password" />
 
         {/* All routes below are authenticated routes - a user must login first */}
         <AuthenticatedRoute exact path="/profile">
