@@ -10,20 +10,20 @@ const getProducts = async (req) => {
 
     offset = offset || 0;
 
-    sortKey = sortKey || 'name' || 'price';
+    sortKey = sortKey || 'name';
 
-    sortOrder = sortOrder || 'asc' || 'desc';
+    sortOrder = sortOrder || 'asc';
 
     const invalidParams = isNaN(limit) || isNaN(offset);
+
+    if (invalidParams) {
+      throw new HttpError('Type or value of parameters is incorrect', 400);
+    }
 
     const products = knex('products')
       .limit(limit)
       .offset(offset)
       .orderBy(sortKey, sortOrder);
-
-    if (invalidParams) {
-      throw new HttpError('Type or value of parameters is incorrect', 400);
-    }
 
     return products;
   } catch (error) {
