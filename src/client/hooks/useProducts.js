@@ -15,7 +15,6 @@ export const useProducts = (
   const [error, setError] = useState();
 
   const loadMoreProducts = () => {
-    console.log('loadMoreProducts is called!');
     if (isLoading) {
       return;
     }

@@ -6,10 +6,10 @@ import ProductsView from '../ProductsView/ProductsView.component';
 
 export default function Pagination({ productsPerPage }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const pageNumberLimit = 6;
+  const pageNumberLimit = 8;
   const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(6);
   const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
-  const { products, isLoading, loadMoreProducts, totalCount } = useProducts({
+  const { products, loadMoreProducts, isLoading, totalCount } = useProducts({
     sortKey: 'name',
     sortOrder: 'asc',
   });
@@ -97,7 +97,7 @@ export default function Pagination({ productsPerPage }) {
         <button
           type="button"
           onClick={() => handleNextBtn()}
-          disabled={isLoading}
+          disabled={products.length === totalCount}
           className="arrows"
         >
           &#9654;
