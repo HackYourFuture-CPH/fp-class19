@@ -100,7 +100,7 @@ router.get('/:id/favorites/', (req, res, next) => {
 
 /**
  * @swagger
- * /user/{ID}:
+ * /user/{ID}/edit-page:
  *  patch:
  *    tags:
  *    - User
@@ -125,13 +125,16 @@ router.get('/:id/favorites/', (req, res, next) => {
  *            address:
  *               type: string
  *            zipcode:
- *               type: integer
+ *               type: string
  *            city:
  *               type: string
  *            country:
  *               type: string
  *            mobile:
- *               type: integer
+ *               type: string
+ *            updated_at:
+ *               type: string
+ *               format: date-time
  *    responses:
  *      200:
  *        description: User was patched
@@ -142,7 +145,7 @@ router.get('/:id/favorites/', (req, res, next) => {
  *      5XX:
  *        description: Unexpected error.
  */
-router.patch('/:id', (req, res, next) => {
+router.patch('/:id/edit-page', (req, res, next) => {
   usersController
     .editUser(req.params.id, req.body)
     .then((result) => {
