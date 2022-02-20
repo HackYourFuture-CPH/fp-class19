@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './FavouriteList.styles.css';
 
-const ProductQuantity = ({ product }) => {
+function ProductQuantity({ product }) {
   const [counter, setCounter] = useState(1);
   const handleClick1 = () => {
     setCounter(counter + 1);
@@ -45,7 +45,7 @@ const ProductQuantity = ({ product }) => {
       </div>
     </div>
   );
-};
+}
 
 ProductQuantity.propTypes = {
   product: PropTypes.shape({

@@ -79,8 +79,7 @@ export default function Pagination({
   }
 
   return (
-    <>
-      <nav className="pagination">
+    <nav className="pagination">
         <button
           type="button"
           onClick={() => onPageChange(handlePrevBtn())}
@@ -101,7 +100,6 @@ export default function Pagination({
           &#9654;
         </button>
       </nav>
-    </>
   );
 }
 

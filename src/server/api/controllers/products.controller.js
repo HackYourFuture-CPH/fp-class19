@@ -41,8 +41,7 @@ const getProducts = async (req) => {
   }
 };
 
-const getDiscountProducts = async () => {
-  return knex('products')
+const getDiscountProducts = async () => knex('products')
     .select(
       'id',
       'name',
@@ -56,7 +55,6 @@ const getDiscountProducts = async () => {
       'picture',
     )
     .where('products.is_on_discount', '=', '1');
-};
 
 const getProductById = async (id) => {
   if (!id) {
