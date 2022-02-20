@@ -15,8 +15,6 @@ const getProducts = async (req) => {
 
   sortOrder = sortOrder || 'asc';
 
-  console.log(sortKey, allowedSortKeys.has(sortKey));
-
   const invalidParams =
     isNaN(limit) ||
     limit <= 0 ||
@@ -30,12 +28,18 @@ const getProducts = async (req) => {
   }
 
   try {
-    const products = knex('products')
+    const totalCount = (
+      await knex('products').count('id', { as: 'count' }).first()
+    ).count;
+    const products = await knex('products')
       .limit(limit)
       .offset(offset)
       .orderBy(sortKey, sortOrder);
 
-    return products;
+    return {
+      totalCount,
+      items: products,
+    };
   } catch (error) {
     return error.message;
   }

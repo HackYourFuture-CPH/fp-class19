@@ -9,7 +9,10 @@ export default function Pagination({ productsPerPage }) {
   const pageNumberLimit = 6;
   const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(6);
   const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
-  const { products, isLoading, loadMoreProducts } = useProducts();
+  const { products, isLoading, loadMoreProducts, totalCount } = useProducts({
+    sortKey: 'name',
+    sortOrder: 'asc',
+  });
   const pages = [];
   for (let i = 1; i <= Math.ceil(products.length / productsPerPage); i += 1) {
     pages.push(i);

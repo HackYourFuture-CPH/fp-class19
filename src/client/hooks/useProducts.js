@@ -1,31 +1,45 @@
 import { useEffect, useState } from 'react';
 
-const fetchProducts = (limit, offset) => {
-  const url = `/api/products?limit=${limit}&offset=${offset}`;
+const fetchProducts = (limit, offset, sortKey, sortOrder) => {
+  const url = `/api/products?limit=${limit}&offset=${offset}&sortKey=${sortKey}&sortOrder=${sortOrder}`;
   return fetch(url).then((response) => response.json());
 };
 
-export const useProducts = () => {
+export const useProducts = (
+  { sortKey, sortOrder } = { sortKey: 'name', sortOrder: 'asc' },
+) => {
+  const PRODUCT_PER_PAGE = 8;
   const [products, setProducts] = useState([]);
-  const [isLoading, setLoading] = useState(true);
+  const [totalCount, setTotalCount] = useState();
+  const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState();
 
   const loadMoreProducts = () => {
-    fetchProducts(8, products.length)
-      .then((productsResponse) => setProducts([...products, ...productsResponse]))
+    console.log('loadMoreProducts is called!');
+    if (isLoading) {
+      return;
+    }
+    setLoading(true);
+
+    fetchProducts(PRODUCT_PER_PAGE, products.length, sortKey, sortOrder)
+      .then(({ items, totalCount: _totalCount }) => {
+        setTotalCount(_totalCount);
+        setProducts([...products, ...items]);
+      })
       .catch((err) => setError(err))
       .finally(() => setLoading(false));
   };
 
-  // if (!products && !error) {
-  // }
-
   useEffect(() => {
+    console.log(sortKey, sortOrder);
+    setProducts([]);
+    setLoading(false);
     loadMoreProducts();
-  }, []);
+  }, [sortKey, sortOrder]);
 
   return {
     loadMoreProducts,
+    totalCount,
     products,
     isLoading,
     error,
