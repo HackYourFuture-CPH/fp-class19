@@ -50,9 +50,7 @@ export default function Carousel ({ products, show }) {
     <div className="carousel-container">
       <div className="carousel-wrapper">
         {currentIndex > 0 && (
-          <button type="button" className="left-arrow" onClick={prev}>
-            &lt;
-          </button>
+          <button type="button" className="left-arrow" onClick={prev}> </button>
         )}
         <div
           className="carousel-content-wrapper"
@@ -78,9 +76,7 @@ export default function Carousel ({ products, show }) {
           </div>
         </div>
         {currentIndex < length - show && (
-          <button type="button" className="right-arrow" onClick={next}>
-            &gt;
-          </button>
+          <button type="button" className="right-arrow" onClick={next}> </button>
         )}
       </div>
     </div>
