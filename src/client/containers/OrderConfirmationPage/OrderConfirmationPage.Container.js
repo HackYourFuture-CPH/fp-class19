@@ -16,12 +16,12 @@ export default function OrderConfirmationPage() {
       </div>
       <div className="wrapper2">
       <div className="wrapper-content2">
-      <button onClick={() => {
+      <button type='button' onClick={() => {
             window.location.href = '/';
           }} className="btn">CONTINUE SHOPPING</button>
       
 
-<button onClick={() => {
+<button type='button' onClick={() => {
             window.location.href = '/';
           }} className="btn2">REVIEW ORDER</button>
       </div>
