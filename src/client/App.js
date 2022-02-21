@@ -16,6 +16,7 @@ import './hooks/useProducts';
 import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
 import ForgotPasswordPage from './containers/ForgotPasswordPage/ForgotPasswordPage.container';
+import ProductPage from "./containers/ProductPage/ProductPage.container"
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -31,7 +32,7 @@ function App() {
       <Switch>
         {/* Home page */}
         <Route exact path="/">
-          <LandingPage />
+          <ProductPage />
         </Route>
         {/* AboutUs Page */}
         <Route exact path="/about-us">

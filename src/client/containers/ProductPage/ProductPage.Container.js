@@ -11,7 +11,7 @@ export default function ProductPage() {
   return (
     <div className="product-page">
       {isLoading && <Loader />}
-      {!isLoading && !error && <ProductDetail product={product} />}
+      {!isLoading && !error && <ProductDetail product={product[0]} />}
       {error && <h1>Error occurred while fetching products: {error}</h1>}
     </div>
   );
