@@ -37,7 +37,6 @@
 
 This repository is Class19's Final Project which is Plant Webshop
 
-
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [React](https://reactjs.org/) - Web Framework
@@ -51,14 +50,14 @@ This repository is Class19's Final Project which is Plant Webshop
 
 ## 📅 Project's Calendar
 
-- 31-Oct-2021 - 12:00 to 16:00
-- 07-Nov-2021 - 12:00 to 16:00
-- 14-Nov-2021 - 12:00 to 16:00
-- 21-Nov-2021 - 12:00 to 16:00
-- 28-Nov-2021 - 12:00 to 16:00
-- 05-Dec-2021 - 12:00 to 16:00
-- 12-Dec-2021- 12:00 to 16:00
-- 15-Dec-2021 - Graduation (Wednesday from 16:00 to 20:00)
+- 23-Jan-2022 - 12:00 to 16:00
+- 30-Jan-2022 - 12:00 to 16:00 
+- 06-Feb-2022 - 12:00 to 16:00
+- 13-Feb-2022 - 12:00 to 16:00
+- 27-Feb-2022 - 12:00 to 16:00
+- 06-Mar-2022 - 12:00 to 16:00
+- 13-Mar-2022- 12:00 to 16:00
+- 09-Mar-2022 - Graduation (Wednesday from 16:00 to 20:00)
 
 :computer::computer::computer: You are welcome to come every Wednesday from 12:00 to 16:00 and work together on the project.
 
@@ -71,7 +70,7 @@ This repository is Class19's Final Project which is Plant Webshop
 
 ## 👩🏻‍💼💡👨🏽‍💼 The Customer
 
-The customer is a fictional plant shop that needs a webshop app to sell their plants online 
+The customer is a fictional plant shop that needs a webshop app to sell their plants online
 
 #### 💼 Business Glossary
 
@@ -104,14 +103,14 @@ We might need to change and/or add new tables and fields and if so we need to fo
 Generally there are 2 types of components: _presentational_ and _container_ components. Please review the differences below:
 
 |                       | Presentational components                           | Container components                                                                                                                                                      |
-| --------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
 | Also known as         | "dumb" components, functional stateless components  | "smart" components, stateful components                                                                                                                                   |
 | Lives in this folder  | `/components`                                       | `/containers`                                                                                                                                                             |
 | Purpose               | Determines what a component looks like              | Determines how the applications works                                                                                                                                     |
 | Communication         | Can only communicate by receiving and passing props | Can communicate via props, can call APIs, can manipulate the DOM with REFs, etc.                                                                                          |
 | Markup                | Contains most of the markup for the application     | Should generally have as little markup as possible. A container `<div>` or an `<ul>` tag is ok, but if you need more, consider making a separate presentational component |
 | Storybook             | Can easily be mocked in Storybook                   | Cannot easily be mocked in Storybook, would require mocking API calls, etc.                                                                                               |
-| Can have side effects | No                                                  | Yes                                                                                                                                                                       |  |
+| Can have side effects | No                                                  | Yes                                                                                                                                                                       |     |
 
 #### A note about React Hooks
 

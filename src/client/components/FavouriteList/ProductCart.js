@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+// eslint-disable-next-line
 import { action } from '@storybook/addon-actions';
 import './FavouriteList.styles.css';
 
-const ProductCart = ({ product }) => {
+function ProductCart({ product }) {
   return (
     <div className="add_cart_button">
       <div>
@@ -51,6 +53,18 @@ const ProductCart = ({ product }) => {
       </div>
     </div>
   );
+}
+
+ProductCart.propTypes = {
+  product: PropTypes.shape({
+    discount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    currency: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  }),
+};
+
+ProductCart.defaultProps = {
+  product: null,
 };
 
 export default ProductCart;

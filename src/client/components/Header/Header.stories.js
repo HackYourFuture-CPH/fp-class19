@@ -1,17 +1,16 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-
-import { Header } from './Header';
+import Header from './Header.component';
 
 export default { title: 'Components / Header' };
 
-export const HeaderBar = () => (
-  <MemoryRouter>
+export function HeaderBar() {
+  return <MemoryRouter>
     <Header isAuthenticated={false} />
   </MemoryRouter>
-);
-export const HeaderBarAuthenticated = () => (
-  <MemoryRouter>
+}
+export function HeaderBarAuthenticated() {
+  return <MemoryRouter>
     <Header isAuthenticated={true} username="Jane" />
   </MemoryRouter>
-);
+}

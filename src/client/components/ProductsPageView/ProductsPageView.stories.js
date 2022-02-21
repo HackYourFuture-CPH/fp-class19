@@ -1,23 +1,19 @@
+/* eslint-disable camelcase */
 import React from 'react';
-
-import ProductsPageComponent from './ProductsPageView';
+import PropTypes from 'prop-types';
+import ProductsPageView from './ProductsPageView.component';
 
 export default {
   title: 'Components / ProductsPage Component',
-  component: ProductsPageComponent,
+  component: ProductsPageView,
   argTypes: {
     products: { control: '' },
   },
 };
 
-const template = ({ products, productsPerPage }) => {
-  return (
-    <ProductsPageComponent
-      products={products}
-      productsPerPage={productsPerPage}
-    />
+const template = ({ products, productsPerPage }) => (
+    <ProductsPageView products={products} productsPerPage={productsPerPage} />
   );
-};
 
 export const showProducts = template.bind({});
 
@@ -313,4 +309,14 @@ showProducts.args = {
     },
   ],
   productsPerPage: 3,
+};
+
+template.propTypes = {
+  products: PropTypes.arrayOf(PropTypes.shape({})),
+  productsPerPage: PropTypes.shape({}),
+};
+
+template.defaultProps = {
+  products: null,
+  productsPerPage: null,
 };

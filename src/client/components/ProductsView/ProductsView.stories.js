@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductsView from './ProductsView';
+import ProductsView from './ProductsView.component';
 
 export default {
   title: 'Components / ProductsView',
@@ -9,13 +9,9 @@ export default {
   },
 };
 
-const template = ({ products }) => {
-  return (
-    <>
-      <ProductsView products={products} />
-    </>
+const template = ({ products }) => (
+    <ProductsView products={products} />
   );
-};
 
 export const productsView = template.bind({});
 

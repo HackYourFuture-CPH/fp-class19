@@ -64,14 +64,16 @@ app.use((err, req, res, next) => {
   res.status(500).send({ error: err || 'Unknown error' });
 });
 
-app.use('/api/', function (req, res) {
+app.use('/api/', (req, res) => {
   res.status(404).send("Sorry can't find that!");
 });
 
 // If "/api" is called, redirect to the API documentation.
-app.use('/api', function (req, res) {
+app.use('/api', (req, res) => {
   res.redirect(`${process.env.API_PATH}/documentation`);
 });
+
+app.use('/static', express.static(path.join(__dirname, '../client/assets')));
 
 app.use('*', (req, res) => {
   res.sendFile(path.join(`${buildPath}/index.html`));

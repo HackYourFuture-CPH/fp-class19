@@ -15,8 +15,13 @@ import Footer from './components/Footer/Footer.component';
 import './hooks/useProducts';
 import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
+<<<<<<< HEAD
 import ForgotPasswordPage from './containers/ForgotPasswordPage/ForgotPasswordPage.container';
 import OrderConfirmationPage from './containers/OrderConfirmationPage/OrderConfirmationPage.Container';
+=======
+import Page404Container from './containers/404Page/404Page.Container';
+import ForgotPasswordPage from './containers/ForgotPasswordPage/ForgotPasswordPage.container';
+>>>>>>> 45b3cc7af703febf0e599b2b8b1bd669a7ef229c
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -57,6 +62,10 @@ function App() {
         <AuthenticatedRoute exact path="/profile">
           <Profile />
         </AuthenticatedRoute>
+        {/* this has to be bottom always.. pls dont move and dont keep under this any routes */}
+        <Route path="*">
+          <Page404Container />
+        </Route>
       </Switch>
       <Footer />
     </Router>

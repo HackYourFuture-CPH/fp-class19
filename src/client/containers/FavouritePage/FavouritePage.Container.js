@@ -1,8 +1,6 @@
 import React from 'react';
-import './FavouritePage.Style.css';
+import './FavouritePage.styles.css';
 
-function FavouritePage() {
+export default function FavouritePage() {
   return <div>Favourites</div>;
 }
-
-export default FavouritePage;
