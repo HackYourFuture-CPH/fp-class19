@@ -1,8 +1,7 @@
 import React from 'react';
 import './OrderConfirmationPage.styles.css';
 
-<<<<<<< HEAD
-function OrderConfirmationPage() {
+export default function OrderConfirmationPage() {
   return <div className="confirmation-page">
     <div className="inner-div">
       <div className="wrapper">
@@ -29,8 +28,4 @@ function OrderConfirmationPage() {
       </div>
     </div>
     </div>
-=======
-export default function OrderConfirmationPage() {
-  return <div>Order Confirmation Page</div>;
->>>>>>> 45b3cc7af703febf0e599b2b8b1bd669a7ef229c
 }
