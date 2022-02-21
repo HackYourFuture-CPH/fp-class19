@@ -1,6 +1,6 @@
 const knex = require('../../config/db');
 const moment = require('moment-timezone');
-const HttpError = require('../lib/utils/http-error');
+// const HttpError = require('../lib/utils/http-error');
 
 const newOrder = async (data) => {
   let orderId;
