@@ -1,0 +1,7 @@
+.product-detail-container {
+  border: 1px solid black;
+}
+.product-preview-content {
+  padding: 45px;
+  display: flex;
+}
