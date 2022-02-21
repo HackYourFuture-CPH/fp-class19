@@ -100,7 +100,7 @@ router.get('/:id/favorites/', (req, res, next) => {
 
 /**
  * @swagger
- * /user/{ID}/edit-page:
+ * /user/{ID}:
  *  patch:
  *    tags:
  *    - User
@@ -145,16 +145,10 @@ router.get('/:id/favorites/', (req, res, next) => {
  *      5XX:
  *        description: Unexpected error.
  */
-router.patch('/:id/edit-page', (req, res, next) => {
+router.patch('/:id', (req, res, next) => {
   usersController
-    .editUser(req.params.id, req.body)
-    .then((result) => {
-      if (result === 0) {
-        res.status(404).send('The user ID you provided does not exist.');
-      } else {
-        return res.json(result);
-      }
-    })
+    .updateUser(req.params.id, req.body, res)
+    .then((result) => res.json(result))
     .catch(next);
 });
 
