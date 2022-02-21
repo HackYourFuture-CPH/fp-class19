@@ -11,7 +11,7 @@
   color: white;
   background-color: #687808;
 }
-/* changed the background color to white and removed to position so would be easier to use it in othe components */
+/* changed the background color to white and removed the position so would be easier to use it in other components */
 .storybook-button--secondary {
   color: #687808;
   background-color: white;
