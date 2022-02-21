@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/camelcase */
+/* eslint-disable camelcase */
 import React, { useState } from 'react';
 import Pagination from './Pagination.component';
 
