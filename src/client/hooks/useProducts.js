@@ -5,12 +5,11 @@ const fetchProducts = (limit, offset, sortKey, sortOrder) => {
   return fetch(url).then((response) => response.json());
 };
 
-export const useProducts = (
-  { sortKey, sortOrder } = { sortKey: 'name', sortOrder: 'asc' },
-) => {
-  const PRODUCT_PER_PAGE = 12;
+export const PRODUCT_PER_PAGE = 12;
+
+export const useProducts = ({ sortKey, sortOrder }) => {
   const [products, setProducts] = useState([]);
-  const [totalCount, setTotalCount] = useState();
+  const [totalCount, setTotalCount] = useState(0);
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState();
 
@@ -30,9 +29,10 @@ export const useProducts = (
   };
 
   useEffect(() => {
-    console.log(sortKey, sortOrder);
     setProducts([]);
-    setLoading(false);
+    // reset products array along with updating state, state changes are async
+    // TODO: find better solution
+    products.length = 0;
     loadMoreProducts();
   }, [sortKey, sortOrder]);
 

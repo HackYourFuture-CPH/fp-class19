@@ -2,65 +2,95 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Sort.styles.css';
 
-export default function Sort({ products, setSortedProducts }) {
-  const [option, setOption] = React.useState();
-  function sortProducts(opt) {
-    if (opt === 'AlphabeticallyAZ') {
-      return products.sort((a, b) => a.name.localeCompare(b.name));
-    }
-    if (opt === 'AlphabeticallyZA') {
-      return products.sort((a, b) => b.name.localeCompare(a.name));
-    }
-    if (opt === 'PriceDescending') {
-      return products.sort((a, b) => a.price - b.price);
-    }
-    if (opt === 'PriceAscending') {
-      return products.sort((a, b) => b.price - a.price);
-    }
-  }
+const SORT_OPTION_MAPPING = {
+  AlphabeticallyAZ: {
+    label: 'A-Z',
+    preference: {
+      sortKey: 'name',
+      sortOrder: 'asc',
+    },
+  },
+  AlphabeticallyZA: {
+    label: 'Z-A',
+    preference: {
+      sortKey: 'name',
+      sortOrder: 'desc',
+    },
+  },
+  PriceDescending: {
+    label: 'Price ↑',
+    preference: {
+      sortKey: 'price',
+      sortOrder: 'desc',
+    },
+  },
+  PriceAscending: {
+    label: 'Price ↓',
+    preference: {
+      sortKey: 'price',
+      sortOrder: 'asc',
+    },
+  },
+};
+
+export default function Sort({ sortingPreferences, setSortingPreferences }) {
+  const [option, setOption] = React.useState(null);
+
   React.useEffect(() => {
-    if (!option) {
-      setSortedProducts(products);
-    } else {
-      setSortedProducts([...sortProducts(option)]);
+    if (!sortingPreferences) {
+      return;
+    }
+
+    // eslint-disable-next-line no-restricted-syntax
+    for (const [_option, { preference }] of Object.entries(
+      SORT_OPTION_MAPPING,
+    )) {
+      if (
+        preference.sortKey === sortingPreferences.sortKey &&
+        preference.sortOrder === sortingPreferences.sortOrder
+      ) {
+        setOption(_option);
+      }
+    }
+  }, [sortingPreferences, setOption]);
+
+  React.useEffect(() => {
+    console.log(`option=${option}`);
+    const { preference } = SORT_OPTION_MAPPING[option] || {};
+    if (preference) {
+      setSortingPreferences(preference);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [option, setSortedProducts]);
+  }, [option, setSortingPreferences]);
 
   return (
     <div className="sorting-div">
       <select
-        defaultValue="DEFAULT"
         onChange={(e) => setOption(e.target.value)}
         className="sort-options"
       >
         <option value="DEFAULT" disabled hidden>
           SORT BY
         </option>
-        <option className="sort-value" value="AlphabeticallyAZ">
-          A-Z
-        </option>
-        <option className="sort-value" value="AlphabeticallyZA">
-          Z-A
-        </option>
-        <option className="sort-value" value="PriceDescending">
-          Price ↑
-        </option>
-        <option className="sort-value" value="PriceAscending">
-          Price ↓
-        </option>
+        {Object.entries(SORT_OPTION_MAPPING).map(([_option, { label }]) => (
+          <option
+            className="sort-value"
+            value={_option}
+            key={_option}
+            selected={option === _option}
+          >
+            {label}
+          </option>
+        ))}
       </select>
     </div>
   );
 }
 
 Sort.propTypes = {
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      name: PropTypes.string,
-      price: PropTypes.number,
-    }),
-  ).isRequired,
-  setSortedProducts: PropTypes.func.isRequired,
+  sortingPreferences: PropTypes.shape({
+    sortKey: PropTypes.string,
+    sortOrder: PropTypes.string,
+  }).isRequired,
+  setSortingPreferences: PropTypes.func.isRequired,
 };
