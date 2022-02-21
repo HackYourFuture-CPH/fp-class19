@@ -1,3 +1,50 @@
-div {
+.confirmation-page {
+  align-items: center;
+  margin: 4%;
+}
+.confirmation-page .inner-div{
+  background-color: #F6F8EB;
+}
+.confirmation-page .wrapper2 {
+  text-align: center;
+  margin-right: 30%;
+}
+
+.confirmation-page .wrapper {
+  width: 90%;
+  text-align: center;
+  padding-top: 8%;
+
+}
+
+.confirmation-page .wrapper-content {
+  width: 90%;
+  font-size: 1.2rem;
+  padding: 4rem;
+  margin-left: auto;
+  background-color: #fff;
+}
+
+.confirmation-page .btn {
+  margin-top: 4rem;
+  margin-left: 40%;
+  border: 2px solid #687808;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  color: white;
+  background-color: #687808;
+  padding: 0.5rem 2rem;
+}
+.confirmation-page .btn2 {
+  margin-top: 2rem;
+  margin-left: 40%;
+  border: 2px solid #687808;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  background-color: white;
   color: #687808;
+  padding: 0.5rem 2rem;
+  margin-bottom: 10%;
 }
