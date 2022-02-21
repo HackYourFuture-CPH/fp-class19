@@ -1,13 +1,8 @@
 exports.seed = function (knex) {
-  
-  return knex('favorites').del()
-    .then(()=> {
-  knex('orders').del()
-      .then(()=> 
   // Deletes ALL existing entries
-  knex('users')
+  return knex('users')
     .del()
-    .then(()=> 
+    .then(() =>
       // Inserts seed entries
       knex('users').insert([
         {
@@ -15,6 +10,7 @@ exports.seed = function (knex) {
           full_name: 'Test User1',
           email: 'testuser1@testmail.com',
           address: 'test address 1',
+          mobile: '55223322',
           zipcode: '1234',
           city: 'Test City',
           country: 'Test Country',
@@ -26,6 +22,7 @@ exports.seed = function (knex) {
           full_name: 'Test User2',
           email: 'testuser2@testmail.com',
           address: 'test address 2',
+          mobile: '55223323',
           zipcode: '1234',
           city: 'Test City',
           country: 'Test Country',
@@ -37,6 +34,7 @@ exports.seed = function (knex) {
           full_name: 'Test User3',
           email: 'testuser3@testmail.com',
           address: 'test address 3',
+          mobile: '34522332',
           zipcode: '1234',
           city: 'Test City',
           country: 'Test Country',
@@ -48,6 +46,7 @@ exports.seed = function (knex) {
           full_name: 'Test User4',
           email: 'testuser4@testmail.com',
           address: 'test address 4',
+          mobile: '12353322',
           zipcode: '1234',
           city: 'Test City',
           country: 'Test Country',
@@ -59,6 +58,7 @@ exports.seed = function (knex) {
           full_name: 'Test User5',
           email: 'testuser5@testmail.com',
           address: 'test address 5',
+          mobile: '12223322',
           zipcode: '1234',
           city: 'Test City',
           country: 'Test Country',
@@ -70,6 +70,7 @@ exports.seed = function (knex) {
           full_name: 'Test User6',
           email: 'testuser6@testmail.com',
           address: 'test address 6',
+          mobile: '44523322',
           zipcode: '1234',
           city: 'Test City',
           country: 'Test Country',
@@ -81,6 +82,7 @@ exports.seed = function (knex) {
           full_name: 'Test User7',
           email: 'testuser7@testmail.com',
           address: 'test address 7',
+          mobile: '76822332',
           zipcode: '1234',
           city: 'Test City',
           country: 'Test Country',
@@ -92,6 +94,7 @@ exports.seed = function (knex) {
           full_name: 'Test User8',
           email: 'testuser8@testmail.com',
           address: 'test address 8',
+          mobile: '53523362',
           zipcode: '1234',
           city: 'Test City',
           country: 'Test Country',
@@ -103,6 +106,7 @@ exports.seed = function (knex) {
           full_name: 'Test User9',
           email: 'testuser9@testmail.com',
           address: 'test address 9',
+          mobile: '93223322',
           zipcode: '1234',
           city: 'Test City',
           country: 'Test Country',
@@ -114,16 +118,15 @@ exports.seed = function (knex) {
           full_name: 'Test User10',
           email: 'testuser10@testmail.com',
           address: 'test address 10',
+          mobile: '9234322',
           zipcode: '1234',
           city: 'Test City',
           country: 'Test Country',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
         },
-      ])
+      ]),
     )
-  )
-})
     .catch((error) => {
       console.error(error);
     });

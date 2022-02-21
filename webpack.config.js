@@ -51,6 +51,9 @@ module.exports = {
       '/api': `http://${process.env.API_HOST || '127.0.0.1'}:${
         process.env.API_PORT
       }`,
+      '/static': `http://${process.env.API_HOST || '127.0.0.1'}:${
+        process.env.API_PORT
+      }`,
     },
   },
   node: {

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { action } from '@storybook/addon-actions';
 import './FavouriteList.styles.css';
 
-const ProductCart = ({ product }) => {
+function ProductCart({ product }) {
   return (
     <div className="add_cart_button">
       <div>
@@ -53,7 +53,7 @@ const ProductCart = ({ product }) => {
       </div>
     </div>
   );
-};
+}
 
 ProductCart.propTypes = {
   product: PropTypes.shape({

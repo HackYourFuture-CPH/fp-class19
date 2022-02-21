@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './FavouriteList.styles.css';
 
-const ProductImage = ({ product }) => {
+function ProductImage({ product }) {
   return (
     <div className="image-discount-box">
       <div>
@@ -22,7 +22,7 @@ const ProductImage = ({ product }) => {
       </div>
     </div>
   );
-};
+}
 
 ProductImage.propTypes = {
   product: PropTypes.shape({

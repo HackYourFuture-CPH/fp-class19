@@ -12,8 +12,8 @@ export default {
   parameters: { actions: { argTypesRegex: '^on.*' } },
 };
 
-export const Component = () => (
-  <BrowserRouter>
+export function Component() {
+  return <BrowserRouter>
     <Login />
   </BrowserRouter>
-);
+}
