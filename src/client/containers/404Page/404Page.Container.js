@@ -1,6 +1,6 @@
 import React from 'react';
 import './404Page.styles.css';
-import page404 from './../../assets/images/404.png';
+import page404 from '../../assets/images/404.png';
 import { Link } from 'react-router-dom';
 
 function Page404() {
