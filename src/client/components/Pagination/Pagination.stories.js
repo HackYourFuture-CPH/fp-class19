@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React, { useState } from 'react';
 import Pagination from './Pagination.component';
 
@@ -32,7 +33,6 @@ const template = (args) => {
         onPageChange={(range) => setCurrentRange(range)}
         {...args}
       />
-      {/* eslint-enable */}
     </>
   );
 };

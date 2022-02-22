@@ -42,7 +42,7 @@ export default function Login() {
               />
             </div>
             <div>
-              <Link to="/reset-password" className="forgot-pw">
+              <Link to="/forgot-password" className="forgot-pw">
                 Forgot Password?
               </Link>
             </div>

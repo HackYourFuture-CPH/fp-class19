@@ -22,7 +22,6 @@ export default function Sort({ products, setSortedProducts }) {
     if (!option) {
       setSortedProducts(products);
     } else {
-      console.log('sorting with', option);
       setSortedProducts([...sortProducts(option)]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -38,10 +37,18 @@ export default function Sort({ products, setSortedProducts }) {
         <option value="DEFAULT" disabled hidden>
           SORT BY
         </option>
-        <option value="AlphabeticallyAZ">A-Z</option>
-        <option value="AlphabeticallyZA">Z-A</option>
-        <option value="PriceDescending">Price ↑</option>
-        <option value="PriceAscending">Price ↓</option>
+        <option className="sort-value" value="AlphabeticallyAZ">
+          A-Z
+        </option>
+        <option className="sort-value" value="AlphabeticallyZA">
+          Z-A
+        </option>
+        <option className="sort-value" value="PriceDescending">
+          Price ↑
+        </option>
+        <option className="sort-value" value="PriceAscending">
+          Price ↓
+        </option>
       </select>
     </div>
   );
@@ -55,4 +62,5 @@ Sort.propTypes = {
       price: PropTypes.number,
     }),
   ).isRequired,
+  setSortedProducts: PropTypes.func.isRequired,
 };

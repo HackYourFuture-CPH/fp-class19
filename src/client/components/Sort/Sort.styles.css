@@ -1,8 +1,18 @@
-.sorting-div .sort-options {
-  width: 130px;
-  z-index: 1800;
-  background: #687808;
-  height: 33px;
-  overflow: hidden;
-  outline: none;
+.sort-options {
+    width: 10rem;
+    z-index: 1800;
+    background: #687808;
+    height: 40px;
+    overflow: hidden;
+    outline: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 22px;
+    margin: 5px;
+}
+
+.sort-value {
+    background: #f6f8eb;
+    color: black;
+    font-weight: bolder;
 }

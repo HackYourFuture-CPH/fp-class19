@@ -1,5 +1,5 @@
+/* eslint-disable camelcase */
 import React from 'react';
-
 import ProductsComponent from './Products.component';
 
 export default {
@@ -10,13 +10,10 @@ export default {
   },
 };
 
-const template = ({ products }) => {
-  return (
-    <>
-      <ProductsComponent products={products} />
-    </>
+// eslint-disable-next-line react/prop-types
+const template = ({ products }) => (
+    <ProductsComponent products={products} />
   );
-};
 
 export const showProducts = template.bind({});
 
