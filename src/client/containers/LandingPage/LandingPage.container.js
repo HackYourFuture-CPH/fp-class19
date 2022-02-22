@@ -7,7 +7,7 @@ export default function LandingPage() {
   const { products, isLoading, error } = useProducts();
 
   return (
-    <div>
+    <div className="landing-page">
       {isLoading && <p>Products getting loaded...</p>}
       {!isLoading && !error && <Products products={products} />}
       {error && <h1>Error occurred while fetching products: {error}</h1>}

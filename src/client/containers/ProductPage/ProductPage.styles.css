@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-product-page {
+.product-page {
   box-sizing: inherit;
   display: flex;
   flex-flow: column wrap;

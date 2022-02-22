@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useProduct } from '../../hooks/useProduct';
 import { useProducts } from '../../hooks/useProducts';
@@ -9,14 +9,24 @@ import Loader from '../../components/Loader/Loader.component';
 
 export default function ProductPage() {
   const { productId } = useParams();
+  const { products, isLoading, error } = useProducts();
+  const [currentProduct, setCurrentProduct] = useState();
+  const [quantityCount, setQuantityCount] = useState(1);
 
-  const { product, isLoading, error } = useProduct(productId);
-  const { products, isLoading1, error1 } = useProducts();
+  useEffect(() => {
+    setCurrentProduct(products?.[productId]);
+  }, [products, productId]);
 
   return (
     <div className="product-page">
       {isLoading && <Loader />}
-      {!isLoading && !error && <ProductDetail product={product} />}
+      {!isLoading && !error && (
+        <ProductDetail
+          product={currentProduct}
+          quantityCount={quantityCount}
+          setQuantityCount={setQuantityCount}
+        />
+      )}
       {error && <h1>Error occurred while fetching products: {error}</h1>}
     </div>
   );
