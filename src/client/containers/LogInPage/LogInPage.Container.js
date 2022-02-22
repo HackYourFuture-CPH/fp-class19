@@ -4,7 +4,7 @@ import './LogInPage.styles.css';
 
 export default function LogInPage() {
   return (
-    <div>
+    <div className="login-page">
       <Login />
     </div>
   );
