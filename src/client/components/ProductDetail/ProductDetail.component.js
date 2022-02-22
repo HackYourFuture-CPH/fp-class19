@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ProductDetail.styles.css';
+import Button from '../Button/Button.component';
 
 export default function ProductDetail({
   product,
@@ -57,16 +58,20 @@ export default function ProductDetail({
               </button>
             </div>
           </div>
-          <button className="productDetail-button" type="button" onClick={' '}>
-            Add
-          </button>
+          <Button
+            className="productDetail-button"
+            type="button"
+            onClick={' '}
+            primary={true}
+            label="ADD"
+          />
         </section>
       </article>
     </div>
   );
 }
 
-/* ProductDetail.propTypes = {
+ProductDetail.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string,
     price: PropTypes.number,
@@ -75,4 +80,3 @@ export default function ProductDetail({
   quantityCount: PropTypes.number.isRequired,
   setQuantityCount: PropTypes.func.isRequired,
 };
- */
