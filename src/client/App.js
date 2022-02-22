@@ -15,8 +15,9 @@ import Footer from './components/Footer/Footer.component';
 import './hooks/useProducts';
 import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
+import Page404Container from './containers/404Page/404Page.Container';
 import ForgotPasswordPage from './containers/ForgotPasswordPage/ForgotPasswordPage.container';
-import ProductPage from "./containers/ProductPage/ProductPage.container"
+import ProductPage from './containers/ProductPage/ProductPage.container';
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -32,7 +33,7 @@ function App() {
       <Switch>
         {/* Home page */}
         <Route exact path="/">
-          <ProductPage />
+          <LandingPage />
         </Route>
         {/* AboutUs Page */}
         <Route exact path="/about-us">
@@ -41,6 +42,10 @@ function App() {
         {/* Contact page */}
         <Route exact path="/contact-us">
           <ContactUsPage />
+        </Route>
+        {/* Product page */}
+        <Route path="/products/:productId">
+          <ProductPage />
         </Route>
 
         {/* Anonymous pages */}
@@ -54,6 +59,10 @@ function App() {
         <AuthenticatedRoute exact path="/profile">
           <Profile />
         </AuthenticatedRoute>
+        {/* this has to be bottom always.. pls dont move and dont keep under this any routes */}
+        <Route path="*">
+          <Page404Container />
+        </Route>
       </Switch>
       <Footer />
     </Router>
