@@ -10,7 +10,7 @@ import Profile from './containers/Profile';
 import Loader from './components/Loader/Loader.component';
 import Header from './components/Header/Header.component';
 import Menu from './components/Menu/Menu.component';
-import LogIn from './components/Login/Login.component';
+import LogInPage from './containers/LogInPage/LogInPage.Container';
 import Footer from './components/Footer/Footer.component';
 import './hooks/useProducts';
 import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
@@ -45,7 +45,7 @@ function App() {
         <SignIn exact path="/sign-in" />
         <SignUp exact path="/sign-up" />
         <ResetPassword exact path="/reset-password" />
-        <LogIn exact path="/log-in" />
+        <LogInPage exact path="/log-in" />
 
         {/* All routes below are authenticated routes - a user must login first */}
         <AuthenticatedRoute exact path="/profile">
