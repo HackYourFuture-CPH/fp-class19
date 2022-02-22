@@ -6,7 +6,7 @@ import './ProductPage.styles.css';
 import ProductDetail from '../../components/ProductDetail/ProductDetail.component';
 import Loader from '../../components/Loader/Loader.component';
 /* import Modal from "./ModalDeleteMe/Modal.component"; */
-/* import Carousel from './CarouselDeleteMe/Carousel.component'; */
+/* import Carousel from './CarouselDeleteMe/Carousel.component';  */
 
 
 export default function ProductPage() {
