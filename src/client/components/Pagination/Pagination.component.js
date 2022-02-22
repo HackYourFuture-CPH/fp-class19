@@ -20,7 +20,7 @@ export default function Pagination({
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProductsOnPage = products.slice(
       indexOfFirstProduct,
-      indexOfLastProduct,
+      indexOfLastProduct
     );
     return currentProductsOnPage;
   };

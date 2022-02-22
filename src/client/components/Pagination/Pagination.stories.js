@@ -15,7 +15,7 @@ const template = (args) => {
   const [propProducts, setPropProducts] = useState(args.products);
   // eslint-disable-next-line
   const [currentRange, setCurrentRange] = useState(
-    args.products.slice(0, args.productsPerPage),
+    args.products.slice(0, args.productsPerPage)
   );
   // eslint-disable-next-line
   React.useEffect(() => {
@@ -29,7 +29,7 @@ const template = (args) => {
         </li>
       ))}
       {/* eslint-disable */}
-      <PaginationComponent
+      <Pagination
         onPageChange={(range) => setCurrentRange(range)}
         {...args}
       />
@@ -38,7 +38,7 @@ const template = (args) => {
 };
 
 export const PaginationComponent = template.bind({});
-Pagination.args = {
+PaginationComponent.args = {
   products: [
     {
       id: 1,
