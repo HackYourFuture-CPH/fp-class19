@@ -1,7 +1,19 @@
 .product-detail-container {
-  border: 1px solid black;
+  border: 1px solid #9e9a9a;
+  position: absolute;
+  background: #ffffff;
+  box-sizing: border-box;
 }
 .product-preview-content {
   padding: 45px;
   display: flex;
+}
+.gray-container {
+  display: flex;
+  background: rgba(238, 238, 238, 0.75);
+  width: 250px;
+  height: 110px;
+  justify-content: space-evenly;
+  padding: 10px;
+  flex-wrap: wrap;
 }

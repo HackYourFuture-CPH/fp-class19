@@ -27,13 +27,21 @@ export default function ProductPreview({
           <img src={image} alt={name} />
           <div className="product-preview-details">
             <h3 className="product-name">{name}</h3>
-            <p>{size}</p>
-            <p>{price}</p>
-            <p>Quantity</p>
-            <button onClick={decreamentCount}>-</button>
-            <span>{count}</span>
-            <button onClick={increamentCount}>+</button>
-            <Button primary="true" label="ADD"></Button>
+            <div className="gray-container">
+              <span>
+                {' '}
+                <p>{size}</p>
+              </span>
+
+              <span>
+                <p>{price}</p>
+              </span>
+              <p>Quantity</p>
+              <button onClick={decreamentCount}>-</button>
+              <span>{count}</span>
+              <button onClick={increamentCount}>+</button>
+              <Button primary="true" label="ADD"></Button>
+            </div>
           </div>
         </div>
       </div>
