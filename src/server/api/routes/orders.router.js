@@ -19,7 +19,7 @@ const ordersController = require('../controllers/orders.controller');
  *       schema:
  *         type: integer
  *         required: true
- *         description: Get all orders of specific user by id
+ *         description: Get a specific order by its own order id
  *
  *    responses:
  *      200:
