@@ -81,7 +81,7 @@ export default function Sort({
             className="sort-value"
             value={_option}
             key={_option}
-            selected={option === _option}
+            defaultValue={option === _option}
           >
             {label}
           </option>

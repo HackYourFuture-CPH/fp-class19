@@ -26,6 +26,10 @@
   color: white;
 }
 
+.pagination button.hidden {
+  display: none;
+}
+
 .pagination button:hover:not(.active):not(button[disabled]) {
   background-color: white;
   color: black;
