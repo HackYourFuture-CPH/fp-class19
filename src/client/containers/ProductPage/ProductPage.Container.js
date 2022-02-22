@@ -8,16 +8,13 @@ import Loader from '../../components/Loader/Loader.component';
 /* import Modal from "./ModalDeleteMe/Modal.component"; */
 /* import Carousel from './CarouselDeleteMe/Carousel.component';  */
 
-
 export default function ProductPage() {
-
   const { productId } = useParams();
   const { product, isLoading, error } = useProductById(productId);
 
-/*   const { products, isLoading, error } = useProducts(); */
+  /*   const { products, isLoading, error } = useProducts(); */
   const [currentProduct, setCurrentProduct] = useState();
   const [quantityCount, setQuantityCount] = useState(1);
-
 
   useEffect(() => {
     setCurrentProduct(product);
