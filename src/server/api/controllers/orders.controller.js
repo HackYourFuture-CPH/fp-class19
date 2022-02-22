@@ -1,9 +1,9 @@
 const knex = require('../../config/db');
 const HttpError = require('../lib/utils/http-error');
 
-  
+
 const getOrderById = async(id) => {
-    if (!id) {
+    if (isNaN(id) || id < 1) {
         throw new HttpError(
             'Bad request. Order ID must be an integer and larger than 0',
             400,
@@ -11,7 +11,6 @@ const getOrderById = async(id) => {
     }
     try {
         const orders = await knex('orders AS o')
-        // .select('orders.id as id', 'status', 'quantity', 'name', etc..)
             .select(
                 'o.id',
                 'o.status',
@@ -28,15 +27,19 @@ const getOrderById = async(id) => {
             .join('products AS p', 'p.id', '=', 'oi.product_id')
             .where('o.id', '=', id);
         if (orders.length === 0) {
-            throw new Error(
+            throw new HttpError(
                 `Order with the id of ${id} not found `,
                 404,
             );
         }
 
         return orders;
-      } catch (error) {
-        return error.message;
+    } catch (error) {
+        if (error instanceof HttpError) {
+            throw error;
+        }
+
+        throw new HttpError('Something went wrong', 500);
     }
 };
 module.exports = {
