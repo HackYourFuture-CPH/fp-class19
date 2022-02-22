@@ -5,7 +5,7 @@ import ContactPage from '../../components/Contact/Contact.component';
 export default function ContactUsPage() {
   return (
     <div>
-      <ContactPage />S
+      <ContactPage />
     </div>
   );
 }
