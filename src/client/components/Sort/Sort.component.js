@@ -33,7 +33,11 @@ const SORT_OPTION_MAPPING = {
   },
 };
 
-export default function Sort({ sortingPreferences, setSortingPreferences }) {
+export default function Sort({
+  sortingPreferences,
+  setSortingPreferences,
+  setCurrentPage,
+}) {
   const [option, setOption] = React.useState(null);
 
   React.useEffect(() => {
@@ -55,13 +59,13 @@ export default function Sort({ sortingPreferences, setSortingPreferences }) {
   }, [sortingPreferences, setOption]);
 
   React.useEffect(() => {
-    console.log(`option=${option}`);
     const { preference } = SORT_OPTION_MAPPING[option] || {};
     if (preference) {
       setSortingPreferences(preference);
+      setCurrentPage(1);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [option, setSortingPreferences]);
+  }, [option, setSortingPreferences, setCurrentPage]);
 
   return (
     <div className="sorting-div">
@@ -93,4 +97,5 @@ Sort.propTypes = {
     sortOrder: PropTypes.string,
   }).isRequired,
   setSortingPreferences: PropTypes.func.isRequired,
+  setCurrentPage: PropTypes.func.isRequired,
 };
