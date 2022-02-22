@@ -5,7 +5,7 @@ const fetchProduct = (productId) => {
   return fetch(url).then((response) => response.json());
 };
 
-export const useProduct = (productId) => {
+export const useProductById = (productId) => {
   const [product, setProduct] = useState();
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState();

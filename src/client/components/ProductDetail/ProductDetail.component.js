@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './ProductDetail.styles.css';
 
@@ -66,13 +66,13 @@ export default function ProductDetail({
   );
 }
 
-ProductDetail.propTypes = {
-  name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  picture: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
+/* ProductDetail.propTypes = {
+  product: PropTypes.shape({
+    name: PropTypes.string,
+    price: PropTypes.number,
+    picture: PropTypes.string,
+  }).isRequired,
+  quantityCount: PropTypes.number.isRequired,
+  setQuantityCount: PropTypes.func.isRequired,
 };
-
-ProductDetail.defaultProps = {
-  onClick: null,
-};
+ */

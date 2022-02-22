@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useProduct } from '../../hooks/useProduct';
 import { useProducts } from '../../hooks/useProducts';
+import { useProductById } from '../../hooks/useProductById';
 import './ProductPage.styles.css';
 import ProductDetail from '../../components/ProductDetail/ProductDetail.component';
-/* import Carousel from './CarouselDeleteMe/Carousel.component'; */
 import Loader from '../../components/Loader/Loader.component';
+/* import Modal from "./ModalDeleteMe/Modal.component"; */
+/* import Carousel from './CarouselDeleteMe/Carousel.component'; */
+
 
 export default function ProductPage() {
+
   const { productId } = useParams();
-  const { products, isLoading, error } = useProducts();
+  const { product, isLoading, error } = useProductById(productId);
+
+/*   const { products, isLoading, error } = useProducts(); */
   const [currentProduct, setCurrentProduct] = useState();
   const [quantityCount, setQuantityCount] = useState(1);
 
+
   useEffect(() => {
-    setCurrentProduct(products?.[productId]);
-  }, [products, productId]);
+    setCurrentProduct(product);
+  }, [currentProduct, productId, product]);
 
   return (
     <div className="product-page">
