@@ -90,6 +90,10 @@
     color: #687808;
     text-decoration: none;
 }
+.login-component .sign-in {
+    color: #fff;
+    text-decoration: none;
+}
 
 .login-component .google-login {
     width: 70%;

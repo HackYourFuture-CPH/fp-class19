@@ -46,9 +46,11 @@ export default function Login() {
                 Forgot Password?
               </Link>
             </div>
-            <button type="button" className="btn">
-              Log In
-            </button>
+            
+              <button type="button" className="btn">
+              <Link to="/sign-in" className="sign-in"> Log In </Link>
+              </button>
+           
             <br />
             <div>
               <Link to="/google-signin">
