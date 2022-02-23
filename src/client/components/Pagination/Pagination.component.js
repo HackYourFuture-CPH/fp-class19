@@ -3,25 +3,22 @@ import PropTypes from 'prop-types';
 import './Pagination.styles.css';
 
 export default function Pagination({
-  currentPage,
-  pages,
-  maxNumberOfPages,
-  onHandlePagination,
-  onPrevButton,
-  onNextButton,
+  currentPageIndex,
+  pageCount,
+  setCurrentPageIndex,
 }) {
+  const pages = [];
+  for (let i = 1; i <= pageCount; i += 1) {
+    pages.push(i);
+  }
   const displayPageNumbers = pages.map((number) => {
     if (number) {
       return (
         <button
           type="button"
           key={number}
-          onClick={() => onHandlePagination(number)}
-          className={
-            (number >= currentPage - 2 && number <= currentPage + 1)
-              ? 'active'
-              : 'hidden'
-          }
+          onClick={() => setCurrentPageIndex(number - 1)}
+          className={number ? 'active' : null}
         >
           {number}
         </button>
@@ -34,8 +31,8 @@ export default function Pagination({
     <div className="pagination">
       <button
         type="button"
-        onClick={() => onPrevButton()}
-        disabled={currentPage === 1}
+        onClick={() => setCurrentPageIndex(currentPageIndex - 1)}
+        disabled={currentPageIndex === 0}
         className="arrows"
       >
         &#9664;
@@ -43,8 +40,8 @@ export default function Pagination({
       {displayPageNumbers}
       <button
         type="button"
-        onClick={() => onNextButton()}
-        disabled={currentPage === maxNumberOfPages}
+        onClick={() => setCurrentPageIndex(currentPageIndex + 1)}
+        disabled={currentPageIndex === pages.length - 1}
         className="arrows"
       >
         &#9654;
@@ -54,15 +51,11 @@ export default function Pagination({
 }
 
 Pagination.propTypes = {
-  currentPage: PropTypes.number,
-  pages: PropTypes.arrayOf(PropTypes.number).isRequired,
-  maxNumberOfPages: PropTypes.number,
-  onHandlePagination: PropTypes.func.isRequired,
-  onPrevButton: PropTypes.func.isRequired,
-  onNextButton: PropTypes.func.isRequired,
+  currentPageIndex: PropTypes.number,
+  pageCount: PropTypes.number.isRequired,
+  setCurrentPageIndex: PropTypes.func.isRequired,
 };
 
 Pagination.defaultProps = {
-  currentPage: 1,
-  maxNumberOfPages: 6,
+  currentPageIndex: 0,
 };

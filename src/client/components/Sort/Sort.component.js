@@ -62,7 +62,7 @@ export default function Sort({
     const { preference } = SORT_OPTION_MAPPING[option] || {};
     if (preference) {
       setSortingPreferences(preference);
-      setCurrentPage(1);
+      setCurrentPage(0);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [option, setSortingPreferences, setCurrentPage]);

@@ -12,44 +12,12 @@ export default function LandingPage() {
     sortKey: 'name',
     sortOrder: 'asc',
   });
-  const { isLoading, error, products, totalCount, loadMoreProducts } =
-    useProducts(sortingPreferences);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPageIndex, setCurrentPageIndex] = useState(0);
+
+  const { isLoading, error, products, totalCount } =
+  useProducts({...sortingPreferences, currentPage: currentPageIndex});
 
   const maxNumberOfPages = Math.ceil(totalCount / PRODUCT_PER_PAGE);
-
-  const pages = [];
-  for (let i = 1; i <= Math.ceil(products.length / PRODUCT_PER_PAGE); i += 1) {
-    pages.push(i);
-  }
-
-  const getCurrentProducts = (page) => {
-    const indexOfLastProduct = page * PRODUCT_PER_PAGE;
-    const indexOfFirstProduct = indexOfLastProduct - PRODUCT_PER_PAGE;
-    const currentProductsOnPage = products.slice(
-      indexOfFirstProduct,
-      indexOfLastProduct,
-    );
-    return currentProductsOnPage;
-  };
-
-  const handlePagination = (pageNumber) => {
-    setCurrentPage(pageNumber);
-    return getCurrentProducts(pageNumber);
-  };
-
-  const handleNextButton = () => {
-    setCurrentPage(currentPage + 1);
-    if (products.length < totalCount) {
-      loadMoreProducts();
-    }
-    return getCurrentProducts(currentPage + 1);
-  };
-
-  const handlePrevBtn = () => {
-    setCurrentPage(currentPage - 1);
-    return getCurrentProducts(currentPage - 1);
-  };
 
   return (
     <div>
@@ -57,22 +25,14 @@ export default function LandingPage() {
       <Sort
         sortingPreferences={sortingPreferences}
         setSortingPreferences={setSortingPreferences}
-        setCurrentPage={setCurrentPage}
+        setCurrentPage={setCurrentPageIndex}
       />
       {isLoading && <Loader />}
       {!!products && products.length > 0 && (
-        <ProductsView products={getCurrentProducts(currentPage)} />
+        <ProductsView products={products} />
       )}
       {totalCount > 0 && (
-        <Pagination
-          currentPage={currentPage}
-          pages={pages}
-          maxNumberOfPages={maxNumberOfPages}
-          productsPerPage={PRODUCT_PER_PAGE}
-          onPrevButton={handlePrevBtn}
-          onNextButton={handleNextButton}
-          onHandlePagination={handlePagination}
-        />
+        <Pagination currentPageIndex={currentPageIndex} pageCount={maxNumberOfPages} setCurrentPageIndex={setCurrentPageIndex} />
       )}
       {error && <h1>Error occurred while fetching products: {error}</h1>}
     </div>
