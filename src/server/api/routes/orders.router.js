@@ -1,12 +1,8 @@
-/* TODO: This is just an example file to illustrate API routing and
-documentation. Can be deleted when the first real route is added. */
-
 const express = require('express');
-
-const router = express.Router({ mergeParams: true });
-
 // controllers
 const ordersController = require('../controllers/orders.controller');
+
+const router = express.Router({ mergeParams: true });
 
 /**
  * @swagger
@@ -20,7 +16,7 @@ const ordersController = require('../controllers/orders.controller');
  *    produces: application/json
  *    parameters:
  *     - in: query
- *       name: user
+ *       name: user_id
  *       schema:
  *         type: integer
  *         required: true
@@ -36,14 +32,8 @@ const ordersController = require('../controllers/orders.controller');
  */
 router.get('/', (req, res, next) => {
   ordersController
-    .getOrderByUserId(req.query.user)
-    .then((result) => {
-      if (result.length === 0) {
-        res.status(404).send('The user ID you provided does not exist');
-      } else {
-        return res.json(result);
-      }
-    })
+    .getOrderByUserId(req.query.user_id)
+    .then((result) => res.json(result))
     .catch(next);
 });
 
