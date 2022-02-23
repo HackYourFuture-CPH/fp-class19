@@ -18,7 +18,7 @@ export default function Pagination({
           type="button"
           key={number}
           onClick={() => setCurrentPageIndex(number - 1)}
-          className={number ? 'active' : null}
+          className={(number-1) === currentPageIndex ? 'active' : null}
         >
           {number}
         </button>
