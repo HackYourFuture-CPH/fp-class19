@@ -13,6 +13,7 @@ const getOrdersByUserId = async (raw_user_id) => {
         'orders.user_id',
         'orders.id as order_number',
         'orders.updated_at',
+        'orders.status',
         knex.raw('sum( ?? * ?? ) as ??', ['quantity', 'price', 'total_amount']),
       )
       .leftJoin('order_items', 'order_items.order_id', '=', 'orders.id')
