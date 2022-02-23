@@ -21,14 +21,16 @@ const getOrdersByUserId = async (raw_user_id) => {
       .where({ user_id })
       .groupBy('orders.id')
       .count('orders.id as nr_of_items');
-
     if (orders.length === 0) {
       throw new HttpError('The user ID you provided does not exist', 404);
     }
+
     return orders;
   } catch (error) {
-    return error.message;
-    // throw new HttpError('Something went wrong', 500);
+    if (error instanceof HttpError) {
+      throw error;
+    }
+    throw new HttpError('Something went wrong', 500);
   }
 };
 
