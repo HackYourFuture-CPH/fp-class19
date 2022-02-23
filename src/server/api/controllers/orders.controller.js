@@ -2,10 +2,9 @@ const knex = require('../../config/db');
 const HttpError = require('../lib/utils/http-error');
 
 const getOrderByUserId = async (raw_user_id) => {
-  // eslint-disable-next-line radix
-  const userId = parseInt(raw_user_id);
+  const user_id = parseInt(raw_user_id, 10);
 
-  if (isNaN(userId) || userId === 0) {
+  if (isNaN(user_id) || user_id < 1) {
     throw new HttpError('The ID should be a number', 400);
   }
   try {
@@ -19,7 +18,7 @@ const getOrderByUserId = async (raw_user_id) => {
       .leftJoin('order_items', 'order_items.order_id', '=', 'orders.id')
       .leftJoin('users', 'users.id', '=', 'orders.user_id')
       .leftJoin('products', 'products.id', '=', 'order_items.product_id')
-      .where({ user_id: userId })
+      .where({ user_id })
       .groupBy('orders.id')
       .count('orders.id as nr_of_items');
 
