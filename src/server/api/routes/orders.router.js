@@ -32,7 +32,7 @@ const router = express.Router({ mergeParams: true });
  */
 router.get('/', (req, res, next) => {
   ordersController
-    .getOrderByUserId(req.query.user_id)
+    .getOrdersByUserId(req.query.user_id)
     .then((result) => res.json(result))
     .catch(next);
 });

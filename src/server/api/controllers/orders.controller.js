@@ -1,7 +1,7 @@
 const knex = require('../../config/db');
 const HttpError = require('../lib/utils/http-error');
 
-const getOrderByUserId = async (raw_user_id) => {
+const getOrdersByUserId = async (raw_user_id) => {
   const user_id = parseInt(raw_user_id, 10);
 
   if (isNaN(user_id) || user_id < 1) {
@@ -33,5 +33,5 @@ const getOrderByUserId = async (raw_user_id) => {
 };
 
 module.exports = {
-  getOrderByUserId,
+  getOrdersByUserId,
 };
