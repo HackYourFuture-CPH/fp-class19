@@ -26,7 +26,7 @@ const getOrdersByUserId = async (raw_user_id) => {
       throw new HttpError('The user ID you provided does not exist', 404);
     }
 
-    return orders;
+    return new HttpError('The user have no orders yet', 404);
   } catch (error) {
     if (error instanceof HttpError) {
       throw error;
