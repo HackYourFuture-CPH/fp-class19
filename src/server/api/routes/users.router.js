@@ -133,4 +133,58 @@ router.get('/:id/favorites/', (req, res, next) => {
     .catch(next);
 });
 
+/**
+ * @swagger
+ * /user/{ID}:
+ *  patch:
+ *    tags:
+ *    - User
+ *    summary: Edit/update user
+ *    description:
+ *      Will edit/update the user's information.
+ *    produces: application/json
+ *    parameters:
+ *      - in: path
+ *        name: ID
+ *        description: ID of the module to patch.
+ *      - in: body
+ *        name: user profile inputs
+ *        description: edit/update the user's information.
+ *        schema:
+ *          type: object
+ *          properties:
+ *            full_name:
+ *               type: string
+ *            email:
+ *               type: string
+ *            address:
+ *               type: string
+ *            zipcode:
+ *               type: string
+ *            city:
+ *               type: string
+ *            country:
+ *               type: string
+ *            mobile:
+ *               type: string
+ *            updated_at:
+ *               type: string
+ *               format: date-time
+ *    responses:
+ *      200:
+ *        description: User was patched
+ *      400:
+ *        description: User Id should be a number
+ *      404:
+ *        description: The user ID you provided does not exist
+ *      5XX:
+ *        description: Unexpected error.
+ */
+router.patch('/:id', (req, res, next) => {
+  usersController
+    .updateUser(req.params.id, req.body, res)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
 module.exports = router;

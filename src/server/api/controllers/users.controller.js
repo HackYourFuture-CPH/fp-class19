@@ -58,8 +58,39 @@ const getUserFavorites = async (user_id) => {
     return error.message;
   }
 };
+
+
+const updateUser = async (userId, updatedUser) => {
+  if (isNaN(userId) || !userId) {
+    throw new HttpError('User Id should be a number', 400);
+  }
+
+  try {
+    const updatedAt = moment().format();
+    const updatedRows = await knex('users').where({ id: userId }).update({
+      full_name: updatedUser.full_name,
+      email: updatedUser.email,
+      address: updatedUser.address,
+      zipcode: updatedUser.zipcode,
+      city: updatedUser.city,
+      country: updatedUser.country,
+      mobile: updatedUser.mobile,
+      updated_at: updatedAt,
+    });
+
+    const NO_ROWS_UPDATED = 0;
+    if (updatedRows === NO_ROWS_UPDATED) {
+      throw new HttpError(`User with ID: ${userId} not found`, 404);
+    }
+    return { message: `User with ID: ${userId} updated at ${updatedAt}` };
+  } catch (error) {
+    return error.message;
+  }
+};
+
 module.exports = {
   createUser,
   getUserFavorites,
   getUserById,
+  updateUser,
 };
