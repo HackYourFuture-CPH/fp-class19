@@ -2,12 +2,18 @@ const knex = require('../../config/db');
 const HttpError = require('../lib/utils/http-error');
 
 const getOrdersByUserId = async (raw_user_id) => {
-  const user_id = parseInt(raw_user_id, 10);
+  const user_id = +raw_user_id;
 
   if (isNaN(user_id) || user_id < 1) {
     throw new HttpError('The ID should be a number', 400);
   }
   try {
+    const user = await knex('users').select('id').where('id', '=', user_id);
+
+    if (user.length === 0) {
+      throw new HttpError('The user ID you provided does not exist', 404);
+    }
+
     const orders = await knex('orders')
       .select(
         'orders.user_id',
@@ -23,10 +29,10 @@ const getOrdersByUserId = async (raw_user_id) => {
       .groupBy('orders.id')
       .count('orders.id as nr_of_items');
     if (orders.length === 0) {
-      throw new HttpError('The user ID you provided does not exist', 404);
+      throw new HttpError('The user have no orders yet', 404);
     }
 
-    return new HttpError('The user have no orders yet', 404);
+    return orders;
   } catch (error) {
     if (error instanceof HttpError) {
       throw error;
