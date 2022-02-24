@@ -4,7 +4,7 @@ const HttpError = require('../lib/utils/http-error');
 
 
 const getOrderById = async(raw__id) => {
-    const id = parseInt(raw__id, 5);
+    const id = parseInt(raw__id, 10);
     if (isNaN(id) || id < 1) {
         throw new HttpError(
             'Bad request. Order ID must be an integer and larger than 0',
