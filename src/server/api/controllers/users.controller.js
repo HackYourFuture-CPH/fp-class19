@@ -13,39 +13,34 @@ const createUser = async (body) => {
     country: body.country,
     created_at: moment(Date.now()).format(),
   });
-
   return {
     successful: true,
   };
 };
-
-const getUsers = async () => knex('users');
-
-const getUserById = async (id) => {
-  if (!id) {
+const getUserById = async (user_id) => {
+  const id = +user_id;
+  if (isNaN(id) || id < 1) {
     throw new HttpError('Bad request. Id should be a number', 400);
   }
-
   try {
     const users = await knex('users')
       .select('users.id as id', 'full_name', 'email', 'mobile', 'address')
       .where({ id });
     if (users.length === 0) {
-      throw new Error(`Specified ID does not existt`, 404);
+      throw new HttpError(`Specified ID does not exist`, 404);
     }
     return users;
   } catch (error) {
-    return error.message;
+    if (error instanceof HttpError) {
+      throw error;
+    }
+    throw new HttpError('Unexpected error', 500);
   }
 };
-
-// eslint-disable-next-line
 const getUserFavorites = async (user_id) => {
-  // eslint-disable-next-line
   if (!user_id) {
     throw new HttpError('User id should be a number', 400);
   }
-
   try {
     const favorites = await knex('favorites')
       .join('products', 'products.id', 'product_id')
@@ -53,8 +48,7 @@ const getUserFavorites = async (user_id) => {
       .where({ user_id })
       .distinct();
     if (favorites.length === 0) {
-      throw new Error(
-        // eslint-disable-next-line
+      throw new HttpError(
         `The favorite products for user ${user_id} is not found`,
         404,
       );
@@ -64,10 +58,8 @@ const getUserFavorites = async (user_id) => {
     return error.message;
   }
 };
-
 module.exports = {
   createUser,
   getUserFavorites,
-  getUsers,
   getUserById,
 };

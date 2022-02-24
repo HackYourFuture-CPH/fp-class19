@@ -33,7 +33,7 @@ router.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // Application routes
 router.use('/modules', modulesRouter);
 router.use('/products', productsRouter);
-router.use('/user', usersRouter);
+router.use('/users', usersRouter);
 router.use('/favorites', favoritesRouter);
 
 module.exports = router;

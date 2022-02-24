@@ -7,10 +7,10 @@ const usersController = require('../controllers/users.controller');
 
 /**
  * @swagger
- * /user:
+ * /users:
  *  post:
  *    tags:
- *    - User
+ *    - Users
  *    summary: Add a user
  *    description:
  *      Will add a user.
@@ -65,10 +65,10 @@ router.post('/', (req, res) => {
 
 /**
  * @swagger
- * /user/{ID}:
+ * /users/{ID}:
  *  get:
  *    tags:
- *    - User
+ *    - Users
  *    summary: Get user by ID
  *    description:
  *      Will return single user with a matching ID.
@@ -84,7 +84,7 @@ router.post('/', (req, res) => {
  *    responses:
  *      200:
  *        description: Successful request
- *      5XX:
+ *      500:
  *        description: Unexpected error
  *      400:
  *        description: Bad request. Id should be a number
@@ -100,10 +100,10 @@ router.get('/:id', (req, res, next) => {
 
 /**
  * @swagger
- * /user/{user_id}/favorites:
+ * /users/{user_id}/favorites:
  *  get:
  *    tags:
- *    - User
+ *    - Users
  *    summary: Get favorite products for a user
  *    description:
  *      Will return the favorite products for a user
