@@ -91,6 +91,8 @@ const getProductById = async(prod_id) => {
             if (error instanceof HttpError) {
                 throw error;
             }
+
+            throw new HttpError('Unexpected error', 500);
         }
     }
 };
