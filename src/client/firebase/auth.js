@@ -5,6 +5,9 @@ import {
   signInWithEmailAndPassword,
   signOut as firebaseSignout,
 } from 'firebase/auth';
+import { useAuthentication } from './../hooks/useAuthentication';
+
+
 
 function handleAuthErrors({ code, message }) {
   switch (code) {
@@ -42,8 +45,9 @@ export async function signIn({ email, password }) {
 
 export async function signUp({ email, password }) {
   try {
-    await createUserWithEmailAndPassword(getAuth(), email, password);
-    addUserToDatabase(auth.currentUser.uid);
+    await createUserWithEmailAndPassword(email, password);
+    const {user} = useAuthentication();
+    addUserToDatabase(user.uid);
     return true;
   } catch (error) {
     handleAuthErrors(error);
@@ -69,19 +73,21 @@ export function signOut() {
 export async function signInWithGoogle(auth, provider) {
   try {
     await auth.signInWithPopup(provider);
-    addUserToDatabase(auth.currentUser.uid);
+    const {user} = useAuthentication();
+    addUserToDatabase(user.uid);
     localStorage.setItem('user', JSON.stringify(auth.currentUser));
   } catch (error) {
     handleAuthErrors(error);
   }
 }
+
 function addUserToDatabase(userId) {
-  fetch(`api/users/${userId}`)
+  fetch(`api/user/${userId}`)
     .then(async (res) => res.json())
     .then((data) => {
       // if not present add new user id to database
       if (!data[0]) {
-        fetch('api/users', {
+        fetch('api/user', {
           method: 'POST',
           headers: {
             Accept: 'application/json',

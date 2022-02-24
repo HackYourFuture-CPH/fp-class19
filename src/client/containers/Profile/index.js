@@ -1,6 +1,5 @@
 import React from 'react';
 import Loader from '../../components/Loader/Loader.component';
-
 import { useAuthentication } from '../../hooks/useAuthentication';
 
 export default function Profile() {
@@ -13,7 +12,6 @@ export default function Profile() {
   return (
     <div>
       <h2>Welcome {user.email}</h2>
-
       <pre>
         {JSON.stringify(
           {
