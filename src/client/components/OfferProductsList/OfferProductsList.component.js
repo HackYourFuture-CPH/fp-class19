@@ -2,14 +2,7 @@ import React from 'react';
 import Product from '../SpecialOffers/OfferProductModel.component';
 import './OfferProductsList.styles.css';
 
-export default function OfferProducts({ products }) {
-  const addToCart = () => {
-    console.log('added to cart');
-  };
-  const addFavorites = () => {
-    console.log('added to favorites');
-  };
-
+export default function OfferProducts({ products, addToCart, addToFavorites }) {
   return (
     <div className="offer-products-container">
       <ul className="offer-products-list">
@@ -21,7 +14,7 @@ export default function OfferProducts({ products }) {
               price={product.price}
               discount={product.discount_percent}
               onClick={addToCart}
-              addToFavorites={addFavorites}
+              addToFavorites={addToFavorites}
             />
           </li>
         ))}
