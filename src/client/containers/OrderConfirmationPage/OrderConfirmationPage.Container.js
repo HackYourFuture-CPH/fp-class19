@@ -10,7 +10,7 @@ export default function OrderConfirmationPage() {
             THANK YOU FOR YOUR ORDER
           </h3>
           <p>
-            We have sent a receipt to the email
+            We have sent a receipt to your email
           </p>
         </div>
       </div>
