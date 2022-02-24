@@ -18,7 +18,7 @@ const createUser = async (body) => {
   };
 };
 const getUserById = async (user_id) => {
-  const id = +user_id;
+  const id = parseInt(user_id, 10);
   if (isNaN(id) || id < 1) {
     throw new HttpError('Bad request. Id should be a number', 400);
   }
