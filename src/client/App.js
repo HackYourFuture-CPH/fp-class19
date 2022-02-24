@@ -15,6 +15,8 @@ import Footer from './components/Footer/Footer.component';
 import './hooks/useProducts';
 import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
+import ShoppingCartPage from './containers/ShoppingCartPage/ShoppingCartPage.Container';
+
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -31,6 +33,9 @@ function App() {
         {/* Home page */}
         <Route exact path="/">
           <LandingPage />
+        </Route>
+        <Route exact path="/shoppingcart">
+          <ShoppingCartPage/>
         </Route>
         {/* AboutUs Page */}
         <Route exact path="/about-us">

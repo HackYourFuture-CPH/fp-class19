@@ -4,17 +4,20 @@ import './Products.styles.css';
 import Product from '../Product/Product.component';
 import Sort from '../Sort/Sort.component';
 
+
 export default function Products({ products }) {
   const [sortedProducts, setSortedProducts] = useState(products);
+  
 
   const addFavorites = () => {
     // eslint-disable-next-line no-console
     console.log('added to favorites');
   };
-  const addToCart = () => {
+    const addToCart = () => {
     // eslint-disable-next-line no-console
     console.log('added to cart');
-  };
+    };
+     
   return (
     <div className="products-component">
       <Sort products={products} setSortedProducts={setSortedProducts} />
@@ -24,11 +27,15 @@ export default function Products({ products }) {
           {sortedProducts.map((product) => (
             <li key={product.id} className="product-item">
               <Product
+                id={product.id}
                 image={product.picture}
                 name={product.name}
                 price={product.price}
+                currency={product.currency}
                 onClick={addToCart}
                 addToFavorites={addFavorites}
+                discount={product.discount_percent}
+                
               />
             </li>
           ))}

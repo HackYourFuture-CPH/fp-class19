@@ -1,30 +1,87 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ShoppingCartPage.styles.css';
+import ShoppingCart from '../../components/ShoppingCart/ShoppingCart.component';
 
-export const shoppingCart = [];
+export const InitialShoppingCart = [];
 
-// assuming name is unique in product. Later we should change product component to also include 
-// product id and then we should use that instead of name
-export const addToShoppingCart = function(nameParam, priceParam, currencyParam, quantityParam) {
-  console.log('in add to shopping cart');
-  
-  const result = shoppingCart.find( ({ name }) => name === nameParam );
-  console.log(result);
+export const addToShoppingCart = (
+  idParam,
+  imageParam,
+  nameParam,
+  priceParam,
+  currencyParam,
+  discountParam,
+  quantityParam,
+) => {
+  const result = InitialShoppingCart.find(({ id }) => id === idParam);
 
   if (result === undefined) {
     console.log('product does not exist in cart');
-    const product = {name:nameParam, price:priceParam, currency:currencyParam, quantity:quantityParam};
+    const product = {
+      id: idParam,
+      image: imageParam,
+      name: nameParam,
+      price: priceParam,
+      currency: currencyParam,
+      quantity: quantityParam,
+      discount: discountParam,
+    };
     console.log(product);
-    shoppingCart.push(product);
+    InitialShoppingCart.push(product);
   } else {
     console.log('product already exist in cart');
     result.quantity = result.quantity + quantityParam;
   }
 
+  console.log(InitialShoppingCart);
+
+  return InitialShoppingCart;
+};
+
+export const incrementFromShoppingCart = function (product, shoppingCart) {
+  console.log('in increment cart');
+  const result = shoppingCart.find(({ id }) => id === product.id);
+  result.quantity = result.quantity + 1;
   console.log(shoppingCart);
-  
+};
+export const decrementFromShoppingCart = function (product, shoppingCart) {
+  console.log('in decrement cart');
+  const result = shoppingCart.find(({ id }) => id === product.id);
+  result.quantity = result.quantity - 1;
+  console.log(shoppingCart);
+};
+
+export const removeFromShoppingCart = function (
+  product,
+  shoppingCart,
+  setShoppingCart,
+) {
+  console.log('in remove cart');
+  setShoppingCart((prev) => prev.filter((item) => item.id !== product.id));
+  const result = shoppingCart.find(({ id }) => id === product.id);
+  if (result === undefined) {
+    console.log('product does not exist in cart');
+  } else {
+    console.log('remove product from the cart');
+    const index = shoppingCart.indexOf(result);
+    if (index > -1) {
+      shoppingCart.splice(index, 1); // 2nd parameter means remove one item only
+      console.log(shoppingCart);
+    }
+  }
 };
 
 export default function ShoppingCartPage() {
-  return <div>Shopping Cart Page</div>;
+  const [shoppingCart, setShoppingCart] = useState(InitialShoppingCart);
+  return (
+    <div>
+      <h2 className="heading">Shopping Cart</h2>
+      <div className="shop-cart">
+        <ShoppingCart
+          shoppingCart={shoppingCart}
+          setShoppingCart={setShoppingCart}
+        />
+      </div>
+    </div>
+  );
 }
