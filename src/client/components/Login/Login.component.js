@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Goog from '../../assets/images/goog.png';
 import LogoPic from '../../assets/images/logo.png';
 import './Login.styles.css';
 import { Link, Redirect } from 'react-router-dom';
@@ -92,10 +91,18 @@ export default function Login() {
               Log In
             </button>
             <br />
+            
             <div>
-              <button onClick={handleLogin}>
-                <img src={Goog} alt="google-signin" className="google-login" />
-              </button>
+              <Link to="/google-signin">
+                <button type="button" onClick={handleLogin} className="btn2">
+                  <img
+                    className="img2"
+                    src="https://user-images.githubusercontent.com/81093589/153756548-dc0a4dea-edae-4836-8a4b-c0aece44111b.svg"
+                    alt="googlepic"
+                  />
+                  Log In with Google
+                </button>
+              </Link>
             </div>
 
             <div>
