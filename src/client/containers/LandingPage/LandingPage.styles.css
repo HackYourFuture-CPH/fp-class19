@@ -1,3 +1,5 @@
-div {
-  color: #687808;
+.sorting-div {
+  width: fit-content;
+  margin-right: 4%;
+  margin-left: auto;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import image1 from '*../../../src/client/assets/images/specialoffertopbanner.png';
+import image1 from '../../assets/images/specialoffertopbanner.png';
 import './SpecialOfferBanner.styles.css';
 
 function SpecialOfferBanner() {
