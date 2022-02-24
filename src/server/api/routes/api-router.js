@@ -37,5 +37,6 @@ router.use('/orders', ordersRouter);
 router.use('/products', productsRouter);
 router.use('/user', usersRouter);
 router.use('/favorites', favoritesRouter);
+router.use('/orders', ordersRouter);
 
 module.exports = router;

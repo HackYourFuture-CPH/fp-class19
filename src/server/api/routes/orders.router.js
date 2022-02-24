@@ -1,8 +1,8 @@
 const express = require('express');
+const ordersController = require('../controllers/orders.controller');
 
 const router = express.Router({ mergeParams: true });
-// controllers
-const ordersController = require('../controllers/orders.controller');
+
 /**
  * @swagger
  * /orders/{id}:
@@ -29,11 +29,39 @@ const ordersController = require('../controllers/orders.controller');
  *      5XX:
  *        description: Unexpected error.
  */
+
+module.exports = router;
 router.get('/:id', (req, res, next) => {
-    ordersController
-        .getOrderById(req.params.id)
-        .then((result) => res.json(result))
-        .catch(next);
+  ordersController
+    .getOrderById(req.params.id)
+    .then((result) => res.json(result))
+    .catch(next);
 });
 
 module.exports = router;
+
+/**
+ * @swagger
+ * /orders?user=user_id:
+ *  get:
+ *    tags:
+ *    - Orders
+ *    summary: Get orders by user ID
+ *    description:
+ *      Will return all orders for specific user.
+ *    produces: application/json
+ *    parameters:
+ *     - in: query
+ *       name: user_id
+ *       schema:
+ *         type: integer
+ *         required: true
+ *         description: Get all orders of specific user with user_id
+ */
+
+router.get('/', (req, res, next) => {
+  ordersController
+    .getOrdersByUserId(req.query.user_id)
+    .then((result) => res.json(result))
+    .catch(next);
+});
