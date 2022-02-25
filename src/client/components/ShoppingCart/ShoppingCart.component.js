@@ -10,11 +10,11 @@ export default function ShoppingCart(props) {
 
   return (
     <div>
-      <ul className="container">
+      <ul className="cart-container">
         {shoppingCart.map((product) => (
           <div>
             <li key={product.id}>
-              <div className="product_container">
+              <div className="cart-product-container">
                 <ShoppingCartImage product={product} />
                 <ModifyProductQuantity
                   product={product}

@@ -1,16 +1,16 @@
-.container {
+.cart-container {
   border: 2px solid rgb(187, 183, 183);
-  width: 650px;
+   width: 650px; 
   /* height: 350px; */
 
   margin: 0;
   padding: 0;
 }
 
-.product_container {
+.cart-product-container {
   display: flex;
   flex-direction: row;
-  width: 646px;
+   width: 646px; 
   padding: 30px;
   background-color: #fff;
   justify-content: space-around;
