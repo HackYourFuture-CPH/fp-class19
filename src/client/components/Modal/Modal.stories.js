@@ -9,14 +9,13 @@ function testFunction() {
 const Template = (args) => {
   return (
     <div>
-      <button>Test</button>
       <Modal {...args} />
     </div>
   );
 };
 export const tryToLogIn = Template.bind({});
 tryToLogIn.args = {
-  modalIsOpen: true,
+  modalIsOpen: testFunction,
   text: 'Kindly check your email to reset your password',
   cornerClose: true,
   btnLabel: 'Try To Log-In Again',
@@ -24,8 +23,7 @@ tryToLogIn.args = {
 };
 export const addedToCart = Template.bind({});
 addedToCart.args = {
-  modalIsOpen: true,
-
+  modalIsOpen: testFunction,
   text: 'ADDED TO THE CART',
   btnLabel: 'VIEW CART',
   cornerClose: false,
@@ -36,8 +34,7 @@ addedToCart.args = {
 };
 export const createdAccount = Template.bind({});
 createdAccount.args = {
-  modalIsOpen: true,
-
+  modalIsOpen: testFunction,
   text: 'Your Account has been created. ',
   cornerClose: false,
   btnFunction: testFunction,
