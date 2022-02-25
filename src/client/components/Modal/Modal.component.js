@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import './Modal.css';
+import React, { useState, useEffect } from 'react';
+import './Modal.styles.css';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button.component';
 import addedToCart from '../../assets/images/added_to_cart.png';
 export default function Modal({
+  modalIsOpen,
   text,
   cornerClose,
   btnLabel,
@@ -12,23 +13,22 @@ export default function Modal({
   btnFunction,
   secondBtnFunction,
 }) {
+  // const [isOpen, setIsOpen] = useState(false);
+  // const openAndCloseModal = () => {
+  //   setIsOpen(!isOpen);
+  // };
   const [isOpen, setIsOpen] = useState(false);
-  const openAndCloseModal = () => {
-    setIsOpen(!isOpen);
-  };
+  useEffect(() => {
+    setIsOpen(modalIsOpen);
+  }, [modalIsOpen]);
   return (
     <div>
-      {!isOpen && (
-        <button onClick={openAndCloseModal} label="open modal">
-          open modal
-        </button>
-      )}
       {isOpen && (
         <div className="modal-bg">
           <div className="modal">
             {cornerClose && (
               <button
-                onClick={openAndCloseModal}
+                onClick={() => setIsOpen(false)}
                 type="button"
                 className="closing-modal-button"
               >
@@ -66,7 +66,7 @@ export default function Modal({
 }
 
 Modal.propTypes = {
-  // show: PropTypes.bool.isRequired,
+  modalIsOpen: PropTypes.bool,
   text: PropTypes.string.isRequired,
   cornerClose: PropTypes.bool.isRequired,
   btnLabel: PropTypes.string.isRequired,
@@ -77,6 +77,7 @@ Modal.propTypes = {
 };
 Modal.defaultProps = {
   secondBtn: false,
+  modalIsOpen: false,
   modalIcon: false,
   secondBtnFunction: () => console.log('pass second button function'),
 };
