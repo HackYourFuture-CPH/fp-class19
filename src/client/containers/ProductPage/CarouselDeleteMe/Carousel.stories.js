@@ -1,17 +1,17 @@
 import React from 'react';
 import Carousel from './Carousel.component';
-import { PRODUCTS_FIXTURE } from '../../fixtures/products.fixture';
+// import { PRODUCTS_FIXTURE } from '../../fixtures/products.fixture';
 
 export default {
   title: 'Components / Carousel',
   component: Carousel,
 };
 
-/*eslint-disable */
-const Template = (args) => <Carousel {...args} />;
-/* eslint-enable */
-export const Default = Template.bind({});
-Default.args = {
-  products: PRODUCTS_FIXTURE,
-  show: 4,
-};
+// /*eslint-disable */
+// const Template = (args) => <Carousel {...args} />;
+// /* eslint-enable */
+// export const Default = Template.bind({});
+// Default.args = {
+//   products: PRODUCTS_FIXTURE,
+//   show: 4,
+// };
