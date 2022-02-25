@@ -26,11 +26,21 @@ const productsController = require('../controllers/products.controller');
  *         schema:
  *            type: integer
  *         description: The numbers of items to return
+ *       - in: query
+ *         name: sortKey
+ *         schema:
+ *            type: string
+ *         description: The name of the column that should be used for sorting
+ *       - in: query
+ *         name: sortOrder
+ *         schema:
+ *            type: string
+ *         description: The value for the ordering type asc/desc
  *    responses:
  *      200:
  *        description: Successful request
  *      400:
- *        description: Limit and offset should be a number
+ *        description: Type or value of parameters is incorrect
  *      5XX:
  *        description: Unexpected error.
  */

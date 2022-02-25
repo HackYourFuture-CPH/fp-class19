@@ -1,13 +1,19 @@
 exports.up = function (knex) {
   return knex.schema
     .createTable('orders', (table) => {
-      table.increments('id').unsigned().primary();
-
-      table.integer('user_id').notNullable().unsigned().references('users.id');
+      table.increments();
+      table
+        .integer('user_id')
+        .notNullable()
+        .unsigned()
+        .references('users.id')
+        .onDelete('CASCADE');
       table
         .enu('status', ['NEW', 'INPROGRESS', 'COMPLETED', 'CANCELLED'])
-        .notNullable();
-      table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
+        .notNullable()
+        .defaultTo('NEW');
+        table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
+        table.timestamp('updated_at').notNullable().defaultTo(knex.fn.now());
     })
     .then(() => {
       console.log('Orders Table is Created!');

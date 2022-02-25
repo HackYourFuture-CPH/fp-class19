@@ -3,26 +3,49 @@ const HttpError = require('../lib/utils/http-error');
 // const moment = require('moment-timezone');
 
 const getProducts = async (req) => {
-  let products = knex('products');
-  const { limit, offset } = req.query;
+  let { limit, offset, sortKey, sortOrder } = req.query;
+  const allowedSortKeys = new Set(['name', 'price']);
+  const allowedSortOrders = new Set(['asc', 'desc']);
 
-  if (!limit && !offset) {
-    return products;
+  limit = limit || 10;
+
+  offset = offset || 0;
+
+  sortKey = sortKey || 'name';
+
+  sortOrder = sortOrder || 'asc';
+
+  const invalidParams =
+    isNaN(limit) ||
+    limit <= 0 ||
+    isNaN(offset) ||
+    offset < 0 ||
+    !allowedSortKeys.has(sortKey) ||
+    !allowedSortOrders.has(sortOrder);
+
+  if (invalidParams) {
+    throw new HttpError('Type or value of parameters is incorrect', 400);
   }
 
-  if (limit && offset) {
-    products = products.limit(limit).offset(offset);
-  }
+  try {
+    const totalCount = (
+      await knex('products').count('id', { as: 'count' }).first()
+    ).count;
+    const products = await knex('products')
+      .limit(limit)
+      .offset(offset)
+      .orderBy(sortKey, sortOrder);
 
-  if (isNaN(limit) || isNaN(offset)) {
-    throw new HttpError('Limit and offset should be a number', 400);
+    return {
+      totalCount,
+      items: products,
+    };
+  } catch (error) {
+    return error.message;
   }
-
-  return products;
 };
 
-const getDiscountProducts = async () => {
-  return knex('products')
+const getDiscountProducts = async () => knex('products')
     .select(
       'id',
       'name',
@@ -36,7 +59,6 @@ const getDiscountProducts = async () => {
       'picture',
     )
     .where('products.is_on_discount', '=', '1');
-};
 
 const getProductById = async (id) => {
   if (!id) {
