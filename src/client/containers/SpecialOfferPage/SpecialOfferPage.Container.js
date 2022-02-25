@@ -1,12 +1,18 @@
-import React from 'react';
-import Loader from '../../components/Loader/Loader.component';
+import React, { useEffect, useState } from 'react';
 import './SpecialOfferPage.styles.css';
+import OfferProducts from '../../components/OfferProductsList/OfferProductsList.component';
 
 export default function SpecialOfferPage() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch('/api/products/on_discount')
+      .then((res) => res.json())
+      .then((json) => setData(json));
+  }, []);
   return (
     <div>
-      Special Offers are Loading...
-      <Loader />
+      <OfferProducts products={data} />
+      );
     </div>
   );
 }
