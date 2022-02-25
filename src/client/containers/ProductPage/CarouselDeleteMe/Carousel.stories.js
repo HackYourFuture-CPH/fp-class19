@@ -7,6 +7,7 @@ export default {
   component: Carousel,
 };
 
+// REMOVE THE COMMENT BLOCK BELOW LATER
 // /*eslint-disable */
 // const Template = (args) => <Carousel {...args} />;
 // /* eslint-enable */
