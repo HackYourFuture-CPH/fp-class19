@@ -74,12 +74,13 @@ Product.propTypes = {
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  currency: PropTypes.string.isRequired,
+  currency: PropTypes.string,
   addToFavorites: PropTypes.func,
   discount: PropTypes.number.isRequired,
 };
 
 Product.defaultProps = {
   addToFavorites: null,
+  currency:'DKK'
   
 };
