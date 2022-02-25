@@ -7,10 +7,10 @@ const usersController = require('../controllers/users.controller');
 
 /**
  * @swagger
- * /user:
+ * /users:
  *  post:
  *    tags:
- *    - User
+ *    - Users
  *    summary: Add a user
  *    description:
  *      Will add a user.
@@ -65,10 +65,45 @@ router.post('/', (req, res) => {
 
 /**
  * @swagger
- * /user/{user_id}/favorites:
+ * /users/{ID}:
  *  get:
  *    tags:
- *    - User
+ *    - Users
+ *    summary: Get user by ID
+ *    description:
+ *      Will return single user with a matching ID.
+ *    produces: application/json
+ *    parameters:
+ *     - in: path
+ *       name: ID
+ *       schema:
+ *         type: integer
+ *         required: true
+ *         description: The ID of the module to get
+ *
+ *    responses:
+ *      200:
+ *        description: Successful request
+ *      500:
+ *        description: Unexpected error
+ *      400:
+ *        description: Bad request. Id should be a number
+ *      404:
+ *        description: Specified ID does not exist
+ */
+router.get('/:id', (req, res, next) => {
+  usersController
+    .getUserById(req.params.id)
+    .then((result) => res.json(result))
+    .catch(next);
+});
+
+/**
+ * @swagger
+ * /users/{user_id}/favorites:
+ *  get:
+ *    tags:
+ *    - Users
  *    summary: Get favorite products for a user
  *    description:
  *      Will return the favorite products for a user
@@ -89,7 +124,7 @@ router.post('/', (req, res) => {
  *      400:
  *        description: Bad request. Incorrect user id.
  *      404:
- *        description: The favorite products for the specified user_id did not found
+ *        description: The favorite products for the specified user_id is not found
  */
 router.get('/:id/favorites/', (req, res, next) => {
   usersController
