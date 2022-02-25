@@ -30,7 +30,7 @@ export const addToShoppingCart = (
     InitialShoppingCart.push(product);
   } else {
     console.log('product already exist in cart');
-    result.quantity = result.quantity + quantityParam;
+    result.quantity += quantityParam;
   }
 
   console.log(InitialShoppingCart);
@@ -41,13 +41,13 @@ export const addToShoppingCart = (
 export const incrementFromShoppingCart = function (product, shoppingCart) {
   console.log('in increment cart');
   const result = shoppingCart.find(({ id }) => id === product.id);
-  result.quantity = result.quantity + 1;
+  result.quantity += 1;
   console.log(shoppingCart);
 };
 export const decrementFromShoppingCart = function (product, shoppingCart) {
   console.log('in decrement cart');
   const result = shoppingCart.find(({ id }) => id === product.id);
-  result.quantity = result.quantity - 1;
+  result.quantity -=  1;
   console.log(shoppingCart);
 };
 

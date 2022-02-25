@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './ShoppingCart.styles.css';
-import {
-  decrementFromShoppingCart,
-  incrementFromShoppingCart,
-} from '../../containers/ShoppingCartPage/ShoppingCartPage.Container';
+import {decrementFromShoppingCart,incrementFromShoppingCart,} from '../../containers/ShoppingCartPage/ShoppingCartPage.Container';
+  
 
-const ModifyProductQuantity = (props) => {
+
+function ModifyProductQuantity(props) {
   const { product, shoppingCart } = props;
 
   const [counter, setCounter] = useState(product.quantity);
@@ -61,7 +60,13 @@ ModifyProductQuantity.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string,
     quantity: PropTypes.number,
+  
   }),
+  shoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+ModifyProductQuantity.defaultProps = {
+  product: null,
 };
 
 export default ModifyProductQuantity;

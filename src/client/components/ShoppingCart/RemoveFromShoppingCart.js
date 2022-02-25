@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { removeFromShoppingCart } from '../../containers/ShoppingCartPage/ShoppingCartPage.Container';
 import './ShoppingCart.styles.css';
 
-const RemoveFromShoppingCart = (props) => {
+function RemoveFromShoppingCart(props) {
   const { product, shoppingCart, setShoppingCart } = props;
 
   const removeProductFromShoppingcart = () => {
@@ -48,7 +48,7 @@ const RemoveFromShoppingCart = (props) => {
       </div>
     </div>
   );
-};
+}
 
 RemoveFromShoppingCart.propTypes = {
   product: PropTypes.shape({
@@ -57,6 +57,12 @@ RemoveFromShoppingCart.propTypes = {
     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     name: PropTypes.string,
   }),
+  shoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setShoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+RemoveFromShoppingCart.defaultProps = {
+  product: null,
 };
 
 export default RemoveFromShoppingCart;

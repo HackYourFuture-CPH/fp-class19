@@ -20,7 +20,7 @@ export default function Products({ products }) {
      
   return (
     <div className="products-component">
-      <Sort products={products} setSortedProducts={setSortedProducts} />
+      <Sort products={products} setSortedProducts={setSortedProducts} /> 
 
       <div>
         <ul className="product-list">
@@ -32,24 +32,28 @@ export default function Products({ products }) {
                 name={product.name}
                 price={product.price}
                 currency={product.currency}
-                onClick={addToCart}
                 addToFavorites={addFavorites}
                 discount={product.discount_percent}
+                onClick={addToCart}
                 
               />
             </li>
           ))}
         </ul>
-      </div>
+      </div> 
     </div>
   );
 }
 
 Products.propTypes = {
   products: PropTypes.shape({
+    id: PropTypes.number,
     picture: PropTypes.string,
     name: PropTypes.string,
     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    image: PropTypes.string,
+    discount:PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    currency:PropTypes.string
   }),
 };
 

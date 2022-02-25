@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ShoppingCart.styles.css';
 
-const ShoppingCartImage = (props) => {
+function ShoppingCartImage (props)  {
   const { product } = props;
   return (
     <div className="image-discount-box">
@@ -28,8 +28,13 @@ const ShoppingCartImage = (props) => {
 ShoppingCartImage.propTypes = {
   product: PropTypes.shape({
     discount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    image: PropTypes.string,
+    image: PropTypes.string
   }),
+};
+
+
+ShoppingCartImage.defaultProps = {
+  product: null,
 };
 
 export default ShoppingCartImage;

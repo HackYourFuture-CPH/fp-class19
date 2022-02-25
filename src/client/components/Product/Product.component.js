@@ -21,9 +21,8 @@ export default function Product({
   name,
   price,
   currency,
-  discount,
   addToFavorites,
-  onClick,
+  discount,  
 }) {
   const addProductToShoppingCart = () => {
     console.log('in addProductToShoppingCart');
@@ -71,18 +70,16 @@ export default function Product({
 }
 
 Product.propTypes = {
+  id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  currency: PropTypes.string,
-  onClick: PropTypes.func,
+  currency: PropTypes.string.isRequired,
   addToFavorites: PropTypes.func,
-  id: PropTypes.number,
-  discount: PropTypes.number,
+  discount: PropTypes.number.isRequired,
 };
 
 Product.defaultProps = {
-  onClick: null,
   addToFavorites: null,
-  currency: 'DKK',
+  
 };
