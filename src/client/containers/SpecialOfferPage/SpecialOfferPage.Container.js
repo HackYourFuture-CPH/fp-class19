@@ -22,13 +22,16 @@ export default function SpecialOfferPage() {
   };
 
   return (
-    <div>
-      <OfferProducts products={getCurrentProducts(currentPageIndex + 1)} />
-      <Pagination
-        currentPageIndex={currentPageIndex}
-        pageCount={totalPages}
-        setCurrentPageIndex={setCurrentPageIndex}
-      />
+    <div className="container">
+      <h1>SPECIAL OFFERS</h1>
+      <div>
+        <OfferProducts products={getCurrentProducts(currentPageIndex + 1)} />
+        <Pagination
+          currentPageIndex={currentPageIndex}
+          pageCount={totalPages}
+          setCurrentPageIndex={setCurrentPageIndex}
+        />
+      </div>
     </div>
   );
 }
