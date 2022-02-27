@@ -28,6 +28,14 @@ exports.up = function (knex) {
     table.string('picture').defaultTo('https://via.placeholder.com/500x500');
     table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
     table.timestamp('updated_at').notNullable().defaultTo(knex.fn.now());
+    table
+      .integer('family_id')
+      .unsigned()
+      .references('id')
+      .inTable('families')
+      .notNullable()
+      .onDelete('CASCADE')
+      .index();
   });
 };
 
