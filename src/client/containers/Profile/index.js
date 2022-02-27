@@ -2,28 +2,37 @@ import React, { useState, useEffect } from 'react';
 import Loader from '../../components/Loader/Loader.component';
 import { useAuthentication } from '../../hooks/useAuthentication';
 
-
 export default function Profile() {
-  const [userData, setUserData]=useState([])
+  const [profileData, setProfileData] = useState(null);
+  const [profileIsLoading, setProfileLoading] = useState(true);
   const { user, isLoading } = useAuthentication();
 
   useEffect(() => {
-    const id="TestUser5";
-    fetch(`api/users/${id}`)
-    .then((res) => res.json())
-    .then((data) => {
-      if(!data[0]){
-        throw new Error('Could not check if user present in Database:', 404);
-      }
-      setUserData(data)})
-    .catch((error) => {
-      if (error instanceof Error) {
-        throw error;
+    if (!user?.uid) {
+      return;
     }
-    throw new Error('Unexpected error', 500);
-    });
-  },[]);
-console.log({userData});
+
+    setProfileLoading(true);
+
+    fetch(`/api/users/${user.uid}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data[0]) {
+          throw new Error('Could not check if user present in Database:', 404);
+        }
+
+        console.log(data);
+        setProfileData(data[0]);
+      })
+      .catch((error) => {
+        if (error instanceof Error) {
+          throw error;
+        }
+        throw new Error('Unexpected error', 500);
+      })
+      .finally(() => setProfileLoading(false));
+  }, [user]);
+
   if (isLoading) {
     return <Loader />;
   }
@@ -43,9 +52,20 @@ console.log({userData});
         )}
       </pre>
 
-      
-{/* <h2>Welcome {userData}</h2>
-<p>uid: {userData.uid} <br/> Email: {userData.email} </p> */}
+      {!profileIsLoading && profileData && (
+        <>
+          <h2>Welcome {profileData.name}</h2>
+          <p>
+            email: {profileData.email} <br /> Address: {profileData.address}{' '}
+          </p>
+        </>
+      )}
+
+      {!profileIsLoading && !profileData && (
+        <>
+          <h2>Profile does not exist</h2>
+        </>
+      )}
     </div>
   );
 }
