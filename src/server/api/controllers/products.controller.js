@@ -57,6 +57,7 @@ const getDiscountProducts = async () => knex('products')
       'is_on_discount',
       'discount_percent',
       'picture',
+      'family_id',
     )
     .where('products.is_on_discount', '=', '1');
 
@@ -78,6 +79,7 @@ const getProductById = async (id) => {
         'is_on_discount',
         'discount_percent',
         'picture',
+        'family_id',
       )
       .where({ id });
     if (products.length === 0) {
