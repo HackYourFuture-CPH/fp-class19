@@ -8,10 +8,11 @@ import { useFirebase } from '../../firebase/FirebaseContext';
 import Loader from '../Loader/Loader.component';
 import { useAuthentication } from '../../hooks/useAuthentication';
 
+
 export default function Login() {
   const { isAuthenticated } = useAuthentication();
   const [isLoading, setIsLoading] = useState(false);
-  const { signIn, signInWithGoogle } = useFirebase();
+  const { signIn} = useFirebase();
 
   const [passwordVisible, makePasswordVisible] = React.useState(false);
   const changeShown = () => {
@@ -33,8 +34,8 @@ export default function Login() {
   };
 
   const handleLogin = async () => {
-    history.push('/');
-    await signInWithGoogle();
+    /* history.push('/');
+    await signInWithGoogle({auth,provider}); */
   };
 
   if (isAuthenticated) {
