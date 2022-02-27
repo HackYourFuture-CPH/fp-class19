@@ -1,3 +1,32 @@
-div {
-  color: #687808;
+.createAccountContainer {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+}
+
+.create-account-image {
+  background-image: url('../../assets/images/image_15.png');
+  background-size: cover;
+  max-width: 280px;
+  max-height: 820px;
+}
+
+@media (max-width: 960px) {
+  .createAccountContainer {
+    margin: 2%;
+  }
+
+  .create-account-image {
+    max-width: 230px;
+  }
+}
+
+@media (max-width: 770px) {
+  .createAccountContainer {
+    margin: 2%;
+  }
+
+  .create-account-image {
+    display: none;
+  }
 }

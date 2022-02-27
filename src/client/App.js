@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useAuthentication } from './hooks/useAuthentication';
 import LandingPage from './containers/LandingPage/LandingPage.container';
 import SignIn from './containers/SignIn';
-import SignUp from './containers/SignUp';
 import ResetPassword from './containers/ResetPassword';
 import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
 import Profile from './containers/Profile';
@@ -17,6 +16,7 @@ import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
 import Page404Container from './containers/404Page/404Page.Container';
 import ForgotPasswordPage from './containers/ForgotPasswordPage/ForgotPasswordPage.container';
+import CreateAccountPage from './containers/CreateAccountPage/CreateAccountPage.container';
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -45,7 +45,7 @@ function App() {
 
         {/* Anonymous pages */}
         <SignIn exact path="/sign-in" />
-        <SignUp exact path="/sign-up" />
+        <CreateAccountPage exact path="/sign-up" />
         <ResetPassword exact path="/reset-password" />
         <LogInPage exact path="/log-in" />
         <ForgotPasswordPage exact path="/forgot-password" />
