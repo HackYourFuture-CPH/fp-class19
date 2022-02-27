@@ -6,39 +6,41 @@ export default { title: 'Components / Modal', component: Modal };
 function testFunction() {
   console.log('test function');
 }
-const Template = (args) => {
+function Template(args) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   function openModal() {
     setModalIsOpen(true);
   }
   return (
     <div>
-      <button onClick={openModal}>Open Modal</button>
+      <button onClick={openModal} type="button">
+        Open Modal
+      </button>
       {modalIsOpen && <Modal modalIsOpen={setModalIsOpen} {...args} />}
     </div>
   );
-};
+}
 export const tryToLogIn = Template.bind({});
 tryToLogIn.args = {
-  text: 'Kindly check your email to reset your password',
-  cornerClose: true,
-  btnLabel: 'Try To Log-In Again',
+  massage: 'Kindly check your email to reset your password',
+  cornerCloseBtn: true,
+  primaryBtnLabel: 'Try To Log-In Again',
   btnFunction: testFunction,
 };
 export const addedToCart = Template.bind({});
 addedToCart.args = {
-  text: 'ADDED TO THE CART',
-  btnLabel: 'VIEW CART',
-  cornerClose: false,
-  modalIcon: true,
-  secondBtn: true,
+  massage: 'ADDED TO THE CART',
+  primaryBtnLabel: 'VIEW CART',
+  cornerCloseBtn: false,
+  showConfirmIcon: true,
+  secondaryBtnLabel: 'CONTINUE SHOPPING',
   btnFunction: testFunction,
   secondBtnFunction: testFunction,
 };
 export const createdAccount = Template.bind({});
 createdAccount.args = {
-  text: 'Your Account has been created. ',
-  cornerClose: false,
+  massage: 'Your Account has been created. ',
+  cornerCloseBtn: false,
   btnFunction: testFunction,
-  btnLabel: 'Proceed to Log In',
+  primaryBtnLabel: 'Proceed to Log In',
 };
