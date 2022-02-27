@@ -21,6 +21,6 @@ const getFamilyById = async (id) => {
   }
 };
 module.exports = {
-  getfamilies,
+  getFamilies,
   getFamilyById,
 };
