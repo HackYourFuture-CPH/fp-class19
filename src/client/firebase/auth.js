@@ -5,6 +5,7 @@ import {
     signInWithEmailAndPassword,
     signOut as firebaseSignout,
 } from 'firebase/auth';
+import { useAuthentication } from '../hooks/useAuthentication';
 
 function handleAuthErrors({ code, message }) {
     switch (code) {
@@ -42,8 +43,9 @@ export async function signIn({ email, password }) {
 
 export async function signUp({ email, password }) {
     try {
-        await createUserWithEmailAndPassword(getAuth(), email, password);
-        addUserToDatabase(uid);
+        await createUserWithEmailAndPassword(email, password);
+        const { user } = useAuthentication();
+        addUserToDatabase(user.uid);
         return true;
     } catch (error) {
         handleAuthErrors(error);
@@ -85,6 +87,6 @@ function addUserToDatabase(uid) {
             }
         })
         .catch((e) => {
-            throw new Error('Could not check if user present in Database:', e);
+            throw new Error('Could not add user to Database:', e.message);
         });
 }
