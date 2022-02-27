@@ -76,7 +76,9 @@ export default function ShoppingCartPage() {
   return (
     <div>
       <h2 className="heading">Shopping Cart</h2>
-      <div className="shop-cart">
+      <div className="shop-cart"  style={{
+            display: shoppingCart.length > 0  ? 'inline-block' : 'none',
+          }}>
         <ShoppingCart
           shoppingCart={shoppingCart}
           setShoppingCart={setShoppingCart}
