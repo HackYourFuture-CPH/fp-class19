@@ -56,11 +56,7 @@
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
   border-left: 20px solid #687808;
-<<<<<<< HEAD
   border-right: 0px;
-=======
-  border-right: 0;
->>>>>>> 30ba61bf6a7a167753b4a2968cf4e93bcc0e7967
   background-color: transparent;
 }
 
@@ -74,20 +70,18 @@
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
   border-right: 20px solid #687808;
-<<<<<<< HEAD
   border-left: 0px;
-=======
-  border-left: 0;
->>>>>>> 30ba61bf6a7a167753b4a2968cf4e93bcc0e7967
   background-color: transparent;
 }
 
 .right-arrow {
   right: 0px;
+  cursor: pointer;
 }
 
 .left-arrow {
   left: 0px;
+  cursor: pointer;
 }
 
 @media (hover: none) and (pointer: coarse) {
