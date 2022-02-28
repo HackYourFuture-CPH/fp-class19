@@ -13,6 +13,7 @@ import Menu from './components/Menu/Menu.component';
 import LogInPage from './containers/LogInPage/LogInPage.Container';
 import Footer from './components/Footer/Footer.component';
 import './hooks/useProducts';
+import SpecialOfferPage from './containers/SpecialOfferPage/SpecialOfferPage.container';
 import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
 import ShoppingCartPage from './containers/ShoppingCartPage/ShoppingCartPage.Container';
@@ -35,8 +36,9 @@ function App() {
         <Route exact path="/">
           <LandingPage />
         </Route>
-        <Route exact path="/shoppingcart">
-          <ShoppingCartPage/>
+        {/* Special Offer Page */}
+        <Route exact path="/special-offers">
+          <SpecialOfferPage />
         </Route>
         {/* AboutUs Page */}
         <Route exact path="/about-us">
@@ -46,6 +48,11 @@ function App() {
         <Route exact path="/contact-us">
           <ContactUsPage />
         </Route>
+        {/* shoppingCart page */}
+        <Route exact path="/shopping-cart">
+          <ShoppingCartPage />
+        </Route>
+
 
         {/* Anonymous pages */}
         <SignIn exact path="/sign-in" />
