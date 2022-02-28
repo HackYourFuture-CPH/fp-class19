@@ -15,14 +15,14 @@ function RemoveFromShoppingCart(props) {
       // console.log('remove product from the cart');
       const index = shoppingCart.indexOf(result);
       if (index > -1) {
-        shoppingCart.splice(index, 1); // 2nd parameter means remove one item only
+        shoppingCart.splice(index, 1);
         // console.log(shoppingCart);
       }
     }
   };
 
   return (
-    <div>
+    <div className="add_cart_button">
       <div>
         <button
           className="close-button"
@@ -35,15 +35,17 @@ function RemoveFromShoppingCart(props) {
       <div className="discounted_price">
         <div
           style={{
-            display: props.product.discount !== 0 ? 'inline-block' : 'none',
+            display: product.discount !== 0 ? 'inline-block' : 'none',
             'text-decoration': 'line-through',
+            color: 'black',
           }}
         >
-          {props.product.currency} {props.product.price}
+          {product.currency} {product.price}
         </div>
         <div
           style={{
-            display: props.product.discount === 0 ? 'inline-block' : 'none',
+            display: product.discount === 0 ? 'inline-block' : 'none',
+            color: 'black',
           }}
         >
           {product.currency} {product.price}
@@ -51,6 +53,7 @@ function RemoveFromShoppingCart(props) {
         <div
           style={{
             display: product.discount !== 0 ? 'inline-block' : 'none',
+            color: 'black',
           }}
         >
           &nbsp;&nbsp;{product.currency}{' '}
