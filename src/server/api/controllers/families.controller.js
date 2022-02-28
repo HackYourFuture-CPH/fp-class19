@@ -1,9 +1,8 @@
 const knex = require('../../config/db');
 const HttpError = require('../lib/utils/http-error');
 
-const getFamilies = async () => {
-  return knex('families');
-};
+const getFamilies = async () => knex('families');
+
 
 const getFamilyById = async (id) => {
   if (!id) {
