@@ -32,8 +32,7 @@ exports.up = function (knex) {
       .unsigned()
       .references('families.id')
       .notNullable()
-      .onDelete('CASCADE')
-      .index();
+      .onDelete('CASCADE');
   });
 };
 
