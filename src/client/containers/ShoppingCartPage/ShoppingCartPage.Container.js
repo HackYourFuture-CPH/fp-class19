@@ -16,7 +16,7 @@ export const addToShoppingCart = (
   const result = InitialShoppingCart.find(({ id }) => id === idParam);
 
   if (result === undefined) {
-    console.log('product does not exist in cart');
+    // console.log('product does not exist in cart');
     const product = {
       id: idParam,
       image: imageParam,
@@ -26,49 +26,16 @@ export const addToShoppingCart = (
       quantity: quantityParam,
       discount: discountParam,
     };
-    console.log(product);
+    // console.log(product);
     InitialShoppingCart.push(product);
   } else {
-    console.log('product already exist in cart');
+    // console.log('product already exist in cart');
     result.quantity += quantityParam;
   }
 
-  console.log(InitialShoppingCart);
+  // console.log(InitialShoppingCart);
 
   return InitialShoppingCart;
-};
-
-export const incrementFromShoppingCart = function (product, shoppingCart) {
-  console.log('in increment cart');
-  const result = shoppingCart.find(({ id }) => id === product.id);
-  result.quantity += 1;
-  console.log(shoppingCart);
-};
-export const decrementFromShoppingCart = function (product, shoppingCart) {
-  console.log('in decrement cart');
-  const result = shoppingCart.find(({ id }) => id === product.id);
-  result.quantity -=  1;
-  console.log(shoppingCart);
-};
-
-export const removeFromShoppingCart = function (
-  product,
-  shoppingCart,
-  setShoppingCart,
-) {
-  console.log('in remove cart');
-  setShoppingCart((prev) => prev.filter((item) => item.id !== product.id));
-  const result = shoppingCart.find(({ id }) => id === product.id);
-  if (result === undefined) {
-    console.log('product does not exist in cart');
-  } else {
-    console.log('remove product from the cart');
-    const index = shoppingCart.indexOf(result);
-    if (index > -1) {
-      shoppingCart.splice(index, 1); // 2nd parameter means remove one item only
-      console.log(shoppingCart);
-    }
-  }
 };
 
 export default function ShoppingCartPage() {
@@ -76,13 +43,24 @@ export default function ShoppingCartPage() {
   return (
     <div>
       <h2 className="heading">Shopping Cart</h2>
-      <div className="shop-cart"  style={{
-            display: shoppingCart.length > 0  ? 'inline-block' : 'none',
-          }}>
+      <div
+        className="shop-cart"
+        style={{
+          display: shoppingCart.length > 0 ? 'inline-block' : 'none',
+        }}
+      >
         <ShoppingCart
           shoppingCart={shoppingCart}
           setShoppingCart={setShoppingCart}
         />
+      </div>
+      <div
+        className="empty-shop-cart"
+        style={{
+          display: shoppingCart.length === 0 ? 'inline-block' : 'none',
+        }}
+      >
+        There are no items in the shopping cart
       </div>
     </div>
   );

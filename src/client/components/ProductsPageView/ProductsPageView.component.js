@@ -9,10 +9,10 @@ export default function ProductsPageView({ products, productsPerPage }) {
   const [sortedProducts, setSortedProducts] = useState(products);
 
   const addFavorites = () => {
-    console.log('added to favorites');
+    // console.log('added to favorites');
   };
   const addToCart = () => {
-    console.log('added to cart');
+    // console.log('added to cart');
   };
 
   const [currentRange, setCurrentRange] = useState(

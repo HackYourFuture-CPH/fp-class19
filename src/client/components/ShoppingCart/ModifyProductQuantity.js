@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './ShoppingCart.styles.css';
-import {decrementFromShoppingCart,incrementFromShoppingCart,} from '../../containers/ShoppingCartPage/ShoppingCartPage.Container';
-  
-
 
 function ModifyProductQuantity(props) {
   const { product, shoppingCart } = props;
@@ -12,13 +9,21 @@ function ModifyProductQuantity(props) {
 
   const incrementCounter = () => {
     setCounter(counter + 1);
-    incrementFromShoppingCart(product, shoppingCart);
+
+    // console.log('in increment cart');
+    const result = shoppingCart.find(({ id }) => id === product.id);
+    result.quantity += 1;
+    // console.log(shoppingCart);
   };
 
   const decrementCounter = () => {
     if (counter > 1) {
       setCounter(counter - 1);
-      decrementFromShoppingCart(product, shoppingCart);
+
+      // console.log('in decrement cart');
+      const result = shoppingCart.find(({ id }) => id === product.id);
+      result.quantity -= 1;
+      // console.log(shoppingCart);
     } else {
       setCounter(1);
     }
@@ -54,13 +59,13 @@ function ModifyProductQuantity(props) {
       </div>
     </div>
   );
-};
+}
 
 ModifyProductQuantity.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string,
     quantity: PropTypes.number,
-  
+    id: PropTypes.number,
   }),
   shoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

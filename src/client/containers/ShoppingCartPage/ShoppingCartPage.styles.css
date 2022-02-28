@@ -10,3 +10,12 @@ div {
 .heading {
   text-align: center;
 }
+.empty-shop-cart {
+  font-size: large;
+  font-weight: bolder;
+  margin: 50px;
+  margin-left: 550px;
+  padding: 0;
+  width: 40%;
+  color: black;
+}

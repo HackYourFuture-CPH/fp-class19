@@ -39,5 +39,5 @@ export default function ShoppingCart(props) {
 
 ShoppingCart.propTypes = {
   shoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
-  setShoppingCart:PropTypes.arrayOf(PropTypes.object).isRequired,
+  setShoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

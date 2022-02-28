@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 
 export default function ProductsView({ products }) {
   const addFavorites = () => {
-    console.log('added to favorites');
+    // console.log('added to favorites');
   };
   const addToCart = () => {
-    console.log('added to cart');
+    // console.log('added to cart');
   };
   return (
     <div className="products-view">
@@ -37,7 +37,7 @@ export default function ProductsView({ products }) {
 
 
 ProductsView.propTypes = {
-  products: PropTypes.shape({
+  products: PropTypes.arrayOf(PropTypes.object),/* shape({
     id: PropTypes.number,
     picture: PropTypes.string,
     name: PropTypes.string,
@@ -45,7 +45,8 @@ ProductsView.propTypes = {
     image: PropTypes.string,
     discount:PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     currency:PropTypes.string
-  }),
+    elementsMap: instanceOf(Map).isRequired
+  }), */
 };
 
 ProductsView.defaultProps = {

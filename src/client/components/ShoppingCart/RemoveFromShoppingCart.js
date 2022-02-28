@@ -1,13 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { removeFromShoppingCart } from '../../containers/ShoppingCartPage/ShoppingCartPage.Container';
 import './ShoppingCart.styles.css';
 
 function RemoveFromShoppingCart(props) {
   const { product, shoppingCart, setShoppingCart } = props;
 
-  const removeProductFromShoppingcart = () => {
-    removeFromShoppingCart(product, shoppingCart, setShoppingCart);
+  const removeProductFromShoppingCart = () => {
+    //  console.log('in remove cart');
+    setShoppingCart((prev) => prev.filter((item) => item.id !== product.id));
+    const result = shoppingCart.find(({ id }) => id === product.id);
+    if (result === undefined) {
+      // console.log('product does not exist in cart');
+    } else {
+      // console.log('remove product from the cart');
+      const index = shoppingCart.indexOf(result);
+      if (index > -1) {
+        shoppingCart.splice(index, 1); // 2nd parameter means remove one item only
+        // console.log(shoppingCart);
+      }
+    }
   };
 
   return (
@@ -15,7 +26,7 @@ function RemoveFromShoppingCart(props) {
       <div>
         <button
           className="close-button"
-          onClick={removeProductFromShoppingcart}
+          onClick={removeProductFromShoppingCart}
           type="button"
         >
           X
@@ -56,6 +67,7 @@ RemoveFromShoppingCart.propTypes = {
     currency: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     name: PropTypes.string,
+    id: PropTypes.number,
   }),
   shoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
   setShoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
