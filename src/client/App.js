@@ -13,6 +13,7 @@ import Menu from './components/Menu/Menu.component';
 import LogInPage from './containers/LogInPage/LogInPage.Container';
 import Footer from './components/Footer/Footer.component';
 import './hooks/useProducts';
+import SpecialOfferPage from './containers/SpecialOfferPage/SpecialOfferPage.container';
 import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
 import Page404Container from './containers/404Page/404Page.Container';
@@ -33,6 +34,10 @@ function App() {
         {/* Home page */}
         <Route exact path="/">
           <LandingPage />
+        </Route>
+        {/* Special Offer Page */}
+        <Route exact path="/special-offers">
+          <SpecialOfferPage />
         </Route>
         {/* AboutUs Page */}
         <Route exact path="/about-us">
