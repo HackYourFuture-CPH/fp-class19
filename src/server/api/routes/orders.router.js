@@ -21,15 +21,18 @@ const ordersController = require('../controllers/orders.controller');
  *        description: create a new order for a user
  *        schema:
  *          type: object
+ *          required:
+ *            - user_id
+ *            - product_id
  *          properties:
  *            user_id:
- *              type: string
+ *              type: integer
  *            items:
  *              type: array
  *              items:
  *                type: object
  *                properties:
- *                  productId:
+ *                  product_id:
  *                    type: integer
  *                  quantity:
  *                    type: integer
@@ -40,10 +43,10 @@ const ordersController = require('../controllers/orders.controller');
  *        description: Unexpected error.
  */
 router.post('/', (req, res, next) => {
-  ordersController
-    .newOrder(req.body)
-    .then((result) => res.json(result))
-    .catch(next);
+    ordersController
+        .newOrder(req.body)
+        .then((result) => res.json(result))
+        .catch(next);
 });
 
 module.exports = router;
