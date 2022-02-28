@@ -22,14 +22,14 @@ function Template(args) {
 }
 export const tryToLogIn = Template.bind({});
 tryToLogIn.args = {
-  massage: 'Kindly check your email to reset your password',
+  message: 'Kindly check your email to reset your password',
   cornerCloseBtn: true,
   primaryBtnLabel: 'Try To Log-In Again',
   btnFunction: testFunction,
 };
 export const addedToCart = Template.bind({});
 addedToCart.args = {
-  massage: 'ADDED TO THE CART',
+  message: 'ADDED TO THE CART',
   primaryBtnLabel: 'VIEW CART',
   cornerCloseBtn: false,
   showConfirmIcon: true,
@@ -39,7 +39,7 @@ addedToCart.args = {
 };
 export const createdAccount = Template.bind({});
 createdAccount.args = {
-  massage: 'Your Account has been created. ',
+  message: 'Your Account has been created. ',
   cornerCloseBtn: false,
   btnFunction: testFunction,
   primaryBtnLabel: 'Proceed to Log In',

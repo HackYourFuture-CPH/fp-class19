@@ -7,7 +7,7 @@ import addedToCart from '../../assets/images/added_to_cart.png';
 
 export default function Modal({
   modalIsOpen,
-  massage,
+  message,
   cornerCloseBtn,
   primaryBtnLabel,
   showConfirmIcon,
@@ -28,7 +28,7 @@ export default function Modal({
             X
           </button>
         )}
-        <p className="modal-text">{massage}</p>
+        <p className="modal-text">{message}</p>
         {showConfirmIcon && (
           <img
             className="add_to_cart_modal_icon"
@@ -56,20 +56,9 @@ export default function Modal({
   );
 }
 
-// Modal.propTypes = {
-//   modalIsOpen: PropTypes.func.isRequired,
-//   massage: PropTypes.string.isRequired,
-//   cornerCloseBtn: PropTypes.bool.isRequired,
-//   btnLabel: PropTypes.string.isRequired,
-//   secondBtn: PropTypes.bool,
-//   showConfirmIcon: PropTypes.bool,
-//   btnFunction: PropTypes.func.isRequired,
-//   secondBtnFunction: PropTypes.func,
-//   secondBtnLabel: PropTypes.string,
-// };
 Modal.propTypes = {
   modalIsOpen: PropTypes.func.isRequired,
-  massage: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
   cornerCloseBtn: PropTypes.bool.isRequired,
   primaryBtnLabel: PropTypes.string.isRequired,
   showConfirmIcon: PropTypes.bool,
