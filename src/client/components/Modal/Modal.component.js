@@ -42,7 +42,7 @@ export default function Modal({
           primary={true}
           label={primaryBtnLabel}
           onClick={btnFunction}
-          style={{ margin: '20px' }}
+          style={{ marginBottom: '60px' }}
         />
         {secondaryBtnFunction && secondaryBtnLabel && (
           <Button
