@@ -3,22 +3,22 @@
     margin: 4%;
 }
 
-.confirmation-page .inner-div {
+.confirmation-page .page-content {
     background-color: #F6F8EB;
 }
 
-.confirmation-page .wrapper2 {
+.confirmation-page .follow-up-actions-box {
     text-align: center;
     margin-right: 30%;
 }
 
-.confirmation-page .wrapper {
+.confirmation-page .thank-you-box {
     width: 90%;
     text-align: center;
     padding-top: 8%;
 }
 
-.confirmation-page .wrapper-content {
+.confirmation-page .box-content {
     width: 90%;
     font-size: 1.2rem;
     padding: 4rem;
@@ -27,7 +27,7 @@
     color: black;
 }
 
-.confirmation-page .btn {
+.confirmation-page .continue-shopping-button {
     margin-top: 4rem;
     margin-left: 40%;
     border: 2px solid #687808;
@@ -39,7 +39,7 @@
     padding: 0.5rem 2rem;
 }
 
-.confirmation-page .btn2 {
+.confirmation-page .review-order-button {
     margin-top: 2rem;
     margin-left: 40%;
     border: 2px solid #687808;
@@ -52,6 +52,6 @@
     margin-bottom: 10%;
 }
 
-.wrapper-content>h3 {
+.box-content>h3 {
     margin: 2em;
 }
