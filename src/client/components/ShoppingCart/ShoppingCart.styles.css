@@ -1,8 +1,6 @@
 .cart-container {
   border: 2px solid rgb(187, 183, 183);
   width: 650px;
-  /* height: 350px; */
-
   margin: 0;
   padding: 0;
 }
@@ -13,7 +11,7 @@
   width: 646px;
   padding: 30px;
   background-color: #fff;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .image-discount-box {
@@ -58,7 +56,7 @@
   margin: 0 30px 40px 30px;
 }
 
-li {
+.cart-list {
   list-style: none;
 }
 
@@ -76,11 +74,11 @@ li {
 .name-counter-container {
   display: flex;
   flex-direction: column;
-
-  /* margin-top:160px; */
   padding: 5px;
   margin-top: auto;
   padding-left: 30px;
+  justify-content: space-between;
+  
 }
 
 .qty-text {
@@ -101,7 +99,7 @@ li {
   background: rgb(240, 236, 236);
   border: none;
   font-weight: bolder;
-  /* color: black; */
+  
 }
 
 .product_image {

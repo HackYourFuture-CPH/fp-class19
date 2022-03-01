@@ -13,7 +13,7 @@ export default function ShoppingCart(props) {
       <ul className="cart-container">
         {shoppingCart.map((product) => (
           <div>
-            <li key={product.id}>
+            <li key={product.id} className="cart-list"> 
               <div className="cart-product-container">
                 <ShoppingCartImage product={product} />
                 <ModifyProductQuantity
@@ -39,5 +39,5 @@ export default function ShoppingCart(props) {
 
 ShoppingCart.propTypes = {
   shoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
-  setShoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setShoppingCart: PropTypes.func.isRequired,
 };

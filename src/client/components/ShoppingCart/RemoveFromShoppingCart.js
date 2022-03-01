@@ -6,7 +6,7 @@ function RemoveFromShoppingCart(props) {
   const { product, shoppingCart, setShoppingCart } = props;
 
   const removeProductFromShoppingCart = () => {
-    //  console.log('in remove cart');
+    
     setShoppingCart((prev) => prev.filter((item) => item.id !== product.id));
     const result = shoppingCart.find(({ id }) => id === product.id);
     if (result === undefined) {
@@ -16,7 +16,7 @@ function RemoveFromShoppingCart(props) {
       const index = shoppingCart.indexOf(result);
       if (index > -1) {
         shoppingCart.splice(index, 1);
-        // console.log(shoppingCart);
+        
       }
     }
   };
@@ -36,7 +36,7 @@ function RemoveFromShoppingCart(props) {
         <div
           style={{
             display: product.discount !== 0 ? 'inline-block' : 'none',
-            'text-decoration': 'line-through',
+            textDecoration: 'line-through',
             color: 'black',
           }}
         >
