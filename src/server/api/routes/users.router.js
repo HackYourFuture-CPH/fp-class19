@@ -5,63 +5,67 @@ const router = express.Router({ mergeParams: true });
 // controllers
 const usersController = require('../controllers/users.controller');
 
-// /**
-//  * @swagger
-//  * /users:
-//  *  post:
-//  *    tags:
-//  *    - Users
-//  *    summary: Add a user
-//  *    description:
-//  *      Will add a user.
-//  *    produces: application/json
-//  *    parameters:
-//  *      - in: body
-//  *        name: User
-//  *        description: The user to add.
-//  *        schema:
-//  *          type: object
-//  *          items:
-//  *            $ref: '#/UserModel'
-//  *          example:
-//  *            { "full_name":  John Dean, "email": john@dean.com, "address" : Enghavevej 80, zipcode: 2300, "city": Copenhagen, "country" : Denmark }
-//  *
-//  *    responses:
-//  *      201:
-//  *        description: User added
-//  *      400:
-//  *        description: Bad request
-//  *      5XX:
-//  *        description: Unexpected error.
-//  *
-//  *  UserModel:
-//  *     type: object
-//  *     properties:
-//  *       full_name:
-//  *         type: string
-//  *       email:
-//  *         type: string
-//  *       address:
-//  *         type: string
-//  *       zipcode:
-//  *         type: integer
-//  *       city:
-//  *         type: string
-//  *       country:
-//  *         type: string
-//  */
-// router.post('/', (req, res) => {
-//     usersController
-//         .createUser(req.body)
-//         .then((result) => res.status(201).json(result))
-//         .catch((error) => {
-//             let responseMessage = '';
-//             if (error.code === 'ER_DUP_ENTRY') {
-//                 responseMessage = 'Sorry, the user already exists';
-//             }
-//             res.status(400).send(responseMessage).end();
-//         });
-// });
+/**
+ * @swagger
+ * /users:
+ *  post:
+ *    tags:
+ *    - Users
+ *    summary: adds a user
+ *    description:
+ *      Will create a user.
+ *    produces: application/json
+ *    parameters:
+ *      - in: body
+ *        name: user
+ *        description: To create a new user.
+ *        schema:
+ *          type: object
+ *          required:
+ *            - uid
+ *            - full_name
+ *            - email
+ *            - mobile
+ *            - address
+ *            - city
+ *            - country
+ *            - zipcode
+ *          properties:
+ *            uid:
+ *              type: string
+ *            full_name:
+ *              type: string
+ *            email:
+ *              type: string
+ *              format: email
+ *            mobile:
+ *              type: string
+ *            address:
+ *              type: string
+ *            city:
+ *              type: string
+ *            country:
+ *              type: string
+ *            zipcode:
+ *              type: string
+ *    responses:
+ *      200:
+ *        description: user created
+ *      5XX:
+ *        description: Unexpected error.
+ */
+router.post('/', (req, res) => {
+    usersController
+        .createUser(req.body)
+        .then((result) => res.status(201).json(result))
+        .catch((error) => {
+            let responseMessage = '';
+            if (error.code === 'ER_DUP_ENTRY') {
+                responseMessage = 'Sorry, the user already exists';
+            }
+            res.status(400).send(responseMessage).end();
+        });
+});
 
 /**
  * @swagger
@@ -136,21 +140,23 @@ router.get('/:id/favorites/', (req, res, next) => {
  * /user/{ID}:
  *  patch:
  *    tags:
- *    - User
- *    summary: Edit/update user
+ *    - Users
+ *    summary: update user profile
  *    description:
- *      Will edit/update the user's information.
+ *      Will update the user profile details.
  *    produces: application/json
  *    parameters:
  *      - in: path
  *        name: ID
- *        description: ID of the module to patch.
+ *        description: ID of the user to patch.
  *      - in: body
  *        name: user profile inputs
- *        description: edit/update the user's information.
+ *        description: edit and update the user's information.
  *        schema:
  *          type: object
  *          properties:
+ *            uid:
+ *               type: string
  *            full_name:
  *               type: string
  *            email:
@@ -227,11 +233,11 @@ router.patch('/:id', (req, res, next) => {
  *      5XX:
  *        description: Unexpected error.
  */
- router.post('/', (req, res, next) => {
+router.post('/', (req, res, next) => {
     usersController
-      .saveUser(req.body)
-      .then((result) => res.json(result))
-      .catch(next);
-  });
+        .saveUser(req.body)
+        .then((result) => res.json(result))
+        .catch(next);
+});
 
 module.exports = router;

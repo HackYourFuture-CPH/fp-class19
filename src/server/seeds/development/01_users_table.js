@@ -124,6 +124,18 @@ exports.seed = function(knex) {
                     created_at: knex.fn.now(),
                     updated_at: knex.fn.now(),
                 },
+                {
+                    uid: 'WJYC6hfZRlTrbCTGOmz2jEwYGZH2',
+                    full_name: 'Test User Dj',
+                    email: 'testuserdj@gmail.com',
+                    address: 'test address 1',
+                    mobile: '55223322',
+                    zipcode: '1234',
+                    city: 'Test City',
+                    country: 'Test Country',
+                    created_at: knex.fn.now(),
+                    updated_at: knex.fn.now(),
+                },
             ]),
         )
         .catch((error) => {
