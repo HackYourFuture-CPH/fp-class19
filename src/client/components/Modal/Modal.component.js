@@ -37,20 +37,28 @@ export default function Modal({
             style={{ margin: '20px' }}
           />
         )}
-
-        <Button
-          primary={true}
-          label={primaryBtnLabel}
-          onClick={btnFunction}
-          style={{ marginBottom: '60px' }}
-        />
-        {secondaryBtnFunction && secondaryBtnLabel && (
+        <div className="button-container , hi">
           <Button
-            label={secondaryBtnLabel}
-            onClick={secondaryBtnFunction}
-            style={{ margin: '20px' }}
+            primary={true}
+            label={primaryBtnLabel}
+            onClick={btnFunction}
+            style={{
+              marginBottom: '50px',
+              marginTop: '15px',
+            }}
           />
-        )}
+          {secondaryBtnFunction && secondaryBtnLabel && (
+            <Button
+              label={secondaryBtnLabel}
+              onClick={secondaryBtnFunction}
+              style={{
+                marginBottom: '20px',
+                marginTop: '-30px',
+                flexGrow: '2',
+              }}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

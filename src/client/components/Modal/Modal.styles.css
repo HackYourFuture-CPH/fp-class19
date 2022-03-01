@@ -42,3 +42,9 @@
   border: 2px solid;
   background-color: white;
 }
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: space-between;
+}
