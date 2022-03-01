@@ -13,10 +13,11 @@ export const addToShoppingCart = (
   discountParam,
   quantityParam,
 ) => {
+  
   const result = InitialShoppingCart.find(({ id }) => id === idParam);
 
   if (result === undefined) {
-    // console.log('product does not exist in cart');
+    
     const product = {
       id: idParam,
       image: imageParam,
@@ -26,20 +27,22 @@ export const addToShoppingCart = (
       quantity: quantityParam,
       discount: discountParam,
     };
-    // console.log(product);
+   
     InitialShoppingCart.push(product);
   } else {
-    // console.log('product already exist in cart');
+    
     result.quantity += quantityParam;
   }
 
-  // console.log(InitialShoppingCart);
+  
 
   return InitialShoppingCart;
 };
 
 export default function ShoppingCartPage() {
   const [shoppingCart, setShoppingCart] = useState(InitialShoppingCart);
+ 
+  
   return (
     <div>
       <h2 className="heading">Shopping Cart</h2>

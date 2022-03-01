@@ -37,17 +37,8 @@ export default function ProductsView({ products }) {
 
 
 ProductsView.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.object),/* shape({
-    id: PropTypes.number,
-    picture: PropTypes.string,
-    name: PropTypes.string,
-    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    image: PropTypes.string,
-    discount:PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    currency:PropTypes.string
-    elementsMap: instanceOf(Map).isRequired
-  }), */
-};
+  products: PropTypes.arrayOf(PropTypes.object),
+  };
 
 ProductsView.defaultProps = {
   products: null,

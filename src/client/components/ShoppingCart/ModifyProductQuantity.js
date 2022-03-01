@@ -10,20 +10,16 @@ function ModifyProductQuantity(props) {
   const incrementCounter = () => {
     setCounter(counter + 1);
 
-    // console.log('in increment cart');
     const result = shoppingCart.find(({ id }) => id === product.id);
     result.quantity += 1;
-    // console.log(shoppingCart);
   };
 
   const decrementCounter = () => {
     if (counter > 1) {
       setCounter(counter - 1);
 
-      // console.log('in decrement cart');
       const result = shoppingCart.find(({ id }) => id === product.id);
       result.quantity -= 1;
-      // console.log(shoppingCart);
     } else {
       setCounter(1);
     }
