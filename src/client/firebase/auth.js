@@ -82,7 +82,7 @@ function addUserToDatabase(id) {
           },
           body: JSON.stringify({
             uid: id.uid,
-            full_name: 'string',
+            full_name: "string",
             email: id.email,
             mobile: 0,
             address: 'string',
