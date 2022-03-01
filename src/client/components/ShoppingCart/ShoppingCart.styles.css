@@ -34,14 +34,15 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 38px;
-  height: 32px;
+  width: 40px;
+  height: 37px;
   background-color: #fff;
   opacity: 0.8;
   border: 1px solid #9b8d8d;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bolder;
   color: black;
+  padding: 5px;
 }
 
 .discounted_price {
