@@ -1,3 +1,57 @@
-div {
-  color: #687808;
+.confirmation-page {
+    align-items: center;
+    margin: 4%;
+}
+
+.confirmation-page .page-content {
+    background-color: #F6F8EB;
+}
+
+.confirmation-page .follow-up-actions-box {
+    text-align: center;
+    margin-right: 30%;
+}
+
+.confirmation-page .thank-you-box {
+    width: 90%;
+    text-align: center;
+    padding-top: 8%;
+}
+
+.confirmation-page .box-content {
+    width: 90%;
+    font-size: 1.2rem;
+    padding: 4rem;
+    margin-left: auto;
+    background-color: #fff;
+    color: black;
+}
+
+.confirmation-page .continue-shopping-button {
+    margin-top: 4rem;
+    margin-left: 40%;
+    border: 2px solid #687808;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
+    color: white;
+    background-color: #687808;
+    padding: 0.5rem 2rem;
+}
+
+.confirmation-page .review-order-button {
+    margin-top: 2rem;
+    margin-left: 40%;
+    border: 2px solid #687808;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
+    background-color: white;
+    color: #687808;
+    padding: 0.5rem 2rem;
+    margin-bottom: 10%;
+}
+
+.box-content>h3 {
+    margin: 2em;
 }
