@@ -18,6 +18,17 @@ const createUser = async (body) => {
     successful: true,
   };
 };
+
+const saveUser = async (data) => {
+    try {
+      await knex('users').insert(data);
+    } catch (error) {
+      if (error instanceof HttpError)
+        throw new HttpError(error.message, error.httpStatus);
+      return error.message;
+    }
+  };
+
 const getUserById = async (uid) => {
   try {
     const user = await knex('users')
@@ -89,4 +100,5 @@ module.exports = {
   getUserFavorites,
   getUserById,
   updateUser,
+  saveUser,
 };
