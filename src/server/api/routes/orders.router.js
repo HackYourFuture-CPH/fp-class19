@@ -43,10 +43,10 @@ const ordersController = require('../controllers/orders.controller');
  *        description: Unexpected error.
  */
 router.post('/', (req, res, next) => {
-    ordersController
-        .newOrder(req.body)
-        .then((result) => res.json(result))
-        .catch(next);
+  ordersController
+    .newOrder(req.body)
+    .then((result) => res.json(result))
+    .catch(next);
 });
 
 /**
@@ -101,6 +101,14 @@ router.get('/:id', (req, res, next) => {
  *         type: integer
  *         required: true
  *         description: Get all orders of specific user with user_id
+ *
+ *    responses:
+ *      200:
+ *        description: Successful request
+ *      404:
+ *        description: incorrect entry with the provided id
+ *      5XX:
+ *        description: Unexpected error.
  */
 
 router.get('/', (req, res, next) => {
