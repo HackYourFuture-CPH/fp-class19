@@ -45,7 +45,7 @@ export default function OfferProduct({
         </div>
       </div>
       <h2 className="offer-product-name">{name}</h2>
-      <div>
+      <div className='offer-product-price-discountPrice'>
         <h2>
           <span className="offer-product-price">
             {price} {currency}
