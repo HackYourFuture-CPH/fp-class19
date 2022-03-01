@@ -5,7 +5,7 @@ import {
   signInWithEmailAndPassword,
   signOut as firebaseSignout,
 } from 'firebase/auth';
-import { useAuthentication } from '../hooks/useAuthentication';
+
 
 function handleAuthErrors({ code, message }) {
   switch (code) {
