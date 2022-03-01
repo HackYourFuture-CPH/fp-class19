@@ -55,7 +55,7 @@ export async function signUp({ email, password }) {
 export async function resetPassword({ email }) {
   // [START sendpasswordemail]
   try {
-    await sendPasswordResetEmail(getAuth(), email);
+    await sendPasswordResetEmail( email);
     // Password Reset Email Sent!
     alert('Password Reset Email Sent!'); // eslint-disable-line no-alert
   } catch (error) {
