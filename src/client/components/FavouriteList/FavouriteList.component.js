@@ -5,12 +5,14 @@ import ProductImage from './ProductImage.js';
 import ProductQuantity from './ProductQuantity';
 import ProductCart from './ProductCart';
 
-export default function FavouriteList({ productList }) {
+export default function FavouriteList( props ) {
+  const {favorites,setFavorites}=props;
+  console.log(favorites)
   return (
-    <>
-      <h2 className="heading_div">Favourites</h2>
-      <ul className="container">
-        {productList.map((product) => (
+    <div>
+      {/* <h2 className="heading_div">Favourites</h2> */}
+      <ul className="favorite-container">
+        {favorites.map((product) => (
             <div>
               <li>
                 <div className="product_container">
@@ -26,10 +28,10 @@ export default function FavouriteList({ productList }) {
             </div>
           ))}
       </ul>
-    </>
+    </div>
   );
 }
 
 FavouriteList.propTypes = {
-  productList: PropTypes.objectOf(PropTypes.object).isRequired,
+  favorites: PropTypes.objectOf(PropTypes.object).isRequired,
 };
