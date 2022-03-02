@@ -23,24 +23,24 @@ function Template(args) {
 export const tryToLogIn = Template.bind({});
 tryToLogIn.args = {
   message: 'Kindly check your email to reset your password',
-  cornerCloseBtn: true,
-  primaryBtnLabel: 'Try To Log-In Again',
-  btnFunction: testFunction,
+  cornerCloseButton: true,
+  primaryButtonLabel: 'Try To Log-In Again',
+  buttonFunction: testFunction,
 };
 export const addedToCart = Template.bind({});
 addedToCart.args = {
   message: 'ADDED TO THE CART',
-  primaryBtnLabel: 'VIEW CART',
-  cornerCloseBtn: false,
+  primaryButtonLabel: 'VIEW CART',
+  cornerCloseButton: false,
   showConfirmIcon: true,
-  secondaryBtnLabel: 'CONTINUE SHOPPING',
-  btnFunction: testFunction,
-  secondBtnFunction: testFunction,
+  secondaryButtonLabel: 'CONTINUE SHOPPING',
+  buttonFunction: testFunction,
+  secondButtonFunction: testFunction,
 };
 export const createdAccount = Template.bind({});
 createdAccount.args = {
   message: 'Your Account has been created. ',
-  cornerCloseBtn: false,
-  btnFunction: testFunction,
-  primaryBtnLabel: 'Proceed to Log In',
+  cornerCloseButton: false,
+  buttonFunction: testFunction,
+  primaryButtonLabel: 'Proceed to Log In',
 };

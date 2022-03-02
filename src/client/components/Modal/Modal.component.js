@@ -8,18 +8,17 @@ import addedToCart from '../../assets/images/added_to_cart.png';
 export default function Modal({
   modalIsOpen,
   message,
-  cornerCloseBtn,
-  primaryBtnLabel,
+  cornerCloseButton,
+  primaryButtonLabel,
   showConfirmIcon,
-  btnFunction,
-
-  secondaryBtnFunction,
-  secondaryBtnLabel,
+  buttonFunction,
+  secondaryButtonFunction,
+  secondaryButtonLabel,
 }) {
   return (
-    <div className="modal-bg">
-      <div className="modal">
-        {cornerCloseBtn && (
+    <div className="modal-background">
+      <div className="modal-box">
+        {cornerCloseButton && (
           <button
             onClick={() => modalIsOpen(false)}
             type="button"
@@ -31,30 +30,33 @@ export default function Modal({
         <p className="modal-text">{message}</p>
         {showConfirmIcon && (
           <img
-            className="add_to_cart_modal_icon"
             src={addedToCart}
             alt="add to cart approved"
-            style={{ margin: '20px' }}
+            style={{ marginBottom: '25px', marginTop: '25px', width: '2.5rem' }}
           />
         )}
-        <div className="button-container , hi">
+        <div className="button-container">
           <Button
             primary={true}
-            label={primaryBtnLabel}
-            onClick={btnFunction}
+            label={primaryButtonLabel}
+            onClick={buttonFunction}
             style={{
-              marginBottom: '50px',
-              marginTop: '15px',
+              marginBottom: '40px',
+              marginTop: '30px',
+              width: 'fit-content',
+              borderRadius: '4px',
             }}
           />
-          {secondaryBtnFunction && secondaryBtnLabel && (
+          {secondaryButtonFunction && secondaryButtonLabel && (
             <Button
-              label={secondaryBtnLabel}
-              onClick={secondaryBtnFunction}
+              label={secondaryButtonLabel}
+              onClick={secondaryButtonFunction}
               style={{
-                marginBottom: '20px',
-                marginTop: '-30px',
                 flexGrow: '2',
+                paddingLeft: '70px',
+                paddingRight: '70px',
+                borderRadius: '4px',
+                marginBottom: '40px',
               }}
             />
           )}
@@ -67,15 +69,15 @@ export default function Modal({
 Modal.propTypes = {
   modalIsOpen: PropTypes.func.isRequired,
   message: PropTypes.string.isRequired,
-  cornerCloseBtn: PropTypes.bool.isRequired,
-  primaryBtnLabel: PropTypes.string.isRequired,
+  cornerCloseButton: PropTypes.bool.isRequired,
+  primaryButtonLabel: PropTypes.string.isRequired,
   showConfirmIcon: PropTypes.bool,
-  btnFunction: PropTypes.func.isRequired,
-  secondaryBtnFunction: PropTypes.func,
-  secondaryBtnLabel: PropTypes.string,
+  buttonFunction: PropTypes.func.isRequired,
+  secondaryButtonFunction: PropTypes.func,
+  secondaryButtonLabel: PropTypes.string,
 };
 Modal.defaultProps = {
-  secondaryBtnLabel: false,
+  secondaryButtonLabel: false,
   showConfirmIcon: false,
-  secondaryBtnFunction: () => console.log('pass second button function'),
+  secondaryButtonFunction: () => console.log('pass second button function'),
 };
