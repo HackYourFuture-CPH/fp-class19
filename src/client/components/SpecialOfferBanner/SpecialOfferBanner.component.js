@@ -12,7 +12,7 @@ function SpecialOfferBanner() {
         <h4>SPECIAL OFFERS</h4>
         <div className="offer-banner1">
           <div className="special-offer-link-container">
-            <a href="/SpecialOfferPage">Get Upto 50% OFF</a>
+            <a href="/special-offers">Get Upto 50% OFF</a>
           </div>
         </div>
       </div>
