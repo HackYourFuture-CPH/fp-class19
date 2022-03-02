@@ -4,14 +4,11 @@
   display: flex;
   flex-direction: column;
   width: 273px;
-<<<<<<< HEAD
   padding: 7px;
   border: 1px solid #c4c4c4;
   margin: 5px;
-=======
   height: 397;
   padding: 10px;
->>>>>>> develop
 }
 
 .product-name {
@@ -34,19 +31,19 @@
 
 .product-add-button {
   background: #687808;
-<<<<<<< HEAD
+
   color: #fff;
   font-size: 1.6rem;
   font-weight: bolder;
   border: none;
   border-radius: 0.3rem;
   padding: 0.5rem;
-=======
+
   color: #ffffff;
   font-size: 25px;
   padding-bottom: 5px;
->>>>>>> develop
 }
+.product-add-button:active { background-color: #414b0b; }
 
 .fav-button-div {
   margin: auto 1rem auto auto;
@@ -61,10 +58,8 @@
 .favorite-button {
   border: none;
   color: #687808;
-<<<<<<< HEAD
-  background-color: #fff;
-=======
-  background-color: #ffffff;
->>>>>>> develop
-}
 
+  background-color: #fff;
+
+  background-color: #ffffff;
+}
