@@ -44,7 +44,12 @@ const getUserFavorites = async (user_id) => {
   try {
     const favorites = await knex('favorites')
       .join('products', 'products.id', 'product_id')
-      .select('products.*')
+      .select(
+        'products.id',
+        'products.name',
+        'products.picture',
+        'products.price',
+      )
       .where({ user_id })
       .distinct();
     if (favorites.length === 0) {
@@ -58,7 +63,6 @@ const getUserFavorites = async (user_id) => {
     return error.message;
   }
 };
-
 
 const updateUser = async (userId, updatedUser) => {
   if (isNaN(userId) || !userId) {
