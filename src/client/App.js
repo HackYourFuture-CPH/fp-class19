@@ -2,11 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useAuthentication } from './hooks/useAuthentication';
 import LandingPage from './containers/LandingPage/LandingPage.container';
-import SignIn from './containers/SignIn';
-import SignUp from './containers/SignUp';
+import CreateAccountPage from './containers/CreateAccountPage';
 import ResetPassword from './containers/ResetPassword';
 import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
-import Profile from './containers/Profile';
+import UserProfilePage from './containers/UserProfilePage';
 import Loader from './components/Loader/Loader.component';
 import Header from './components/Header/Header.component';
 import Menu from './components/Menu/Menu.component';
@@ -53,15 +52,14 @@ function App() {
         </Route>
 
         {/* Anonymous pages */}
-        <SignIn exact path="/sign-in" />
-        <SignUp exact path="/sign-up" />
+        <CreateAccountPage exact path="/sign-up" />
         <ResetPassword exact path="/reset-password" />
         <LogInPage exact path="/log-in" />
         <ForgotPasswordPage exact path="/forgot-password" />
 
         {/* All routes below are authenticated routes - a user must login first */}
         <AuthenticatedRoute exact path="/profile">
-          <Profile />
+          <UserProfilePage />
         </AuthenticatedRoute>
         {/* this has to be bottom always.. pls dont move and dont keep under this any routes */}
         <Route path="*">
