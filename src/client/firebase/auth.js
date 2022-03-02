@@ -97,5 +97,6 @@ function addUserToDatabase(id) {
         })
         .catch((e) => {
             throw new Error('Could not add user to Database:', e.message);
-        });
+
+        })
 }
