@@ -1,12 +1,17 @@
 .product-container {
-  background-color: white;
+  background-color: #ffffff;
   box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   width: 273px;
+<<<<<<< HEAD
   padding: 7px;
   border: 1px solid #c4c4c4;
   margin: 5px;
+=======
+  height: 397;
+  padding: 10px;
+>>>>>>> develop
 }
 
 .product-name {
@@ -15,6 +20,7 @@
 }
 .product-price {
   color: black;
+  margin-bottom: 5px;
 }
 
 .add-fav-button {
@@ -28,12 +34,18 @@
 
 .product-add-button {
   background: #687808;
+<<<<<<< HEAD
   color: #fff;
   font-size: 1.6rem;
   font-weight: bolder;
   border: none;
   border-radius: 0.3rem;
   padding: 0.5rem;
+=======
+  color: #ffffff;
+  font-size: 25px;
+  padding-bottom: 5px;
+>>>>>>> develop
 }
 
 .fav-button-div {
@@ -41,7 +53,7 @@
 }
 
 .vector-bucket {
-  color: #fff;
+  color: #ffffff;
   margin-left: 20px;
   padding-top: 5px;
 }
@@ -49,5 +61,10 @@
 .favorite-button {
   border: none;
   color: #687808;
+<<<<<<< HEAD
   background-color: #fff;
+=======
+  background-color: #ffffff;
+>>>>>>> develop
 }
+
