@@ -76,7 +76,6 @@ router.post('/', (req, res, next) => {
  *        description: Unexpected error.
  */
 
-module.exports = router;
 router.get('/:id', (req, res, next) => {
   ordersController
     .getOrderById(req.params.id)
