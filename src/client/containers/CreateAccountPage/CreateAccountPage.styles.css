@@ -1,14 +1,18 @@
 .createAccountContainer {
   display: flex;
   justify-content: center;
-  margin: 5%;
+  margin: auto;
+  max-width: 980px;
 }
 
 .create-account-image {
   background-image: url('../../assets/images/image_15.png');
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
   max-width: 280px;
   max-height: 820px;
+  margin-left: 25px;
+  margin-top: 25px;
 }
 
 @media (max-width: 960px) {
@@ -17,13 +21,13 @@
   }
 
   .create-account-image {
-    max-width: 230px;
+    max-width: 200px;
   }
 }
 
 @media (max-width: 770px) {
   .createAccountContainer {
-    margin: 2%;
+    margin: 5% auto;
   }
 
   .create-account-image {

@@ -78,7 +78,6 @@ footer ul {
 
 .right-part-footer {
   display: flex;
-  padding-right: 3rem;
 }
 
 ::placeholder {
@@ -167,6 +166,9 @@ footer ul {
 
   .footer-text {
     padding: 1em;
+  }
+  .footer-list {
+    padding: 0;
   }
 
   footer ul {
