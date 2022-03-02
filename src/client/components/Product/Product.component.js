@@ -22,7 +22,7 @@ export default function Product({
   name,
   price,
   currency,
-  discount,
+  
   onClick,
   
 }) {
@@ -74,13 +74,14 @@ export default function Product({
 }
 
 Product.propTypes = {
+  id:PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   currency: PropTypes.string,
   onClick: PropTypes.func,
-  addToFavorites: PropTypes.func,
-  discount:PropTypes.number.isRequired
+  // addToFavorites: PropTypes.func.isRequired,
+  // discount:PropTypes.number.isRequired
 };
 
 Product.defaultProps = {
