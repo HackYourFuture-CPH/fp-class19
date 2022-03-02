@@ -16,11 +16,7 @@ import './hooks/useProducts';
 import SpecialOfferPage from './containers/SpecialOfferPage/SpecialOfferPage.container';
 import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
-<<<<<<< HEAD
 import ShoppingCartPage from './containers/ShoppingCartPage/ShoppingCartPage.Container';
-import Page404Container from './containers/404Page/404Page.Container';
-=======
->>>>>>> develop
 import ForgotPasswordPage from './containers/ForgotPasswordPage/ForgotPasswordPage.container';
 import OrderConfirmationPage from './containers/OrderConfirmationPage/OrderConfirmationPage.Container';
 import Page404Container from './containers/404Page/404Page.Container';
