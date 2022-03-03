@@ -22,14 +22,6 @@
   padding-bottom: 25px;
 }
 
-.modal-background:active {
-  display: flex;
-}
-
-.modal-background:visible {
-  opacity: 1;
-}
-
 .modal-text {
   font-size: 26px;
   color: black;
