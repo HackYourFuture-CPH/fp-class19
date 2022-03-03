@@ -7,7 +7,7 @@ import Button from '../Button/Button.component';
 export default function Modal({
   modalIsOpen,
   message,
-  cornerCloseButton,
+  modalIsCloseable,
   primaryButtonLabel,
   showIcon,
   buttonFunction,
@@ -17,7 +17,7 @@ export default function Modal({
   return (
     <div className="modal-background">
       <div className="modal-box">
-        {cornerCloseButton && (
+        {modalIsCloseable && (
           <button
             onClick={() => modalIsOpen(false)}
             type="button"
@@ -74,7 +74,7 @@ export default function Modal({
 Modal.propTypes = {
   modalIsOpen: PropTypes.func.isRequired,
   message: PropTypes.string.isRequired,
-  cornerCloseButton: PropTypes.bool.isRequired,
+  modalIsCloseable: PropTypes.bool.isRequired,
   primaryButtonLabel: PropTypes.string.isRequired,
   showIcon: PropTypes.string,
   buttonFunction: PropTypes.func.isRequired,

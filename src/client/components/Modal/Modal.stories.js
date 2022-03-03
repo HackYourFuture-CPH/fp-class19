@@ -24,7 +24,7 @@ function Template(args) {
 export const tryToLogIn = Template.bind({});
 tryToLogIn.args = {
   message: 'Kindly check your email to reset your password',
-  cornerCloseButton: true,
+  modalIsCloseable: true,
   primaryButtonLabel: 'Try To Log-In Again',
   buttonFunction: testFunction,
 };
@@ -32,7 +32,7 @@ export const addedToCart = Template.bind({});
 addedToCart.args = {
   message: 'ADDED TO THE CART',
   primaryButtonLabel: 'VIEW CART',
-  cornerCloseButton: false,
+  modalIsCloseable: false,
   showIcon: addedToCartImg,
   secondaryButtonLabel: 'CONTINUE SHOPPING',
   buttonFunction: testFunction,
@@ -41,7 +41,7 @@ addedToCart.args = {
 export const createdAccount = Template.bind({});
 createdAccount.args = {
   message: 'Your Account has been created. ',
-  cornerCloseButton: false,
+  modalIsCloseable: false,
   buttonFunction: testFunction,
   primaryButtonLabel: 'Proceed to Log In',
 };
