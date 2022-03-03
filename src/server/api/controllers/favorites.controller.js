@@ -3,7 +3,6 @@ const moment = require('moment-timezone');
 const HttpError = require('../lib/utils/http-error');
 
 const addToFavorites = async(body) => {
-    console.log('in add');
     await knex('favorites').insert({
         user_id: body.user_id,
         product_id: body.product_id,
