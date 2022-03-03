@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Pagination from '../Pagination/Pagination.component';
 import Product from '../Product/Product.component';
-import Sort from '../Sort/Sort.component';
+import Sort from '../SortComponent/SortComponent';
 import PropTypes from 'prop-types';
 import './ProductsPageView.styles.css';
 
