@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import SortComponent from './Sort.component';
 
 export default {
@@ -18,7 +17,6 @@ const template = ({ products }) => {
   });
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
 
-  const { products } = useState(products);
   return (
     <>
       <SortComponent
