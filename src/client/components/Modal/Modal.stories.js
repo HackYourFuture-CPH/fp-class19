@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
 import Modal from './Modal.component';
+import addedToCartImg from '../../assets/images/added_to_cart.png';
 
 export default { title: 'Components / Modal', component: Modal };
 function testFunction() {
@@ -32,7 +33,7 @@ addedToCart.args = {
   message: 'ADDED TO THE CART',
   primaryButtonLabel: 'VIEW CART',
   cornerCloseButton: false,
-  showConfirmIcon: true,
+  showIcon: addedToCartImg,
   secondaryButtonLabel: 'CONTINUE SHOPPING',
   buttonFunction: testFunction,
   secondButtonFunction: testFunction,

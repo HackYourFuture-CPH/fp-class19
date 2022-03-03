@@ -3,14 +3,13 @@ import React from 'react';
 import './Modal.styles.css';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button.component';
-import addedToCart from '../../assets/images/added_to_cart.png';
 
 export default function Modal({
   modalIsOpen,
   message,
   cornerCloseButton,
   primaryButtonLabel,
-  showConfirmIcon,
+  showIcon,
   buttonFunction,
   secondaryButtonFunction,
   secondaryButtonLabel,
@@ -28,12 +27,18 @@ export default function Modal({
           </button>
         )}
         <p className="modal-text">{message}</p>
-        {showConfirmIcon && (
-          <img
-            src={addedToCart}
-            alt="add to cart approved"
-            style={{ marginBottom: '25px', marginTop: '25px', width: '2.5rem' }}
-          />
+        {showIcon.length > 0 && (
+          <div>
+            <img
+              src={showIcon}
+              alt="add to cart approved"
+              style={{
+                marginBottom: '25px',
+                marginTop: '25px',
+                width: '2.5rem',
+              }}
+            />
+          </div>
         )}
         <div className="button-container">
           <Button
@@ -71,13 +76,13 @@ Modal.propTypes = {
   message: PropTypes.string.isRequired,
   cornerCloseButton: PropTypes.bool.isRequired,
   primaryButtonLabel: PropTypes.string.isRequired,
-  showConfirmIcon: PropTypes.bool,
+  showIcon: PropTypes.string,
   buttonFunction: PropTypes.func.isRequired,
   secondaryButtonFunction: PropTypes.func,
   secondaryButtonLabel: PropTypes.string,
 };
 Modal.defaultProps = {
   secondaryButtonLabel: false,
-  showConfirmIcon: false,
+  showIcon: '',
   secondaryButtonFunction: () => console.log('pass second button function'),
 };
