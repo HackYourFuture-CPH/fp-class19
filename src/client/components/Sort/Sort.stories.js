@@ -8,18 +8,25 @@ export default {
   argTypes: {
     products: { control: '' },
   },
-};
+}; 
 
 const template = ({ products }) => {
   // eslint-disable-next-line
-  const [sortedProducts, setSortedProducts] = useState(products);
+  const [sortingPreferences, setSortingPreferences] = useState({
+    sortKey: 'name',
+    sortOrder: 'asc',
+  });
+  const [currentPageIndex, setCurrentPageIndex] = useState(0);
+
+  const { products } = useState(products);
   return (
     <>
       <SortComponent
-        products={products}
-        setSortedProducts={setSortedProducts}
+        sortingPreferences={sortingPreferences}
+        setSortingPreferences={setSortingPreferences}
+        setCurrentPage={setCurrentPageIndex}
       />
-      {sortedProducts.map((product) => (
+      {products.map((product) => (
         <li key={product.id}>
           {product.name} - DKK {product.price}
         </li>
