@@ -1,6 +1,5 @@
 const knex = require('../../config/db');
 const HttpError = require('../lib/utils/http-error');
-// const moment = require('moment-timezone');
 
 const getProducts = async(req) => {
     let { limit, offset, sortKey, sortOrder } = req.query;
@@ -73,13 +72,14 @@ const getDiscountProducts = async() => {
     }
 };
 
-const getProductById = async(id) => {
-    if (!id) {
-        throw new HttpError('Id should be a number', 400);
+const getProductById = async(product_id) => {
+    const NUMBER_REGEXP = /^\d+$/g;
+    const id = parseInt(product_id, 10);
+    if (typeof product_id === 'string' && !product_id.match(NUMBER_REGEXP)) {
+        throw new HttpError('Bad request, Invalid id', 400);
     }
-
     try {
-        const products = await knex('products')
+        const product = await knex('products')
             .select(
                 'id',
                 'name',
@@ -93,12 +93,16 @@ const getProductById = async(id) => {
                 'picture',
             )
             .where({ id });
-        if (products.length === 0) {
-            throw new Error(`incorrect entry with the id of ${id}`, 404);
+        if (product.length === 0) {
+            throw new HttpError(`Product with id ${id} doesn't exist`, 404);
         }
-        return products;
+        return product[0];
     } catch (error) {
-        return error.message;
+        if (error instanceof HttpError) {
+            throw error;
+        }
+
+        throw new HttpError('Unexpected error', 500);
     }
 };
 

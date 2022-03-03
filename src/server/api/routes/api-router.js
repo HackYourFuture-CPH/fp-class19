@@ -35,7 +35,7 @@ router.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 router.use('/modules', modulesRouter);
 router.use('/orders', ordersRouter);
 router.use('/products', productsRouter);
-router.use('/user', usersRouter);
+router.use('/users', usersRouter);
 router.use('/favorites', favoritesRouter);
 router.use('/orders', ordersRouter);
 
