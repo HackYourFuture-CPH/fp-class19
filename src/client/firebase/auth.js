@@ -44,8 +44,8 @@ export async function signIn({ email, password }) {
 export async function signUp({ email, password }) {
     try {
         await createUserWithEmailAndPassword(getAuth(), email, password);
-        const { user } = useAuthentication();
-        addUserToDatabase(user.uid);
+        console.log(getAuth().currentUser);
+        addUserToDatabase(getAuth().currentUser);
         return true;
     } catch (error) {
         handleAuthErrors(error);
@@ -82,7 +82,7 @@ function addUserToDatabase(id) {
                     },
                     body: JSON.stringify({
                         uid: id.uid,
-                        full_name: 'string',
+                        full_name: "string",
                         email: id.email,
                         mobile: 0,
                         address: 'string',
@@ -97,6 +97,5 @@ function addUserToDatabase(id) {
         })
         .catch((e) => {
             throw new Error('Could not add user to Database:', e.message);
-
-        })
+        });
 }
