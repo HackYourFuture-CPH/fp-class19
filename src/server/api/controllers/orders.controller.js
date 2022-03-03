@@ -13,7 +13,7 @@ const newOrder = async ({ user_id, items }) => {
   if (items.length === 0) {
     throw new HttpError(`Order with the user id of ${userId} not found `, 404);
   }
-  // try {
+  try {
     const orderId = await knex('orders')
       .insert({
         user_id,
@@ -21,13 +21,12 @@ const newOrder = async ({ user_id, items }) => {
         status: 'NEW',
       })
       .returning('id');
-    console.log(orderId);
-    
+
     items.forEach(async (item) => {
       console.log(item);
       await knex('order_items').insert({
         order_id: orderId[0],
-        product_id: item.productId,
+        product_id: item.product_id,
         quantity: item.quantity,
       });
     });
@@ -35,13 +34,13 @@ const newOrder = async ({ user_id, items }) => {
     return {
       success: true,
     };
-  // } catch (error) {
-  //   if (error instanceof HttpError) {
-  //     console.log(error);
-  //     throw error;
-  //   }
-  //   throw new HttpError('Something went wrong', 500);
-  // }
+  } catch (error) {
+    if (error instanceof HttpError) {
+      console.log(error);
+      throw error;
+    }
+    throw new HttpError('Something went wrong', 500);
+  }
 };
 
 // Get Order by ID
