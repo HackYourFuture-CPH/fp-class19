@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Pagination.styles.css';
+
 export default function Pagination({
   currentPageIndex,
   pageCount,

@@ -21,7 +21,7 @@ const template = (args) => {
   React.useEffect(() => {
     setPropProducts(args.products);
     setCurrentRange(propProducts.slice(0, args.productsPerPage));
-  }, [propProducts, args.productsPerPage]);
+  }, [propProducts, args.productsPerPage, args.products]);
   return (
     <>
       {currentRange.map((product) => (
