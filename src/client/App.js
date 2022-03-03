@@ -17,6 +17,7 @@ import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
 import Page404Container from './containers/404Page/404Page.Container';
 import ForgotPasswordPage from './containers/ForgotPasswordPage/ForgotPasswordPage.container';
+import FavoritePage from './containers/FavoritePage/FavoritePage.Container';
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -42,6 +43,10 @@ function App() {
         <Route exact path="/contact-us">
           <ContactUsPage />
         </Route>
+        <Route exact path="/favorites">
+          <FavoritePage />
+        </Route>
+
 
         {/* Anonymous pages */}
         <SignIn exact path="/sign-in" />

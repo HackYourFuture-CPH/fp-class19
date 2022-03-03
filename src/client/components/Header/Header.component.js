@@ -22,7 +22,7 @@ export default function Header() {
       {/* ICONS */}
       <div className="icons-right">
         <img className="icons" src={faShoppingCart} alt="shopping-cart" />
-        <img className="icons" src={faHeart} alt="favorite" />
+        <Link to='favorites'><button type='button'><img className="icons" src={faHeart} alt="favorite" /></button></Link>
         <img className="icons" src={faUser} alt="login" />
 
         {isAuthenticated ? (
