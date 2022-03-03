@@ -1,6 +1,4 @@
 import './Header.styles.css';
-
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -44,11 +42,7 @@ export default function Header() {
   );
 }
 
-Header.propTypes = {
-  isAuthenticated: PropTypes.bool.isRequired,
-  username: PropTypes.string,
-  link: PropTypes.string,
-};
+
 
 Header.defaultProps = {
   username: 'username',
