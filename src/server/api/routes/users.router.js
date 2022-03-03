@@ -39,7 +39,7 @@ const usersController = require('../controllers/users.controller');
  *              type: string
  *              format: email
  *            mobile:
- *              type: string
+ *              type: integer
  *            address:
  *              type: string
  *            city:
@@ -47,7 +47,7 @@ const usersController = require('../controllers/users.controller');
  *            country:
  *              type: string
  *            zipcode:
- *              type: string
+ *              type: integer
  *    responses:
  *      200:
  *        description: user created
@@ -137,7 +137,7 @@ router.get('/:id/favorites/', (req, res, next) => {
 
 /**
  * @swagger
- * /user/{ID}:
+ * /users/{ID}:
  *  patch:
  *    tags:
  *    - Users
@@ -155,30 +155,21 @@ router.get('/:id/favorites/', (req, res, next) => {
  *        schema:
  *          type: object
  *          properties:
- *            uid:
- *               type: string
  *            full_name:
- *               type: string
- *            email:
- *               type: string
- *            address:
- *               type: string
- *            zipcode:
- *               type: string
- *            city:
- *               type: string
- *            country:
- *               type: string
+ *              type: string
  *            mobile:
- *               type: string
- *            updated_at:
- *               type: string
- *               format: date-time
+ *              type: integer
+ *            address:
+ *              type: string
+ *            city:
+ *              type: string
+ *            country:
+ *              type: string
+ *            zipcode:
+ *              type: integer
  *    responses:
  *      200:
  *        description: User was patched
- *      400:
- *        description: User Id should be a number
  *      404:
  *        description: The user ID you provided does not exist
  *      5XX:
@@ -191,53 +182,5 @@ router.patch('/:id', (req, res, next) => {
         .catch(next);
 });
 
-/**
- * @swagger
- * /users:
- *  post:
- *    tags:
- *    - Users
- *    summary: Save user information
- *    description:
- *      To Save new user to the DB
- *    produces: application/json
- *    parameters:
- *     - in: body
- *       name: user
- *       description: create a new user
- *       schema:
- *         type: object
- *         required: true
- *         description: user json object
- *         properties:
- *            uid:
- *              type: string
- *            full_name:
- *              type: string  
- *            email:
- *              type: string 
- *            mobile:
- *              type: integer 
- *            address:
- *              type: string
- *            zipcode:
- *              type: integer
- *            city:
- *              type: string
- *            country:
- *              type: string
- *
- *    responses:
- *      200:
- *        description: Successful request
- *      5XX:
- *        description: Unexpected error.
- */
-router.post('/', (req, res, next) => {
-    usersController
-        .saveUser(req.body)
-        .then((result) => res.json(result))
-        .catch(next);
-});
 
 module.exports = router;
