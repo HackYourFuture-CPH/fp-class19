@@ -13,11 +13,12 @@ import Menu from './components/Menu/Menu.component';
 import LogInPage from './containers/LogInPage/LogInPage.Container';
 import Footer from './components/Footer/Footer.component';
 import './hooks/useProducts';
+import SpecialOfferPage from './containers/SpecialOfferPage/SpecialOfferPage.container';
 import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
-import Page404Container from './containers/404Page/404Page.Container';
 import ForgotPasswordPage from './containers/ForgotPasswordPage/ForgotPasswordPage.container';
-import FavoritePage from './containers/FavoritePage/FavoritePage.Container';
+import OrderConfirmationPage from './containers/OrderConfirmationPage/OrderConfirmationPage.Container';
+import Page404Container from './containers/404Page/404Page.Container';
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -35,6 +36,10 @@ function App() {
         <Route exact path="/">
           <LandingPage />
         </Route>
+        {/* Special Offer Page */}
+        <Route exact path="/special-offers">
+          <SpecialOfferPage />
+        </Route>
         {/* AboutUs Page */}
         <Route exact path="/about-us">
           <AboutUsPage />
@@ -43,10 +48,9 @@ function App() {
         <Route exact path="/contact-us">
           <ContactUsPage />
         </Route>
-        <Route exact path="/favorites">
-          <FavoritePage />
+        <Route exact path="/order-confirmation">
+          <OrderConfirmationPage />
         </Route>
-
 
         {/* Anonymous pages */}
         <SignIn exact path="/sign-in" />
