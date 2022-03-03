@@ -12,13 +12,14 @@ export default {
 
 const template = (args) => {
   // eslint-disable-next-line
-  const [propProducts, setPropProducts] = useState(args.products);
+  const [propProducts, setPropProducts] = useState([]);
   // eslint-disable-next-line
   const [currentRange, setCurrentRange] = useState(
     args.products.slice(0, args.productsPerPage),
   );
   // eslint-disable-next-line
   React.useEffect(() => {
+    setPropProducts(args.products);
     setCurrentRange(propProducts.slice(0, args.productsPerPage));
   }, [propProducts, args.productsPerPage]);
   return (
@@ -29,16 +30,13 @@ const template = (args) => {
         </li>
       ))}
       {/* eslint-disable */}
-      <PaginationComponent
-        onPageChange={(range) => setCurrentRange(range)}
-        {...args}
-      />
+      <Pagination onPageChange={(range) => setCurrentRange(range)} {...args} />
     </>
   );
 };
 
 export const PaginationComponent = template.bind({});
-Pagination.args = {
+PaginationComponent.args = {
   products: [
     {
       id: 1,
@@ -54,7 +52,7 @@ Pagination.args = {
     },
     {
       id: 2,
-      name: 'Lilium “Pearl White”',
+      name: 'Lilium "Pearl White"',
       price: 88,
       color: 'purple',
       size: 'sm',
@@ -102,7 +100,7 @@ Pagination.args = {
     },
     {
       id: 6,
-      name: 'Anthurium “Red”',
+      name: 'Anthurium "Red"',
       price: 62,
       color: 'white',
       size: 'xxl',
@@ -126,7 +124,7 @@ Pagination.args = {
     },
     {
       id: 8,
-      name: 'Miltonia “Sunset”',
+      name: 'Miltonia "Sunset"',
       price: 78,
       color: 'blue',
       size: 'm',
@@ -162,7 +160,7 @@ Pagination.args = {
     },
     {
       id: 11,
-      name: 'Rosa “Pink”',
+      name: 'Rosa "Pink"',
       price: 99,
       color: 'pink',
       size: 'xxl',
@@ -174,7 +172,7 @@ Pagination.args = {
     },
     {
       id: 12,
-      name: 'Dahlia “Pink”',
+      name: 'Dahlia "Pink"',
       price: 115,
       color: 'pink',
       size: 's',
@@ -186,7 +184,7 @@ Pagination.args = {
     },
     {
       id: 13,
-      name: 'Rosa “Sweer honey”',
+      name: 'Rosa "Sweer honey"',
       price: 99,
       color: 'red',
       size: 'sm',
@@ -222,7 +220,7 @@ Pagination.args = {
     },
     {
       id: 16,
-      name: 'Anthurium “Pink”',
+      name: 'Anthurium "Pink"',
       price: 58,
       color: 'yellow',
       size: 'sm',
@@ -258,7 +256,7 @@ Pagination.args = {
     },
     {
       id: 19,
-      name: 'Helenium “Waltraut”',
+      name: 'Helenium "Waltraut"',
       price: 80,
       color: 'blue',
       size: 'sm',
@@ -270,7 +268,7 @@ Pagination.args = {
     },
     {
       id: 20,
-      name: 'Crocosmia “Mistral”',
+      name: 'Crocosmia "Mistral"',
       price: 85,
       color: 'orange',
       size: 'xxl',

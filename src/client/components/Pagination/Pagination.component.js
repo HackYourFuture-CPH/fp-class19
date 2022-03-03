@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Pagination.styles.css';
-
 export default function Pagination({
   currentPageIndex,
   pageCount,
@@ -18,7 +17,7 @@ export default function Pagination({
           type="button"
           key={number}
           onClick={() => setCurrentPageIndex(number - 1)}
-          className={(number-1) === currentPageIndex ? 'active' : null}
+          className={number - 1 === currentPageIndex ? 'active' : null}
         >
           {number}
         </button>
@@ -26,7 +25,6 @@ export default function Pagination({
     }
     return null;
   });
-
   return (
     <div className="pagination">
       <button
@@ -49,13 +47,12 @@ export default function Pagination({
     </div>
   );
 }
-
 Pagination.propTypes = {
   currentPageIndex: PropTypes.number,
-  pageCount: PropTypes.number.isRequired,
+  pageCount: PropTypes.number,
   setCurrentPageIndex: PropTypes.func.isRequired,
 };
-
 Pagination.defaultProps = {
   currentPageIndex: 0,
+  pageCount: 5,
 };
