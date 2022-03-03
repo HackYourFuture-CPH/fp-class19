@@ -58,28 +58,22 @@ const getUserFavorites = async(user_id) => {
 };
 
 const updateUser = async(userId, updatedUser) => {
-    if (!userId) {
-        throw new HttpError('Invalid User Id', 400);
-    }
-
     try {
-        const updatedAt = moment().format();
-        const updatedRows = await knex('users').where({ id: userId }).update({
+        const updatedRows = await knex('users').where({ uid: userId }).update({
             full_name: updatedUser.full_name,
-            email: updatedUser.email,
             mobile: updatedUser.mobile,
             address: updatedUser.address,
             city: updatedUser.city,
             country: updatedUser.country,
             zipcode: updatedUser.zipcode,
-            updated_at: updatedAt,
+            updated_at: moment(Date.now()).format(),
         });
 
         const NO_ROWS_UPDATED = 0;
         if (updatedRows === NO_ROWS_UPDATED) {
             throw new HttpError(`User with ID: ${userId} not found`, 404);
         }
-        return { message: `User with ID: ${userId} updated at ${updatedAt}` };
+        return { message: `User with ID: ${userId} updated` };
     } catch (error) {
         return error.message;
     }
