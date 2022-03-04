@@ -1,39 +1,45 @@
-import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 import './CreateAccountForm.styles.css';
 
 export default function CreateAccount() {
-  const [passwordShown, setPasswordShown] = useState(false);
-  const [confirmPasswordShown, setConfirmPasswordShown] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordConfirm, setPasswordConfirm] = useState('');
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
+  const [passwordMatch, setPasswordMatch] = useState();
+  const [fullName, setFullName] = useState('');
+  const [mobile, setMobile] = useState('');
+  const [address, setAddress] = useState('');
+  const [city, setCity] = useState('');
+  const [country, setCountry] = useState('');
+  const [zipCode, setZipCode] = useState('');
 
-  const handleSubmit = (e) => {
-    const formData = new FormData(e.target);
-    e.preventDefault();
-    
-    fetch('/api/users', {
-      method: 'POST',
-      body: {
-        full_name: formData.get('full_name'),
-        email: formData.get('email'),
-        mobile: Number(formData.get('mobile')),
-        address: formData.get('address'),
-        zipcode: Number(formData.get('zipcode')),
-        city: formData.get('city'),
-        country: formData.get('country')
-      },
-    });
-    console.log({
-      full_name: formData.get('full_name'),
-      email: formData.get('email'),
-      mobile: Number(formData.get('mobile')),
-      address: formData.get('address'),
-      zipcode: Number(formData.get('zipcode')),
-      city: formData.get('city'),
-      country: formData.get('country')
-    });
-}
+  useEffect(() => {
+    if (password !== passwordConfirm || !password || !passwordConfirm) {
+      setPasswordMatch(false);
+    }
+    if (password === passwordConfirm) {
+      setPasswordMatch(true);
+    }
+  }, [password, passwordConfirm]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const newUser = {
+      email,
+      password,
+      fullName,
+      mobile,
+      address,
+      city,
+      country,
+      zipCode,
+    };
+    console.log(newUser);
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -45,7 +51,8 @@ export default function CreateAccount() {
           <input
             type="email"
             name="email"
-            // value={email}
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
             required
           />
         </label>
@@ -53,14 +60,15 @@ export default function CreateAccount() {
           Password
           <div className="show-hide-password-container">
             <input
-              type={passwordShown ? 'text' : 'password'}
-              // name="password"
-              // value={password}
+              type={passwordVisible ? 'text' : 'password'}
+              name="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
               required
             />
             <FontAwesomeIcon
-              onClick={() => setPasswordShown(!passwordShown)}
-              icon={passwordShown ? faEye : faEyeSlash}
+              onClick={() => setPasswordVisible(!passwordVisible)}
+              icon={passwordVisible ? faEye : faEyeSlash}
             />
           </div>
         </label>
@@ -68,16 +76,18 @@ export default function CreateAccount() {
           Confirm Password
           <div className="show-hide-password-container">
             <input
-              type={confirmPasswordShown ? 'text' : 'password'}
-              // name="passwordConfirm"
-              // value={passwordConfirm}
+              type={confirmPasswordVisible ? 'text' : 'password'}
+              name="password"
+              value={passwordConfirm}
+              onChange={(event) => setPasswordConfirm(event.target.value)}
               required
             />
             <FontAwesomeIcon
-              onClick={() => setConfirmPasswordShown(!confirmPasswordShown)}
-              icon={confirmPasswordShown ? faEye : faEyeSlash}
+              onClick={() => setConfirmPasswordVisible(!confirmPasswordVisible)}
+              icon={confirmPasswordVisible ? faEye : faEyeSlash}
             />
           </div>
+          {(!passwordMatch && passwordConfirm) && <p style={{color:"red", fontSize: "12px"}}>Passowrd needs to match</p>}
         </label>
       </div>
       <div className="create-account-container">
@@ -86,17 +96,19 @@ export default function CreateAccount() {
           Full name
           <input
             type="text"
-            name="full_name"
-            // value={full_name}
+            name="fullName"
+            value={fullName}
+            onChange={(event) => setFullName(event.target.value)}
             required
           />
         </label>
-        <label htmlFor="mobile">
+        <label htmlFor="phone">
           Mobile
           <input
-            type="tel"
-            name="mobile"
-            // value={phoneNumber}
+            type="number"
+            name="phone"
+            value={mobile}
+            onChange={(event) => setMobile(event.target.value)}
             required
           />
         </label>
@@ -106,7 +118,8 @@ export default function CreateAccount() {
           <input
             type="text"
             name="address"
-            // value={address}
+            value={address}
+            onChange={(event) => setAddress(event.target.value)}
             required
           />
         </label>
@@ -115,7 +128,8 @@ export default function CreateAccount() {
           <input
             type="text"
             name="city"
-            // value={city}
+            value={city}
+            onChange={(event) => setCity(event.target.value)}
             required
           />
         </label>
@@ -124,7 +138,8 @@ export default function CreateAccount() {
           <input
             type="text"
             name="country"
-            // value={country}
+            value={country}
+            onChange={(event) => setCountry(event.target.value)}
             required
           />
         </label>
@@ -132,14 +147,17 @@ export default function CreateAccount() {
           Zip-code
           <input
             type="text"
-            // pattern="\d*/"
-            title="Only numbers allowed"
             name="zipcode"
-            // value={zipCode}
+            value={zipCode}
+            onChange={(event) => setZipCode(event.target.value)}
             required
           />
         </label>
-        <button className="create-account-button" type="submit">
+        <button
+          className="create-account-button"
+          type="submit"
+          disabled={!passwordMatch}
+        >
           Create account
         </button>
       </div>
@@ -147,6 +165,3 @@ export default function CreateAccount() {
   );
 }
 
-// CreateAccount.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-// };
