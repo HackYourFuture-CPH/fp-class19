@@ -1,15 +1,9 @@
 import React from 'react';
 import Product from '../SpecialOffers/OfferProductModel.component';
 import './OfferProductsList.styles.css';
-import {addProductToFavorites} from '../../containers/FavoritePage/FavoritePage.Container';
+import PropTypes from 'prop-types';
 
-export default function OfferProducts({ products, addToCart, addToFavorites }) {
-
-
-  const addToFavorites=()=>{
-    console.log('in add to favorites');
-    addProductToFavorites(2,id);
-    }
+export default function OfferProducts({ products, addToCart }) {
   return (
     <div className="offer-products-container">
       <ul className="offer-products-list">
@@ -22,7 +16,6 @@ export default function OfferProducts({ products, addToCart, addToFavorites }) {
               price={product.price}
               discount={product.discount_percent}
               onClick={addToCart}
-              addToFavorites={addToFavorites}
             />
           </li>
         ))}
@@ -30,3 +23,23 @@ export default function OfferProducts({ products, addToCart, addToFavorites }) {
     </div>
   );
 }
+
+
+
+OfferProducts.propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      image: PropTypes.string,
+      currency: PropTypes.string,
+      onClick: PropTypes.func,
+      discount:PropTypes.number
+      
+    }),
+  ).isRequired,
+  
+};
+
+
+

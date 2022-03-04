@@ -41,7 +41,9 @@
 .offer-favorite-button {
     border: none;
     background-color: #fff;
+    cursor:pointer;
 }
+
 
 .offer-product-price {
     text-decoration: line-through;

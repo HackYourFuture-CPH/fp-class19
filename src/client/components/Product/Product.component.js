@@ -22,7 +22,6 @@ export default function Product({
   name,
   price,
   currency,
-  
   onClick,
   
 }) {
@@ -30,8 +29,11 @@ export default function Product({
   
   const addToFavorites=()=>{
     console.log('in add to favorites');
-    addProductToFavorites(2,id);
+    addProductToFavorites(5,id);
     }
+
+    
+
 
   return (
     <div className="product-container">

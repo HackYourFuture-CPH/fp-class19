@@ -4,6 +4,7 @@ import './OfferProductModel.styles.css';
 import cartBucketImage from '../../assets/images/cart_bucket.png';
 import heartImage from '../../assets/images/heart.png';
 import font from '../../assets/fonts/Inter-Regular.ttf';
+import {addProductToFavorites} from '../../containers/FavoritePage/FavoritePage.Container';
 
 const cartBucket = {
   src: cartBucketImage,
@@ -16,15 +17,22 @@ const heart = {
 };
 
 export default function OfferProduct({
+  id,
   image,
   discount,
   name,
   price,
   currency,
   onClick,
-  addToFavorites,
+  
 }) {
   const discountPrice = price - (price * discount) / 100;
+
+  const addToFavorites=()=>{
+    console.log('in add to favorites');
+    addProductToFavorites(5,id);
+    console.log(id)
+    }
   return (
     <div
       className="offer-product-container"
@@ -89,17 +97,19 @@ export default function OfferProduct({
 }
 
 OfferProduct.propTypes = {
+  
+  id:PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   discount: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   currency: PropTypes.string,
   onClick: PropTypes.func,
-  addToFavorites: PropTypes.func,
+  
 };
 
 OfferProduct.defaultProps = {
   onClick: null,
-  addToFavorites: null,
+  
   currency: 'DKK',
 };
