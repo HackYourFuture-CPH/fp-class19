@@ -2,10 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useAuthentication } from './hooks/useAuthentication';
 import LandingPage from './containers/LandingPage/LandingPage.container';
-import CreateAccountPage from './containers/CreateAccountPage';
-import ResetPassword from './containers/ResetPassword';
+import CreateAccountPage from './containers/CreateAccountPage/CreateAccountPage.Container';
 import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
-import UserProfilePage from './containers/UserProfilePage';
+import UserProfilePage from './containers/UserProfilePage/UserProfilePage.Container';
 import Loader from './components/Loader/Loader.component';
 import Header from './components/Header/Header.component';
 import Menu from './components/Menu/Menu.component';
@@ -53,7 +52,6 @@ function App() {
 
         {/* Anonymous pages */}
         <CreateAccountPage exact path="/sign-up" />
-        <ResetPassword exact path="/reset-password" />
         <LogInPage exact path="/log-in" />
         <ForgotPasswordPage exact path="/forgot-password" />
 
