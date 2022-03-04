@@ -6,11 +6,10 @@ export default {
   component: ProductDetail,
 };
 
-const Template = (args) => {
+function Template(args) {
   const [quantityCount, setQuantity] = useState(1);
   return (
-    <>
-      <ProductDetail
+    <ProductDetail
         product={{
           name: 'Verbena bonariens',
           price: 78,
@@ -19,8 +18,7 @@ const Template = (args) => {
         quantityCount={quantityCount}
         setQuantityCount={setQuantity}
       />
-    </>
   );
-};
+}
 
 export const newProductPreview = Template.bind({});

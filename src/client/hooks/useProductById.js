@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const fetchProduct = (productId) => {
   const url = `/api/products/${productId}`;
@@ -10,12 +10,12 @@ export const useProductById = (productId) => {
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState();
 
-  if (!product && !error) {
-    fetchProduct(`${productId}`)
+  useEffect(() => {
+    fetchProduct(productId)
       .then((productResponse) => setProduct(productResponse[0]))
       .catch((err) => setError(err))
       .finally(() => setLoading(false));
-  }
+}, [productId]);
 
   return {
     product,

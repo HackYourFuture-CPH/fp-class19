@@ -43,7 +43,6 @@ function App() {
         <Route exact path="/contact-us">
           <ContactUsPage />
         </Route>
-        {/* Product page */}
         <Route path="/products/:productId">
           <ProductPage />
         </Route>
@@ -59,7 +58,6 @@ function App() {
         <AuthenticatedRoute exact path="/profile">
           <Profile />
         </AuthenticatedRoute>
-        {/* this has to be bottom always.. pls dont move and dont keep under this any routes */}
         <Route path="*">
           <Page404Container />
         </Route>

@@ -1,19 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './ProductDetail.styles.css';
 import Button from '../Button/Button.component';
+import './ProductDetail.styles.css';
 
 export default function ProductDetail({
   product,
   quantityCount,
   setQuantityCount,
 }) {
+  const MIN_COUNT = 1;
+  const MAX_COUNT = 99;
+
   function decreamentQuantityCount() {
-    setQuantityCount((prevCount) => prevCount - 1);
+    if (quantityCount <= MIN_COUNT) {
+      return quantityCount;
+    }
+    setQuantityCount(quantityCount - 1);
   }
 
   function increamentQuantityCount() {
-    setQuantityCount((prevCount) => prevCount + 1);
+    if (quantityCount >= MAX_COUNT) {
+      return quantityCount;
+    }
+    setQuantityCount(quantityCount + 1);
   }
 
   function handleQuantityCountChange(e) {
@@ -23,8 +32,8 @@ export default function ProductDetail({
 
   const { name, price, picture } = product;
   return (
-    <div className="productDetail">
-      <article className="productDetail-container">
+    <div className="product-detail">
+      <div className="product-detail-container">
         <section className="image-container">
           <img src={picture} alt={name} />
         </section>
@@ -32,14 +41,14 @@ export default function ProductDetail({
           <h3>{name}</h3>
           <div className="info-container-stripes">
             <div className="info-container-stripe">
-              <p>2lt pot </p>
-              <p>DKK &nbsp;{price}</p>
+              <p>2lt pot</p>
+              <p>DKK&nbsp;{price}</p>
             </div>
             <div className="info-container-stripe">
-              <p>Quantity: &nbsp;</p>
+              <p>Quantity:</p>
               <button
                 type="button"
-                className="quantityButton"
+                className="quantity-button"
                 onClick={decreamentQuantityCount}
               >
                 -
@@ -51,7 +60,7 @@ export default function ProductDetail({
               />
               <button
                 type="button"
-                className="quantityButton"
+                className="quantity-button"
                 onClick={increamentQuantityCount}
               >
                 +
@@ -59,14 +68,14 @@ export default function ProductDetail({
             </div>
           </div>
           <Button
-            className="productDetail-button"
+            className="product-detail-button"
             type="button"
             onClick={' '}
             primary={true}
             label="ADD"
           />
         </section>
-      </article>
+      </div>
     </div>
   );
 }
