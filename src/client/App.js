@@ -10,7 +10,7 @@ import Profile from './containers/Profile';
 import Loader from './components/Loader/Loader.component';
 import Header from './components/Header/Header.component';
 import Menu from './components/Menu/Menu.component';
-import LogInPage from './containers/LogInPage/LogInPage.Container';
+import LoginPage from './containers/LoginPage/LoginPage.container';
 import Footer from './components/Footer/Footer.component';
 import './hooks/useProducts';
 import SpecialOfferPage from './containers/SpecialOfferPage/SpecialOfferPage.container';
@@ -56,7 +56,7 @@ function App() {
         <SignIn exact path="/sign-in" />
         <SignUp exact path="/sign-up" />
         <ResetPassword exact path="/reset-password" />
-        <LogInPage exact path="/log-in" />
+        <LoginPage exact path="/log-in" />
         <ForgotPasswordPage exact path="/forgot-password" />
 
         {/* All routes below are authenticated routes - a user must login first */}
