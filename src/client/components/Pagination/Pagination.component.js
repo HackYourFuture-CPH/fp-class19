@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Pagination.styles.css';
-
 export default function Pagination({
   currentPageIndex,
   pageCount,
@@ -38,10 +37,10 @@ export default function Pagination({
       </button>
       {displayPageNumbers}
       <button
-        type="button"
+        type =  "button"
         onClick={() => setCurrentPageIndex(currentPageIndex + 1)}
         disabled={currentPageIndex === pages.length - 1}
-        className="arrows"
+        className= "arrows" 
       >
         &#9654;
       </button>
@@ -57,3 +56,12 @@ Pagination.defaultProps = {
   currentPageIndex: 0,
   pageCount: 5,
 };
+
+
+
+
+
+
+
+
+
