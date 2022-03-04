@@ -6,13 +6,13 @@ import ProductQuantity from './ProductQuantity';
 import ProductCart from './ProductCart';
 
 export default function FavoriteList( props ) {
-  const {favorites,setFavorites}=props;
-  console.log(favorites)
+  const {favorites, setFavorites} = props;
+  
   return (
     <div>
       
       <ul className="favorite-container">
-        {favorites.map((product) => (
+        {props.favorites.map((product) => (
             <div>
               <li>
                 <div className="product_container">
@@ -34,4 +34,5 @@ export default function FavoriteList( props ) {
 
 FavoriteList.propTypes = {
   favorites: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setFavorites:PropTypes.arrayOf(PropTypes.object).isRequired
 };

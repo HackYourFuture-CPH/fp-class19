@@ -1,17 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './FavoriteList.styles.css';
- 
 
-function ProductCart({ product }) {
+function ProductCart(props) {
+  const { product, favorites, setFavorites } = props;
 
-  
- 
-   const removeProductFromFavorites = () => {
+  const removeProductFromFavorites = () => {
     console.log('in remove favorites container');
-    const userId = 5;
+
+    setFavorites((prev) => prev.filter((item) => item.id !== product.id));
+    const result = favorites.find(({ id }) => id === product.id);
+    /* if (result === undefined) {
+      // console.log('product does not exist in favorites');
+    } else {
+      // console.log('remove product from the favorites'); */
+      const index = favorites.indexOf(result);
+      if (index > -1) {
+        favorites.splice(index, 1);
+        console.log(favorites);
+      }
+    
+
+    const userId = 10;
     console.log(userId, product.id);
-  
+    const api = `/api/favorites?product_id= ${product.id} &user_id=${userId}`;
+    console.log(api);
+
     const requestOptions = {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
@@ -20,13 +34,13 @@ function ProductCart({ product }) {
         user_id: userId,
       }),
     };
-    fetch('/api/favorites', requestOptions)
+    fetch(api, requestOptions)
       .then((response) => response.json())
-      .then((result) => {
-        console.log(result);
+      .then((resp) => {
+        console.log(resp);
       });
-  }; 
-  
+  };
+
   return (
     <div className="add_cart_button">
       <div>
@@ -82,15 +96,14 @@ ProductCart.propTypes = {
     discount_percent: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     currency: PropTypes.string,
+    id: PropTypes.string
   }),
-  
+  favorites:PropTypes.arrayOf(PropTypes.object).isRequired,
+  setFavorites:PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 ProductCart.defaultProps = {
   product: null,
-  
-
 };
-
 
 export default ProductCart;

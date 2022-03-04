@@ -29,7 +29,7 @@ export default function Product({
   
   const addToFavorites=()=>{
     console.log('in add to favorites');
-    addProductToFavorites(5,id);
+    addProductToFavorites(10,id);
     }
 
     
