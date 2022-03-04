@@ -1,15 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './FavoriteList.styles.css';
-import { action } from '@storybook/addon-actions'; 
+ 
 
 function ProductCart({ product }) {
+
+  
+ 
+   const removeProductFromFavorites = () => {
+    console.log('in remove favorites container');
+    const userId = 5;
+    console.log(userId, product.id);
+  
+    const requestOptions = {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        product_id: product.id,
+        user_id: userId,
+      }),
+    };
+    fetch('/api/favorites', requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+      });
+  }; 
+  
   return (
     <div className="add_cart_button">
       <div>
         <button
           className="close-button"
-          onClick={action('You have clicked the close button')}
+          onClick={removeProductFromFavorites}
           type="button"
         >
           X
@@ -43,7 +66,7 @@ function ProductCart({ product }) {
       <div>
         <button
           className="add_button"
-          onClick={action('You have clicked the add to cart button')}
+          // onClick={onClick}
           type="button"
         >
           {' '}

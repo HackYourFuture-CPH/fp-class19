@@ -6,7 +6,7 @@ import ProductQuantity from './ProductQuantity';
 import ProductCart from './ProductCart';
 
 export default function FavoriteList( props ) {
-  const {favorites}=props;
+  const {favorites,setFavorites}=props;
   console.log(favorites)
   return (
     <div>
@@ -20,7 +20,7 @@ export default function FavoriteList( props ) {
 
                   <ProductQuantity product={product} />
 
-                  <ProductCart product={product} />
+                  <ProductCart product={product} favorites={favorites} setFavorites={setFavorites} />
                 </div>
               </li>
 
