@@ -32,14 +32,14 @@ export default function ProductPreview({
           <h3 className="productpreview-plant-name">{name}</h3>
           <div className="info-container-stripes">
             <div className="info-container-stripe">
-              <p className="details-text">2lt pot </p>
-              <p className="details-text"> DKK {+' ' + price}</p>
+              <p className="productpreview-texts">2lt pot </p>
+              <p className="productpreview-texts"> DKK {+' ' + price}</p>
             </div>
             <div className="info-container-stripe">
-              <p className="details-text">Quantity</p>
+              <p className="productpreview-texts">Quantity</p>
               <button
                 type="button"
-                className="quantityButton"
+                className="quantity-button"
                 onClick={decreamentQuantityCount}
               >
                 -
@@ -52,7 +52,7 @@ export default function ProductPreview({
               />
               <button
                 type="button"
-                className="quantityButton"
+                className="quantity-button"
                 onClick={increamentQuantityCount}
               >
                 +
