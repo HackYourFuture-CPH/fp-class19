@@ -32,11 +32,11 @@ export default function ProductPreview({
           <h3 className="productpreview-plant-name">{name}</h3>
           <div className="info-container-stripes">
             <div className="info-container-stripe">
-              <p>2lt pot </p>
-              <p className="productpreview-price"> DKK {+' ' + price}</p>
+              <p className="details-text">2lt pot </p>
+              <p className="details-text"> DKK {+' ' + price}</p>
             </div>
             <div className="info-container-stripe">
-              <p className="quantity-text">Quantity:</p>
+              <p className="details-text">Quantity</p>
               <button
                 type="button"
                 className="quantityButton"

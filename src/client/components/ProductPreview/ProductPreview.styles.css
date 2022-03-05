@@ -58,8 +58,10 @@
   padding: 0 0 1.8rem 0;
   font-size: 28px;
 }
-.quantity-text {
+.details-text {
   padding-right: 20px;
+  font-size: 24px;
+  font-weight: 400;
 }
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
   input[type='checkbox'],
