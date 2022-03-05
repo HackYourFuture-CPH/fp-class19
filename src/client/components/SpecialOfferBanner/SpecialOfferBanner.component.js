@@ -13,9 +13,9 @@ function SpecialOfferBanner() {
         <h4>SPECIAL OFFERS</h4>
         <div className="offer-banner1">
           <div className="special-offer-link-container">
-            <NavLink to="/special-offers">
+            <a href="/special-offers">
             Get Upto 50% OFF
-            </NavLink>
+            </a>
           </div>
         </div>
       </div>
