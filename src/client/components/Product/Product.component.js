@@ -68,7 +68,6 @@ Product.propTypes = {
   price: PropTypes.number.isRequired,
   currency: PropTypes.string,
   onClick: PropTypes.func,
-  discount: PropTypes.number.isRequired,
 };
 
 Product.defaultProps = {
