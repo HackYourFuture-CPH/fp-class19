@@ -24,11 +24,11 @@ export default function ProductPreview({
   const { name, price, picture } = product;
   return (
     <div className="productPreview">
-      <article className="productPreview-container">
-        <section className="image-container">
+      <div className="productPreview-container">
+        <div className="image-container">
           <img src={picture} alt={name} />
-        </section>
-        <section className="info-container">
+        </div>
+        <div className="info-container">
           <h3 className="productpreview-plant-name">{name}</h3>
           <div className="info-container-stripes">
             <div className="info-container-stripe">
@@ -77,8 +77,8 @@ export default function ProductPreview({
               fontWeight: '500',
             }}
           />
-        </section>
-      </article>
+        </div>
+      </div>
     </div>
   );
 }
