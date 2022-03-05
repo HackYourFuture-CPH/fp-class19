@@ -35,7 +35,7 @@ export default function FavoritePage() {
 
         if (result) {
           // eslint-disable
-          for (let i = 0; i < result.length; i++) {
+          for (let i = 0; i < result.length; i+= 1) {
             result[i].discount = result[i].discount_percent;
             result[i].image = result[i].picture;
             result[i].currency = 'DKK';
