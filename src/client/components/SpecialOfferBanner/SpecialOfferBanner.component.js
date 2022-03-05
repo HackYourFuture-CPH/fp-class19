@@ -1,6 +1,7 @@
 import React from 'react';
 import image1 from '../../assets/images/specialoffertopbanner.png';
 import './SpecialOfferBanner.styles.css';
+import { NavLink } from 'react-router-dom';
 
 function SpecialOfferBanner() {
   return (
@@ -12,7 +13,9 @@ function SpecialOfferBanner() {
         <h4>SPECIAL OFFERS</h4>
         <div className="offer-banner1">
           <div className="special-offer-link-container">
-            <a href="/special-offers">Get Upto 50% OFF</a>
+            <NavLink to="/special-offers">
+            Get Upto 50% OFF
+            </NavLink>
           </div>
         </div>
       </div>
