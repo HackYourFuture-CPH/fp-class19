@@ -46,7 +46,7 @@ export default function FavoritePage() {
           console.log(favorites);
         }
       });
-  });
+  }, [favorites]);
 
   useEffect(() => {
     GetFavorites();
