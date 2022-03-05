@@ -34,13 +34,15 @@ export default function FavoritePage() {
         console.log(result);
 
         if (result) {
-          // eslint-disable
+          
           for (let i = 0; i < result.length; i+= 1) {
+            // eslint-disable-next-line
             result[i].discount = result[i].discount_percent;
+            // eslint-disable-next-line
             result[i].image = result[i].picture;
+            // eslint-disable-next-line
             result[i].currency = 'DKK';
           }
-          // eslint-enable
           const items = result.map((item) => item);
           setFavorites((prev) => prev.concat(items));
           console.log(favorites);
