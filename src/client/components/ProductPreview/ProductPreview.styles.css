@@ -62,6 +62,15 @@
   padding-right: 20px;
   font-size: 24px;
   font-weight: 400;
+  font-family: Inter;
+font-weight: 400;
+line-height: 27px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.productpreview-input {
+  border: 1px solid #929b90;
 }
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
   input[type='checkbox'],
@@ -71,7 +80,6 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     margin: 0;
-    border: 0;
     padding: 0.2rem;
     box-shadow: 0;
     width: 3.5rem;

@@ -45,6 +45,7 @@ export default function ProductPreview({
                 -
               </button>
               <input
+                className="productpreview-input"
                 type="text"
                 value={quantityCount}
                 onChange={handleQuantityCountChange}
@@ -70,9 +71,10 @@ export default function ProductPreview({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '1.2rem',
+              fontSize: '26px',
               padding: ' 0.4rem',
               marginTop: '1rem',
+              fontWeight: '500',
             }}
           />
         </section>
