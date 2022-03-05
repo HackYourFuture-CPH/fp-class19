@@ -1,7 +1,7 @@
 import React from 'react';
 import image1 from '../../assets/images/specialoffertopbanner.png';
 import './SpecialOfferBanner.styles.css';
-import { NavLink } from 'react-router-dom';
+
 
 function SpecialOfferBanner() {
   return (
