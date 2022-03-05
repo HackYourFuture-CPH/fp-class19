@@ -14,8 +14,10 @@ export default function LandingPage() {
   });
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
 
-  const { isLoading, error, products, totalCount } =
-  useProducts({...sortingPreferences, currentPage: currentPageIndex});
+  const { isLoading, error, products, totalCount } = useProducts({
+    ...sortingPreferences,
+    currentPage: currentPageIndex,
+  });
 
   const maxNumberOfPages = Math.ceil(totalCount / PRODUCT_PER_PAGE);
 
@@ -32,7 +34,11 @@ export default function LandingPage() {
         <ProductsView products={products} />
       )}
       {totalCount > 0 && (
-        <Pagination currentPageIndex={currentPageIndex} pageCount={maxNumberOfPages} setCurrentPageIndex={setCurrentPageIndex} />
+        <Pagination
+          currentPageIndex={currentPageIndex}
+          pageCount={maxNumberOfPages}
+          setCurrentPageIndex={setCurrentPageIndex}
+        />
       )}
       {error && <h1>Error occurred while fetching products: {error}</h1>}
     </div>
