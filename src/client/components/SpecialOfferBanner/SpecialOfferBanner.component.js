@@ -1,5 +1,5 @@
 import React from 'react';
-import image1 from '*../../../src/client/assets/images/specialoffertopbanner.png';
+import image1 from '../../assets/images/specialoffertopbanner.png';
 import './SpecialOfferBanner.styles.css';
 
 function SpecialOfferBanner() {
@@ -12,7 +12,7 @@ function SpecialOfferBanner() {
         <h4>SPECIAL OFFERS</h4>
         <div className="offer-banner1">
           <div className="special-offer-link-container">
-            <a href="/SpecialOfferPage">Get Upto 50% OFF</a>
+            <a href="/special-offers">Get Upto 50% OFF</a>
           </div>
         </div>
       </div>
