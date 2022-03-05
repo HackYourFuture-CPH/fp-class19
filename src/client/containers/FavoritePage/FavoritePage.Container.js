@@ -40,9 +40,9 @@ export default function FavoritePage() {
             result[i].currency = 'DKK';
           }
           const items = result.map((item) => item);
-          setFavorites((prev) => {
-            return prev.concat(items);
-          });
+          setFavorites((prev) => 
+            prev.concat(items)
+          );
           console.log(favorites);
         }
       });
