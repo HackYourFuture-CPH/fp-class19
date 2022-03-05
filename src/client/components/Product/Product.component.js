@@ -22,9 +22,7 @@ export default function Product({
   name,
   price,
   currency,
-  discount,
   onClick,
-  
 }) {
 
   
