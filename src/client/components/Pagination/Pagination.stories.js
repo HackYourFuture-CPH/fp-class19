@@ -17,11 +17,17 @@ const template = (args) => {
   const [currentRange, setCurrentRange] = useState(
     args.products.slice(0, args.productsPerPage),
   );
+  const [currentPageIndex, setCurrentPageIndex] = useState(0);
   // eslint-disable-next-line
   React.useEffect(() => {
     setPropProducts(args.products);
-    setCurrentRange(propProducts.slice(0, args.productsPerPage));
-  }, [propProducts, args.productsPerPage, args.products]);
+    setCurrentRange(
+      propProducts.slice(
+        currentPageIndex * args.productsPerPage,
+        args.productsPerPage + currentPageIndex * args.productsPerPage,
+      ),
+    );
+  }, [propProducts, args.productsPerPage, args.products, currentPageIndex]);
   return (
     <>
       {currentRange.map((product) => (
@@ -30,7 +36,12 @@ const template = (args) => {
         </li>
       ))}
       {/* eslint-disable */}
-      <Pagination onPageChange={(range) => setCurrentRange(range)} {...args} />
+      <Pagination
+        currentPageIndex={currentPageIndex}
+        setCurrentPageIndex={setCurrentPageIndex}
+        pageCount={args.products.length / args.productsPerPage}
+        {...args}
+      />
     </>
   );
 };
