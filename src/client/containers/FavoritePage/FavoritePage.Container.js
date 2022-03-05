@@ -26,7 +26,7 @@ export default function FavoritePage() {
   const [favorites, setFavorites] = useState([]);
 
   const GetFavorites = useCallback(() => {
-    let apiUrl = '/api/users/2/favorites';
+    const apiUrl = '/api/users/2/favorites';
     console.log(apiUrl);
     fetch(apiUrl)
       .then((res) => res.json())
@@ -46,7 +46,7 @@ export default function FavoritePage() {
           console.log(favorites);
         }
       });
-  }, []);
+  });
 
   useEffect(() => {
     GetFavorites();
