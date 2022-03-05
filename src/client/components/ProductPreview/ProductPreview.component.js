@@ -29,14 +29,14 @@ export default function ProductPreview({
           <img src={picture} alt={name} />
         </section>
         <section className="info-container">
-          <h3>{name}</h3>
+          <h3 className="productpreview-plant-name">{name}</h3>
           <div className="info-container-stripes">
             <div className="info-container-stripe">
               <p>2lt pot </p>
-              <p>DKK &nbsp;{price}</p>
+              <p className="productpreview-price"> DKK {+' ' + price}</p>
             </div>
             <div className="info-container-stripe">
-              <p>Quantity: &nbsp;</p>
+              <p className="quantity-text">Quantity:</p>
               <button
                 type="button"
                 className="quantityButton"
@@ -59,11 +59,21 @@ export default function ProductPreview({
             </div>
           </div>
           <Button
-            className="productPreview-button"
             type="button"
             onClick={' '}
             primary={true}
             label="ADD"
+            style={{
+              width: ' 100%',
+              textAlign: ' center',
+              textDecoration: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '1.2rem',
+              padding: ' 0.4rem',
+              marginTop: '1rem',
+            }}
           />
         </section>
       </article>
