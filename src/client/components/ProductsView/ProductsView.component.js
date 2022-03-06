@@ -8,7 +8,7 @@ export default function ProductsView({ products }) {
     console.log('added to favorites');
   };
   const addToCart = () => {
-    //console.log('added to cart');
+    console.log('added to cart');
   };
   return (
     <div className="products-view">

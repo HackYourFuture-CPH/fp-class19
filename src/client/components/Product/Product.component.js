@@ -4,7 +4,7 @@ import './Product.styles.css';
 import cartBucketImage from '../../assets/images/cart_bucket.png';
 import heartImage from '../../assets/images/heart.png';
 
-import {addProductToFavorites} from '../../containers/FavoritePage/FavoritePage.Container';
+import { addProductToFavorites } from '../../containers/FavoritePage/FavoritePage.Container';
 
 const cartBucket = {
   src: cartBucketImage,
@@ -16,22 +16,11 @@ const heart = {
   alt: 'heart image',
 };
 
-export default function Product({
-  id,
-  image,
-  name,
-  price,
-  currency,
-  discount,
-  onClick,
-  
-}) {
-
-  
-  const addToFavorites=()=>{
+export default function Product({ id, image, name, price, currency, onClick }) {
+  const addToFavorites = () => {
     console.log('in add to favorites');
-    addProductToFavorites(2,id);
-    }
+    addProductToFavorites(2, id);
+  };
 
   return (
     <div className="product-container">
@@ -79,8 +68,6 @@ Product.propTypes = {
   price: PropTypes.number.isRequired,
   currency: PropTypes.string,
   onClick: PropTypes.func,
-  addToFavorites: PropTypes.func,
-  discount:PropTypes.number.isRequired
 };
 
 Product.defaultProps = {
