@@ -44,7 +44,14 @@ const getUserFavorites = async (user_id) => {
   try {
     const favorites = await knex('favorites')
       .join('products', 'products.id', 'product_id')
-      .select('products.*')
+      .select(
+        'products.id',
+        'products.name',
+        'products.picture',
+        'products.price',
+        'products.is_on_discount',
+        'products.discount_percent',
+      )
       .where({ user_id })
       .distinct();
     if (favorites.length === 0) {
@@ -55,10 +62,12 @@ const getUserFavorites = async (user_id) => {
     }
     return favorites;
   } catch (error) {
-    return error.message;
+    if (error instanceof HttpError) {
+      throw error;
+    }
+    throw new HttpError('Unexpected error', 500);
   }
 };
-
 
 const updateUser = async (userId, updatedUser) => {
   if (isNaN(userId) || !userId) {
