@@ -22,7 +22,7 @@ const createUser = async(body) => {
 const getUserById = async(uid) => {
     try {
         const user = await knex('users')
-            .select('uid', 'full_name', 'email', 'mobile', 'address')
+            .select('uid', 'full_name', 'email', 'mobile', 'address', 'city', 'country', 'zipcode')
             .where({ uid });
         if (user.length === 0) {
             throw new HttpError(`Specified ID does not exist`, 404);
