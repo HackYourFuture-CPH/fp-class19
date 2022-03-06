@@ -49,6 +49,8 @@ const getUserFavorites = async (user_id) => {
         'products.name',
         'products.picture',
         'products.price',
+        'products.is_on_discount',
+        'products.discount_percent',
       )
       .where({ user_id })
       .distinct();
@@ -60,7 +62,10 @@ const getUserFavorites = async (user_id) => {
     }
     return favorites;
   } catch (error) {
-    return error.message;
+    if (error instanceof HttpError) {
+      throw error;
+    }
+    throw new HttpError('Unexpected error', 500);
   }
 };
 
