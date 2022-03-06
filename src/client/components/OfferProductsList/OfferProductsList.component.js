@@ -27,13 +27,13 @@ export default function OfferProducts({ products, addToCart, addToFavorites }) {
 
 
 OfferProducts.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.object),
+  products: PropTypes.arrayOf(PropTypes.object).isRequired,
   addToCart:PropTypes.func,
   addToFavorites:PropTypes.func
   };
 
   OfferProducts.defaultProps = {
-  products: null,
+  
   addToCart:null,
   addToFavorites:null
 };

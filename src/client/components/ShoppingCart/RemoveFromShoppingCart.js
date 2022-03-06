@@ -9,10 +9,8 @@ function RemoveFromShoppingCart(props) {
     
     setShoppingCart((prev) => prev.filter((item) => item.id !== product.id));
     const result = shoppingCart.find(({ id }) => id === product.id);
-    if (result === undefined) {
-      // console.log('product does not exist in cart');
-    } else {
-      // console.log('remove product from the cart');
+    if (result !== undefined) {
+      
       const index = shoppingCart.indexOf(result);
       if (index > -1) {
         shoppingCart.splice(index, 1);
@@ -56,7 +54,8 @@ function RemoveFromShoppingCart(props) {
             color: 'black',
           }}
         >
-          &nbsp;&nbsp;{product.currency}{' '}
+          <span className='currency-field'>{product.currency}</span>
+
           {Math.round(product.price * (1 - product.discount / 100))}
         </div>
       </div>
@@ -71,13 +70,11 @@ RemoveFromShoppingCart.propTypes = {
     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     name: PropTypes.string,
     id: PropTypes.number,
-  }),
+  }).isRequired,
   shoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
   setShoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-RemoveFromShoppingCart.defaultProps = {
-  product: null,
-};
+
 
 export default RemoveFromShoppingCart;

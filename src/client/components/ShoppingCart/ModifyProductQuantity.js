@@ -62,12 +62,10 @@ ModifyProductQuantity.propTypes = {
     name: PropTypes.string,
     quantity: PropTypes.number,
     id: PropTypes.number,
-  }),
+  }).isRequired,
   shoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-ModifyProductQuantity.defaultProps = {
-  product: null,
-};
+
 
 export default ModifyProductQuantity;

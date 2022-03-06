@@ -25,7 +25,7 @@ export default function Product({
   discount,  
 }) {
   const addProductToShoppingCart = () => {
-    // console.log('in addProductToShoppingCart');
+    
     addToShoppingCart(id, image, name, price, currency, discount, 1);
   };
 
