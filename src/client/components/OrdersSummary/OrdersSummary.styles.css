@@ -4,8 +4,9 @@
   
 }
 
-.orders-view .order-item {
- 
+.orders-view .order-list{
+
+ margin: 10px;
 }
 
 .orders-view button{
