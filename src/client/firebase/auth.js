@@ -44,7 +44,6 @@ export async function signIn({ email, password }) {
 export async function signUp({ email, password }) {
     try {
         await createUserWithEmailAndPassword(getAuth(), email, password);
-        console.log(getAuth().currentUser);
         addUserToDatabase(getAuth().currentUser);
         return true;
     } catch (error) {
@@ -68,8 +67,8 @@ export function signOut() {
     firebaseSignout(getAuth());
 }
 
-function addUserToDatabase(id) {
-    fetch(`api/users/${id.uid}`)
+function addUserToDatabase(user) {
+    fetch(`api/users/${user.uid}`)
         .then(async(res) => res.json())
         .then((data) => {
             // if not present add new user id to database
@@ -81,9 +80,9 @@ function addUserToDatabase(id) {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        uid: id.uid,
+                        uid: user.uid,
                         full_name: "string",
-                        email: id.email,
+                        email: user.email,
                         mobile: 0,
                         address: 'string',
                         zipcode: 0,
