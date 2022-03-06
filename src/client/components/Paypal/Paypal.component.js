@@ -1,8 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-// eslint-disable-next-line react/prop-types
-function Paypal({ orderId, totalAmount, onSuccess, onError, onCancel }) {
+function Paypal({
+  orderId,
+  totalAmount,
+  userName,
+  onSuccess,
+  onError,
+  onCancel,
+}) {
   const paypalRef = useRef();
 
   useEffect(() => {
@@ -39,21 +45,23 @@ function Paypal({ orderId, totalAmount, onSuccess, onError, onCancel }) {
         },
       })
     );
-  }, [orderId, totalAmount, onSuccess, onError, onCancel]);
+  }, [orderId, totalAmount, userName, onSuccess, onError, onCancel]);
   return <div ref={paypalRef} />;
 }
 
 Paypal.prototype = {
   orderId: PropTypes.string.isRequired,
   totalAmount: PropTypes.number.isRequired,
+  userName: PropTypes.string.isRequired,
   onSuccess: PropTypes.func,
   onError: PropTypes.func,
   onCancel: PropTypes.func,
 };
 
 Paypal.defaultProps = {
-  orderId: '',
+  orderId: '1111',
   totalAmount: 0,
+  userName: 'Hyf',
   onSuccess: (data) => {
     console.log(data);
   },
