@@ -27,10 +27,13 @@ export default function Header() {
 
         {isAuthenticated ? (
           <>
+          <Link to="/log-in">
             <button onClick={() => signOut()} type="button">
               Logout
             </button>
+            </Link>
             <div className="login icons"> Hello {user.email}</div>
+            
           </>
         ) : (
           <Link className="login icons" to="/log-in">
