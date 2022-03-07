@@ -35,20 +35,16 @@ const favoritesController = require('../controllers/favorites.controller');
  *      200:
  *        description: added to favorites
  *      400:
- *        description: Bad Request.
- *
- *
+ *        description: Bad Request. ID must be an integer and larger than 0'.
+ *      5xx:
+ *        description: Unexpected error.
  *
  */
-router.post('/add', (req, res) => {
+router.post('/add', (req, res, next) => {
   favoritesController
     .addToFavorites(req.body)
     .then((result) => res.json(result))
-    .catch((error) => {
-      console.log(error);
-
-      res.status(400).send('Bad request').end();
-    });
+    .catch((next))
 });
 
 /**
