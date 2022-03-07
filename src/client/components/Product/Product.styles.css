@@ -44,7 +44,10 @@
   border: none;
   color: #687808;
   background-color: #ffffff;
-  cursor:pointer
+  cursor: pointer;
 }
 
-
+.favorite-button:active {
+  background-color: white;
+  transform: translateY(2px);
+}

@@ -9,7 +9,7 @@ function ProductImage({ product }) {
         <img
           className="product_image"
           src={product.picture}
-           alt={product.name}
+          alt={product.name}
         />
       </div>
       <div
@@ -28,12 +28,8 @@ ProductImage.propTypes = {
   product: PropTypes.shape({
     discount_percent: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     picture: PropTypes.string,
-    name:PropTypes.string
-  }),
+    name: PropTypes.string,
+  }).isRequired,
 };
-
- ProductImage.defaultProps = {
-  product: null,
- };
 
 export default ProductImage;

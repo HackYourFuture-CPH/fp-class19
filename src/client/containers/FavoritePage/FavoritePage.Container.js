@@ -4,7 +4,6 @@ import FavoriteList from '../../components/FavoriteList/FavoriteList.component';
 
 export const addProductToFavorites = (userId, productId) => {
   console.log('in add favorites container');
-  console.log(userId, productId);
 
   const requestOptions = {
     method: 'POST',
@@ -26,23 +25,37 @@ export default function FavoritePage() {
 
   const GetFavorites = useCallback(() => {
     const apiUrl = '/api/users/10/favorites';
-    console.log(apiUrl);
+
     fetch(apiUrl)
       .then((res) => res.json())
       .then((result) => {
         setFavorites(result);
       });
   }, []);
-  console.log(favorites);
 
   useEffect(() => {
     GetFavorites();
   }, [GetFavorites]);
 
   return (
-    <div className="favorite-list">
+    <div>
       <h2 className="fav-heading">Favorites</h2>
-      <FavoriteList favorites={favorites} setFavorites={setFavorites} />
+      <div
+        className="favorites"
+        style={{
+          display: favorites.length > 0 ? 'inline-block' : 'none',
+        }}
+      >
+        <FavoriteList favorites={favorites} setFavorites={setFavorites} />
+      </div>
+      <div
+        className="empty-fav-list"
+        style={{
+          display: favorites.length === 0 ? 'inline-block' : 'none',
+        }}
+      >
+        There are no items in favorites
+      </div>
     </div>
   );
 }

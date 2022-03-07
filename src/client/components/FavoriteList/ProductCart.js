@@ -6,25 +6,18 @@ function ProductCart(props) {
   const { product, favorites, setFavorites } = props;
 
   const removeProductFromFavorites = () => {
-    console.log('in remove favorites container');
-
     setFavorites((prev) => prev.filter((item) => item.id !== product.id));
     const result = favorites.find(({ id }) => id === product.id);
-    /* if (result === undefined) {
-      // console.log('product does not exist in favorites');
-    } else {
-      // console.log('remove product from the favorites'); */
+    if (result !== undefined) {
       const index = favorites.indexOf(result);
+
       if (index > -1) {
         favorites.splice(index, 1);
-        console.log(favorites);
       }
-    
-
+    }
     const userId = 10;
-    console.log(userId, product.id);
+
     const api = `/api/favorites?product_id= ${product.id} &user_id=${userId}`;
-    console.log(api);
 
     const requestOptions = {
       method: 'DELETE',
@@ -73,16 +66,12 @@ function ProductCart(props) {
             display: product.discount_percent !== 0 ? 'inline-block' : 'none',
           }}
         >
-          &nbsp;&nbsp;{product.currency}{' '}
+          <span className="currency">{product.currency}</span>
           {Math.round(product.price * (1 - product.discount_percent / 100))}
         </div>
       </div>
       <div>
-        <button
-          className="add_button"
-          // onClick={onClick}
-          type="button"
-        >
+        <button className="add_button" type="button">
           {' '}
           ADD TO CART
         </button>
@@ -96,14 +85,10 @@ ProductCart.propTypes = {
     discount_percent: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     currency: PropTypes.string,
-    id: PropTypes.string
-  }),
-  favorites:PropTypes.arrayOf(PropTypes.object).isRequired,
-  setFavorites:PropTypes.arrayOf(PropTypes.object).isRequired,
-};
-
-ProductCart.defaultProps = {
-  product: null,
+    id: PropTypes.string,
+  }).isRequired,
+  favorites: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setFavorites: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default ProductCart;

@@ -4,7 +4,7 @@ import './OfferProductModel.styles.css';
 import cartBucketImage from '../../assets/images/cart_bucket.png';
 import heartImage from '../../assets/images/heart.png';
 import font from '../../assets/fonts/Inter-Regular.ttf';
-import {addProductToFavorites} from '../../containers/FavoritePage/FavoritePage.Container';
+import { addProductToFavorites } from '../../containers/FavoritePage/FavoritePage.Container';
 
 const cartBucket = {
   src: cartBucketImage,
@@ -24,15 +24,12 @@ export default function OfferProduct({
   price,
   currency,
   onClick,
-  
 }) {
   const discountPrice = price - (price * discount) / 100;
 
-  const addToFavorites=()=>{
-    console.log('in add to favorites');
-    addProductToFavorites(10,id);
-    console.log(id)
-    }
+  const addToFavorites = () => {
+    addProductToFavorites(10, id);
+  };
   return (
     <div
       className="offer-product-container"
@@ -53,7 +50,7 @@ export default function OfferProduct({
         </div>
       </div>
       <h2 className="offer-product-name">{name}</h2>
-      <div className='offer-product-price-discountPrice'>
+      <div className="offer-product-price-discountPrice">
         <h2>
           <span className="offer-product-price">
             {price} {currency}
@@ -97,19 +94,17 @@ export default function OfferProduct({
 }
 
 OfferProduct.propTypes = {
-  
-  id:PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   discount: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   currency: PropTypes.string,
   onClick: PropTypes.func,
-  
 };
 
 OfferProduct.defaultProps = {
   onClick: null,
-  
+
   currency: 'DKK',
 };

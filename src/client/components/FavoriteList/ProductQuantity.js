@@ -50,11 +50,9 @@ function ProductQuantity({ product }) {
 ProductQuantity.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string,
-  }),
+  }).isRequired,
 };
 
-ProductQuantity.defaultProps = {
-  product: null,
-};
+
 
 export default ProductQuantity;

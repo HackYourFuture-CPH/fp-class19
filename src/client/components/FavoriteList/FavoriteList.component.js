@@ -12,7 +12,7 @@ export default function FavoriteList( props ) {
     <div>
       
       <ul className="favorite-container">
-        {props.favorites.map((product) => (
+        {favorites.map((product) => (
             <div>
               <li>
                 <div className="product_container">

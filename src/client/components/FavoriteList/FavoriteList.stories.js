@@ -1,9 +1,6 @@
-/* import { number, text } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions'; */
+
 import React from 'react';
-
 import FavoriteList from './FavoriteList.component';
-
 import imageFile1 from '../../assets/images/image_4.png';
 import imageFile2 from '../../assets/images/image_30.png';
 import imageFile3 from '../../assets/images/image_31.png';
