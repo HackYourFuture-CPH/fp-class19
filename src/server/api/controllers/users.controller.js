@@ -53,7 +53,10 @@ const getUserFavorites = async(user_id) => {
         }
         return favorites;
     } catch (error) {
-        return error.message;
+        if (error instanceof HttpError) {
+            throw error;
+        }
+        throw new HttpError('Unexpected error', 500);
     }
 };
 
@@ -75,7 +78,10 @@ const updateUser = async(userId, updatedUser) => {
         }
         return { message: `User with ID: ${userId} updated` };
     } catch (error) {
-        return error.message;
+        if (error instanceof HttpError) {
+            throw error;
+        }
+        throw new HttpError('Unexpected error', 500);
     }
 };
 
