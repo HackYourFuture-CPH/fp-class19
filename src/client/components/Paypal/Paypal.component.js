@@ -1,22 +1,15 @@
 import React, { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
 
-function Paypal({
-  orderId,
-  totalAmount,
-  userName,
-  onSuccess,
-  onError,
-  onCancel,
-}) {
+export default function Paypal() {
   const paypalRef = useRef();
 
   useEffect(() => {
-    if (
-      window.paypal.Buttons({
+    window.paypal
+      .Buttons({
         style: {
           color: 'white',
           shape: 'rect',
+          layout: 'horizontal',
           label: 'paypal',
         },
         createOrder: (data, actions) =>
@@ -24,53 +17,26 @@ function Paypal({
             intent: 'CAPTURE',
             purchase_units: [
               {
-                description: orderId,
+                description: 'OrderID: 12345',
                 amount: {
-                  currency_code: 'DKK',
-                  value: totalAmount,
+                  value: '0.1',
                 },
               },
             ],
           }),
         onApprove: async (data, actions) => {
           await actions.order.capture().then((details) => {
-            onSuccess(details);
+            console.log(details);
           });
         },
         onError: (error) => {
-          onError(error);
+          console.log(error);
         },
         onCancel: (data) => {
-          onCancel(data);
+          console.log(data);
         },
       })
-    );
-  }, [orderId, totalAmount, userName, onSuccess, onError, onCancel]);
+      .render(paypalRef.current);
+  }, []);
   return <div ref={paypalRef} />;
 }
-
-Paypal.prototype = {
-  orderId: PropTypes.string.isRequired,
-  totalAmount: PropTypes.number.isRequired,
-  userName: PropTypes.string.isRequired,
-  onSuccess: PropTypes.func,
-  onError: PropTypes.func,
-  onCancel: PropTypes.func,
-};
-
-Paypal.defaultProps = {
-  orderId: '1111',
-  totalAmount: 0,
-  userName: 'Hyf',
-  onSuccess: (data) => {
-    console.log(data);
-  },
-  onError: (data) => {
-    console.log(data);
-  },
-  onCancel: (data) => {
-    console.log(data);
-  },
-};
-
-export default Paypal;
