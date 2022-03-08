@@ -23,6 +23,11 @@ nav {
   float: left;
   cursor: pointer;
   margin-right: 0.5em;
+
+}
+.cart{
+  border: none;
+  background-color: #fff;
 }
 
 .login {

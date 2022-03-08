@@ -16,6 +16,7 @@ import './hooks/useProducts';
 import SpecialOfferPage from './containers/SpecialOfferPage/SpecialOfferPage.container';
 import AboutUsPage from './containers/AboutUsPage/AboutUsPage.container';
 import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
+import ShoppingCartPage from './containers/ShoppingCartPage/ShoppingCartPage.Container';
 import ForgotPasswordPage from './containers/ForgotPasswordPage/ForgotPasswordPage.container';
 import OrderConfirmationPage from './containers/OrderConfirmationPage/OrderConfirmationPage.Container';
 import Page404Container from './containers/404Page/404Page.Container';
@@ -48,6 +49,11 @@ function App() {
         <Route exact path="/contact-us">
           <ContactUsPage />
         </Route>
+        {/* shoppingCart page */}
+        <Route exact path="/shopping-cart">
+          <ShoppingCartPage />
+        </Route>
+
         <Route exact path="/order-confirmation">
           <OrderConfirmationPage />
         </Route>
