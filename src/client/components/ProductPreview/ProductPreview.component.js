@@ -8,35 +8,47 @@ export default function ProductPreview({
   quantityCount,
   setQuantityCount,
 }) {
+  const MIN_QUANTITY = 1;
+  const MAX_QUANTITY = 99;
+
   function decreamentQuantityCount() {
-    setQuantityCount((prevCount) => prevCount - 1);
+    if (quantityCount <= MIN_QUANTITY) {
+      return quantityCount;
+    }
+    setQuantityCount(quantityCount - 1);
   }
 
   function increamentQuantityCount() {
-    setQuantityCount((prevCount) => prevCount + 1);
+    if (quantityCount >= MAX_QUANTITY) {
+      return quantityCount;
+    }
+    setQuantityCount(quantityCount + 1);
   }
 
   function handleQuantityCountChange(e) {
     e.preventDefault();
+    if (e.target.value <= MIN_QUANTITY || e.target.value >= MAX_QUANTITY) {
+      return quantityCount;
+    }
     setQuantityCount(e.target.value);
   }
 
   const { name, price, picture } = product;
   return (
-    <div className="productPreview">
-      <div className="productPreview-container">
+    <div className="product-preview">
+      <div className="product-preview-container">
         <div className="image-container">
           <img src={picture} alt={name} />
         </div>
         <div className="info-container">
-          <h3 className="productpreview-plant-name">{name}</h3>
+          <h3 className="product-preview-plant-name">{name}</h3>
           <div className="info-container-stripes">
             <div className="info-container-stripe">
-              <p className="productpreview-texts">2lt pot </p>
-              <p className="productpreview-texts"> DKK {+' ' + price}</p>
+              <p className="product-preview-texts">2lt pot</p>
+              <p className="product-preview-texts"> DKK {+' ' + price}</p>
             </div>
             <div className="info-container-stripe">
-              <p className="productpreview-texts">Quantity</p>
+              <p className="product-preview-texts">Quantity</p>
               <button
                 type="button"
                 className="quantity-button"
@@ -45,7 +57,7 @@ export default function ProductPreview({
                 -
               </button>
               <input
-                className="productpreview-input"
+                className="product-preview-input"
                 type="text"
                 value={quantityCount}
                 onChange={handleQuantityCountChange}
