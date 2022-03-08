@@ -3,8 +3,6 @@ import React, { useState, useEffect, useCallback } from 'react';
 import FavoriteList from '../../components/FavoriteList/FavoriteList.component';
 
 export const addProductToFavorites = (userId, productId) => {
-  console.log('in add favorites container');
-
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -13,11 +11,9 @@ export const addProductToFavorites = (userId, productId) => {
       user_id: userId,
     }),
   };
-  fetch('/api/favorites/add', requestOptions)
-    .then((response) => response.json())
-    .then((result) => {
-      console.log(result);
-    });
+  fetch('/api/favorites/add', requestOptions).then((response) =>
+    response.json(),
+  );
 };
 
 export default function FavoritePage() {

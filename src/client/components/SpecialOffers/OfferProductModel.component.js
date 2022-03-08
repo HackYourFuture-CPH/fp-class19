@@ -1,9 +1,10 @@
-import React from 'react';
+import React,{useState} from 'react';
 import PropTypes from 'prop-types';
 import './OfferProductModel.styles.css';
 import cartBucketImage from '../../assets/images/cart_bucket.png';
 import heartImage from '../../assets/images/heart.png';
 import font from '../../assets/fonts/Inter-Regular.ttf';
+import fillHeartImage from '../../assets/images/heartFill.png';
 import { addProductToFavorites } from '../../containers/FavoritePage/FavoritePage.Container';
 
 const cartBucket = {
@@ -15,6 +16,10 @@ const heart = {
   src: heartImage,
   alt: 'heart image',
 };
+const filledHeart = {
+  src: fillHeartImage,
+  alt: ' filled heart image',
+};
 
 export default function OfferProduct({
   id,
@@ -25,9 +30,12 @@ export default function OfferProduct({
   currency,
   onClick,
 }) {
+
+  const [isFavorite, setIsFavorite] = useState(false);
   const discountPrice = price - (price * discount) / 100;
 
   const addToFavorites = () => {
+    setIsFavorite(true);
     addProductToFavorites(10, id);
   };
   return (
@@ -80,11 +88,23 @@ export default function OfferProduct({
             className="offer-favorite-button"
             type="button"
             onClick={addToFavorites}
+            style={{ display: !isFavorite ? 'inline-block' : 'none' }}
           >
             <img
               src={heart.src}
               alt={heart.alt}
               className="offer-favorite-button"
+            />
+          </button>
+          <button
+            className="favorite-button"
+            type="button"
+            style={{ display: isFavorite ? 'inline-block' : 'none' }}
+          >
+            <img
+              src={filledHeart.src}
+              alt={filledHeart.alt}
+              className="favorite-button"
             />
           </button>
         </div>

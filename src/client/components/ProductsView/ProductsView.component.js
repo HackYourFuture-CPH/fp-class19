@@ -26,9 +26,14 @@ export default function ProductsView({ products }) {
 }
 
 Product.propTypes = {
-  image: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  currency: PropTypes.string,
-  discount: PropTypes.number.isRequired,
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      image: PropTypes.string,
+      price: PropTypes.number,
+      currency: PropTypes.string,
+      discount: PropTypes.number,
+    }),
+  ).isRequired,
 };

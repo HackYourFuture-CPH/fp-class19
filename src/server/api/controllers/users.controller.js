@@ -47,12 +47,12 @@ const getUserFavorites = async (user_id) => {
       .select('products.*')
       .where({ user_id })
       .distinct();
-    if (favorites.length === 0) {
+    /* if (favorites.length === 0) {
       throw new HttpError(
         `The favorite products for user ${user_id} is not found`,
         404,
-      );
-    }
+      ); 
+    } */
     return favorites;
   } catch (error) {
     return error.message;
