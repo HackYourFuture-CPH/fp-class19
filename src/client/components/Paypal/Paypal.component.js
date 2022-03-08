@@ -1,6 +1,13 @@
 import React, { useEffect, useRef } from 'react';
+import { PropTypes } from 'prop-types';
 
-export default function Paypal() {
+export default function Paypal({
+  orderId,
+  toalAmount,
+  onSuccess,
+  onError,
+  onCancel,
+}) {
   const paypalRef = useRef();
 
   useEffect(() => {
@@ -10,6 +17,7 @@ export default function Paypal() {
           color: 'white',
           shape: 'rect',
           layout: 'horizontal',
+          tagline: 'false',
           label: 'paypal',
         },
         createOrder: (data, actions) =>
@@ -40,3 +48,25 @@ export default function Paypal() {
   }, []);
   return <div ref={paypalRef} />;
 }
+
+Paypal.PropType = {
+  orderId: PropTypes.string.isRequired,
+  totalAmount: PropTypes.number.isRequired,
+  onSuccess: PropTypes.func,
+  onError: PropTypes.func,
+  onCancel: PropTypes.func,
+};
+
+Paypal.defaultProps = {
+  orderId: '',
+  totalAmount: 0,
+  onSuccess: () => {
+    '';
+  },
+  onError: () => {
+    '';
+  },
+  onCancel: () => {
+    '';
+  },
+};
