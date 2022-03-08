@@ -12,15 +12,23 @@ export default {
 
 const template = (args) => {
   // eslint-disable-next-line
-  const [propProducts, setPropProducts] = useState(args.products);
+  const [propProducts, setPropProducts] = useState([]);
   // eslint-disable-next-line
   const [currentRange, setCurrentRange] = useState(
     args.products.slice(0, args.productsPerPage)
   );
   // eslint-disable-next-line
+  const [currentPageIndex, setCurrentPageIndex] = useState(0);
+  // eslint-disable-next-line
   React.useEffect(() => {
-    setCurrentRange(propProducts.slice(0, args.productsPerPage));
-  }, [propProducts, args.productsPerPage]);
+    setPropProducts(args.products);
+    setCurrentRange(
+      propProducts.slice(
+        currentPageIndex * args.productsPerPage,
+        args.productsPerPage + currentPageIndex * args.productsPerPage,
+      ),
+    );
+  }, [propProducts, args.productsPerPage, args.products, currentPageIndex]);
   return (
     <>
       {currentRange.map((product) => (
@@ -30,7 +38,9 @@ const template = (args) => {
       ))}
       {/* eslint-disable */}
       <Pagination
-        onPageChange={(range) => setCurrentRange(range)}
+        currentPageIndex={currentPageIndex}
+        setCurrentPageIndex={setCurrentPageIndex}
+        pageCount={args.products.length / args.productsPerPage}
         {...args}
       />
     </>
@@ -54,7 +64,7 @@ PaginationComponent.args = {
     },
     {
       id: 2,
-      name: 'Lilium “Pearl White”',
+      name: 'Lilium "Pearl White"',
       price: 88,
       color: 'purple',
       size: 'sm',
@@ -102,7 +112,7 @@ PaginationComponent.args = {
     },
     {
       id: 6,
-      name: 'Anthurium “Red”',
+      name: 'Anthurium "Red"',
       price: 62,
       color: 'white',
       size: 'xxl',
@@ -126,7 +136,7 @@ PaginationComponent.args = {
     },
     {
       id: 8,
-      name: 'Miltonia “Sunset”',
+      name: 'Miltonia "Sunset"',
       price: 78,
       color: 'blue',
       size: 'm',
@@ -162,7 +172,7 @@ PaginationComponent.args = {
     },
     {
       id: 11,
-      name: 'Rosa “Pink”',
+      name: 'Rosa "Pink"',
       price: 99,
       color: 'pink',
       size: 'xxl',
@@ -174,7 +184,7 @@ PaginationComponent.args = {
     },
     {
       id: 12,
-      name: 'Dahlia “Pink”',
+      name: 'Dahlia "Pink"',
       price: 115,
       color: 'pink',
       size: 's',
@@ -186,7 +196,7 @@ PaginationComponent.args = {
     },
     {
       id: 13,
-      name: 'Rosa “Sweer honey”',
+      name: 'Rosa "Sweer honey"',
       price: 99,
       color: 'red',
       size: 'sm',
@@ -222,7 +232,7 @@ PaginationComponent.args = {
     },
     {
       id: 16,
-      name: 'Anthurium “Pink”',
+      name: 'Anthurium "Pink"',
       price: 58,
       color: 'yellow',
       size: 'sm',
@@ -258,7 +268,7 @@ PaginationComponent.args = {
     },
     {
       id: 19,
-      name: 'Helenium “Waltraut”',
+      name: 'Helenium "Waltraut"',
       price: 80,
       color: 'blue',
       size: 'sm',
@@ -270,7 +280,7 @@ PaginationComponent.args = {
     },
     {
       id: 20,
-      name: 'Crocosmia “Mistral”',
+      name: 'Crocosmia "Mistral"',
       price: 85,
       color: 'orange',
       size: 'xxl',

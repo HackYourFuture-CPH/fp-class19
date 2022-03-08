@@ -59,3 +59,12 @@ Pagination.propTypes = {
 Pagination.defaultProps = {
   currentPageIndex: 0,
 };
+
+
+
+
+
+
+
+
+

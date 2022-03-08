@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './Product.styles.css';
 import cartBucketImage from '../../assets/images/cart_bucket.png';
 import heartImage from '../../assets/images/heart.png';
+import { addToShoppingCart } from '../../containers/ShoppingCartPage/ShoppingCartPage.Container';
 
 import { addProductToFavorites } from '../../containers/FavoritePage/FavoritePage.Container';
 
@@ -16,10 +17,18 @@ const heart = {
   alt: 'heart image',
 };
 
-export default function Product({ id, image, name, price, currency, onClick }) {
-  const addToFavorites = () => {
-    console.log('in add to favorites');
-    addProductToFavorites(2, id);
+export default function Product({
+  id,
+  image,
+  name,
+  price,
+  currency,
+  addToFavorites,
+  discount,  
+}) {
+  const addProductToShoppingCart = () => {
+    
+    addToShoppingCart(id, image, name, price, currency, discount, 1);
   };
 
   return (
@@ -37,7 +46,7 @@ export default function Product({ id, image, name, price, currency, onClick }) {
           <button
             className="product-add-button"
             type="button"
-            onClick={onClick}
+            onClick={addProductToShoppingCart}
           >
             ADD
             <img
@@ -63,14 +72,17 @@ export default function Product({ id, image, name, price, currency, onClick }) {
 }
 
 Product.propTypes = {
+  id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   currency: PropTypes.string,
-  onClick: PropTypes.func,
+  addToFavorites: PropTypes.func,
+  discount: PropTypes.number.isRequired,
 };
 
 Product.defaultProps = {
-  onClick: null,
-  currency: 'DKK',
+  addToFavorites: null,
+  currency:'DKK'
+  
 };

@@ -21,8 +21,8 @@ export default function Header() {
       </Link>
       {/* ICONS */}
       <div className="icons-right">
-        <img className="icons" src={faShoppingCart} alt="shopping-cart" />
-        <Link to='favorites'><button type='button'><img className="icons" src={faHeart} alt="favorite" /></button></Link>
+        <Link to="/shopping-cart"><button type='button' className='cart'><img className="icons" src={faShoppingCart} alt="shopping-cart" /></button></Link>
+        <img className="icons" src={faHeart} alt="favorite" />
         <img className="icons" src={faUser} alt="login" />
 
         {isAuthenticated ? (
