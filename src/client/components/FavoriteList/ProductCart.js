@@ -13,9 +13,12 @@ function ProductCart(props) {
 
       if (index > -1) {
         favorites.splice(index, 1);
+        
+        }
       }
-    }
-    const userId = 10;
+    
+    const userId = 10; // this is set for testing only
+    // TODO : integrate with userId when user logs in
 
     const api = `/api/favorites?product_id= ${product.id} &user_id=${userId}`;
 
@@ -29,10 +32,9 @@ function ProductCart(props) {
     };
     fetch(api, requestOptions)
       .then((response) => response.json())
-      .then((resp) => {
-        console.log(resp);
-      });
+      
   };
+  
 
   return (
     <div className="add_cart_button">

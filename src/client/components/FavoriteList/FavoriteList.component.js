@@ -6,12 +6,15 @@ import ProductQuantity from './ProductQuantity';
 import ProductCart from './ProductCart';
 
 export default function FavoriteList( props ) {
+  
   const {favorites, setFavorites} = props;
+  
   
   return (
     <div>
       
       <ul className="favorite-container">
+       
         {favorites.map((product) => (
             <div>
               <li>
@@ -27,12 +30,20 @@ export default function FavoriteList( props ) {
               <div className="line" />
             </div>
           ))}
+        
       </ul>
     </div>
   );
+        
 }
 
 FavoriteList.propTypes = {
-  favorites: PropTypes.arrayOf(PropTypes.object).isRequired,
-  setFavorites:PropTypes.arrayOf(PropTypes.object).isRequired
+  favorites: PropTypes.arrayOf(PropTypes.object),
+  setFavorites:PropTypes.arrayOf(PropTypes.object)
+};
+
+
+FavoriteList.defaultProps = {
+  favorites: [],
+  setFavorites:[]
 };

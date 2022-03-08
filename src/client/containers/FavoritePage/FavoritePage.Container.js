@@ -21,6 +21,7 @@ export default function FavoritePage() {
 
   const GetFavorites = useCallback(() => {
     const apiUrl = '/api/users/10/favorites';
+    // TODO : integrate with userId when user logs in
 
     fetch(apiUrl)
       .then((res) => res.json())
