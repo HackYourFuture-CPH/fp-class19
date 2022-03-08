@@ -4,6 +4,7 @@ import { PropTypes } from 'prop-types';
 export default function Paypal({
   orderId,
   toalAmount,
+  userName,
   onSuccess,
   onError,
   onCancel,
@@ -58,15 +59,13 @@ Paypal.PropType = {
 };
 
 Paypal.defaultProps = {
-  orderId: '',
-  totalAmount: 0,
-  onSuccess: () => {
-    '';
+  onSuccess: (data) => {
+    console.log(data);
   },
-  onError: () => {
-    '';
+  onError: (data) => {
+    console.log(data);
   },
-  onCancel: () => {
-    '';
+  onCancel: (data) => {
+    console.log(data);
   },
 };
