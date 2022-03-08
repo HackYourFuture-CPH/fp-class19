@@ -39,7 +39,7 @@ const usersController = require('../controllers/users.controller');
  *              type: string
  *              format: email
  *            mobile:
- *              type: integer
+ *              type: string
  *            address:
  *              type: string
  *            city:
@@ -47,7 +47,7 @@ const usersController = require('../controllers/users.controller');
  *            country:
  *              type: string
  *            zipcode:
- *              type: integer
+ *              type: string
  *    responses:
  *      200:
  *        description: user created
@@ -102,7 +102,7 @@ router.get('/:id', (req, res, next) => {
 
 /**
  * @swagger
- * /users/{user_id}/favorites:
+ * /users/{uid}/favorites:
  *  get:
  *    tags:
  *    - Users
@@ -112,9 +112,9 @@ router.get('/:id', (req, res, next) => {
  *    produces: application/json
  *    parameters:
  *     - in: path
- *       name: user_id
+ *       name: uid
  *       schema:
- *         type: integer
+ *         type: string
  *         required: true
  *         description: The user_id of the user to get its favorite products
  *
@@ -158,7 +158,7 @@ router.get('/:id/favorites/', (req, res, next) => {
  *            full_name:
  *              type: string
  *            mobile:
- *              type: integer
+ *              type: string
  *            address:
  *              type: string
  *            city:
@@ -166,7 +166,7 @@ router.get('/:id/favorites/', (req, res, next) => {
  *            country:
  *              type: string
  *            zipcode:
- *              type: integer
+ *              type: string
  *    responses:
  *      200:
  *        description: User was patched
