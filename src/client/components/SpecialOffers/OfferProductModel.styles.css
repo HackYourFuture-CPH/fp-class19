@@ -28,6 +28,7 @@
     border-radius: 0.3rem;
     padding: 0.5rem;
 }
+.offer-product-add-button:active { background-color: #414b0b; }
 
 .offer-fav-button-div {
     margin: auto 1rem auto auto;
@@ -66,8 +67,9 @@
     border: 1px solid #9b8d8d;
     font-size: 1.2rem;
     font-weight: bolder;
+    color: black;
 }
 
-.discount-box h3 {
-    font-weight: 900;
+.offer-product-price-discountPrice {
+    color: black;
 }

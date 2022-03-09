@@ -1,3 +1,36 @@
-div {
-  color: #687808;
+.createAccountContainer {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-width: 850px;
+}
+
+.create-account-image {
+  background-image: url('../../assets/images/image_15.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 280px;
+  max-height: 820px;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+@media (max-width: 960px) {
+  .createAccountContainer {
+    margin: 2%;
+  }
+
+  .create-account-image {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 680px) {
+  .createAccountContainer {
+    margin: 5% auto;
+  }
+
+  .create-account-image {
+    display: none;
+  }
 }
