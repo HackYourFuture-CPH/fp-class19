@@ -27,12 +27,16 @@
     padding: 0;
 }
 
-.user-details-content {
+.user-details-content,
+.user-details-info {
     width: 10rem;
     text-align: start;
-    color: #000;
     font-weight: 600;
     padding-bottom: 1rem;
+}
+
+.user-details-content {
+    color: #000;
 }
 
 .text-capitalize {
@@ -52,7 +56,6 @@
 }
 
 .user-profile-block {
-    display: flex;
     padding-bottom: 3rem;
 }
 
@@ -73,4 +76,47 @@
 
 .user-contact-details {
     padding: 1rem 5rem;
+}
+
+@media only screen and (max-width: 500px) {
+    .user-profile-block {
+        display: flex;
+        flex-direction: column;
+    }
+    .user-info-block {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+    .user-details-info {
+        color: #687808;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .user-profile-block {
+        display: flex;
+        flex-direction: column;
+    }
+    .user-info-block {
+        display: flex;
+        padding: 0;
+    }
+    .user-details-info {
+        color: #000;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+    .user-profile-block {
+        display: flex;
+        flex-direction: row;
+    }
+    .user-info-block {
+        display: flex;
+        padding: 0;
+    }
+    .user-details-info {
+        color: #000;
+    }
 }
