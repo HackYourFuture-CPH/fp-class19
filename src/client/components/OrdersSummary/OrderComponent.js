@@ -10,16 +10,15 @@ export default function OrderComponent({ order, details }) {
   return (
     <div>
       <li>
-        <div>
-          <p>
-            Order No: {order.order_number} ({order.nr_of_items}items)
-            <span>{order.updated_at.slice(0, 10)}</span>
-            <span>Kr. {order.total_amount}</span>
-            <button onClick={viewOrder}>
+        <div className='flex-container'>
+          <div><h3>
+            Order No: {order.order_number}<span> ({order.nr_of_items} items)</span></h3></div>
+            <div><p>{order.updated_at.slice(0, 10)}</p>
+            <p>Kr. {order.total_amount}</p></div>
+            <div> <button onClick={viewOrder}>
               {fullView ? <p>&#x25BC;</p> : <p>&#x25B2;</p>}
             </button>
-            {console.log(details)}
-          </p>
+            </div>
         </div>
         {fullView && <div className='flex-container'>
                 <div><img src={details[0].picture} /></div>

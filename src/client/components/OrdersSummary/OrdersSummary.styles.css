@@ -1,15 +1,10 @@
-.orders-view .order-list {
-  list-style: none;
+.orders-view .order-item {
+  border: solid white 3px;
   background-color: #f6f8eb;
-  
+  margin-bottom: 15px;
 }
 
-.orders-view .order-list{
-
- margin: 10px;
-}
-
-.orders-view button{
+.orders-view button {
   border: none;
   background-color: #f6f8eb;
 }
@@ -23,6 +18,9 @@
 }
 
 .orders-view .flex-container > div {
-  margin: 10px;
-  padding: 20px;
+  margin: 0 10px;
+  padding: 0 20px;
+}
+.orders-view span {
+  font-size: small;
 }
