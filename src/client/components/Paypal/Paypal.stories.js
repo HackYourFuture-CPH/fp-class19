@@ -13,6 +13,6 @@ export function PaypalButton(args) {
 
 PaypalButton.args = {
   orderId: 'orderId',
-  totalAmount: 100,
+  totalAmount: 'totalAmount',
   userName: 'john doe',
 };
