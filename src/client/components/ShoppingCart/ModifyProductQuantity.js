@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './ShoppingCart.styles.css';
+import totalPriceOfProducts from '../ShoppingCart/ShoppingCart.component';
 
 function ModifyProductQuantity(props) {
   const { product, shoppingCart } = props;
@@ -12,6 +13,9 @@ function ModifyProductQuantity(props) {
 
     const result = shoppingCart.find(({ id }) => id === product.id);
     result.quantity += 1;
+    // props.totalPrice+=product.price*product.quantity;
+
+    props.setTotalPrice(props.totalPrice + 9);
   };
 
   const decrementCounter = () => {
@@ -65,7 +69,5 @@ ModifyProductQuantity.propTypes = {
   }).isRequired,
   shoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
-
-
 
 export default ModifyProductQuantity;

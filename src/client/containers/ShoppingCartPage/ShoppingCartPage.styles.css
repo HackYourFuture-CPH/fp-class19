@@ -1,6 +1,4 @@
-div {
-  color: #687808;
-}
+
 
 .shop-cart {
   margin: 50px;
@@ -8,7 +6,7 @@ div {
   width: 40%;
 }
 .heading {
-  text-align: center;
+  text-align: center
 }
 .empty-shop-cart {
   font-size: large;
