@@ -6,8 +6,17 @@ import faLogo from '../../assets/images/logo.png';
 import faUser from '../../assets/images/user-login.png';
 import faHeart from '../../assets/images/favorite-icon.png';
 import faShoppingCart from '../../assets/images/shopping-cart.png';
+// import { InitialShoppingCart } from '../../containers/ShoppingCartPage/ShoppingCartPage.Container';
 
-export default function Header({ isAuthenticated, username, link }) {
+export default function Header({
+  isAuthenticated,
+  username,
+  link,
+  numberOfItemsInCart,
+}) {
+  // const intialshop = InitialShoppingCart
+  //   const numberOfItemsInCart = intialshop.length();
+
   return (
     <nav>
       {/* LOGO */}
@@ -16,8 +25,20 @@ export default function Header({ isAuthenticated, username, link }) {
       </Link>
       {/* ICONS */}
       <div className="icons-right">
-        <Link to="/shopping-cart"><button type='button' className='cart'><img className="icons" src={faShoppingCart} alt="shopping-cart" /></button></Link>
-        <img className="icons" src={faHeart} alt="favorite" />
+        <Link to="/shopping-cart">
+          <button className="icons cart" type="button">
+            <div style={{ position: 'relative' }}>
+              <img src={faShoppingCart} alt="shopping-cart" />
+              {numberOfItemsInCart >= 1 ? (
+                <span className="cart-item-number">{numberOfItemsInCart}</span>
+              ) : null}
+            </div>
+          </button>
+        </Link>
+        <div className="icons">
+          <img src={faHeart} alt="favorite" />
+        </div>
+
         <img className="icons" src={faUser} alt="login" />
 
         {isAuthenticated ? (
@@ -36,9 +57,11 @@ Header.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
   username: PropTypes.string,
   link: PropTypes.string,
+  numberOfItemsInCart: PropTypes.number,
 };
 
 Header.defaultProps = {
   username: 'username',
   link: '/log-in',
+  numberOfItemsInCart: 2,
 };

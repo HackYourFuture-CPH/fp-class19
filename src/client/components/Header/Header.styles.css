@@ -18,13 +18,26 @@ nav {
   height: 75px;
 }
 
-.icons {
+.cart-item-number {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: 0px;
+  right: -16px;
+  background: #687808;
+  color: white;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 4px;
+}
+
+.cart-item-number > span .icons {
   float: left;
   cursor: pointer;
   margin-right: 0.5em;
-
 }
-.cart{
+.cart {
   border: none;
   background-color: #fff;
 }
