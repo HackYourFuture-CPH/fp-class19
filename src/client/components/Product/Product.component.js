@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './Product.styles.css';
 import cartBucketImage from '../../assets/images/cart_bucket.png';
 import heartImage from '../../assets/images/heart.png';
+import { addToShoppingCart } from '../../containers/ShoppingCartPage/ShoppingCartPage.Container';
 
 const cartBucket = {
   src: cartBucketImage,
@@ -15,13 +16,19 @@ const heart = {
 };
 
 export default function Product({
+  id,
   image,
   name,
   price,
   currency,
-  onClick,
   addToFavorites,
+  discount,  
 }) {
+  const addProductToShoppingCart = () => {
+    
+    addToShoppingCart(id, image, name, price, currency, discount, 1);
+  };
+
   return (
     <div className="product-container">
       <img className="product-image" src={image} alt={name} />
@@ -37,7 +44,7 @@ export default function Product({
           <button
             className="product-add-button"
             type="button"
-            onClick={onClick}
+            onClick={addProductToShoppingCart}
           >
             ADD
             <img
@@ -63,16 +70,17 @@ export default function Product({
 }
 
 Product.propTypes = {
+  id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   currency: PropTypes.string,
-  onClick: PropTypes.func,
   addToFavorites: PropTypes.func,
+  discount: PropTypes.number.isRequired,
 };
 
 Product.defaultProps = {
-  onClick: null,
   addToFavorites: null,
-  currency: 'DKK',
+  currency:'DKK'
+  
 };
