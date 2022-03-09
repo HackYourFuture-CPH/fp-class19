@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useRef } from 'react';
 import { PropTypes } from 'prop-types';
 
@@ -7,65 +8,55 @@ export default function Paypal({
   userName,
   onSuccess,
   onError,
-  onCancel,
 }) {
   const paypalRef = useRef();
-
   useEffect(() => {
     window.paypal
       .Buttons({
         style: {
           color: 'white',
           shape: 'rect',
-          layout: 'horizontal',
-          tagline: 'false',
-          label: 'paypal',
         },
         createOrder: (data, actions) =>
           actions.order.create({
             intent: 'CAPTURE',
             purchase_units: [
               {
-                description: 'OrderID: 12345',
+                description: orderId,
                 amount: {
-                  value: '0.1',
+                  value: '100',
                 },
               },
             ],
           }),
         onApprove: async (data, actions) => {
           await actions.order.capture().then((details) => {
-            console.log(details);
+            onSuccess(details);
           });
         },
         onError: (error) => {
-          console.log(error);
-        },
-        onCancel: (data) => {
-          console.log(data);
+          onError(error);
         },
       })
       .render(paypalRef.current);
-  }, []);
+  }, [orderId, toalAmount, userName, onSuccess, onError]);
   return <div ref={paypalRef} />;
 }
 
 Paypal.PropType = {
   orderId: PropTypes.string.isRequired,
   totalAmount: PropTypes.number.isRequired,
+  userName: PropTypes.string,
   onSuccess: PropTypes.func,
   onError: PropTypes.func,
-  onCancel: PropTypes.func,
 };
 
 Paypal.defaultProps = {
+  userName: 'John Doe',
   onSuccess: (data) => {
     console.log(data);
   },
   onError: (data) => {
-    console.log(data);
-  },
-  onCancel: (data) => {
     console.log(data);
   },
 };
