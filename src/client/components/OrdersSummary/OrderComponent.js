@@ -6,6 +6,9 @@ export default function OrderComponent({ order, orderDetails}) {
   const viewOrder = () => {
     setFullView(!fullView);
   };
+  React.useEffect(() => {
+    setCurrentRange(propProducts.slice(0, args.productsPerPage));
+  }, [propProducts, args.productsPerPage]);
   return (
       <div>
             <li key={order.id}>
@@ -17,7 +20,10 @@ export default function OrderComponent({ order, orderDetails}) {
                 <button onClick={viewOrder}>{fullView ? <p>&#x25BC;</p>:<p>&#x25B2;</p>}</button></p> 
               </div>
               {fullView && <>
-                {orderDetails}
+                {orderDetails.filter(odr=>odr.id==order.id)}
+                <img src={orderDetails.filter(odr=>odr.id==order.id).picture}/>
+                <p>{orderDetails.filter(odr=>odr.id==order.id).name}</p>
+                <p>Quantity: {orderDetails.filter(odr=>odr.id==order.id).quantity}</p>
               </>}
             </li>
       </div>

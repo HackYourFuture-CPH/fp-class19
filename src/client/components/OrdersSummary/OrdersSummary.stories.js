@@ -65,7 +65,7 @@ OrdersDisplay.args = {
       user_id: 1,
       quantity: 2,
       name: 'Lilim Pearl White',
-      picture: 'static/images/image_6.png',
+      picture: 'https://via.placeholder.com/500x500',
       stock_amount: 25,
     },
     {
@@ -76,7 +76,7 @@ OrdersDisplay.args = {
       user_id: 1,
       quantity: 2,
       name: 'Lilim Pearl White',
-      picture: 'static/images/image_6.png',
+      picture: 'https://via.placeholder.com/500x500',
       stock_amount: 25,
     },
     {
@@ -87,7 +87,7 @@ OrdersDisplay.args = {
       user_id: 1,
       quantity: 2,
       name: 'Lilim Pearl White',
-      picture: 'static/images/image_6.png',
+      picture: 'https://via.placeholder.com/500x500',
       stock_amount: 25,
     },
     {
@@ -98,7 +98,7 @@ OrdersDisplay.args = {
       user_id: 1,
       quantity: 2,
       name: 'Lilim Pearl White',
-      picture: 'static/images/image_6.png',
+      picture: 'https://via.placeholder.com/500x500',
       stock_amount: 25,
     },
     {
@@ -109,7 +109,7 @@ OrdersDisplay.args = {
       user_id: 1,
       quantity: 2,
       name: 'Lilim Pearl White',
-      picture: 'static/images/image_6.png',
+      picture: 'https://via.placeholder.com/500x500',
       stock_amount: 25,
     },
   ],
