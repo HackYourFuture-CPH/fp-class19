@@ -13,3 +13,16 @@
   border: none;
   background-color: #f6f8eb;
 }
+.orders-view img {
+  width: 100px;
+  height: 100px;
+}
+
+.orders-view .flex-container {
+  display: flex;
+}
+
+.orders-view .flex-container > div {
+  margin: 10px;
+  padding: 20px;
+}
