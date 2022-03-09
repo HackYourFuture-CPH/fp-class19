@@ -20,7 +20,7 @@ export default function OrderComponent({ order, details }) {
             </button>
             </div>
         </div>
-        {fullView && <div className='flex-container'>
+        {fullView && <div className='flex-container flex-container2'>
                 <div><img src={details[0].picture} /></div>
                 <div><p>{details[0].name}</p>
                 <p>Quantity: {details[0].quantity}</p></div>
