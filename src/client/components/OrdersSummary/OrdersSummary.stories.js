@@ -9,7 +9,7 @@ export default {
   },
 };
 
-const template = ({ orders }) => <OrdersSummary orders={orders} />;
+const template = ({ orders, orderDetails}) => <OrdersSummary orders={orders} orderDetails={orderDetails}/>;
 
 export const OrdersDisplay = template.bind({});
 
