@@ -73,6 +73,7 @@ export default function UserProfile() {
       <p className="user-profile-title title-font-style">my account</p>
       <div className="user-profile-container">
         <div className="user-profile-block">
+          <div> 
             {!profileIsLoading && profileData && (
               <div className="user-contact-details">
                 <p className="user-contact-title title-font-style text-capitalize">
@@ -84,7 +85,7 @@ export default function UserProfile() {
                       full name:
                     </li>
                     {!showForm && (
-                      <li className="user-details-content">
+                      <li className="user-details-info">
                         {profileData.full_name}
                       </li>
                     )}
@@ -106,7 +107,7 @@ export default function UserProfile() {
                     <li className="user-details-content text-capitalize">
                       email:
                     </li>
-                    <li className="user-details-content">
+                    <li className="user-details-info">
                       {profileData.email}
                     </li>
                   </ul>
@@ -117,7 +118,7 @@ export default function UserProfile() {
                       mobile:
                     </li>
                     {showForm === false && (
-                      <li className="user-details-content">
+                      <li className="user-details-info">
                         {profileData.mobile}
                       </li>
                     )}
@@ -133,6 +134,7 @@ export default function UserProfile() {
                       </li>
                     )}
                   </ul>
+                  
                 </div>
                 <p className="user-contact-title title-font-style text-capitalize">
                   your items will be delivered here
@@ -144,7 +146,17 @@ export default function UserProfile() {
                     </li>
                     {showForm === false && (
                         
-                      <li className="user-details-content text-capitalize">
+                      <li className="@media only screen and (max-width: 1000px) {
+                        .user-profile-block {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .user-info-block {
+                            display: flex;
+                            flex-direction: column;
+                            padding: 0;
+                        }
+                    } text-capitalize">
                         {profileData.address} <br />
                         {profileData.city} <br />
                         {profileData.country} <br />
@@ -194,7 +206,7 @@ export default function UserProfile() {
                 </div>
               </div>
             )}
-          
+          </div>
           <div className="user-contact-edit-details">
           {showForm===false && (
             <button
