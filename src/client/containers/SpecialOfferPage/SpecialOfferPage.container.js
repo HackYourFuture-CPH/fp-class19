@@ -11,6 +11,7 @@ export default function SpecialOfferPage() {
     fetch('/api/products/on_discount')
       .then((res) => res.json())
       .then((json) => setData(json));
+      
   }, []);
   const totalItemsPerPage = 8;
   const totalPages = Math.ceil(data.length / totalItemsPerPage);

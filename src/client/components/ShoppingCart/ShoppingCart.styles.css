@@ -1,14 +1,11 @@
-
-
-.favorite-container {
+.cart-container {
   border: 2px solid rgb(187, 183, 183);
   width: 650px;
-  background-color: #fff;
   margin: 0;
   padding: 0;
 }
 
-.product_container {
+.cart-product-container {
   display: flex;
   flex-direction: row;
   width: 646px;
@@ -19,6 +16,16 @@
 
 .image-discount-box {
   position: relative;
+}
+.add_cart_button {
+  margin-top: auto;
+  padding: 5px;
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100px;
+  padding-left: 100px;
 }
 
 .discount {
@@ -39,8 +46,8 @@
 .discounted_price {
   display: flex;
   flex-direction: row;
-  font-weight: bolder;
   color: black;
+  font-weight: bolder;
 }
 
 .line {
@@ -49,13 +56,14 @@
   margin: 0 30px 40px 30px;
 }
 
-.favorite-container li {
+.cart-list {
   list-style: none;
 }
 
 .counter-section {
   display: flex;
   flex-direction: row;
+  color: black;
 }
 
 .product_name {
@@ -69,10 +77,13 @@
   padding: 5px;
   margin-top: auto;
   padding-left: 30px;
+  justify-content: space-between;
+  
 }
 
 .qty-text {
   padding-right: 5px;
+  color: black;
 }
 
 .counter-box {
@@ -80,43 +91,31 @@
   width: 60px;
   height: 20px;
   text-align: center;
+  color: black;
+  font-weight: bolder;
 }
 
 .counter-button {
   background: rgb(240, 236, 236);
   border: none;
   font-weight: bolder;
-}
-
-.add_cart_button {
-  margin-top: auto;
-  padding: 5px;
-  align-items: flex-end;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  height: 100px;
-  padding-left: 100px;
-}
-
-.add_button {
-  background-color: #687808;
+  
 }
 
 .product_image {
   width: 100px;
   height: 100px;
 }
+.currency-field{
+  margin-left: 5px;
+  margin-right:5px;
+}
 
-.add_cart_button .close-button {
+.close-button {
   border-radius: 50%;
   margin-top: 0;
-  color: #687808;
+  color: black;
   background-color: #fff;
   justify-content: normal;
-}
-.currency{
-  margin-left: 2px;
-  margin-right: 2px;
-  color: black;
+  font-weight: bolder;
 }

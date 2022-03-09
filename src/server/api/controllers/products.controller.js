@@ -44,20 +44,33 @@ const getProducts = async(req) => {
     }
 };
 
-const getDiscountProducts = async() => knex('products')
-    .select(
-        'id',
-        'name',
-        'price',
-        'color',
-        'size',
-        'is_available',
-        'stock_amount',
-        'is_on_discount',
-        'discount_percent',
-        'picture',
-    )
-    .where('products.is_on_discount', '=', '1');
+const getDiscountProducts = async() => {
+    try {
+        const productsOnDiscount = await knex('products')
+            .select(
+                'id',
+                'name',
+                'price',
+                'color',
+                'size',
+                'is_available',
+                'stock_amount',
+                'is_on_discount',
+                'discount_percent',
+                'picture',
+            )
+            .where('products.is_on_discount', '=', '1');
+        if (productsOnDiscount.length === 0) {
+            throw new HttpError('There are no products with discount', 404);
+        }
+        return productsOnDiscount;
+    } catch (error) {
+        if (error instanceof HttpError) {
+            throw error;
+        }
+        throw new HttpError('Unexpected error', 500);
+    }
+};
 
 const getProductById = async(product_id) => {
     const NUMBER_REGEXP = /^\d+$/g;
@@ -81,12 +94,9 @@ const getProductById = async(product_id) => {
             )
             .where({ id });
         if (product.length === 0) {
-            throw new HttpError(`Product with id ${id} doesn't exist`,
-                404);
+            throw new HttpError(`Product with id ${id} doesn't exist`, 404);
         }
         return product[0];
-
-
     } catch (error) {
         if (error instanceof HttpError) {
             throw error;
@@ -94,7 +104,6 @@ const getProductById = async(product_id) => {
 
         throw new HttpError('Unexpected error', 500);
     }
-
 };
 
 module.exports = {

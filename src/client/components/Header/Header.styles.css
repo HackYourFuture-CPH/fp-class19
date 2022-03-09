@@ -1,5 +1,4 @@
 nav {
-  width: 100vw;
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -23,6 +22,11 @@ nav {
   float: left;
   cursor: pointer;
   margin-right: 0.5em;
+
+}
+.cart{
+  border: none;
+  background-color: #fff;
 }
 .fav-button{
 border: none;

@@ -4,12 +4,19 @@
   display: flex;
   flex-direction: column;
   width: 273px;
+  padding: 7px;
+  border: 1px solid #c4c4c4;
+  margin: 5px;
   height: 397;
   padding: 10px;
 }
 
 .product-name {
   color: #687808;
+  margin-bottom: 3px;
+}
+.product-price {
+  color: black;
   margin-bottom: 5px;
 }
 
@@ -24,14 +31,22 @@
 
 .product-add-button {
   background: #687808;
+
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: bolder;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+
   color: #ffffff;
   font-size: 25px;
   padding-bottom: 5px;
 }
+.product-add-button:active { background-color: #414b0b; }
 
 .fav-button-div {
-  margin-left: auto;
-  margin-right: 0;
+  margin: auto 1rem auto auto;
 }
 
 .vector-bucket {
@@ -43,6 +58,9 @@
 .favorite-button {
   border: none;
   color: #687808;
+
+  background-color: #fff;
+
   background-color: #ffffff;
   cursor: pointer;
 }

@@ -16,6 +16,7 @@ export default function ProductsView({ products }) {
                 name={product.name}
                 price={product.price}
                 discount={product.discount_percent}
+                currency={product.currency}
               />
             </li>
           ))}
@@ -25,7 +26,7 @@ export default function ProductsView({ products }) {
   );
 }
 
-Product.propTypes = {
+ProductsView.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
@@ -36,4 +37,4 @@ Product.propTypes = {
       discount: PropTypes.number,
     }),
   ).isRequired,
-};
+  }

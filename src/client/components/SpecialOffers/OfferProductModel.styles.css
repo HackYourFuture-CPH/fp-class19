@@ -28,6 +28,7 @@
     border-radius: 0.3rem;
     padding: 0.5rem;
 }
+.offer-product-add-button:active { background-color: #414b0b; }
 
 .offer-fav-button-div {
     margin: auto 1rem auto auto;

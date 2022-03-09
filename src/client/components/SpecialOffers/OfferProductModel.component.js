@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './OfferProductModel.styles.css';
 import cartBucketImage from '../../assets/images/cart_bucket.png';
@@ -6,6 +6,7 @@ import heartImage from '../../assets/images/heart.png';
 import font from '../../assets/fonts/Inter-Regular.ttf';
 import fillHeartImage from '../../assets/images/heartFill.png';
 import { addProductToFavorites } from '../../containers/FavoritePage/FavoritePage.Container';
+import { addToShoppingCart } from '../../containers/ShoppingCartPage/ShoppingCartPage.Container';
 
 const cartBucket = {
   src: cartBucketImage,
@@ -24,14 +25,16 @@ const filledHeart = {
 export default function OfferProduct({
   id,
   image,
-  discount,
   name,
   price,
   currency,
-  onClick,
+  discount,
 }) {
-
   const [isFavorite, setIsFavorite] = useState(false);
+
+  const addProductToShoppingCart = () => {
+    addToShoppingCart(id, image, name, price, currency, discount, 1);
+  };
   const discountPrice = price - (price * discount) / 100;
 
   const addToFavorites = () => {
@@ -72,7 +75,7 @@ export default function OfferProduct({
           <button
             className="offer-product-add-button"
             type="button"
-            onClick={onClick}
+            onClick={addProductToShoppingCart}
           >
             ADD
             <img
@@ -99,6 +102,7 @@ export default function OfferProduct({
           <button
             className="favorite-button"
             type="button"
+            onClick={addToFavorites}
             style={{ display: isFavorite ? 'inline-block' : 'none' }}
           >
             <img
@@ -120,11 +124,8 @@ OfferProduct.propTypes = {
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   currency: PropTypes.string,
-  onClick: PropTypes.func,
 };
 
 OfferProduct.defaultProps = {
-  onClick: null,
-
   currency: 'DKK',
 };

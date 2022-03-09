@@ -51,25 +51,25 @@ function ProductCart(props) {
         <div
           style={{
             display: product.discount_percent !== 0 ? 'inline-block' : 'none',
-            'text-decoration': 'line-through',
+            textDecoration: 'line-through',
           }}
         >
-          {product.currency} {product.price}
+         <span className='currency'> DKK {product.price}</span>
         </div>
         <div
           style={{
             display: product.discount_percent === 0 ? 'inline-block' : 'none',
           }}
         >
-          {product.currency} {product.price}
+         <span className='currency'> DKK {product.price}</span>
         </div>
         <div
           style={{
             display: product.discount_percent !== 0 ? 'inline-block' : 'none',
           }}
         >
-          <span className="currency">{product.currency}</span>
-          {Math.round(product.price * (1 - product.discount_percent / 100))}
+          <span className="currency">DKK
+          {Math.round(product.price * (1 - product.discount_percent / 100))}</span>
         </div>
       </div>
       <div>
@@ -83,14 +83,26 @@ function ProductCart(props) {
 }
 
 ProductCart.propTypes = {
-  product: PropTypes.shape({
-    discount_percent: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    currency: PropTypes.string,
-    id: PropTypes.string,
-  }).isRequired,
+
+
+  product: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      currency: PropTypes.string,
+      discount_percent: PropTypes.number.isRequired,
+    }),
+  ),
   favorites: PropTypes.arrayOf(PropTypes.object).isRequired,
   setFavorites: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
+ ProductCart.defaultProps={
+   product:PropTypes.shape({ currency:'DKK'})
+  
+   
+
+}
 
 export default ProductCart;

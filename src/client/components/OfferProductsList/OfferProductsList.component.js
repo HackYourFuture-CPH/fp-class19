@@ -3,7 +3,7 @@ import Product from '../SpecialOffers/OfferProductModel.component';
 import './OfferProductsList.styles.css';
 import PropTypes from 'prop-types';
 
-export default function OfferProducts({ products, addToCart }) {
+export default function OfferProducts({ products }) {
   return (
     <div className="offer-products-container">
       <ul className="offer-products-list">
@@ -15,7 +15,6 @@ export default function OfferProducts({ products, addToCart }) {
               name={product.name}
               price={product.price}
               discount={product.discount_percent}
-              onClick={addToCart}
             />
           </li>
         ))}
@@ -24,8 +23,6 @@ export default function OfferProducts({ products, addToCart }) {
   );
 }
 
-
-
 OfferProducts.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
@@ -33,13 +30,7 @@ OfferProducts.propTypes = {
       name: PropTypes.string,
       image: PropTypes.string,
       currency: PropTypes.string,
-      onClick: PropTypes.func,
-      discount:PropTypes.number
-      
+      discount: PropTypes.number,
     }),
   ).isRequired,
-  
 };
-
-
-
