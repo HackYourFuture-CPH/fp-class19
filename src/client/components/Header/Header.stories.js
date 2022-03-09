@@ -1,16 +1,26 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import Header from './Header.component';
 
 export default { title: 'Components / Header' };
 
-export function HeaderBar() {
-  return <MemoryRouter>
-    <Header isAuthenticated={false} />
-  </MemoryRouter>
+function Template(args) {
+  return (
+    <MemoryRouter>
+      <Header {...args} />
+    </MemoryRouter>
+  );
 }
-export function HeaderBarAuthenticated() {
-  return <MemoryRouter>
-    <Header isAuthenticated={true} username="Jane" />
-  </MemoryRouter>
-}
+
+export const HeaderBarAuthenticated = Template.bind({});
+HeaderBarAuthenticated.args = {
+  isAuthenticated: true,
+  numberOfItemsInCart: 10,
+};
+
+export const HeaderBar = Template.bind({});
+HeaderBar.args = {
+  isAuthenticated: false,
+  numberOfItemsInCart: 0,
+};

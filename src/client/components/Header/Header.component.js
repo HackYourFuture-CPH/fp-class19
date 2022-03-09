@@ -57,11 +57,10 @@ Header.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
   username: PropTypes.string,
   link: PropTypes.string,
-  numberOfItemsInCart: PropTypes.number,
+  numberOfItemsInCart: PropTypes.number.isRequired,
 };
 
 Header.defaultProps = {
   username: 'username',
   link: '/log-in',
-  numberOfItemsInCart: 2,
 };
