@@ -19,6 +19,7 @@ import ContactUsPage from './containers/ContactUsPage/ContactUsPage.container';
 import ForgotPasswordPage from './containers/ForgotPasswordPage/ForgotPasswordPage.container';
 import OrderConfirmationPage from './containers/OrderConfirmationPage/OrderConfirmationPage.Container';
 import Page404Container from './containers/404Page/404Page.Container';
+import PaypalPage from './containers/Paypal/PaypalPage.container';
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -51,7 +52,10 @@ function App() {
         <Route exact path="/order-confirmation">
           <OrderConfirmationPage />
         </Route>
-
+        {/* Testing Paypal page path,should be removed  */}
+        <Route exact path="/paypal">
+          <PaypalPage />
+        </Route>
         {/* Anonymous pages */}
         <SignIn exact path="/sign-in" />
         <SignUp exact path="/sign-up" />
