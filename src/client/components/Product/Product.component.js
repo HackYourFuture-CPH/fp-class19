@@ -5,8 +5,6 @@ import cartBucketImage from '../../assets/images/cart_bucket.png';
 import heartImage from '../../assets/images/heart.png';
 import { addToShoppingCart } from '../../containers/ShoppingCartPage/ShoppingCartPage.Container';
 
-import { addProductToFavorites } from '../../containers/FavoritePage/FavoritePage.Container';
-
 const cartBucket = {
   src: cartBucketImage,
   alt: 'shopping cart image',
