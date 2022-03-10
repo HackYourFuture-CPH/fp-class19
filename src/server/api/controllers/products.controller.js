@@ -98,7 +98,7 @@ const getProductById = async(product_id) => {
     if (products.length === 0) {
       throw new Error(`incorrect entry with the id of ${id}`, 404);
         }
-        return product[0];
+        return products[0];
     } catch (error) {
         if (error instanceof HttpError) {
             throw error;
