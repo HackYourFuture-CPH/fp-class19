@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './ShoppingCart.styles.css';
 import ShoppingCartImage from './ShoppingCartImage';
@@ -10,6 +10,7 @@ export default function ShoppingCart(props) {
   const [totalPrice, setTotalPrice] = useState(getTotalPrice());
   const [totalDiscount, setTotalDiscount] = useState(getTotalDiscount());
   const [totalPayment, setTotalPayment] = useState(getTotalPayment());
+  const [userDetail, setUserDetail] = useState([]);
 
   function getTotalPrice() {
     const totalPriceOfProducts = shoppingCart.reduce(
@@ -31,9 +32,26 @@ export default function ShoppingCart(props) {
     return totalAmountToBePayed;
   }
 
+  //  to fetch user details
+  const GetUserDetails = useCallback(() => {
+    const apiUrl = '/api/users/10';
+    // TODO : integrate with userId when user logs in
+
+    fetch(apiUrl)
+      .then((res) => res.json())
+      .then((result) => {
+        setUserDetail(result);
+        
+      });
+  }, []);
+
+  useEffect(() => {
+    GetUserDetails();
+  }, [GetUserDetails]);
+
   return (
     <div className="parent-div">
-      {/* first div */}
+      
       <div className="detail-container">
         <div>
           <ul className="cart-container">
@@ -102,20 +120,32 @@ export default function ShoppingCart(props) {
           </div>
         </div>
       </div>
-      {/* second div */}
-      <div className="user-detail">
-        <div>My Details</div>
-        <div>Name:</div>
-        <div>Email:</div>
-      </div>
-      {/* third div */}
-      <div className="delivery-info">
-        <div>DELIVERY INFORMATION:</div>
-        <div>Address:</div>
-        <div>City:</div>
-        <div>Country:</div>
-        <div>Zipcode:</div>
-      </div>
+
+      {userDetail.map((user) => (
+        <>
+          <div className="user-detail">
+            <div>My Details</div>
+            <div>Name:{user.full_name}</div>
+            <div>Email:{user.email}</div>
+          </div>
+
+          <div className="delivery-info">
+            <div>DELIVERY INFORMATION:</div>
+            <div>
+              Address:<span className="user-field">{user.address}</span>
+            </div>
+            <div>
+              City:<span className="user-field">{user.city}</span>
+            </div>
+            <div>
+              Country:<span className="user-field">{user.country}</span>
+            </div>
+            <div>
+              Zipcode:<span className="user-field">{user.zipcode}</span>
+            </div>
+          </div>
+        </>
+      ))}
     </div>
   );
 }
@@ -123,11 +153,5 @@ export default function ShoppingCart(props) {
 ShoppingCart.propTypes = {
   shoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
   setShoppingCart: PropTypes.func.isRequired,
-  // product: PropTypes.arrayOf(PropTypes.object).isRequired,
-  /* totalPrice: PropTypes.func.isRequired,
-  setTotalPrice: PropTypes.func.isRequired,
-  totalDiscount: PropTypes.func.isRequired,
-  setTotalDiscount: PropTypes.func.isRequired,
-  totalPayment: PropTypes.func.isRequired,
-  setTotalPayment: PropTypes.func.isRequired, */
+  
 };
