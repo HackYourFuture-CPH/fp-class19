@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import SortComponent from './SortComponent';
+import SortComponent from './Sorting.component';
 
 export default {
   title: 'Components / Sort Component',

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './SortComponent.styles.css';
+import './Sorting.styles.css';
 
 export default function SortComponent({ products, setSortedProducts }) {
   const [option, setOption] = React.useState();
