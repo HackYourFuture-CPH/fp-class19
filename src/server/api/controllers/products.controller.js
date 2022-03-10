@@ -44,7 +44,9 @@ const getProducts = async(req) => {
     }
 };
 
-const getDiscountProducts = async () => knex('products')
+const getDiscountProducts = async () => {
+     try {
+         const productsOnDiscount = await knex('products')
     .select(
       'id',
       'name',
