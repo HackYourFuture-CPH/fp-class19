@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Products.styles.css';
 import Product from '../Product/Product.component';
-import Sort from '../SortComponent/SortComponent';
+import Sort from '../SortComponent/Sorting.component';
 
 export default function Products({ products }) {
   const [sortedProducts, setSortedProducts] = useState(products);
