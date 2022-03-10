@@ -7,12 +7,12 @@ export default function UserProfile() {
   const [profileData, setProfileData] = useState(null);
   const [profileIsLoading, setProfileLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
-  const [newFullName, setFullName] = useState(null);
-  const [newMobile, setMobile] = useState(null);
-  const [newZipcode, setZipcode] = useState(null);
-  const [newCity, setCity] = useState(null);
-  const [newCountry, setCountry] = useState(null);
-  const [newAddress, setAddress] = useState(null);
+  const [newFullName, setFullName] = useState("");
+  const [newMobile, setMobile] = useState("");
+  const [newZipcode, setZipcode] = useState("");
+  const [newCity, setCity] = useState("");
+  const [newCountry, setCountry] = useState("");
+  const [newAddress, setAddress] = useState("");
   const { user, isLoading } = useAuthentication();
   
   function updateUserProfile(event) {
@@ -36,7 +36,6 @@ export default function UserProfile() {
   }
 
   const showProfileUpdateForm = () => {
-    setProfileData({});
     setShowForm(true);
   };
 
@@ -54,6 +53,12 @@ export default function UserProfile() {
           throw new Error('Could not check if user present in Database:', 404);
         }
         setProfileData(data[0]);
+        setFullName(data[0].full_name);
+        setMobile(data[0].mobile);
+        setAddress(data[0].address);
+        setCity(data[0].city);
+        setCountry(data[0].country);
+        setZipcode(data[0].zipcode);
       })
       .catch((error) => {
         if (error instanceof Error) {
