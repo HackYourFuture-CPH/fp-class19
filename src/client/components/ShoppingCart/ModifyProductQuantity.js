@@ -1,29 +1,59 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './ShoppingCart.styles.css';
-import totalPriceOfProducts from '../ShoppingCart/ShoppingCart.component';
 
 function ModifyProductQuantity(props) {
-  const { product, shoppingCart } = props;
-
-  const [counter, setCounter] = useState(product.quantity);
+  const [counter, setCounter] = useState(props.product.quantity);
 
   const incrementCounter = () => {
     setCounter(counter + 1);
 
-    const result = shoppingCart.find(({ id }) => id === product.id);
+    const result = props.shoppingCart.find(({ id }) => id === props.product.id);
     result.quantity += 1;
-    // props.totalPrice+=product.price*product.quantity;
 
-    props.setTotalPrice(props.totalPrice + 9);
+    const totalPriceOfProducts = props.shoppingCart.reduce(
+      (sum, item) => sum + item.quantity * item.price,
+      0,
+    );
+    props.setTotalPrice(totalPriceOfProducts);
+
+    const totalDiscountOfProducts = props.shoppingCart.reduce(
+      (sum, item) =>
+        sum + Math.round((item.discount * (item.quantity * item.price)) / 100),
+      0,
+    );
+    props.setTotalDiscount(totalDiscountOfProducts);
+
+    const totalAmountToBePayed = totalPriceOfProducts - totalDiscountOfProducts;
+    props.setTotalPayment(totalAmountToBePayed);
   };
 
   const decrementCounter = () => {
     if (counter > 1) {
       setCounter(counter - 1);
 
-      const result = shoppingCart.find(({ id }) => id === product.id);
+      const result = props.shoppingCart.find(
+        ({ id }) => id === props.product.id,
+      );
       result.quantity -= 1;
+
+      const totalPriceOfProducts = props.shoppingCart.reduce(
+        (sum, item) => sum + item.quantity * item.price,
+        0,
+      );
+      props.setTotalPrice(totalPriceOfProducts);
+
+      const totalDiscountOfProducts = props.shoppingCart.reduce(
+        (sum, item) =>
+          sum +
+          Math.round((item.discount * (item.quantity * item.price)) / 100),
+        0,
+      );
+      props.setTotalDiscount(totalDiscountOfProducts);
+
+      const totalAmountToBePayed =
+        totalPriceOfProducts - totalDiscountOfProducts;
+      props.setTotalPayment(totalAmountToBePayed);
     } else {
       setCounter(1);
     }
@@ -31,7 +61,7 @@ function ModifyProductQuantity(props) {
 
   return (
     <div className="name-counter-container">
-      <div className="product_name">{product.name}</div>
+      <div className="product_name">{props.product.name}</div>
       <br />
       <br />
 
@@ -68,6 +98,9 @@ ModifyProductQuantity.propTypes = {
     id: PropTypes.number,
   }).isRequired,
   shoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setTotalPrice: PropTypes.func.isRequired,
+  setTotalDiscount: PropTypes.func.isRequired,
+  setTotalPayment: PropTypes.func.isRequired,
 };
 
 export default ModifyProductQuantity;

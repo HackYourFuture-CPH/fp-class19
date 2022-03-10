@@ -7,27 +7,33 @@ import RemoveFromShoppingCart from './RemoveFromShoppingCart';
 
 export default function ShoppingCart(props) {
   const { shoppingCart, setShoppingCart } = props;
-  const [totalPrice, setTotalPrice] = useState(totalPriceOfProducts);
-  // TODO :add functionality of changing price with quantity
-  // const [totalDiscount,setTotalDiscount]=useState();
-  // const [totalPayment,setTotalPayment]=useState();
+  const [totalPrice, setTotalPrice] = useState(getTotalPrice());
+  const [totalDiscount, setTotalDiscount] = useState(getTotalDiscount());
+  const [totalPayment, setTotalPayment] = useState(getTotalPayment());
 
-  const totalPriceOfProducts = shoppingCart.reduce(
-    (sum, product) => sum + product.quantity * product.price,
-    0,
-  );
-  console.log(totalPriceOfProducts);
-  const totalDiscount = shoppingCart.reduce(
-    (sum, product) =>
-      sum +
-      Math.round((product.discount * (product.quantity * product.price)) / 100),
-    0,
-  );
-  const amountToBePayed = totalPriceOfProducts - totalDiscount;
+  function getTotalPrice() {
+    const totalPriceOfProducts = shoppingCart.reduce(
+      (sum, item) => sum + item.quantity * item.price,
+      0,
+    );
+    return totalPriceOfProducts;
+  }
+  function getTotalDiscount() {
+    const totalDiscountOfProducts = shoppingCart.reduce(
+      (sum, item) =>
+        sum + Math.round((item.discount * (item.quantity * item.price)) / 100),
+      0,
+    );
+    return totalDiscountOfProducts;
+  }
+  function getTotalPayment() {
+    const totalAmountToBePayed = totalPrice - totalDiscount;
+    return totalAmountToBePayed;
+  }
 
   return (
     <div className="parent-div">
-      1.
+      {/* first div */}
       <div className="detail-container">
         <div>
           <ul className="cart-container">
@@ -42,11 +48,21 @@ export default function ShoppingCart(props) {
                       setShoppingCart={setShoppingCart}
                       totalPrice={totalPrice}
                       setTotalPrice={setTotalPrice}
+                      totalDiscount={totalDiscount}
+                      setTotalDiscount={setTotalDiscount}
+                      totalPayment={totalPayment}
+                      setTotalPayment={setTotalPayment}
                     />
                     <RemoveFromShoppingCart
                       product={product}
                       shoppingCart={shoppingCart}
                       setShoppingCart={setShoppingCart}
+                      totalPrice={totalPrice}
+                      setTotalPrice={setTotalPrice}
+                      totalDiscount={totalDiscount}
+                      setTotalDiscount={setTotalDiscount}
+                      totalPayment={totalPayment}
+                      setTotalPayment={setTotalPayment}
                     />
                   </div>
                 </li>
@@ -61,36 +77,38 @@ export default function ShoppingCart(props) {
             <div>Cart Details</div>
 
             <div>
-              Total:<span className="total-price">{totalPriceOfProducts}</span>{' '}
-              DKK
+              Total:<span className="total-price">{totalPrice}</span> DKK
             </div>
 
             <div>
               Discount:<span className="total-discount">{totalDiscount} </span>
               DKK
             </div>
-            <div className="line"></div>
+            <div className="line" />
             <div>
-              You Pay:<span className="total-payment">{amountToBePayed}</span>{' '}
-              DKK
+              You Pay:<span className="total-payment">{totalPayment}</span> DKK
             </div>
 
             <div>
-              <button className="proceed-payment">Proceed to payment</button>
+              <button type="button" className="proceed-payment">
+                Proceed to payment
+              </button>
             </div>
           </div>
           <div>
-            <button className="continue-shop">Continue Shopping</button>
+            <button type="button" className="continue-shop">
+              Continue Shopping
+            </button>
           </div>
         </div>
       </div>
-      2.
+      {/* second div */}
       <div className="user-detail">
         <div>My Details</div>
         <div>Name:</div>
         <div>Email:</div>
       </div>
-      3.
+      {/* third div */}
       <div className="delivery-info">
         <div>DELIVERY INFORMATION:</div>
         <div>Address:</div>
@@ -105,4 +123,11 @@ export default function ShoppingCart(props) {
 ShoppingCart.propTypes = {
   shoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
   setShoppingCart: PropTypes.func.isRequired,
+  // product: PropTypes.arrayOf(PropTypes.object).isRequired,
+  /* totalPrice: PropTypes.func.isRequired,
+  setTotalPrice: PropTypes.func.isRequired,
+  totalDiscount: PropTypes.func.isRequired,
+  setTotalDiscount: PropTypes.func.isRequired,
+  totalPayment: PropTypes.func.isRequired,
+  setTotalPayment: PropTypes.func.isRequired, */
 };

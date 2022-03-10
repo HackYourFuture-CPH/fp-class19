@@ -1,19 +1,18 @@
-.detail-container{
+.detail-container {
   display: flex;
   flex-direction: row;
   margin: 0;
   margin-left: 100px;
   padding: 0;
 }
-.detail-container>div{
+.detail-container > div {
   margin: 10px;
 }
 
 .cart-container {
-  /* border: 2px solid rgb(187, 183, 183); */
   width: 650px;
-  margin: 0;
   padding: 0;
+  margin: -20px 0 0 -35px;
 }
 
 .cart-product-container {
@@ -23,7 +22,6 @@
   padding: 30px;
   background-color: #fff;
   justify-content: space-between;
-  ;
 }
 
 .image-discount-box {
@@ -90,7 +88,6 @@
   margin-top: auto;
   padding-left: 30px;
   justify-content: space-between;
-  
 }
 
 .qty-text {
@@ -111,16 +108,15 @@
   background: rgb(240, 236, 236);
   border: none;
   font-weight: bolder;
-  
 }
 
 .product_image {
   width: 100px;
   height: 100px;
 }
-.currency-field{
+.currency-field {
   margin-left: 5px;
-  margin-right:5px;
+  margin-right: 5px;
 }
 
 .close-button {
@@ -131,94 +127,83 @@
   justify-content: normal;
   font-weight: bolder;
 }
-.cart-detail-container{
+.cart-detail-container {
   display: flex;
   box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.1);
-  
-  background-color:beige;
-  
-  height:fit-content;
-  
+
+  background-color: beige;
+
+  height: fit-content;
+
   flex-direction: column;
-  
+
   text-align: center;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
-  
 }
-.cart-detail-container>div{
-margin: 5px;
-width:200px;
-color: black;
-
+.cart-detail-container > div {
+  margin: 5px;
+  width: 200px;
+  color: black;
 }
-.proceed-payment{
+.proceed-payment {
   background-color: #687804;
   margin: 15px;
-
 }
-.right-div{
+.right-div {
   display: flex;
   flex-direction: column;
   font-weight: bolder;
-  
 }
-.right-div>div{
-  margin :10px;
-  
+.right-div > div {
+  margin: 10px;
 }
 
-.continue-shop{
+.continue-shop {
   background-color: #687804;
-  margin:20px;
-  
+  margin: 20px;
 }
-.parent-div{
+.parent-div {
   display: flex;
   flex-direction: column;
-  border: 2px solid red;
-  
-
 }
-.parent-div > div{
-  margin:15px;
-
+.parent-div > div {
+  margin: 15px 40px;
 }
-.user-detail{
-
-background-color:beige;
-padding: 20px;
-
-color: black;
-font-weight: bolder;
-box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.1);
-
+.user-detail {
+  background-color: beige;
+  padding: 20px;
+  margin-left: 30px;
+  color: black;
+  font-weight: bolder;
+  box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.1);
+  width: fit-content;
 }
-.user-detail>div{
+.user-detail > div {
   margin: 10px;
   color: black;
 }
-.delivery-info{
-background-color:beige;
-padding: 20px;
-color: black;
-font-weight: bolder;
-box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.1);
+.delivery-info {
+  background-color: beige;
+  padding: 20px;
+  color: black;
+  font-weight: bolder;
+  box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.1);
+  width: fit-content;
 }
-.delivery-info>div{
+.delivery-info > div {
   margin: 10px;
   color: black;
 }
-.total-price{
+.total-price {
   margin-left: 4px;
   margin-right: 4px;
 }
-.total-discount{
+.total-discount {
   margin-left: 4px;
   margin-right: 4px;
 }
-.total-payment{
+.total-payment {
   margin-left: 4px;
   margin-right: 4px;
 }
-
