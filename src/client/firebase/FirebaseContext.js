@@ -37,10 +37,10 @@ export function FirebaseProvider({ children, initialAuth }) {
     () => ({
       auth,
       isInitialized: !!auth,
-      signIn: (data) => signIn(auth, data),
-      signUp: (data) => signUp(auth, data),
-      signOut: () => signOut(auth),
-      resetPassword: (data) => resetPassword(auth, data),
+      signIn: (data) => signIn(data),
+      signUp: (data) => signUp(data),
+      signOut: () => signOut(),
+      resetPassword: (data) => resetPassword(data),
     }),
     [auth],
   );
