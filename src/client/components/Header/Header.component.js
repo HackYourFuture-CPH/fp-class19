@@ -6,7 +6,6 @@ import faLogo from '../../assets/images/logo.png';
 import faUser from '../../assets/images/user-login.png';
 import faHeart from '../../assets/images/favorite-icon.png';
 import faShoppingCart from '../../assets/images/shopping-cart.png';
-// import { InitialShoppingCart } from '../../containers/ShoppingCartPage/ShoppingCartPage.Container';
 
 export default function Header({
   isAuthenticated,
@@ -14,9 +13,6 @@ export default function Header({
   link,
   numberOfItemsInCart,
 }) {
-  // const intialshop = InitialShoppingCart
-  //   const numberOfItemsInCart = intialshop.length();
-
   return (
     <nav>
       {/* LOGO */}
