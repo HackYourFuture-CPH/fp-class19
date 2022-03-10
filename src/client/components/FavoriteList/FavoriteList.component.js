@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './FavoriteList.styles.css';
-import ProductImage from './ProductImage.js';
-import ProductQuantity from './ProductQuantity';
-import ProductCart from './ProductCart';
+import FavoriteProductImage from './FavoriteProductImage.js';
+import FavoriteProductQuantitySelector from './FavoriteProductQuantitySelector';
+import RemoveFromFavorites from './RemoveFromFavorites';
 
 export default function FavoriteList( props ) {
   
@@ -19,11 +19,11 @@ export default function FavoriteList( props ) {
             <div>
               <li>
                 <div className="product_container">
-                  <ProductImage product={product} />
+                  <FavoriteProductImage product={product} />
 
-                  <ProductQuantity product={product} />
+                  <FavoriteProductQuantitySelector product={product} />
 
-                  <ProductCart product={product} favorites={favorites} setFavorites={setFavorites} />
+                  <RemoveFromFavorites product={product} favorites={favorites} setFavorites={setFavorites} />
                 </div>
               </li>
 

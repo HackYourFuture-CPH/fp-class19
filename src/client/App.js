@@ -51,7 +51,7 @@ function App() {
         <Route exact path="/contact-us">
           <ContactUsPage />
         </Route>
-         {/* this is set here just for testing,will be moved to authentication route */}  
+         {/* TODO:this is set here just for testing,will be moved to authentication route */}  
         <Route exact path="/favorites">
           <FavoritePage /> 
         </Route>
