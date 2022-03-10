@@ -1,6 +1,6 @@
 import React from 'react';
 import './OrdersSummary.styles.css';
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 export default function OrderComponent({ order, details }) {
   const [fullView, setFullView] = React.useState(false);
