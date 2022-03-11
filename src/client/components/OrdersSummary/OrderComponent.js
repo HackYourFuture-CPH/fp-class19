@@ -1,6 +1,7 @@
 import React from 'react';
 import './OrdersSummary.styles.css';
 import moment from 'moment-timezone';
+import OrderDetails from './OrderDetails';
 
 export default function OrderComponent({ order, details }) {
   const [fullView, setFullView] = React.useState(false);
@@ -29,17 +30,7 @@ export default function OrderComponent({ order, details }) {
             </button>
           </div>
         </div>
-        {fullView && (
-          <div className="flex-container flex-container2">
-            <div>
-              <img src={details[0].picture} alt="orderedItem" />
-            </div>
-            <div>
-              <p>{details[0].name}</p>
-              <p>Quantity: {details[0].quantity}</p>
-            </div>
-          </div>
-        )}
+        {fullView && <OrderDetails details={details}/>}
       </li>
     </div>
   );
