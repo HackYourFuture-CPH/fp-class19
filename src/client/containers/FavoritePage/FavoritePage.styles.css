@@ -1,0 +1,13 @@
+div {
+  color: #687808;
+}
+
+
+.favoritelist {
+  margin: 50px;
+  padding: 0;
+  width: 40%;
+}
+.fav-heading {
+  text-align: center;
+}
