@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './ShoppingCart.styles.css';
 import ShoppingCartImage from './ShoppingCartImage';
@@ -124,13 +125,16 @@ export default function ShoppingCart(props) {
       {userDetail.map((user) => (
         <>
           <div className="user-detail">
-            <div>My Details</div>
+            <div><h3>My Details</h3></div>
             <div>Name:{user.full_name}</div>
             <div>Email:{user.email}</div>
           </div>
 
           <div className="delivery-info">
-            <div>DELIVERY INFORMATION:</div>
+            <div className='edit-details'>
+              <div><h3>DELIVERY INFORMATION:</h3></div>
+              <div><span className='edit-field'></span><Link>Edit</Link></div>
+            </div>
             <div>
               Address:<span className="user-field">{user.address}</span>
             </div>

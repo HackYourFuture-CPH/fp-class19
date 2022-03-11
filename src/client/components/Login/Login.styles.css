@@ -68,14 +68,13 @@
 
 .login-component .btn {
     background: #687808;
-    color: #ffff;
-    width: 60%;
+    color: #fff;
+    width: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 35px;
+    height: 40px;
     border: 0;
-    font-weight: bolder;
 }
 
 .login-component .form-control2 {
@@ -90,6 +89,7 @@
     color: #687808;
     text-decoration: none;
 }
+
 .login-component .sign-in {
     color: #fff;
     text-decoration: none;
@@ -154,5 +154,4 @@
 
 .login-component .img2 {
     float: left;
-    
 }

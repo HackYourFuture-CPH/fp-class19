@@ -183,6 +183,9 @@
   margin: 10px;
   color: black;
 }
+.user-detail h3 {
+  font-weight: bolder;
+}
 .delivery-info {
   background-color: beige;
   padding: 20px;
@@ -195,6 +198,10 @@
   margin: 10px;
   color: black;
 }
+.delivery-info h3 {
+  font-weight: bolder;
+}
+
 .total-price {
   margin-left: 4px;
   margin-right: 4px;
@@ -207,7 +214,18 @@
   margin-left: 4px;
   margin-right: 4px;
 }
-.user-field{
+.user-field {
   margin-left: 5px;
   margin-right: 5px;
+}
+.edit-details {
+  display: flex;
+  flex-direction: row;
+}
+.edit-details > div {
+  margin: auto;
+  color: black;
+}
+.edit-field {
+  margin-left: 150px;
 }

@@ -1,19 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .create-account-container {
   background-color: #f6f8eb;
   color: var(--black);
   display: flex;
   flex-direction: column;
-  max-width: 550px;
-  margin-bottom: 25px;
+  margin-block: 25px;
   padding-bottom: 25px;
 }
 
 .create-account-container h1 {
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   font-size: 1.6rem;
 }
 
 .create-account-container h2 {
+  font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   padding-top: 25px;
   font-size: 1.2rem;
@@ -22,6 +25,7 @@
 }
 
 .create-account-container label {
+  font-family: 'Roboto', sans-serif;
   display: block;
   margin-inline: auto;
   margin-block: 15px;
@@ -35,9 +39,11 @@
   border-radius: 3px;
   border: 2px solid #808080;
   padding: 5px;
+  font-size: 14px;
 }
 
 .create-account-button {
+  font-family: 'Roboto', sans-serif;
   width: 175px;
   margin: 0 auto;
   border-radius: 3px;
@@ -56,11 +62,16 @@
   border: 2px solid #808080;
   background-color: #fff;
   padding-right: 5px;
+  color: black;
 }
 
 .show-hide-password-container input {
   border: none;
   padding: 5px;
+}
+
+.create-account-container input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 .create-account-container input:focus {
