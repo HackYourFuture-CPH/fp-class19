@@ -3,7 +3,7 @@ import './ProductsView.styles.css';
 import Product from '../Product/Product.component';
 import PropTypes from 'prop-types';
 
-export default function ProductsView({ products }) {
+export default function ProductsView({ products,user }) {
   return (
     <div className="products-view">
       <div>
@@ -17,6 +17,7 @@ export default function ProductsView({ products }) {
                 price={product.price}
                 discount={product.discount_percent}
                 currency={product.currency}
+                user={user}
               />
             </li>
           ))}

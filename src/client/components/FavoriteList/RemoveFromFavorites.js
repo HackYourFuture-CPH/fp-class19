@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './FavoriteList.styles.css';
 
 function RemoveFromFavorites(props) {
-  const { product, favorites, setFavorites } = props;
+  const { product, favorites, setFavorites, user } = props;
 
   const removeProductFromFavorites = () => {
     setFavorites((prev) => prev.filter((item) => item.id !== product.id));
@@ -13,28 +13,21 @@ function RemoveFromFavorites(props) {
 
       if (index > -1) {
         favorites.splice(index, 1);
-        
-        }
       }
-    
-    const userId = 10; // this is set for testing only
-    // TODO : integrate with userId when user logs in
+    }
 
-    const api = `/api/favorites?product_id= ${product.id} &user_id=${userId}`;
+    const api = `/api/favorites?product_id=${product.id}&uid=${user.uid}`;
 
     const requestOptions = {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         product_id: product.id,
-        user_id: userId,
+        user_id: user.uid,
       }),
     };
-    fetch(api, requestOptions)
-      .then((response) => response.json())
-      
+    fetch(api, requestOptions).then((response) => response.json());
   };
-  
 
   return (
     <div className="add_cart_button">
@@ -54,22 +47,24 @@ function RemoveFromFavorites(props) {
             textDecoration: 'line-through',
           }}
         >
-         <span className='currency'> DKK {product.price}</span>
+          <span className="currency"> DKK {product.price}</span>
         </div>
         <div
           style={{
             display: product.discount_percent === 0 ? 'inline-block' : 'none',
           }}
         >
-         <span className='currency'> DKK {product.price}</span>
+          <span className="currency"> DKK {product.price}</span>
         </div>
         <div
           style={{
             display: product.discount_percent !== 0 ? 'inline-block' : 'none',
           }}
         >
-          <span className="currency">DKK
-          {Math.round(product.price * (1 - product.discount_percent / 100))}</span>
+          <span className="currency">
+            DKK
+            {Math.round(product.price * (1 - product.discount_percent / 100))}
+          </span>
         </div>
       </div>
       <div>
@@ -83,8 +78,6 @@ function RemoveFromFavorites(props) {
 }
 
 RemoveFromFavorites.propTypes = {
-
-
   product: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -97,12 +90,10 @@ RemoveFromFavorites.propTypes = {
   ),
   favorites: PropTypes.arrayOf(PropTypes.object).isRequired,
   setFavorites: PropTypes.arrayOf(PropTypes.object).isRequired,
+  user: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
-RemoveFromFavorites.defaultProps={
-   product:PropTypes.shape({ currency:'DKK'})
-  
-   
-
-}
+RemoveFromFavorites.defaultProps = {
+  product: PropTypes.shape({ currency: 'DKK' }),
+};
 
 export default RemoveFromFavorites;

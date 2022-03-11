@@ -7,6 +7,7 @@ import fillHeartImage from '../../assets/images/heartFill.png';
 import { addProductToFavorites } from '../../containers/FavoritePage/FavoritePage.Container';
 import { addToShoppingCart } from '../../containers/ShoppingCartPage/ShoppingCartPage.Container';
 
+
 const cartBucket = {
   src: cartBucketImage,
   alt: 'shopping cart image',
@@ -28,16 +29,23 @@ export default function Product({
   price,
   currency,
   discount,
+  user
 }) {
   const [isFavorite, setIsFavorite] = useState(false);
+
   const addProductToShoppingCart = () => {
     addToShoppingCart(id, image, name, price, currency, discount, 1);
   };
 
   const addToFavorites = () => {
-    addProductToFavorites(10, id); // default user_id for testing
-    // TODO : change to user-d that logs in
-    setIsFavorite(true); // setFavorite is set true just to show color change on favorite button when it is clicked and it is not adding any functionality.
+    if (!user) {
+      // eslint-disable-next-line no-alert
+      alert('Please login to add to your Favorites');
+    } else {
+      addProductToFavorites(user.uid, id);
+
+      setIsFavorite(true); // setFavorite is set true just to show color change on favorite button when it is clicked and it is not adding any functionality.
+    }
   };
   return (
     <div className="product-container">
@@ -97,7 +105,7 @@ Product.propTypes = {
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   currency: PropTypes.string,
-  discount:PropTypes.number.isRequired,
+  discount: PropTypes.number.isRequired,
 };
 
 Product.defaultProps = {

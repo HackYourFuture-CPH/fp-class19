@@ -7,6 +7,7 @@ import font from '../../assets/fonts/Inter-Regular.ttf';
 import fillHeartImage from '../../assets/images/heartFill.png';
 import { addProductToFavorites } from '../../containers/FavoritePage/FavoritePage.Container';
 import { addToShoppingCart } from '../../containers/ShoppingCartPage/ShoppingCartPage.Container';
+import { useAuthentication } from '../../hooks/useAuthentication';
 
 const cartBucket = {
   src: cartBucketImage,
@@ -31,15 +32,23 @@ export default function OfferProduct({
   discount,
 }) {
   const [isFavorite, setIsFavorite] = useState(false);
+  const { user } = useAuthentication();
 
   const addProductToShoppingCart = () => {
     addToShoppingCart(id, image, name, price, currency, discount, 1);
   };
+
   const discountPrice = price - (price * discount) / 100;
 
   const addToFavorites = () => {
-    setIsFavorite(true);
-    addProductToFavorites(10, id);
+    
+    if (!user) {
+      // eslint-disable-next-line no-alert
+      alert('Please login to add to your Favorites');
+    } else {
+      addProductToFavorites(user.uid, id);
+      setIsFavorite(true);
+    }
   };
   return (
     <div

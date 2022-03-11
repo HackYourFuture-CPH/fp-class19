@@ -1,38 +1,46 @@
 import './FavoritePage.styles.css';
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect} from 'react';
 import FavoriteList from '../../components/FavoriteList/FavoriteList.component';
+import Loader from '../../components/Loader/Loader.component';
 
-export const addProductToFavorites = (userId, productId) => {
+export const addProductToFavorites = (uid, productId) => {
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       product_id: productId,
-      user_id: userId,
+      uid,
     }),
   };
-  fetch('/api/favorites/add', requestOptions).then((response) =>
-    response.json(),
-  );
+  fetch(
+    `/api/favorites/add?uid=${uid}&product_id=${productId}`,
+    requestOptions,
+  ).then((response) => response.json());
 };
 
-export default function FavoritePage() {
+export default function FavoritePage(props) {
   const [favorites, setFavorites] = useState([]);
+  // eslint-disable-next-line react/prop-types
+  const{user,isLoading}=props;
+  
 
-  const GetFavorites = useCallback(() => {
-    const apiUrl = '/api/users/10/favorites';
-    // TODO : integrate with userId when user logs in
+  useEffect(() => {
+    if (!user?.uid) {
+      return;
+    }
+
+    const apiUrl = `/api/users/${user.uid}/favorites`;
 
     fetch(apiUrl)
       .then((res) => res.json())
       .then((result) => {
         setFavorites(result);
       });
-  }, []);
+  }, [user]);
 
-  useEffect(() => {
-    GetFavorites();
-  }, [GetFavorites]);
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <div>
@@ -43,7 +51,7 @@ export default function FavoritePage() {
           display: favorites.length > 0 ? 'inline-block' : 'none',
         }}
       >
-        <FavoriteList favorites={favorites} setFavorites={setFavorites} />
+        <FavoriteList favorites={favorites} setFavorites={setFavorites} user={user}/>
       </div>
       <div
         className="empty-fav-list"

@@ -5,7 +5,6 @@ import LandingPage from './containers/LandingPage/LandingPage.container';
 import SignIn from './containers/SignIn';
 import ResetPassword from './containers/ResetPassword';
 import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
-import Profile from './containers/Profile';
 import Loader from './components/Loader/Loader.component';
 import Header from './components/Header/Header.component';
 import Menu from './components/Menu/Menu.component';
@@ -22,9 +21,10 @@ import CreateAccountPage from './containers/CreateAccountPage/CreateAccountPage.
 import OrderConfirmationPage from './containers/OrderConfirmationPage/OrderConfirmationPage.Container';
 import Page404Container from './containers/404Page/404Page.Container';
 
+import UserProfilePage from './containers/UserProfilePage/UserProfilePage.Container';
 
 function App() {
-  const { isLoading } = useAuthentication();
+  const { isLoading ,user} = useAuthentication();
 
   if (isLoading) {
     return <Loader />;
@@ -37,7 +37,7 @@ function App() {
       <Switch>
         {/* Home page */}
         <Route exact path="/">
-          <LandingPage />
+          <LandingPage user={user}/>
         </Route>
         {/* Special Offer Page */}
         <Route exact path="/special-offers">
@@ -51,11 +51,6 @@ function App() {
         <Route exact path="/contact-us">
           <ContactUsPage />
         </Route>
-         {/* TODO:this is set here just for testing,will be moved to authentication route */}  
-        <Route exact path="/favorites">
-          <FavoritePage /> 
-        </Route>
-
 
         {/* shoppingCart page */}
         <Route exact path="/shopping-cart">
@@ -66,7 +61,6 @@ function App() {
           <OrderConfirmationPage />
         </Route>
 
-
         {/* Anonymous pages */}
         <SignIn exact path="/sign-in" />
         <CreateAccountPage exact path="/sign-up" />
@@ -75,9 +69,14 @@ function App() {
         <ForgotPasswordPage exact path="/forgot-password" />
 
         {/* All routes below are authenticated routes - a user must login first */}
-        <AuthenticatedRoute exact path="/profile">
-          <Profile />
+        <AuthenticatedRoute exact path="/user-profile">
+          <UserProfilePage />
         </AuthenticatedRoute>
+
+        <AuthenticatedRoute exact path="/favorites">
+          <FavoritePage user={user} isLoading={isLoading} />
+        </AuthenticatedRoute>
+
         {/* this has to be bottom always.. pls dont move and dont keep under this any routes */}
         <Route path="*">
           <Page404Container />
