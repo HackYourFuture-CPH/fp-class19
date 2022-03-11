@@ -41,10 +41,10 @@ const favoritesController = require('../controllers/favorites.controller');
  *
  */
 router.post('/add', (req, res, next) => {
-  favoritesController
-    .addToFavorites(req.body)
-    .then((result) => res.json(result))
-    .catch((next))
+    favoritesController
+        .addToFavorites(req.body)
+        .then((result) => res.json(result))
+        .catch((next))
 });
 
 /**
@@ -61,42 +61,25 @@ router.post('/add', (req, res, next) => {
  *      - in: query
  *        name: user_id
  *        type: integer
- *        required:
- *            - user_id
  *        description: ID of the user to delete.
- *
- *
  *      - in: query
  *        name: product_id
  *        type: integer
- *        required:
- *            - product_id
  *        description: ID of the product to delete.
  *    responses:
  *      200:
- *        description: product deleted for a user from favorites
+ *        description: Product deleted for a user from favorites
+ *      400:
+ *        description: Bad request. Id should be a number
  *      404:
- *        description: The product ID or user Id you provided does not exist
+ *        description: Bad request. userID or productID doesn't exist
+ *      
  *
  */
-router.delete('/', (req, res) => {
-  console.log('Going to delete the favorite product of a user');
-  console.log(req.query.user_id);
-  console.log(req.query.product_id);
-  favoritesController
-    .deleteFromFavorites(req.query.user_id, req.query.product_id)
-    .then((result) => {
-      console.log(result);
-      // If result is equal to 0, then that means the product id or user id does not exist
-      if (result === 0) {
-        res
-          .status(404)
-          .send('The product ID or user Id you provided does not exist.');
-      } else {
-        res.json({ success: true });
-      }
-    })
-    .catch((error) => console.log(error));
+router.delete('/', (req, res, next) => {
+    favoritesController
+        .deleteFromFavorites(req.query.user_id, req.query.product_id)
+        .then((result) => res.json(result))
+        .catch(next);
 });
-
 module.exports = router;
