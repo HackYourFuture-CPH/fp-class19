@@ -16,9 +16,7 @@ export default function FavoriteList(props) {
             <li>
               <div className="product_container">
                 <FavoriteProductImage product={product} />
-
                 <FavoriteProductQuantitySelector product={product} />
-
                 <RemoveFromFavorites
                   product={product}
                   favorites={favorites}
