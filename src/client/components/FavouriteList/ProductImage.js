@@ -8,8 +8,8 @@ function ProductImage({ product }) {
       <div>
         <img
           className="product_image"
-          src={product.image.src}
-          alt={product.image.alt}
+          src={product.image}
+           alt={product.image}
         />
       </div>
       <div
@@ -31,8 +31,8 @@ ProductImage.propTypes = {
   }),
 };
 
-ProductImage.defaultProps = {
+ ProductImage.defaultProps = {
   product: null,
-};
+ };
 
 export default ProductImage;

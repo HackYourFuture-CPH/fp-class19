@@ -1,11 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import './Header.styles.css';
-import faLogo from '../../assets/images/logo.png';
-import faUser from '../../assets/images/user-login.png';
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 import faHeart from '../../assets/images/favorite-icon.png';
+import faLogo from '../../assets/images/logo.png';
 import faShoppingCart from '../../assets/images/shopping-cart.png';
+import faUser from '../../assets/images/user-login.png';
+import { useFirebase } from '../../firebase/FirebaseContext';
+import { useAuthentication } from '../../hooks/useAuthentication';
+
+export default function Header() {
+  const { isAuthenticated, user } = useAuthentication();
+  const { signOut } = useFirebase();
 
 export default function Header({
   isAuthenticated,
@@ -42,9 +48,17 @@ export default function Header({
         <img className="icons" src={faUser} alt="login" />
 
         {isAuthenticated ? (
-          <div className="login icons"> Hello {username}</div>
+          <>
+          <Link to="/log-in">
+            <button onClick={() => signOut()} type="button">
+              Logout
+            </button>
+            </Link>
+            <div className="login icons"> Hello {user.email}</div>
+            
+          </>
         ) : (
-          <Link className="login icons" to={link}>
+          <Link className="login icons" to="/log-in">
             Log In
           </Link>
         )}
@@ -64,4 +78,4 @@ Header.propTypes = {
 Header.defaultProps = {
   username: 'username',
   link: '/log-in',
-};
+}

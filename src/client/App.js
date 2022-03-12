@@ -5,7 +5,6 @@ import LandingPage from './containers/LandingPage/LandingPage.container';
 import SignIn from './containers/SignIn';
 import ResetPassword from './containers/ResetPassword';
 import AuthenticatedRoute from './components/Auth/AuthenticatedRoute';
-import Profile from './containers/Profile';
 import Loader from './components/Loader/Loader.component';
 import Header from './components/Header/Header.component';
 import Menu from './components/Menu/Menu.component';
@@ -20,6 +19,7 @@ import ForgotPasswordPage from './containers/ForgotPasswordPage/ForgotPasswordPa
 import CreateAccountPage from './containers/CreateAccountPage/CreateAccountPage.container';
 import OrderConfirmationPage from './containers/OrderConfirmationPage/OrderConfirmationPage.Container';
 import Page404Container from './containers/404Page/404Page.Container';
+import UserProfilePage from './containers/UserProfilePage/UserProfilePage.Container'
 
 function App() {
   const { isLoading } = useAuthentication();
@@ -66,8 +66,8 @@ function App() {
         <ForgotPasswordPage exact path="/forgot-password" />
 
         {/* All routes below are authenticated routes - a user must login first */}
-        <AuthenticatedRoute exact path="/profile">
-          <Profile />
+        <AuthenticatedRoute exact path="/user-profile">
+          <UserProfilePage />
         </AuthenticatedRoute>
         {/* this has to be bottom always.. pls dont move and dont keep under this any routes */}
         <Route path="*">
