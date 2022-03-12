@@ -17,10 +17,12 @@ export const HeaderBarAuthenticated = Template.bind({});
 HeaderBarAuthenticated.args = {
   isAuthenticated: true,
   numberOfItemsInCart: 10,
+  numberOfItemsInFavorite: 20,
 };
 
 export const HeaderBar = Template.bind({});
 HeaderBar.args = {
   isAuthenticated: false,
   numberOfItemsInCart: 0,
+  numberOfItemsInFavorite: 0,
 };

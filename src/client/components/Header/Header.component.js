@@ -12,6 +12,7 @@ export default function Header({
   username,
   link,
   numberOfItemsInCart,
+  numberOfItemsInFavorite,
 }) {
   return (
     <nav>
@@ -31,8 +32,11 @@ export default function Header({
             </div>
           </button>
         </Link>
-        <div className="icons">
+        <div className="icons" style={{ position: 'relative' }}>
           <img src={faHeart} alt="favorite" />
+          {numberOfItemsInFavorite >= 1 ? (
+            <span className="favorite-item-number">{numberOfItemsInFavorite}</span>
+          ) : null}
         </div>
 
         <img className="icons" src={faUser} alt="login" />
@@ -54,6 +58,7 @@ Header.propTypes = {
   username: PropTypes.string,
   link: PropTypes.string,
   numberOfItemsInCart: PropTypes.number.isRequired,
+  numberOfItemsInFavorite: PropTypes.number.isRequired,
 };
 
 Header.defaultProps = {
