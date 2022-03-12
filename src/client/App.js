@@ -22,7 +22,7 @@ import Page404Container from './containers/404Page/404Page.Container';
 import UserProfilePage from './containers/UserProfilePage/UserProfilePage.Container'
 
 function App() {
-  const { isLoading } = useAuthentication();
+  const { isLoading,user } = useAuthentication();
 
   if (isLoading) {
     return <Loader />;
@@ -51,7 +51,7 @@ function App() {
         </Route>
         {/* shoppingCart page */}
         <Route exact path="/shopping-cart">
-          <ShoppingCartPage />
+          <ShoppingCartPage user={user} isLoading={isLoading}/>
         </Route>
 
         <Route exact path="/order-confirmation">
