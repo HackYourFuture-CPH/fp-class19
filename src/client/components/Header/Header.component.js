@@ -1,6 +1,8 @@
+/* eslint-disable react/no-unused-prop-types */
 import './Header.styles.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from  'prop-types';
 
 import faHeart from '../../assets/images/favorite-icon.png';
 import faLogo from '../../assets/images/logo.png';
@@ -9,17 +11,13 @@ import faUser from '../../assets/images/user-login.png';
 import { useFirebase } from '../../firebase/FirebaseContext';
 import { useAuthentication } from '../../hooks/useAuthentication';
 
-export default function Header() {
-  const { isAuthenticated, user } = useAuthentication();
-  const { signOut } = useFirebase();
-
 export default function Header({
-  isAuthenticated,
-  username,
-  link,
   numberOfItemsInCart,
   numberOfItemsInFavorite,
 }) {
+  const { isAuthenticated, user } = useAuthentication();
+  const { signOut } = useFirebase();
+
   return (
     <nav>
       {/* LOGO */}
@@ -41,7 +39,9 @@ export default function Header({
         <div className="icons" style={{ position: 'relative' }}>
           <img src={faHeart} alt="favorite" />
           {numberOfItemsInFavorite >= 1 ? (
-            <span className="favorite-item-number">{numberOfItemsInFavorite}</span>
+            <span className="favorite-item-number">
+              {numberOfItemsInFavorite}
+            </span>
           ) : null}
         </div>
 
@@ -49,13 +49,12 @@ export default function Header({
 
         {isAuthenticated ? (
           <>
-          <Link to="/log-in">
-            <button onClick={() => signOut()} type="button">
-              Logout
-            </button>
+            <Link to="/log-in">
+              <button onClick={() => signOut()} type="button">
+                Logout
+              </button>
             </Link>
             <div className="login icons"> Hello {user.email}</div>
-            
           </>
         ) : (
           <Link className="login icons" to="/log-in">
@@ -68,7 +67,6 @@ export default function Header({
 }
 
 Header.propTypes = {
-  isAuthenticated: PropTypes.bool.isRequired,
   username: PropTypes.string,
   link: PropTypes.string,
   numberOfItemsInCart: PropTypes.number.isRequired,
@@ -78,4 +76,4 @@ Header.propTypes = {
 Header.defaultProps = {
   username: 'username',
   link: '/log-in',
-}
+};
