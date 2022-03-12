@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductPreview from '../../components/ProductPreview/ProductPreview.component';
-import Carousel from '../../components/Carousel/Carousel';
+import Carousel from '../../components/Carousel/Carousel.component';
 import Loader from '../../components/Loader/Loader.component';
 import './ProductPage.styles.css';
 
@@ -41,19 +41,24 @@ export default function ProductPage() {
 
   return (
     <div className="product-page">
-      {isProductLoading && <Loader />}
-      {!isProductLoading && !productError && (
-        <ProductPreview
-          product={product}
-          quantityCount={quantityCount}
-          setQuantityCount={setQuantityCount}
-        />
-      )}
-      {productError && (
-        <h1>Error occurred while fetching products: {productError}</h1>
-      )}
-      <div className="products-carousel">
-        {products && <Carousel products={products.items} />}
+      <div className="product-page-preview-container">
+        {isProductLoading && <Loader />}
+        {!isProductLoading && !productError && (
+          <ProductPreview
+            product={product}
+            quantityCount={quantityCount}
+            setQuantityCount={setQuantityCount}
+          />
+        )}
+        {productError && (
+          <h1>Error occurred while fetching products: {productError}</h1>
+        )}
+      </div>
+      <div className="similar-products">
+        <h2>SIMILAR PRODUCTS</h2>
+      </div>
+      <div className="product-page-carousel-container">
+        {products && <Carousel products={products.items} show={2} />}
       </div>
     </div>
   );

@@ -3,11 +3,31 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 3rem;
+  padding: 3rem 0;
+}
+.product-page-preview-container {
+  margin-bottom: 3rem;
 }
 
-.products-carousel {
+.product-page-carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem 0;
+  background:rgba(0, 170, 0, 0.384);
+}
+
+.similar-products {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.similar-products h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: black;
+  font-family: Inter;
 }
