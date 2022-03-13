@@ -23,11 +23,11 @@ const favoritesController = require('../controllers/favorites.controller');
  *        schema:
  *          type: object
  *          example:
- *            {"user_id":2,
+ *            {"uid":"string",
  *             "product_id":3}
  *          properties:
- *             user_id:
- *               type: integer
+ *             uid:
+ *               type: string
  *             product_id:
  *               type: integer
  *
@@ -35,7 +35,7 @@ const favoritesController = require('../controllers/favorites.controller');
  *      200:
  *        description: added to favorites
  *      400:
- *        description: Bad Request. ID must be an integer and larger than 0'.
+ *        description: Bad Request. UID must be a string'.
  *      5xx:
  *        description: Unexpected error.
  *
@@ -59,8 +59,8 @@ router.post('/add', (req, res, next) => {
  *    produces: application/json
  *    parameters:
  *      - in: query
- *        name: user_id
- *        type: integer
+ *        name: uid
+ *        type: string
  *        description: ID of the user to delete.
  *      - in: query
  *        name: product_id
@@ -70,7 +70,7 @@ router.post('/add', (req, res, next) => {
  *      200:
  *        description: Product deleted for a user from favorites
  *      400:
- *        description: Bad request. Id should be a number
+ *        description: Bad request. uId should be a string
  *      404:
  *        description: Bad request. userID or productID doesn't exist
  *      
@@ -78,7 +78,7 @@ router.post('/add', (req, res, next) => {
  */
 router.delete('/', (req, res, next) => {
     favoritesController
-        .deleteFromFavorites(req.query.user_id, req.query.product_id)
+        .deleteFromFavorites(req.query.uid, req.query.product_id)
         .then((result) => res.json(result))
         .catch(next);
 });

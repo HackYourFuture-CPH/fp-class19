@@ -3,6 +3,7 @@ import './SpecialOfferPage.styles.css';
 import OfferProducts from '../../components/OfferProductsList/OfferProductsList.component';
 import Pagination from '../../components/Pagination/Pagination.component';
 
+
 export default function SpecialOfferPage() {
   const [data, setData] = useState([]);
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
