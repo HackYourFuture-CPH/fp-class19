@@ -2,20 +2,20 @@
 import './Header.styles.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from  'prop-types';
+import PropTypes from 'prop-types';
 
 import faHeart from '../../assets/images/favorite-icon.png';
 import faLogo from '../../assets/images/logo.png';
 import faShoppingCart from '../../assets/images/shopping-cart.png';
 import faUser from '../../assets/images/user-login.png';
 import { useFirebase } from '../../firebase/FirebaseContext';
-import { useAuthentication } from '../../hooks/useAuthentication';
 
 export default function Header({
   numberOfItemsInCart,
   numberOfItemsInFavorite,
+  user,
+  isAuthenticated,
 }) {
-  const { isAuthenticated, user } = useAuthentication();
   const { signOut } = useFirebase();
 
   return (
@@ -36,7 +36,13 @@ export default function Header({
             </div>
           </button>
         </Link>
-        <div className="icons" style={{ position: 'relative' }}>
+        <div
+          className="icons"
+          style={{
+            position: 'relative',
+            display: user ? 'inline-block' : 'none',
+          }}
+        >
           <img src={faHeart} alt="favorite" />
           {numberOfItemsInFavorite >= 1 ? (
             <span className="favorite-item-number">
@@ -67,13 +73,13 @@ export default function Header({
 }
 
 Header.propTypes = {
-  username: PropTypes.string,
-  link: PropTypes.string,
+  isAuthenticated: PropTypes.bool,
+  user: PropTypes.shape({}),
   numberOfItemsInCart: PropTypes.number.isRequired,
   numberOfItemsInFavorite: PropTypes.number.isRequired,
 };
 
 Header.defaultProps = {
-  username: 'username',
-  link: '/log-in',
+  isAuthenticated: false,
+  user: null,
 };

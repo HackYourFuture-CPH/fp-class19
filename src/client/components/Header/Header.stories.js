@@ -16,6 +16,7 @@ function Template(args) {
 export const HeaderBarAuthenticated = Template.bind({});
 HeaderBarAuthenticated.args = {
   isAuthenticated: true,
+  user: { email: 'foo@example.com' },
   numberOfItemsInCart: 10,
   numberOfItemsInFavorite: 20,
 };
@@ -23,6 +24,7 @@ HeaderBarAuthenticated.args = {
 export const HeaderBar = Template.bind({});
 HeaderBar.args = {
   isAuthenticated: false,
+  user: null,
   numberOfItemsInCart: 0,
   numberOfItemsInFavorite: 0,
 };
