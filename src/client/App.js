@@ -24,7 +24,7 @@ import Page404Container from './containers/404Page/404Page.Container';
 import UserProfilePage from './containers/UserProfilePage/UserProfilePage.Container';
 
 function App() {
-  const { isLoading, user } = useAuthentication();
+  const { isLoading, user, isAuthenticated } = useAuthentication();
 
   if (isLoading) {
     return <Loader />;
@@ -32,12 +32,12 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      <Header user={user} isAuthenticated={isAuthenticated} />
       <Menu />
       <Switch>
         {/* Home page */}
         <Route exact path="/">
-          <LandingPage user={user}/>
+          <LandingPage user={user} />
         </Route>
         {/* Special Offer Page */}
         <Route exact path="/special-offers">
