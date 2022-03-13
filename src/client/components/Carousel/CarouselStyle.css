@@ -1,14 +1,16 @@
 .carousel-container {
     width: 100%;
     position: relative;
-    background-color: #F6F8EB;
+    background-color: #f6f8eb;
+    display: flex;
 }
 
 .carousel-wrapper {
     display: flex;
-    width: 100%;
+    width: 80%;
     position: relative;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 .carousel-content {
@@ -22,7 +24,6 @@
 
 .right-arrow {
     position: absolute;
-    z-index: 1;
     top: 50%;
     width: 0;
     height: 0;
@@ -35,7 +36,6 @@
 
 .left-arrow {
     position: absolute;
-    z-index: 1;
     top: 50%;
     width: 0;
     height: 0;
