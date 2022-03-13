@@ -42,7 +42,7 @@ export default function ProductPage() {
   return (
     <div className="product-page">
       <div className="product-page-detail-container">
-        {isProductLoading && <Loader />}
+        {isProductLoading && isProductsLoading && <Loader />}
         {!isProductLoading && !productError && (
           <ProductDetail
             product={product}
@@ -59,7 +59,7 @@ export default function ProductPage() {
       </div>
       <div className="product-page-carousel-block">
         <div className="product-page-carousel-container">
-          {products && <Carousel products={products.items} show={2} />}
+          {!isProductsLoading && !productsError && <Carousel products={products.items} show={2} />}
         </div>
       </div>
     </div>
