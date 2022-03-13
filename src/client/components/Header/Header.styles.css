@@ -62,7 +62,7 @@ nav {
   background: #fff;
 }
 
-.login {
+.displayActive, .displayHidden {
   font-family: 'Roboto', sans-serif;
   color: #687808;
   font-size: 24px;
@@ -73,6 +73,15 @@ nav {
   text-align: center;
   text-decoration: none;
 }
+
+.displayActive {
+  display: block;
+}
+
+.displayHidden {
+  display: none;
+}
+
 .icons-right {
   display: flex;
   align-items: center;

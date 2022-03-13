@@ -1,9 +1,8 @@
 /* eslint-disable react/no-unused-prop-types */
 import './Header.styles.css';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import faHeart from '../../assets/images/favorite-icon.png';
 import faLogo from '../../assets/images/logo.png';
 import faShoppingCart from '../../assets/images/shopping-cart.png';
@@ -17,6 +16,29 @@ export default function Header({
   isAuthenticated,
 }) {
   const { signOut } = useFirebase();
+  const [userName, setUserName] = useState('');
+  const [logOut, setLogOut] = useState();
+
+  useEffect(() => {
+    if (!user?.uid) {
+      return;
+    }
+
+    fetch(`/api/users/${user.uid}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data[0]) {
+          throw new Error('Could not check if user present in Database:', 404);
+        }
+        setUserName(data[0].full_name);
+      })
+      .catch((error) => {
+        if (error instanceof Error) {
+          throw error;
+        }
+        throw new Error('Unexpected error', 500);
+      });
+  }, [user]);
 
   return (
     <nav>
@@ -52,26 +74,66 @@ export default function Header({
           ) : null}
         </div>
 
-        <img
-          className="icons"
-          style={{ margin: '2rem' }}
-          src={faUser}
-          alt="login"
-        />
-
         {isAuthenticated ? (
           <>
+            <Link to="/user-profile" style={{ textDecoration: 'none' }}>
+              <img
+                className="icons"
+                style={{ margin: '2rem' }}
+                src={faUser}
+                alt="login"
+              />
+            </Link>
             <Link to="/log-in">
-              <button onClick={() => signOut()} type="button">
-                Logout
+              <button
+                onClick={() => signOut()}
+                onMouseEnter={() => setLogOut(true)}
+                onMouseLeave={() => setLogOut(false)}
+                type="button"
+                style={{
+                  border: 'none',
+                  background: 'none',
+                  cursor: 'pointer',
+                }}
+              >
+                {userName ? (
+                  <>
+                    <div className={!logOut ? 'displayActive' : 'displayHidden'}> Hello {userName}</div>
+                    <div
+                      className={
+                        logOut ? 'displayActive' : 'displayHidden'
+                      }
+                    >
+                      Log out {userName}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="login icons"> Hello {user.email}</div>
+                    <div
+                      className={
+                        logOut ? 'displayActive' : 'displayHidden'
+                      }
+                    >
+                      Log out {user.email}
+                    </div>
+                  </>
+                )}
               </button>
             </Link>
-            <div className="login icons"> Hello {user.email}</div>
           </>
         ) : (
-          <Link className="login icons" to="/log-in">
-            Log In
-          </Link>
+          <>
+            <img
+              className="icons"
+              style={{ margin: '2rem' }}
+              src={faUser}
+              alt="login"
+            />
+            <Link className="login icons" to="/log-in">
+              Log In
+            </Link>
+          </>
         )}
       </div>
     </nav>
