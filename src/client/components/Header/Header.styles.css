@@ -62,7 +62,7 @@ nav {
   background: #fff;
 }
 
-.displayActive, .displayHidden {
+.displayActive, .displayHidden, .login {
   font-family: 'Roboto', sans-serif;
   color: #687808;
   font-size: 24px;
