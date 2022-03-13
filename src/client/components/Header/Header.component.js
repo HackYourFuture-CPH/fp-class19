@@ -26,7 +26,7 @@ export default function Header({
       </Link>
       {/* ICONS */}
       <div className="icons-right">
-        <Link to="/shopping-cart">
+        <Link to="/shopping-cart" style={{ margin: '1rem' }}>
           <button className="icons cart" type="button">
             <div style={{ position: 'relative' }}>
               <img src={faShoppingCart} alt="shopping-cart" />
@@ -41,6 +41,7 @@ export default function Header({
           style={{
             position: 'relative',
             display: user ? 'inline-block' : 'none',
+            margin: '1rem',
           }}
         >
           <img src={faHeart} alt="favorite" />
@@ -51,7 +52,12 @@ export default function Header({
           ) : null}
         </div>
 
-        <img className="icons" src={faUser} alt="login" />
+        <img
+          className="icons"
+          style={{ margin: '2rem' }}
+          src={faUser}
+          alt="login"
+        />
 
         {isAuthenticated ? (
           <>
