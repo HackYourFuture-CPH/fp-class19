@@ -38,8 +38,8 @@ export default function ShoppingCart(props) {
         <div>
           <ul className="cart-container">
             {shoppingCart.map((product) => (
-              <div>
-                <li key={product.id} className="cart-list">
+              <div key={product.id}>
+                <li className="cart-list">
                   <div className="cart-product-container">
                     <ShoppingCartImage product={product} />
                     <ModifyProductQuantity
@@ -104,7 +104,7 @@ export default function ShoppingCart(props) {
       </div>
 
       {userDetail.map((user) => (
-        <>
+        <React.Fragment key={user.uid}>
           <div className="user-detail">
             <div>
               <h3>My Details</h3>
@@ -132,7 +132,7 @@ export default function ShoppingCart(props) {
               Zipcode:<span className="user-field">{user.zipcode}</span>
             </div>
           </div>
-        </>
+        </React.Fragment>
       ))}
     </div>
   );
@@ -141,4 +141,16 @@ export default function ShoppingCart(props) {
 ShoppingCart.propTypes = {
   shoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
   setShoppingCart: PropTypes.func.isRequired,
+  userDetail: PropTypes.arrayOf(
+    PropTypes.shape({
+      address: PropTypes.string,
+      city: PropTypes.string,
+      country: PropTypes.string,
+      email: PropTypes.string,
+      full_name: PropTypes.string,
+      mobile: PropTypes.string,
+      uid: PropTypes.string,
+      zipcode: PropTypes.string,
+    }),
+  ).isRequired,
 };
