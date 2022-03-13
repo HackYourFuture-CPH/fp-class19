@@ -18,6 +18,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_4.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 1,
         },
         {
           id: 2,
@@ -32,6 +33,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_6.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 1,
         },
         {
           id: 3,
@@ -46,6 +48,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_7.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 1,
         },
         {
           id: 4,
@@ -60,6 +63,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_10.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 2,
         },
         {
           id: 5,
@@ -74,6 +78,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_12.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 2,
         },
         {
           id: 6,
@@ -88,6 +93,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_13.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 2,
         },
         {
           id: 7,
@@ -102,6 +108,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_16.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 3,
         },
         {
           id: 8,
@@ -116,6 +123,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_17.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 3,
         },
         {
           id: 9,
@@ -130,6 +138,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_18.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 3,
         },
         {
           id: 10,
@@ -144,6 +153,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_19.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 4,
         },
         {
           id: 11,
@@ -158,6 +168,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_20.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 4,
         },
         {
           id: 12,
@@ -172,6 +183,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_21.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 4,
         },
         {
           id: 13,
@@ -186,6 +198,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_22.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 5,
         },
         {
           id: 14,
@@ -200,6 +213,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_30.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 5,
         },
         {
           id: 15,
@@ -214,6 +228,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_24.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 5,
         },
         {
           id: 16,
@@ -228,6 +243,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_25.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 6,
         },
         {
           id: 17,
@@ -242,6 +258,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_21.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 6,
         },
         {
           id: 18,
@@ -256,6 +273,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_28.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 6,
         },
         {
           id: 19,
@@ -270,6 +288,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_19.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 7,
         },
         {
           id: 20,
@@ -284,6 +303,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_30.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 7,
         },
         {
           id: 21,
@@ -298,6 +318,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_31.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 7,
         },
         {
           id: 22,
@@ -312,6 +333,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_4.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 8,
         },
         {
           id: 23,
@@ -326,6 +348,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_6.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 8,
         },
         {
           id: 24,
@@ -340,6 +363,7 @@ exports.seed = function (knex) {
           picture: '/static/images/image_7.png',
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
+          family_id: 8,
         },
       ]),
     )
