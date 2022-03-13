@@ -35,22 +35,22 @@ const getUserById = async(uid) => {
         throw new HttpError('Unexpected error', 500);
     }
 };
-const getUserFavorites = async(user_id) => {
-    if (!user_id) {
+const getUserFavorites = async(uid) => {
+    if (!uid) {
         throw new HttpError('Invalid User ID', 400);
     }
     try {
         const favorites = await knex('favorites')
             .join('products', 'products.id', 'product_id')
             .select('products.*')
-            .where({ user_id })
+            .where({ uid })
             .distinct();
-        if (favorites.length === 0) {
+        /* if (favorites.length === 0) {
             throw new HttpError(
                 `The favorite products for user ${user_id} is not found`,
                 404,
             );
-        }
+        } */
         return favorites;
     } catch (error) {
         if (error instanceof HttpError) {

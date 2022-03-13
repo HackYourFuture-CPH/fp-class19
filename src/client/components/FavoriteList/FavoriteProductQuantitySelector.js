@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './FavouriteList.styles.css';
+import './FavoriteList.styles.css';
 
-function ProductQuantity({ product }) {
+function FavoriteProductQuantitySelector({ product }) {
   const [counter, setCounter] = useState(1);
   const handleClick1 = () => {
     setCounter(counter + 1);
@@ -47,14 +47,12 @@ function ProductQuantity({ product }) {
   );
 }
 
-ProductQuantity.propTypes = {
+FavoriteProductQuantitySelector.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string,
-  }),
+  }).isRequired,
 };
 
-ProductQuantity.defaultProps = {
-  product: null,
-};
 
-export default ProductQuantity;
+
+export default FavoriteProductQuantitySelector;
