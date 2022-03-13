@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './OfferProductModel.styles.css';
 import cartBucketImage from '../../assets/images/cart_bucket.png';
 import heartImage from '../../assets/images/heart.png';
 import font from '../../assets/fonts/Inter-Regular.ttf';
+import fillHeartImage from '../../assets/images/heartFill.png';
+import { addProductToFavorites } from '../../containers/FavoritePage/FavoritePage.Container';
 import { addToShoppingCart } from '../../containers/ShoppingCartPage/ShoppingCartPage.Container';
+import { useAuthentication } from '../../hooks/useAuthentication';
 
 const cartBucket = {
   src: cartBucketImage,
@@ -15,22 +18,38 @@ const heart = {
   src: heartImage,
   alt: 'heart image',
 };
+const filledHeart = {
+  src: fillHeartImage,
+  alt: ' filled heart image',
+};
 
 export default function OfferProduct({
   id,
   image,
-
   name,
   price,
   currency,
   discount,
-
-  addToFavorites,
 }) {
+  const [isFavorite, setIsFavorite] = useState(false);
+  const { user } = useAuthentication();
+
   const addProductToShoppingCart = () => {
     addToShoppingCart(id, image, name, price, currency, discount, 1);
   };
+
   const discountPrice = price - (price * discount) / 100;
+
+  const addToFavorites = () => {
+    
+    if (!user) {
+      // eslint-disable-next-line no-alert
+      alert('Please login to add to your Favorites');
+    } else {
+      addProductToFavorites(user.uid, id);
+      setIsFavorite(true);
+    }
+  };
   return (
     <div
       className="offer-product-container"
@@ -81,11 +100,24 @@ export default function OfferProduct({
             className="offer-favorite-button"
             type="button"
             onClick={addToFavorites}
+            style={{ display: !isFavorite ? 'inline-block' : 'none' }}
           >
             <img
               src={heart.src}
               alt={heart.alt}
               className="offer-favorite-button"
+            />
+          </button>
+          <button
+            className="favorite-button"
+            type="button"
+            onClick={addToFavorites}
+            style={{ display: isFavorite ? 'inline-block' : 'none' }}
+          >
+            <img
+              src={filledHeart.src}
+              alt={filledHeart.alt}
+              className="favorite-button"
             />
           </button>
         </div>
@@ -101,11 +133,8 @@ OfferProduct.propTypes = {
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   currency: PropTypes.string,
-
-  addToFavorites: PropTypes.func,
 };
 
 OfferProduct.defaultProps = {
-  addToFavorites: null,
   currency: 'DKK',
 };
