@@ -58,7 +58,7 @@ export default function Header({
             </div>
           </button>
         </Link>
-        <Link to="/favorites">
+        <Link to="/favorites" style={{ margin: '1rem' }}>
         <div
           className="icons"
           style={{
