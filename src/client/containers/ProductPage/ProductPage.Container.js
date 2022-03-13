@@ -57,8 +57,10 @@ export default function ProductPage() {
       <div className="similar-products">
         <h2> SIMILAR PRODUCTS </h2>
       </div>
+      <div className='product-page-carousel-block'>
       <div className="product-page-carousel-container">
         {products && <Carousel products={products.items} show={2} />}
+      </div>
       </div>
     </div>
   );

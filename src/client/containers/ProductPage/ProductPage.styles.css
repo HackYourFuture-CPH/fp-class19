@@ -10,9 +10,15 @@
     margin-bottom: 3rem;
 }
 
+.product-page-carousel-block {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #F6F8EB;
+}
+
 .product-page-carousel-container {
     max-width: 80%;
-    margin: 0 auto;
+    margin: 4rem auto;
 }
 
 .similar-products {

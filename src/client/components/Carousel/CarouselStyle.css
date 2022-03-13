@@ -1,6 +1,7 @@
 .carousel-container {
     width: 100%;
     position: relative;
+    background-color: #F6F8EB;
 }
 
 .carousel-wrapper {
