@@ -33,6 +33,7 @@
     text-align: start;
     font-weight: 600;
     padding-bottom: 1rem;
+    list-style: none;
 }
 
 .user-details-content {
@@ -41,6 +42,7 @@
 
 .text-capitalize {
     text-transform: capitalize;
+    list-style: none;
 }
 
 .user-contact-edit-details {
