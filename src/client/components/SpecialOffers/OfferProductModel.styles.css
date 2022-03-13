@@ -42,7 +42,14 @@
 .offer-favorite-button {
     border: none;
     background-color: #fff;
+    cursor:pointer;
 }
+.offer-favorite-button:active {
+    background-color: white;
+    transform: translateY(2px);
+  }
+
+
 
 .offer-product-price {
     text-decoration: line-through;
