@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ProductPreview from '../../components/ProductPreview/ProductPreview.component';
+import ProductDetail from '../../components/ProductDetail/ProductDetail.component';
 import Carousel from '../../components/Carousel/Carousel';
 import Loader from '../../components/Loader/Loader.component';
 import './ProductPage.styles.css';
@@ -41,10 +41,10 @@ export default function ProductPage() {
 
   return (
     <div className="product-page">
-      <div className="product-page-preview-container">
+      <div className="product-page-detail-container">
         {isProductLoading && <Loader />}
         {!isProductLoading && !productError && (
-          <ProductPreview
+          <ProductDetail
             product={product}
             quantityCount={quantityCount}
             setQuantityCount={setQuantityCount}
