@@ -15,4 +15,6 @@ PaypalButton.args = {
   orderId: 'orderId',
   totalAmount: 'totalAmount',
   userName: 'john doe',
+  onSuccess: (response) =>
+    setTimeout(() => window.alert(JSON.stringify(response))),
 };
