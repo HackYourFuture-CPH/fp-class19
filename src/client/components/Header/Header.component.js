@@ -36,6 +36,8 @@ export default function Header({
             </div>
           </button>
         </Link>
+        <Link to="/favorites" style={{ margin: '1rem' }}>
+          <button className="icons cart" type="button">
         <div
           className="icons"
           style={{
@@ -51,6 +53,8 @@ export default function Header({
             </span>
           ) : null}
         </div>
+        </button>
+        </Link>
 
         <img
           className="icons"
