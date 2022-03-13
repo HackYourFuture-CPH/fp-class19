@@ -58,6 +58,7 @@ export default function Header({
             </div>
           </button>
         </Link>
+        <Link to="/favorites">
         <div
           className="icons"
           style={{
@@ -73,6 +74,7 @@ export default function Header({
             </span>
           ) : null}
         </div>
+        </Link>
 
         {isAuthenticated ? (
           <>
