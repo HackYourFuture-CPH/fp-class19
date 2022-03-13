@@ -23,6 +23,7 @@ import Page404Container from './containers/404Page/404Page.Container';
 import PaypalPage from './containers/Paypal/PaypalPage.container';
 import UserProfilePage from './containers/UserProfilePage/UserProfilePage.Container';
 
+
 function App() {
   const { isLoading, user } = useAuthentication();
 
