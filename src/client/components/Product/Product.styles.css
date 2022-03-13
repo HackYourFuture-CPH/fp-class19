@@ -62,4 +62,10 @@
   background-color: #fff;
 
   background-color: #ffffff;
+  cursor: pointer;
+}
+
+.favorite-button:active {
+  background-color: white;
+  transform: translateY(2px);
 }

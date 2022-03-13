@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import SortComponent from './Sort.component';
+import SortComponent from './Sorting.component';
 
 export default {
   title: 'Components / Sort Component',
@@ -11,7 +11,7 @@ export default {
 };
 
 const template = ({ products }) => {
-  // eslint-disable-next-line
+    // eslint-disable-next-line
   const [sortedProducts, setSortedProducts] = useState(products);
   return (
     <>

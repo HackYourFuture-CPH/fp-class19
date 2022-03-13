@@ -1,13 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+/* eslint-disable react/no-unused-prop-types */
 import './Header.styles.css';
-import faLogo from '../../assets/images/logo.png';
-import faUser from '../../assets/images/user-login.png';
-import faHeart from '../../assets/images/favorite-icon.png';
-import faShoppingCart from '../../assets/images/shopping-cart.png';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-export default function Header({ isAuthenticated, username, link }) {
+import faHeart from '../../assets/images/favorite-icon.png';
+import faLogo from '../../assets/images/logo.png';
+import faShoppingCart from '../../assets/images/shopping-cart.png';
+import faUser from '../../assets/images/user-login.png';
+import { useFirebase } from '../../firebase/FirebaseContext';
+
+export default function Header({
+  numberOfItemsInCart,
+  numberOfItemsInFavorite,
+  user,
+  isAuthenticated,
+}) {
+  const { signOut } = useFirebase();
+
   return (
     <nav>
       {/* LOGO */}
@@ -16,14 +26,50 @@ export default function Header({ isAuthenticated, username, link }) {
       </Link>
       {/* ICONS */}
       <div className="icons-right">
-        <Link to="/shopping-cart"><button type='button' className='cart'><img className="icons" src={faShoppingCart} alt="shopping-cart" /></button></Link>
-        <img className="icons" src={faHeart} alt="favorite" />
-        <img className="icons" src={faUser} alt="login" />
+        <Link to="/shopping-cart" style={{ margin: '1rem' }}>
+          <button className="icons cart" type="button">
+            <div style={{ position: 'relative' }}>
+              <img src={faShoppingCart} alt="shopping-cart" />
+              {numberOfItemsInCart >= 1 ? (
+                <span className="cart-item-number">{numberOfItemsInCart}</span>
+              ) : null}
+            </div>
+          </button>
+        </Link>
+        <div
+          className="icons"
+          style={{
+            position: 'relative',
+            display: user ? 'inline-block' : 'none',
+            margin: '1rem',
+          }}
+        >
+          <img src={faHeart} alt="favorite" />
+          {numberOfItemsInFavorite >= 1 ? (
+            <span className="favorite-item-number">
+              {numberOfItemsInFavorite}
+            </span>
+          ) : null}
+        </div>
+
+        <img
+          className="icons"
+          style={{ margin: '2rem' }}
+          src={faUser}
+          alt="login"
+        />
 
         {isAuthenticated ? (
-          <div className="login icons"> Hello {username}</div>
+          <>
+            <Link to="/log-in">
+              <button onClick={() => signOut()} type="button">
+                Logout
+              </button>
+            </Link>
+            <div className="login icons"> Hello {user.email}</div>
+          </>
         ) : (
-          <Link className="login icons" to={link}>
+          <Link className="login icons" to="/log-in">
             Log In
           </Link>
         )}
@@ -33,12 +79,13 @@ export default function Header({ isAuthenticated, username, link }) {
 }
 
 Header.propTypes = {
-  isAuthenticated: PropTypes.bool.isRequired,
-  username: PropTypes.string,
-  link: PropTypes.string,
+  isAuthenticated: PropTypes.bool,
+  user: PropTypes.shape({}),
+  numberOfItemsInCart: PropTypes.number.isRequired,
+  numberOfItemsInFavorite: PropTypes.number.isRequired,
 };
 
 Header.defaultProps = {
-  username: 'username',
-  link: '/log-in',
+  isAuthenticated: false,
+  user: null,
 };
