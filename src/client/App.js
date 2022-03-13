@@ -19,8 +19,8 @@ import ForgotPasswordPage from './containers/ForgotPasswordPage/ForgotPasswordPa
 import CreateAccountPage from './containers/CreateAccountPage/CreateAccountPage.container';
 import OrderConfirmationPage from './containers/OrderConfirmationPage/OrderConfirmationPage.Container';
 import Page404Container from './containers/404Page/404Page.Container';
-import UserProfilePage from './containers/UserProfilePage/UserProfilePage.Container'
-import ProductPage from './containers/ProductPage/ProductPage.container';
+import UserProfilePage from './containers/UserProfilePage/UserProfilePage.Container';
+import ProductPage from './containers/ProductPage/ProductPage.Container';
 
 function App() {
   const { isLoading } = useAuthentication();
