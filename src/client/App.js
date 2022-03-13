@@ -23,7 +23,7 @@ import Page404Container from './containers/404Page/404Page.Container';
 import UserProfilePage from './containers/UserProfilePage/UserProfilePage.Container';
 
 function App() {
-  const { isLoading, user } = useAuthentication();
+  const { isLoading, user, isAuthenticated } = useAuthentication();
 
   if (isLoading) {
     return <Loader />;
@@ -31,7 +31,7 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      <Header user={user} isAuthenticated={isAuthenticated} />
       <Menu />
       <Switch>
         {/* Home page */}
@@ -53,7 +53,7 @@ function App() {
 
         {/* shoppingCart page */}
         <Route exact path="/shopping-cart">
-          <ShoppingCartPage />
+          <ShoppingCartPage user={user} isLoading={isLoading}/>
         </Route>
 
         <Route exact path="/order-confirmation">
