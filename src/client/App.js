@@ -20,7 +20,6 @@ import FavoritePage from './containers/FavoritePage/FavoritePage.Container';
 import CreateAccountPage from './containers/CreateAccountPage/CreateAccountPage.container';
 import OrderConfirmationPage from './containers/OrderConfirmationPage/OrderConfirmationPage.Container';
 import Page404Container from './containers/404Page/404Page.Container';
-
 import UserProfilePage from './containers/UserProfilePage/UserProfilePage.Container';
 
 function App() {
