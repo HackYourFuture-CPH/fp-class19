@@ -21,7 +21,7 @@ export default function ProductPage() {
   };
 
   const fetchProducts = () => {
-    const url = '/api/products';
+    const url = '/api/products?limit=100';
     return fetch(url).then((response) => response.json());
   };
 
@@ -59,7 +59,7 @@ export default function ProductPage() {
       </div>
       <div className='product-page-carousel-block'>
       <div className="product-page-carousel-container">
-        {products && <Carousel products={products.items} show={2} />}
+        {products && <Carousel products={products.items} show={10} />}
       </div>
       </div>
     </div>
