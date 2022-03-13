@@ -38,8 +38,10 @@ function App() {
         <Route exact path="/">
           <LandingPage />
         </Route>
+
         <Route path="/products/:productId">
           <ProductPage />
+
         </Route>
         {/* Special Offer Page */}
         <Route exact path="/special-offers">
