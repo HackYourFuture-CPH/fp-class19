@@ -53,10 +53,9 @@ Paypal.PropType = {
 
 Paypal.defaultProps = {
   userName: 'John Doe',
-  onSuccess: (data) => {
-    console.log(data);
-  },
-  onError: (data) => {
-    console.log(data);
+  // eslint-disable-next-line no-return-assign
+  onSuccess: () => (window.location.href = '/order-confirmation'),
+  onError: () => {
+    window.location.href = '*';
   },
 };
