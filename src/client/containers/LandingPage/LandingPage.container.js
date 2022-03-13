@@ -7,7 +7,7 @@ import Pagination from '../../components/Pagination/Pagination.component';
 import SpecialOfferBanner from '../../components/SpecialOfferBanner/SpecialOfferBanner.component';
 import ProductsView from '../../components/ProductsView/ProductsView.component';
 
-export default function LandingPage() {
+export default function LandingPage(props) {
   const [sortingPreferences, setSortingPreferences] = useState({
     sortKey: 'name',
     sortOrder: 'asc',
@@ -31,7 +31,7 @@ export default function LandingPage() {
       />
       {isLoading && <Loader />}
       {!!products && products.length > 0 && (
-        <ProductsView products={products} />
+        <ProductsView products={products} user={props.user}/>
       )}
       {totalCount > 0 && (
         <Pagination

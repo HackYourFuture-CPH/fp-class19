@@ -28,6 +28,12 @@ nav {
   border: none;
   background-color: #fff;
 }
+.fav-button{
+border: none;
+background: #fff;
+
+}
+
 
 .login {
   font-family: 'Roboto', sans-serif;

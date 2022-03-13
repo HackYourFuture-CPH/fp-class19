@@ -125,8 +125,8 @@ router.get('/:id', (req, res, next) => {
  *        description: Unexpected error.
  *      400:
  *        description: Bad request. Incorrect user id.
- *      404:
- *        description: The favorite products for the specified user_id is not found
+ *      // 404:
+ *        // description: The favorite products for the specified user_id is not found
  */
 router.get('/:id/favorites/', (req, res, next) => {
     usersController

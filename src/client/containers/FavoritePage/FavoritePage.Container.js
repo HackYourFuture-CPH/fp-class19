@@ -1,63 +1,66 @@
 import './FavoritePage.styles.css';
+import React, { useState, useEffect} from 'react';
+import FavoriteList from '../../components/FavoriteList/FavoriteList.component';
+import Loader from '../../components/Loader/Loader.component';
 
-import React, { useState, useEffect, useCallback } from 'react';
-import FavouriteList from '../../components/FavouriteList/FavouriteList.component';
-
-export const addProductToFavorites = (userId, productId) => {
-  console.log('in add favorites container');
-  console.log(userId, productId);
-
+export const addProductToFavorites = (uid, productId) => {
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       product_id: productId,
-      user_id: userId,
+      uid,
     }),
   };
-  fetch('/api/favorites/add', requestOptions)
-    .then((response) => response.json())
-    .then((result) => {
-      console.log(result);
-    });
+  fetch(
+    `/api/favorites/add?uid=${uid}&product_id=${productId}`,
+    requestOptions,
+  ).then((response) => response.json());
 };
 
-export default function FavoritePage() {
+export default function FavoritePage(props) {
   const [favorites, setFavorites] = useState([]);
+  // eslint-disable-next-line react/prop-types
+  const{user,isLoading}=props;
+  
 
-  const GetFavorites = useCallback(() => {
-    const apiUrl = '/api/users/2/favorites';
-    console.log(apiUrl);
+  useEffect(() => {
+    if (!user?.uid) {
+      return;
+    }
+
+    const apiUrl = `/api/users/${user.uid}/favorites`;
+
     fetch(apiUrl)
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
-
-        if (result) {
-          
-          for (let i = 0; i < result.length; i+= 1) {
-            // eslint-disable-next-line
-            result[i].discount = result[i].discount_percent;
-            // eslint-disable-next-line
-            result[i].image = result[i].picture;
-            // eslint-disable-next-line
-            result[i].currency = 'DKK';
-          }
-          const items = result.map((item) => item);
-          setFavorites((prev) => prev.concat(items));
-          console.log(favorites);
-        }
+        setFavorites(result);
       });
-  }, [favorites]);
+  }, [user]);
 
-  useEffect(() => {
-    GetFavorites();
-  }, [GetFavorites]);
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
-    <div className="favoritelist">
+    <div>
       <h2 className="fav-heading">Favorites</h2>
-      <FavouriteList favorites={favorites} setFavorites={setFavorites} />
+      <div
+        className="favorites"
+        style={{
+          display: favorites.length > 0 ? 'inline-block' : 'none',
+        }}
+      >
+        <FavoriteList favorites={favorites} setFavorites={setFavorites} user={user}/>
+      </div>
+      <div
+        className="empty-fav-list"
+        style={{
+          display: favorites.length === 0 ? 'inline-block' : 'none',
+        }}
+      >
+        There are no items in favorites
+      </div>
     </div>
   );
 }
