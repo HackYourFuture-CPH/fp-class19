@@ -54,7 +54,7 @@ function App() {
 
         {/* shoppingCart page */}
         <Route exact path="/shopping-cart">
-          <ShoppingCartPage />
+          <ShoppingCartPage user={user} isLoading={isLoading}/>
         </Route>
 
         <Route exact path="/order-confirmation">
