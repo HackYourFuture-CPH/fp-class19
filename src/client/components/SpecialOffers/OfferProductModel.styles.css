@@ -1,82 +1,82 @@
 .offer-product-container {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    width: 273px;
-    padding: 7px;
-    font-size: 1rem;
-    border: 1px solid #C4C4C4;
-    margin: 5px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 273px;
+  padding: 7px;
+  font-size: 1rem;
+  border: 1px solid #c4c4c4;
+  margin: 5px;
 }
 
 .offer-product-name {
-    color: #687808;
-    margin-bottom: 5px;
+  color: #687808;
+  margin-bottom: 5px;
 }
 
 .offer-add-fav-buttons {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .offer-product-add-button {
-    background: #687808;
-    color: #fff;
-    font-size: 1.6rem;
-    font-weight: bolder;
-    border: none;
-    border-radius: 0.3rem;
-    padding: 0.5rem;
+  background: #687808;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: bolder;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
 }
-.offer-product-add-button:active { background-color: #414b0b; }
+.offer-product-add-button:active {
+  background-color: #414b0b;
+}
 
 .offer-fav-button-div {
-    margin: auto 1rem auto auto;
+  margin: auto 1rem auto auto;
 }
 
 .offer-vector-bucket {
-    color: #fff;
-    margin-left: 20px;
+  color: #fff;
+  margin-left: 20px;
 }
 
 .offer-favorite-button {
-    border: none;
-    background-color: #fff;
-    cursor:pointer;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
 }
 .offer-favorite-button:active {
-    background-color: white;
-    transform: translateY(2px);
-  }
-
-
+  background-color: white;
+  transform: translateY(2px);
+}
 
 .offer-product-price {
-    text-decoration: line-through;
-    padding-right: 1rem;
+  text-decoration: line-through;
+  padding-right: 1rem;
 }
 
 .image-and-discount {
-    position: relative;
-    text-align: center;
-    text-emphasis: bolder;
-    font-size: 1rem;
+  position: relative;
+  text-align: center;
+  text-emphasis: bolder;
+  font-size: 1rem;
 }
 
 .discount-box {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 88px;
-    height: 92px;
-    background-color: #fff;
-    opacity: 0.8;
-    border: 1px solid #9b8d8d;
-    font-size: 1.2rem;
-    font-weight: bolder;
-    color: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 88px;
+  height: 92px;
+  background-color: #fff;
+  opacity: 0.8;
+  border: 1px solid #9b8d8d;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  color: black;
 }
 
 .offer-product-price-discountPrice {
-    color: black;
+  color: black;
 }

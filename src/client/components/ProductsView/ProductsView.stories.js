@@ -9,9 +9,7 @@ export default {
   },
 };
 
-const template = ({ products }) => (
-    <ProductsView products={products} />
-  );
+const template = ({ products }) => <ProductsView products={products} />;
 
 export const productsView = template.bind({});
 

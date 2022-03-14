@@ -45,10 +45,10 @@ const productsController = require('../controllers/products.controller');
  *        description: Unexpected error.
  */
 router.get('/', (req, res, next) => {
-    productsController
-        .getProducts(req)
-        .then((result) => res.json(result))
-        .catch(next);
+  productsController
+    .getProducts(req)
+    .then((result) => res.json(result))
+    .catch(next);
 });
 
 /**
@@ -70,10 +70,10 @@ router.get('/', (req, res, next) => {
  *        description:  There are no products with discount.
  */
 router.get('/on_discount', (req, res, next) => {
-    productsController
-        .getDiscountProducts()
-        .then((result) => res.json(result))
-        .catch(next);
+  productsController
+    .getDiscountProducts()
+    .then((result) => res.json(result))
+    .catch(next);
 });
 
 /**
@@ -105,10 +105,10 @@ router.get('/on_discount', (req, res, next) => {
  *        description: Invalid id. Bad request.
  */
 router.get('/:id', (req, res, next) => {
-    productsController
-        .getProductById(req.params.id)
-        .then((result) => res.json(result))
-        .catch(next);
+  productsController
+    .getProductById(req.params.id)
+    .then((result) => res.json(result))
+    .catch(next);
 });
 
 module.exports = router;

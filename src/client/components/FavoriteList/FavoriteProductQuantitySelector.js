@@ -53,6 +53,4 @@ FavoriteProductQuantitySelector.propTypes = {
   }).isRequired,
 };
 
-
-
 export default FavoriteProductQuantitySelector;

@@ -8,8 +8,6 @@ import './ProductsPageView.styles.css';
 export default function ProductsPageView({ products, productsPerPage }) {
   const [sortedProducts, setSortedProducts] = useState(products);
 
-  
-
   const [currentRange, setCurrentRange] = useState(
     sortedProducts.slice(0, productsPerPage),
   );
@@ -34,7 +32,6 @@ export default function ProductsPageView({ products, productsPerPage }) {
                 image={product.picture}
                 name={product.name}
                 price={product.price}
-                
               />
             </li>
           ))}

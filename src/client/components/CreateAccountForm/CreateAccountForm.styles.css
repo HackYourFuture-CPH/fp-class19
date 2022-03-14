@@ -70,7 +70,7 @@
   padding: 5px;
 }
 
-.create-account-container input[type=number]::-webkit-inner-spin-button {
+.create-account-container input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 

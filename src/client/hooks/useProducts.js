@@ -13,8 +13,12 @@ export const useProducts = ({ sortKey, sortOrder, currentPage }) => {
   const [error, setError] = useState();
 
   const loadPage = useCallback(() => {
-
-    fetchProducts(PRODUCT_PER_PAGE, currentPage * PRODUCT_PER_PAGE, sortKey, sortOrder)
+    fetchProducts(
+      PRODUCT_PER_PAGE,
+      currentPage * PRODUCT_PER_PAGE,
+      sortKey,
+      sortOrder,
+    )
       .then(({ items, totalCount: _totalCount }) => {
         setTotalCount(_totalCount);
         setProducts([...items]);

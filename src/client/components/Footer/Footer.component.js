@@ -26,7 +26,7 @@ export default function Footer() {
             </li>
             <li className="footer-list">
               <div className="footer-text">
-                <Link to="/log-in" style={{ textAlign: 'left' }}>
+                <Link to="/login" style={{ textAlign: 'left' }}>
                   <p>
                     Create
                     <br />

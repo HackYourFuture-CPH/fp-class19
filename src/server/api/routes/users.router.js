@@ -55,16 +55,16 @@ const usersController = require('../controllers/users.controller');
  *        description: Unexpected error.
  */
 router.post('/', (req, res) => {
-    usersController
-        .createUser(req.body)
-        .then((result) => res.status(201).json(result))
-        .catch((error) => {
-            let responseMessage = '';
-            if (error.code === 'ER_DUP_ENTRY') {
-                responseMessage = 'Sorry, the user already exists';
-            }
-            res.status(400).send(responseMessage).end();
-        });
+  usersController
+    .createUser(req.body)
+    .then((result) => res.status(201).json(result))
+    .catch((error) => {
+      let responseMessage = '';
+      if (error.code === 'ER_DUP_ENTRY') {
+        responseMessage = 'Sorry, the user already exists';
+      }
+      res.status(400).send(responseMessage).end();
+    });
 });
 
 /**
@@ -94,10 +94,10 @@ router.post('/', (req, res) => {
  *        description: Specified ID does not exist
  */
 router.get('/:id', (req, res, next) => {
-    usersController
-        .getUserById(req.params.id)
-        .then((result) => res.json(result))
-        .catch(next);
+  usersController
+    .getUserById(req.params.id)
+    .then((result) => res.json(result))
+    .catch(next);
 });
 
 /**
@@ -129,10 +129,10 @@ router.get('/:id', (req, res, next) => {
  *        // description: The favorite products for the specified user_id is not found
  */
 router.get('/:id/favorites/', (req, res, next) => {
-    usersController
-        .getUserFavorites(req.params.id)
-        .then((result) => res.json(result))
-        .catch(next);
+  usersController
+    .getUserFavorites(req.params.id)
+    .then((result) => res.json(result))
+    .catch(next);
 });
 
 /**
@@ -176,11 +176,10 @@ router.get('/:id/favorites/', (req, res, next) => {
  *        description: Unexpected error.
  */
 router.patch('/:id', (req, res, next) => {
-    usersController
-        .updateUser(req.params.id, req.body, res)
-        .then((result) => res.json(result))
-        .catch(next);
+  usersController
+    .updateUser(req.params.id, req.body, res)
+    .then((result) => res.json(result))
+    .catch(next);
 });
-
 
 module.exports = router;

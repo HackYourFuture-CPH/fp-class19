@@ -51,7 +51,7 @@ This repository is Class19's Final Project which is Plant Webshop
 ## 📅 Project's Calendar
 
 - 23-Jan-2022 - 12:00 to 16:00
-- 30-Jan-2022 - 12:00 to 16:00 
+- 30-Jan-2022 - 12:00 to 16:00
 - 06-Feb-2022 - 12:00 to 16:00
 - 13-Feb-2022 - 12:00 to 16:00
 - 27-Feb-2022 - 12:00 to 16:00

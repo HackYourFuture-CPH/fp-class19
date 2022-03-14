@@ -7,14 +7,14 @@ export default function UserProfile() {
   const [profileData, setProfileData] = useState(null);
   const [profileIsLoading, setProfileLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
-  const [newFullName, setFullName] = useState("");
-  const [newMobile, setMobile] = useState("");
-  const [newZipcode, setZipcode] = useState("");
-  const [newCity, setCity] = useState("");
-  const [newCountry, setCountry] = useState("");
-  const [newAddress, setAddress] = useState("");
+  const [newFullName, setFullName] = useState('');
+  const [newMobile, setMobile] = useState('');
+  const [newZipcode, setZipcode] = useState('');
+  const [newCity, setCity] = useState('');
+  const [newCountry, setCountry] = useState('');
+  const [newAddress, setAddress] = useState('');
   const { user, isLoading } = useAuthentication();
-  
+
   function updateUserProfile(event) {
     event.preventDefault();
     fetch(`/api/users/${user.uid}`, {
@@ -78,7 +78,7 @@ export default function UserProfile() {
       <p className="user-profile-title title-font-style">my account</p>
       <div className="user-profile-container">
         <div className="user-profile-block">
-          <div> 
+          <div>
             {!profileIsLoading && profileData && (
               <div className="user-contact-details">
                 <p className="user-contact-title title-font-style text-capitalize">
@@ -112,9 +112,7 @@ export default function UserProfile() {
                     <li className="user-details-content text-capitalize">
                       email:
                     </li>
-                    <li className="user-details-info">
-                      {profileData.email}
-                    </li>
+                    <li className="user-details-info">{profileData.email}</li>
                   </ul>
                 </div>
                 <div>
@@ -139,7 +137,6 @@ export default function UserProfile() {
                       </li>
                     )}
                   </ul>
-                  
                 </div>
                 <p className="user-contact-title title-font-style text-capitalize">
                   your items will be delivered here
@@ -150,8 +147,8 @@ export default function UserProfile() {
                       address:
                     </li>
                     {showForm === false && (
-                        
-                      <li className="@media only screen and (max-width: 1000px) {
+                      <li
+                        className="@media only screen and (max-width: 1000px) {
                         .user-profile-block {
                             display: flex;
                             flex-direction: column;
@@ -161,7 +158,8 @@ export default function UserProfile() {
                             flex-direction: column;
                             padding: 0;
                         }
-                    } text-capitalize">
+                    } text-capitalize"
+                      >
                         {profileData.address} <br />
                         {profileData.city} <br />
                         {profileData.country} <br />
@@ -175,7 +173,7 @@ export default function UserProfile() {
                           name="newAddress"
                           value={newAddress}
                           placeholder={profileData.address}
-                          className='user-profile-input-margin'
+                          className="user-profile-input-margin"
                           onChange={(event) => setAddress(event.target.value)}
                         />{' '}
                         <br />{' '}
@@ -184,7 +182,7 @@ export default function UserProfile() {
                           name="newCity"
                           value={newCity}
                           placeholder={profileData.city}
-                          className='user-profile-input-margin'
+                          className="user-profile-input-margin"
                           onChange={(event) => setCity(event.target.value)}
                         />{' '}
                         <br />{' '}
@@ -193,7 +191,7 @@ export default function UserProfile() {
                           name="newCountry"
                           value={newCountry}
                           placeholder={profileData.country}
-                          className='user-profile-input-margin'
+                          className="user-profile-input-margin"
                           onChange={(event) => setCountry(event.target.value)}
                         />{' '}
                         <br />{' '}
@@ -202,7 +200,7 @@ export default function UserProfile() {
                           name="newZipcode"
                           value={newZipcode}
                           placeholder={profileData.zipcode}
-                          className='user-profile-input-margin'
+                          className="user-profile-input-margin"
                           onChange={(event) => setZipcode(event.target.value)}
                         />
                       </div>
@@ -213,17 +211,17 @@ export default function UserProfile() {
             )}
           </div>
           <div className="user-contact-edit-details">
-          {showForm===false && (
-            <button
-              type="button"
-              onClick={showProfileUpdateForm}
-              className=" user-contact-edit-button text-capitalize"
-            >
-              edit contact details
-            </button>
-          )}
+            {showForm === false && (
+              <button
+                type="button"
+                onClick={showProfileUpdateForm}
+                className=" user-contact-edit-button text-capitalize"
+              >
+                edit contact details
+              </button>
+            )}
             {showForm && profileData && (
-                <button
+              <button
                 type="button"
                 onClick={(event) => updateUserProfile(event)}
                 className=" user-contact-edit-button text-capitalize"

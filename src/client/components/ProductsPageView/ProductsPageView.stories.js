@@ -12,8 +12,8 @@ export default {
 };
 
 const template = ({ products, productsPerPage }) => (
-    <ProductsPageView products={products} productsPerPage={productsPerPage} />
-  );
+  <ProductsPageView products={products} productsPerPage={productsPerPage} />
+);
 
 export const showProducts = template.bind({});
 

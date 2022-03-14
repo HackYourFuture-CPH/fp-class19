@@ -1,5 +1,5 @@
 import './FavoritePage.styles.css';
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import FavoriteList from '../../components/FavoriteList/FavoriteList.component';
 import Loader from '../../components/Loader/Loader.component';
 
@@ -21,8 +21,7 @@ export const addProductToFavorites = (uid, productId) => {
 export default function FavoritePage(props) {
   const [favorites, setFavorites] = useState([]);
   // eslint-disable-next-line react/prop-types
-  const{user,isLoading}=props;
-  
+  const { user, isLoading } = props;
 
   useEffect(() => {
     if (!user?.uid) {
@@ -51,7 +50,11 @@ export default function FavoritePage(props) {
           display: favorites.length > 0 ? 'inline-block' : 'none',
         }}
       >
-        <FavoriteList favorites={favorites} setFavorites={setFavorites} user={user}/>
+        <FavoriteList
+          favorites={favorites}
+          setFavorites={setFavorites}
+          user={user}
+        />
       </div>
       <div
         className="empty-fav-list"

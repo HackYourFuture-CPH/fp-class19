@@ -143,8 +143,8 @@ As an example, this means you would have to run `knex -- migrate:latest` instead
 
 Here is a list of some important Knex commands to know:
 
-| Command                               | Note                                                                                          |
-| ------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Command                                       | Note                                                                                          |
+| --------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `npm run knex -- migrate:latest`              | Run "latest" migrations (i.e. migrations that have not previously been run on your database). |
 | `npm run knex -- migrate:rollback`            | "Roll back" the latest migration.                                                             |
 | `npm run knex -- migrate:up`                  | Apply one migration forward from the current state.                                           |

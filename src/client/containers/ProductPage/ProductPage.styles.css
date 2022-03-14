@@ -1,3 +1,36 @@
-div {
-  color: #687808;
+.product-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem 0;
+}
+
+.product-page-detail-container {
+  margin-bottom: 3rem;
+}
+
+.product-page-carousel-block {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f6f8eb;
+}
+
+.product-page-carousel-container {
+  max-width: 80%;
+  margin: 4rem auto;
+}
+
+.similar-products {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.similar-products h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: black;
+  font-family: Inter;
 }

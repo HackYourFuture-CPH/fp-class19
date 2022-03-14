@@ -1,8 +1,7 @@
-
 ## 💻 Working with GIT <a name="git"></a>
 
-You will be working directly on the main repo and making Pull Request on the Develop Branch, 
-NEVER on the Master branch. PR on the Master Branch *will not be merged*, they will be closed.
+You will be working directly on the main repo and making Pull Request on the Develop Branch,
+NEVER on the Master branch. PR on the Master Branch _will not be merged_, they will be closed.
 
 Working with git is a HUGE part of the final project. This is how you should be
 working with git in the final project:
@@ -190,5 +189,5 @@ origin	git@github.com:HackYourFuture-CPH/ov-class09-fp.git (push)
         - When you have a merge conflict, git is in a state of being "in the middle of a commit". If you run `git status` you can confirm that you are in the middle of a merge.
         - You must tell git that you have fixed the merge conflict by adding the conflicted files to the staging area with `git add [file-path]` for each of the implicated files.
         - Finally run `git commit`. This will finish the commit and ommitting the `-m` option will allow git to automatically write a merge commit messages with description of what files you have solved conflicts in.
-        
+
         - You can also check this 5min video on how to resolve a simple merge conflict: https://drive.google.com/open?id=1xkxRqDIMUlLSY_ZhZE8-DHJs5TSQMrAR.
