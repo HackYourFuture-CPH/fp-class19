@@ -40,7 +40,7 @@ function App() {
           <LandingPage user={user} />
         </Route>
 
-        <Route path="/products/:productId">
+        <Route path="/product/:productId">
           <ProductPage />
         </Route>
         {/* Special Offer Page */}
