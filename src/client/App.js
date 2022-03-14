@@ -22,6 +22,7 @@ import OrderConfirmationPage from './containers/OrderConfirmationPage/OrderConfi
 import Page404Container from './containers/404Page/404Page.Container';
 import UserProfilePage from './containers/UserProfilePage/UserProfilePage.Container';
 import ProductPage from './containers/ProductPage/ProductPage.Container';
+import Paypal from './containers/Paypal/PaypalPage.container';
 
 function App() {
   const { isLoading, user, isAuthenticated } = useAuthentication();
@@ -76,7 +77,9 @@ function App() {
         <AuthenticatedRoute exact path="/user-profile">
           <UserProfilePage />
         </AuthenticatedRoute>
-
+        <AuthenticatedRoute exact path="/paypal">
+          <Paypal />
+        </AuthenticatedRoute>
         <AuthenticatedRoute exact path="/favorites">
           <FavoritePage user={user} isLoading={isLoading} />
         </AuthenticatedRoute>
