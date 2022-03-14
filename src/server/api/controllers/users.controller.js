@@ -1,5 +1,4 @@
 const knex = require('../../config/db');
-const moment = require('moment-timezone');
 const HttpError = require('../lib/utils/http-error');
 
 const createUser = async (body) => {
@@ -72,17 +71,15 @@ const getUserFavorites = async (uid) => {
 
 const updateUser = async (userId, updatedUser) => {
   try {
-    const updatedRows = await knex('users')
-      .where({ uid: userId })
-      .update({
-        full_name: updatedUser.full_name,
-        mobile: updatedUser.mobile,
-        address: updatedUser.address,
-        city: updatedUser.city,
-        country: updatedUser.country,
-        zipcode: updatedUser.zipcode,
-        updated_at: moment(Date.now()).format(),
-      });
+    const updatedRows = await knex('users').where({ uid: userId }).update({
+      full_name: updatedUser.full_name,
+      mobile: updatedUser.mobile,
+      address: updatedUser.address,
+      city: updatedUser.city,
+      country: updatedUser.country,
+      zipcode: updatedUser.zipcode,
+      updated_at: knex.fn.now(),
+    });
 
     const NO_ROWS_UPDATED = 0;
     if (updatedRows === NO_ROWS_UPDATED) {
