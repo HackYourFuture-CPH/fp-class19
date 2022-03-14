@@ -5,18 +5,18 @@ export default function OrderDetails({ details }) {
   
   return (
     <div className="flex-container flex-container2">
-      {details.map((eachProduct) => (
+      {details ? details.map((eachProduct) => (
             <li className="order-item">
              <div>
-        <img src={eachProduct[0].picture} alt="orderedItem" />
+        <img src={eachProduct.picture} alt="orderedItem" />
       </div>
       <div>
-        <p>{eachProduct[0].name}</p>
-        <p>Quantity: {eachProduct[0].quantity}</p>
+        <p>{eachProduct.name}</p>
+        <p>Quantity: {eachProduct.quantity}</p>
       </div>
             </li>
           ))
-      }
+      : ''}
     </div>
   );
 }
