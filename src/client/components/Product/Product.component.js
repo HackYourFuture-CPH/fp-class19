@@ -50,7 +50,9 @@ export default function Product({
   return (
     <div className="product-container">
       <Link to={`/product/${id}`}>
-      <img className="product-image" src={image} alt={name} />
+      <img className="product-image" src={image} alt={name}
+          width={257}
+          height={226} />
       </Link>
       <h2 className="product-name">{name}</h2>
 
