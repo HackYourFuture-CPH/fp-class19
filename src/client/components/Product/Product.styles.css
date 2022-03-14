@@ -8,7 +8,6 @@
   border: 1px solid #c4c4c4;
   margin: 5px;
   height: 397;
-  padding: 10px;
 }
 
 .product-name {
@@ -31,7 +30,6 @@
 
 .product-add-button {
   background: #687808;
-
   color: #fff;
   font-size: 1.6rem;
   font-weight: bolder;
@@ -43,6 +41,7 @@
   font-size: 25px;
   padding-bottom: 5px;
 }
+
 .product-add-button:active {
   background-color: #414b0b;
 }
