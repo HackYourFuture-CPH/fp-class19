@@ -2,13 +2,22 @@ import React from 'react';
 import './OrdersSummary.styles.css';
 import moment from 'moment-timezone';
 import OrderDetails from './OrderDetails';
+import Loader from '../Loader/Loader.component';
+import { useAuthentication } from '../../hooks/useAuthentication';
 
-export default function OrderComponent({ order, details }) {
+export default function OrderComponent() {
   const [fullView, setFullView] = React.useState(false);
   const viewOrder = () => {
     setFullView(!fullView);
   };
+  
+  const { user, isLoading } = useAuthentication();
+  const orders = (userId) => fetch(`api/orders/${userId}`);
+  const orderDetails = (userId) => fetch(`api/orders/${userId}`);
 
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <div>
       <li>
