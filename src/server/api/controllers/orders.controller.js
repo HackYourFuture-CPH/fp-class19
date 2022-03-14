@@ -1,6 +1,5 @@
 const knex = require('../../config/db');
 const HttpError = require('../lib/utils/http-error');
-const moment = require('moment-timezone');
 
 const newOrder = async ({ user_id, items }) => {
   const userId = parseInt(user_id, 10);
@@ -17,7 +16,7 @@ const newOrder = async ({ user_id, items }) => {
     const orderId = await knex('orders')
       .insert({
         user_id,
-        created_at: moment(Date.now()).format(),
+        created_at: knex.fn.now(),
         status: 'NEW',
       })
       .returning('id');

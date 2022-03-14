@@ -90,10 +90,10 @@
 }
 
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
-  input[type='checkbox'],
-  input[type='text'],
-  input[type='number'],
-  input[type='radio'] {
+  .product-detail input[type='checkbox'],
+  .product-detail input[type='text'],
+  .product-detail input[type='number'],
+  .product-detail input[type='radio'] {
     -webkit-appearance: none;
     -moz-appearance: none;
     margin: 0;

@@ -38,22 +38,22 @@ export default function Header({
         </Link>
         <Link to="/favorites" style={{ margin: '1rem' }}>
           <button className="icons cart" type="button">
-        <div
-          className="icons"
-          style={{
-            position: 'relative',
-            display: user ? 'inline-block' : 'none',
-            margin: '1rem',
-          }}
-        >
-          <img src={faHeart} alt="favorite" />
-          {numberOfItemsInFavorite >= 1 ? (
-            <span className="favorite-item-number">
-              {numberOfItemsInFavorite}
-            </span>
-          ) : null}
-        </div>
-        </button>
+            <div
+              className="icons"
+              style={{
+                position: 'relative',
+                display: user ? 'inline-block' : 'none',
+                margin: '1rem',
+              }}
+            >
+              <img src={faHeart} alt="favorite" />
+              {numberOfItemsInFavorite >= 1 ? (
+                <span className="favorite-item-number">
+                  {numberOfItemsInFavorite}
+                </span>
+              ) : null}
+            </div>
+          </button>
         </Link>
 
         <img
@@ -65,7 +65,7 @@ export default function Header({
 
         {isAuthenticated ? (
           <>
-            <Link to="/log-in">
+            <Link to="/login">
               <button onClick={() => signOut()} type="button">
                 Logout
               </button>
@@ -73,7 +73,7 @@ export default function Header({
             <div className="login icons"> Hello {user.email}</div>
           </>
         ) : (
-          <Link className="login icons" to="/log-in">
+          <Link className="login icons" to="/login">
             Log In
           </Link>
         )}

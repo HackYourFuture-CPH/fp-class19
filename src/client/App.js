@@ -42,7 +42,6 @@ function App() {
 
         <Route path="/products/:productId">
           <ProductPage />
-
         </Route>
         {/* Special Offer Page */}
         <Route exact path="/special-offers">
@@ -59,7 +58,7 @@ function App() {
 
         {/* shoppingCart page */}
         <Route exact path="/shopping-cart">
-          <ShoppingCartPage user={user} isLoading={isLoading}/>
+          <ShoppingCartPage user={user} isLoading={isLoading} />
         </Route>
 
         <Route exact path="/order-confirmation">
@@ -70,7 +69,7 @@ function App() {
         <SignIn exact path="/sign-in" />
         <CreateAccountPage exact path="/sign-up" />
         <ResetPassword exact path="/reset-password" />
-        <LogInPage exact path="/log-in" />
+        <LogInPage exact path="/login" />
         <ForgotPasswordPage exact path="/forgot-password" />
 
         {/* All routes below are authenticated routes - a user must login first */}

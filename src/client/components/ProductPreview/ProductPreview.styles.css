@@ -76,10 +76,10 @@
   border: 1px solid #929b90;
 }
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
-  input[type='checkbox'],
-  input[type='text'],
-  input[type='number'],
-  input[type='radio'] {
+  .product-preview input[type='checkbox'],
+  .product-preview input[type='text'],
+  .product-preview input[type='number'],
+  .product-preview input[type='radio'] {
     -webkit-appearance: none;
     -moz-appearance: none;
     margin: 0;
