@@ -2,6 +2,7 @@
   border: solid white 3px;
   background-color: #f6f8eb;
   margin-bottom: 15px;
+  list-style: none;
 }
 
 .orders-view button {
