@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button.component';
+import Modal from '../Modal/Modal.component';
+import addedToCartImg from '../../assets/images/added_to_cart.png';
+
 import './ProductDetail.styles.css';
 
 export default function ProductDetail({
@@ -8,6 +11,21 @@ export default function ProductDetail({
   quantityCount,
   setQuantityCount,
 }) {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const addedToCart = {
+    message: 'ADDED TO THE CART',
+    primaryButtonLabel: 'VIEW CART',
+    modalIsCloseable: false,
+    showIcon: addedToCartImg,
+    secondaryButtonLabel: 'CONTINUE SHOPPING',
+    buttonFunction: 'testFunction',
+    secondButtonFunction: 'testFunction',
+  };
+
   const MIN_QUANTITY = 1;
   const MAX_QUANTITY = 99;
 
@@ -73,12 +91,24 @@ export default function ProductDetail({
           <Button
             className="product-detail-button"
             type="button"
-            onClick={' '}
+            onClick={openModal}
             primary={true}
             label="ADD"
           />
         </section>
       </div>
+      {modalIsOpen && (
+        <Modal
+          modalIsOpen={setModalIsOpen}
+          message="ADDED TO CART"
+          primaryButtonLabel="VIEW CART"
+          modalIsCloseable={true}
+          showIcon={addedToCartImg}
+          secondaryButtonLabel="Continue shopping"
+          buttonFunction={' '}
+          secondButtonFunction={' '}
+        />
+      )}
     </div>
   );
 }
