@@ -50,11 +50,11 @@ export default function ProductDetail({
           </div>
           <div
             style={{
-              display: discount_percent !== 0 ? 'inline-block' : 'none',
+              display: product.discount_percent !== 0 ? 'inline-block' : 'none',
             }}
             className="discount"
           >
-            {discount_percent}%
+            {product.discount_percent}%
           </div>
         </section>
         <section className="info-container">
@@ -67,7 +67,7 @@ export default function ProductDetail({
               <div className="discounted_price">
                 <div
                   style={{
-                    display: discount_percent !== 0 ? 'inline-block' : 'none',
+                    display: product.discount_percent !== 0 ? 'inline-block' : 'none',
                     textDecoration: 'line-through',
                     color: 'black',
                   }}
@@ -76,7 +76,7 @@ export default function ProductDetail({
                 </div>
                 <div
                   style={{
-                    display: discount_percent === 0 ? 'inline-block' : 'none',
+                    display: product.discount_percent === 0 ? 'inline-block' : 'none',
                     color: 'black',
                   }}
                 >
@@ -84,13 +84,13 @@ export default function ProductDetail({
                 </div>
                 <div
                   style={{
-                    display: discount_percent !== 0 ? 'inline-block' : 'none',
+                    display: product.discount_percent !== 0 ? 'inline-block' : 'none',
                     color: 'black',
                   }}
                 >
                   <span className="currency-field">DKK</span>
 
-                  {Math.round(price * (1 - discount_percent / 100))}
+                  {Math.round(price * (1 - product.discount_percent / 100))}
                 </div>
               </div>
             </div>
@@ -136,6 +136,7 @@ ProductDetail.propTypes = {
     price: PropTypes.number.isRequired,
     picture: PropTypes.string.isRequired,
     currency:PropTypes.string,
+    discount_percent: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   }),
 
   quantityCount: PropTypes.number.isRequired,
