@@ -3,15 +3,16 @@ import './OrdersSummary.styles.css';
 import moment from 'moment-timezone';
 import OrderDetails from './OrderDetails';
 
-export default function OrderComponent({ order, details }) {
+export default function OrderComponent({ order }) {
   const [fullView, setFullView] = React.useState(false);
   const viewOrder = () => {
     setFullView(!fullView);
   };
+  const details = order ? fetch(`/api/orders/${order.order_number}`) : [];
 
   return (
     <div>
-      <li>
+      {order ? <li>
         <div className="flex-container">
           <div>
             <h3>
@@ -30,8 +31,8 @@ export default function OrderComponent({ order, details }) {
             </button>
           </div>
         </div>
-        {fullView && <OrderDetails details={details}/>}
-      </li>
+        {fullView && order.order_number ? <OrderDetails details={details}/> : ""}
+      </li>: ''}
     </div>
   );
 }

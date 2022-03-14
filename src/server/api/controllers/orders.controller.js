@@ -57,7 +57,7 @@ const getOrderById = async (raw__id) => {
         'o.id',
         'o.status',
         'o.created_at',
-        'o.user_id',
+        'o.uid',
         'oi.quantity',
         'p.id',
         'p.name',
@@ -83,14 +83,14 @@ const getOrderById = async (raw__id) => {
 };
 
 // get orders By User ID
-const getOrdersByUserId = async (raw_user_id) => {
-  const user_id = +raw_user_id;
+const getOrdersByUserId = async (user_id) => {
+  // const user_id = +raw_user_id;
 
-  if (isNaN(user_id) || user_id < 1) {
-    throw new HttpError('The ID should be a number', 400);
-  }
+  // if (isNaN(user_id) || user_id < 1) {
+  //   throw new HttpError('The ID should be a number', 400);
+  // }
   try {
-    const user = await knex('users').select('id').where('id', '=', user_id);
+    const user = await knex('users').select('uid').where('uid', '=', user_id);
 
     if (user.length === 0) {
       throw new HttpError('The user ID you provided does not exist', 404);
@@ -98,25 +98,25 @@ const getOrdersByUserId = async (raw_user_id) => {
 
     const orders = await knex('orders')
       .select(
-        'orders.user_id',
+        'orders.uid',
         'orders.id as order_number',
         'orders.updated_at',
         'orders.status',
         knex.raw('sum( ?? * ?? ) as ??', ['quantity', 'price', 'total_amount']),
       )
       .leftJoin('order_items', 'order_items.order_id', '=', 'orders.id')
-      .leftJoin('users', 'users.id', '=', 'orders.user_id')
+      .leftJoin('users', 'users.uid', '=', 'orders.uid')
       .leftJoin('products', 'products.id', '=', 'order_items.product_id')
-      .where({ user_id })
+      .where({ 'orders.uid': user_id })
       .groupBy('orders.id')
       .count('orders.id as nr_of_items');
     if (orders.length === 0) {
       return [];
       // throw new HttpError('The user have no orders yet', 404);
     }
-
     return orders;
-  } catch (error) {
+  } 
+  catch (error) {
     if (error instanceof HttpError) {
       throw error;
     }

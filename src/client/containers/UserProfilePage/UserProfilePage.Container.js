@@ -7,8 +7,7 @@ import Loader from '../../components/Loader/Loader.component';
 
 export default function UserProfilePage() {
   const { user, isLoading } = useAuthentication();
-  const orders = (userId) => fetch(`api/orders/${userId}`);
-  const orderDetails = (userId) => fetch(`api/orders/${userId}`);
+  const orders = (userId) => fetch(`api/orders/user/${userId}`);
 
   if (isLoading) {
     return <Loader />;
@@ -17,7 +16,7 @@ export default function UserProfilePage() {
   return (
     <div>
       <UserProfile />
-      <OrdersSummary orders={orders(user.uid)} orderDetails={orderDetails(user.uid)}/>
+      {orders(user.uid) ? <OrdersSummary orders={orders(user.uid)}/> : ''}
     </div>
   );
 }

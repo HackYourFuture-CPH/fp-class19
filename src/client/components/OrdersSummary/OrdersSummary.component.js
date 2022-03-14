@@ -2,16 +2,17 @@ import React from 'react';
 import OrderComponent from './OrderComponent';
 import './OrdersSummary.styles.css';
 
-export default function OrdersSummary({ orders, orderDetails }) {
+export default function OrdersSummary({ orders }) {
   
-  const filteredDetails = (id) => orderDetails.filter((odr) => odr.id === id);
+  const orderDetails = (orderId) => fetch(`api/orders/${orderId}`);
+  
   return (
     <div className="orders-view">
       <div>
         <ul className="order-list">
           {orders.map((each) => (
             <li className="order-item">
-              <OrderComponent order={each} details={filteredDetails(each.order_number)}/>
+              <OrderComponent order={each} details={orderDetails(each.order_number)}/>
             </li>
           ))}
         </ul>
