@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Product.styles.css';
 import cartBucketImage from '../../assets/images/cart_bucket.png';
@@ -48,8 +49,9 @@ export default function Product({
   };
   return (
     <div className="product-container">
+      <Link to={`/product/${id}`}>
       <img className="product-image" src={image} alt={name} />
-
+      </Link>
       <h2 className="product-name">{name}</h2>
 
       <h2 className="product-price">
