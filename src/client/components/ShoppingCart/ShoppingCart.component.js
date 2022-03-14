@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './ShoppingCart.styles.css';
 import ShoppingCartImage from './ShoppingCartImage';
@@ -90,15 +90,19 @@ export default function ShoppingCart(props) {
             </div>
 
             <div>
+              <Link to="/paypal">
               <button type="button" className="proceed-payment">
                 Proceed to payment
               </button>
+              </Link>
             </div>
           </div>
           <div>
+          <Link to="/">
             <button type="button" className="continue-shop">
               Continue Shopping
             </button>
+            </Link>
           </div>
         </div>
       </div>
