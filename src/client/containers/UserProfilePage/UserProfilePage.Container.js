@@ -36,7 +36,11 @@ export default function UserProfilePage() {
   return (
     <div>
       <UserProfile />
-      {orders.length!=0 ? <OrdersSummary orders={orders}/> : ''}
+      <div>
+        <h1>Orders Summary</h1>
+      {orders.length!==0 ? <OrdersSummary orders={orders}/> : ''}
+      </div>
+      
     </div>
   );
 }
