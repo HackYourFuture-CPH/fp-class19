@@ -2,14 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button.component';
 import './ProductDetail.styles.css';
+import { addToShoppingCart } from '../../containers/ShoppingCartPage/ShoppingCartPage.Container';
 
 export default function ProductDetail({
   product,
   quantityCount,
   setQuantityCount,
 }) {
+  console.log(product);
   const MIN_QUANTITY = 1;
   const MAX_QUANTITY = 99;
+  // eslint-disable-next-line camelcase
+  const { id, name, price, picture, discount_percent, currency } = product;
+
+  const addProductToShoppingCart = () => {
+    addToShoppingCart(id, picture, name, price, currency, discount_percent, 1);
+  };
 
   function decreamentQuantityCount() {
     if (quantityCount <= MIN_QUANTITY) {
@@ -33,19 +41,58 @@ export default function ProductDetail({
     setQuantityCount(e.target.value);
   }
 
-  const { name, price, picture } = product;
   return (
     <div className="product-detail">
       <div className="product-detail-container">
         <section className="image-container">
-          <img src={picture} alt={name} />
+          <div>
+            <img src={picture} alt={name} />
+          </div>
+          <div
+            style={{
+              display: product.discount_percent !== 0 ? 'inline-block' : 'none',
+            }}
+            className="discount"
+          >
+            {product.discount_percent}%
+          </div>
         </section>
         <section className="info-container">
           <h3>{name}</h3>
           <div className="info-container-stripes">
             <div className="info-container-stripe">
               <p>2lt pot</p>
-              <p>DKK&nbsp;{price}</p>
+              {/* <p>DKK&nbsp;{price}</p> */}
+
+              <div className="discounted_price">
+                <div
+                  style={{
+                    display: product.discount_percent !== 0 ? 'inline-block' : 'none',
+                    textDecoration: 'line-through',
+                    color: 'black',
+                  }}
+                >
+                  DKK<span className="price-field">{price}</span>
+                </div>
+                <div
+                  style={{
+                    display: product.discount_percent === 0 ? 'inline-block' : 'none',
+                    color: 'black',
+                  }}
+                >
+                  DKK<span className="currency-field">{price}</span>
+                </div>
+                <div
+                  style={{
+                    display: product.discount_percent !== 0 ? 'inline-block' : 'none',
+                    color: 'black',
+                  }}
+                >
+                  <span className="currency-field">DKK</span>
+
+                  {Math.round(price * (1 - product.discount_percent / 100))}
+                </div>
+              </div>
             </div>
             <div className="info-container-stripe">
               <p>Quantity:</p>
@@ -73,7 +120,7 @@ export default function ProductDetail({
           <Button
             className="product-detail-button"
             type="button"
-            onClick={' '}
+            onClick={addProductToShoppingCart}
             primary={true}
             label="ADD"
           />
@@ -85,10 +132,17 @@ export default function ProductDetail({
 
 ProductDetail.propTypes = {
   product: PropTypes.shape({
-    name: PropTypes.string,
-    price: PropTypes.number,
-    picture: PropTypes.string,
-  }).isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    picture: PropTypes.string.isRequired,
+    currency:PropTypes.string,
+    discount_percent: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  }),
+
   quantityCount: PropTypes.number.isRequired,
   setQuantityCount: PropTypes.func.isRequired,
+};
+
+ProductDetail.defaultProps = {
+  product: PropTypes.shape({ currency: 'DKK' }),
 };

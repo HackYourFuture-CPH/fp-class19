@@ -32,6 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .image-container img {
@@ -121,5 +122,13 @@
 
   .product-detail-container {
     border: none;
+  }
+  .price-field{
+    margin-right: 6px;
+    margin-left: 6px;
+  }
+  .currency-field{
+    margin-left: 6px;
+    margin-right: 6px;
   }
 }

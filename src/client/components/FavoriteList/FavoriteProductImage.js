@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './FavoriteList.styles.css';
 
@@ -6,11 +7,14 @@ function FavoriteProductImage({ product }) {
   return (
     <div className="image-discount-box">
       <div>
-        <img
+      <Link to={`/product/${product.id}`}>
+      <img
           className="product_image"
           src={product.picture}
           alt={product.name}
         />
+      </Link>
+        
       </div>
       <div
         style={{
