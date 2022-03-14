@@ -58,7 +58,7 @@ const getDiscountProducts = async () => {
         'is_on_discount',
         'discount_percent',
         'picture',
-        
+        'family_id',
       )
       .where('products.is_on_discount', '=', '1');
     if (productsOnDiscount.length === 0) {
@@ -76,9 +76,7 @@ const getDiscountProducts = async () => {
 const getProductById = async (product_id) => {
   const NUMBER_REGEXP = /^\d+$/g;
   const id = parseInt(product_id, 10);
-  
   if (typeof product_id === 'string' && !product_id.match(NUMBER_REGEXP)) {
-    
     throw new HttpError('Bad request, Invalid id', 400);
   }
   try {
@@ -94,18 +92,14 @@ const getProductById = async (product_id) => {
         'is_on_discount',
         'discount_percent',
         'picture',
-        
+        'family_id',
       )
       .where({ id });
     if (products.length === 0) {
-      
       throw new Error(`incorrect entry with the id of ${id}`, 404);
     }
-    console.log(products);
     return products[0];
   } catch (error) {
-    
-    console.log(error);
     if (error instanceof HttpError) {
       throw error;
     }

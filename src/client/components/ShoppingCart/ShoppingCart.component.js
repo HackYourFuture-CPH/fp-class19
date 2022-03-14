@@ -90,11 +90,11 @@ export default function ShoppingCart(props) {
             </div>
 
             <div>
-              <Link to="/paypal">
+              
               <button type="button" className="proceed-payment">
                 Proceed to payment
               </button>
-              </Link>
+              
             </div>
           </div>
           <div>
