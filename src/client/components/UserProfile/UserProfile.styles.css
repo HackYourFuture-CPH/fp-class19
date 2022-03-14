@@ -1,122 +1,122 @@
 .user-profile {
-    display: block;
-    width: 70%;
-    height: auto;
-    margin: auto;
-    align-items: center;
-    margin-bottom: 8rem;
-    margin-top: 5rem;
+  display: block;
+  width: 70%;
+  height: auto;
+  margin: auto;
+  align-items: center;
+  margin-bottom: 8rem;
+  margin-top: 5rem;
 }
 
 .user-profile-title {
-    text-transform: uppercase;
-    margin-bottom: 1.3rem;
-    text-align: start;
+  text-transform: uppercase;
+  margin-bottom: 1.3rem;
+  text-align: start;
 }
 
 .user-profile-container {
-    width: 100%;
-    height: auto;
-    background-color: #F6F8EB;
-    margin: auto;
-    margin-bottom: 2rem;
+  width: 100%;
+  height: auto;
+  background-color: #f6f8eb;
+  margin: auto;
+  margin-bottom: 2rem;
 }
 
 .user-info-block {
-    display: flex;
-    padding: 0;
+  display: flex;
+  padding: 0;
 }
 
 .user-details-content,
 .user-details-info {
-    width: 10rem;
-    text-align: start;
-    font-weight: 600;
-    padding-bottom: 1rem;
+  width: 10rem;
+  text-align: start;
+  font-weight: 600;
+  padding-bottom: 1rem;
 }
 
 .user-details-content {
-    color: #000;
+  color: #000;
 }
 
 .text-capitalize {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .user-contact-edit-details {
-    padding: 4rem 4rem 4rem 7rem;
+  padding: 4rem 4rem 4rem 7rem;
 }
 
 .user-contact-edit-button {
-    background-color: #687808;
-    color: #fff;
-    border: none;
-    padding: 0.4rem 2rem;
-    border-radius: 3px;
+  background-color: #687808;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 2rem;
+  border-radius: 3px;
 }
 
 .user-profile-block {
-    padding-bottom: 3rem;
+  padding-bottom: 3rem;
 }
 
 .title-font-style {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #000;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #000;
 }
 
 .user-contact-title {
-    text-align: start;
-    padding-bottom: 1rem;
+  text-align: start;
+  padding-bottom: 1rem;
 }
 
 .user-profile-input-margin {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .user-contact-details {
-    padding: 1rem 5rem;
+  padding: 1rem 5rem;
 }
 
 @media only screen and (max-width: 500px) {
-    .user-profile-block {
-        display: flex;
-        flex-direction: column;
-    }
-    .user-info-block {
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-    }
-    .user-details-info {
-        color: #687808;
-    }
+  .user-profile-block {
+    display: flex;
+    flex-direction: column;
+  }
+  .user-info-block {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .user-details-info {
+    color: #687808;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
-    .user-profile-block {
-        display: flex;
-        flex-direction: column;
-    }
-    .user-info-block {
-        display: flex;
-        padding: 0;
-    }
-    .user-details-info {
-        color: #000;
-    }
+  .user-profile-block {
+    display: flex;
+    flex-direction: column;
+  }
+  .user-info-block {
+    display: flex;
+    padding: 0;
+  }
+  .user-details-info {
+    color: #000;
+  }
 }
 
 @media only screen and (min-width: 1001px) {
-    .user-profile-block {
-        display: flex;
-        flex-direction: row;
-    }
-    .user-info-block {
-        display: flex;
-        padding: 0;
-    }
-    .user-details-info {
-        color: #000;
-    }
+  .user-profile-block {
+    display: flex;
+    flex-direction: row;
+  }
+  .user-info-block {
+    display: flex;
+    padding: 0;
+  }
+  .user-details-info {
+    color: #000;
+  }
 }

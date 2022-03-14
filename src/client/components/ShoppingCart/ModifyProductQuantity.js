@@ -2,7 +2,13 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './ShoppingCart.styles.css';
 
-function ModifyProductQuantity({product,shoppingCart,setTotalPrice,setTotalDiscount,setTotalPayment}) {
+function ModifyProductQuantity({
+  product,
+  shoppingCart,
+  setTotalPrice,
+  setTotalDiscount,
+  setTotalPayment,
+}) {
   const [counter, setCounter] = useState(product.quantity);
 
   const incrementCounter = () => {
@@ -32,9 +38,7 @@ function ModifyProductQuantity({product,shoppingCart,setTotalPrice,setTotalDisco
     if (counter > 1) {
       setCounter(counter - 1);
 
-      const result = shoppingCart.find(
-        ({ id }) => id === product.id,
-      );
+      const result = shoppingCart.find(({ id }) => id === product.id);
       result.quantity -= 1;
 
       const totalPriceOfProducts = shoppingCart.reduce(

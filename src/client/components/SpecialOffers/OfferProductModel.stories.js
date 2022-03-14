@@ -17,13 +17,15 @@ export default {
 };
 
 export function OfferProductModel() {
-  return <OfferProduct
-    image={imageFile}
-    discount={number('discount', 20)}
-    name={text('Name', 'Crocosmia Mistral8')}
-    price={number('Price', 85)}
-    currency={text('Currency', 'DKK')}
-    onClick={action('You have clicked the add to cart button')}
-    addToFavorites={action('You have clicked the add to favorites button')}
-  />
+  return (
+    <OfferProduct
+      image={imageFile}
+      discount={number('discount', 20)}
+      name={text('Name', 'Crocosmia Mistral8')}
+      price={number('Price', 85)}
+      currency={text('Currency', 'DKK')}
+      onClick={action('You have clicked the add to cart button')}
+      addToFavorites={action('You have clicked the add to favorites button')}
+    />
+  );
 }

@@ -3,7 +3,6 @@ import './SpecialOfferPage.styles.css';
 import OfferProducts from '../../components/OfferProductsList/OfferProductsList.component';
 import Pagination from '../../components/Pagination/Pagination.component';
 
-
 export default function SpecialOfferPage() {
   const [data, setData] = useState([]);
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
@@ -11,7 +10,6 @@ export default function SpecialOfferPage() {
     fetch('/api/products/on_discount')
       .then((res) => res.json())
       .then((json) => setData(json));
-      
   }, []);
   const totalItemsPerPage = 8;
   const totalPages = Math.ceil(data.length / totalItemsPerPage);

@@ -1,64 +1,64 @@
 .carousel-container {
-    width: 100%;
-    position: relative;
-    background-color: #f6f8eb;
-    display: flex;
+  width: 100%;
+  position: relative;
+  background-color: #f6f8eb;
+  display: flex;
 }
 
 .carousel-wrapper {
-    display: flex;
-    width: 80%;
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
+  display: flex;
+  width: 80%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
 .carousel-content {
-    display: flex;
-    transition: all 250ms linear;
-    -ms-overflow-style: none;
-    /* hide scrollbar in IE and Edge */
-    scrollbar-width: none;
-    /* hide scrollbar in Firefox */
+  display: flex;
+  transition: all 250ms linear;
+  -ms-overflow-style: none;
+  /* hide scrollbar in IE and Edge */
+  scrollbar-width: none;
+  /* hide scrollbar in Firefox */
 }
 
 .right-arrow {
-    position: absolute;
-    top: 50%;
-    width: 0;
-    height: 0;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-left: 20px solid #687808;
-    border-right: 0px;
-    background-color: transparent;
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #687808;
+  border-right: 0px;
+  background-color: transparent;
 }
 
 .left-arrow {
-    position: absolute;
-    top: 50%;
-    width: 0;
-    height: 0;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-right: 20px solid #687808;
-    border-left: 0px;
-    background-color: transparent;
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #687808;
+  border-left: 0px;
+  background-color: transparent;
 }
 
 .right-arrow {
-    right: 0px;
-    cursor: pointer;
+  right: 0px;
+  cursor: pointer;
 }
 
 .left-arrow {
-    left: 0px;
-    cursor: pointer;
+  left: 0px;
+  cursor: pointer;
 }
 
 @media (hover: none) and (pointer: coarse) {
-    .left-arrow,
-    .right-arrow {
-        display: none;
-    }
+  .left-arrow,
+  .right-arrow {
+    display: none;
+  }
 }

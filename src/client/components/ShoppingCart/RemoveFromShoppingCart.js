@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import './ShoppingCart.styles.css';
 
 function RemoveFromShoppingCart(props) {
-
-
   const removeProductFromShoppingCart = () => {
-    props.setShoppingCart((prev) => prev.filter((item) => item.id !== props.product.id));
+    props.setShoppingCart((prev) =>
+      prev.filter((item) => item.id !== props.product.id),
+    );
     const result = props.shoppingCart.find(({ id }) => id === props.product.id);
     if (result !== undefined) {
       const index = props.shoppingCart.indexOf(result);
@@ -88,12 +88,12 @@ RemoveFromShoppingCart.propTypes = {
   }).isRequired,
   shoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
   setShoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
-  
+
   setTotalPrice: PropTypes.func.isRequired,
-  
+
   setTotalDiscount: PropTypes.func.isRequired,
-  
-  setTotalPayment: PropTypes.func.isRequired, 
+
+  setTotalPayment: PropTypes.func.isRequired,
 };
 
 export default RemoveFromShoppingCart;

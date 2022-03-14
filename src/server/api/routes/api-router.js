@@ -13,18 +13,18 @@ const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
 const swaggerOptions = {
-    swaggerDefinition: {
-        info: {
-            version: '1.0',
-            title: 'Final project',
-            description: 'API documentation for the final project',
-            contact: {},
-        },
-        host: '',
-        basePath: '/api',
+  swaggerDefinition: {
+    info: {
+      version: '1.0',
+      title: 'Final project',
+      description: 'API documentation for the final project',
+      contact: {},
     },
-    securityDefinitions: {},
-    apis: ['./src/server/api/routes/*.js'],
+    host: '',
+    basePath: '/api',
+  },
+  securityDefinitions: {},
+  apis: ['./src/server/api/routes/*.js'],
 };
 
 const swaggerDocument = swaggerJsDoc(swaggerOptions);

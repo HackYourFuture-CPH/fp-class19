@@ -13,7 +13,9 @@ export default {
 };
 
 export function Component() {
-  return <BrowserRouter>
-    <Login />
-  </BrowserRouter>
+  return (
+    <BrowserRouter>
+      <Login />
+    </BrowserRouter>
+  );
 }

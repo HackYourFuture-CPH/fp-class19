@@ -7,7 +7,6 @@ import fillHeartImage from '../../assets/images/heartFill.png';
 import { addProductToFavorites } from '../../containers/FavoritePage/FavoritePage.Container';
 import { addToShoppingCart } from '../../containers/ShoppingCartPage/ShoppingCartPage.Container';
 
-
 const cartBucket = {
   src: cartBucketImage,
   alt: 'shopping cart image',
@@ -29,7 +28,7 @@ export default function Product({
   price,
   currency,
   discount,
-  user
+  user,
 }) {
   const [isFavorite, setIsFavorite] = useState(false);
 

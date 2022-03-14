@@ -5,5 +5,5 @@ import Loader from './Loader.component';
 export default { title: 'Components / Loader' };
 
 export function Spinner() {
-  return <Loader />
+  return <Loader />;
 }

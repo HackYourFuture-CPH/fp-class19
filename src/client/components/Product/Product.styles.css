@@ -43,7 +43,9 @@
   font-size: 25px;
   padding-bottom: 5px;
 }
-.product-add-button:active { background-color: #414b0b; }
+.product-add-button:active {
+  background-color: #414b0b;
+}
 
 .fav-button-div {
   margin: auto 1rem auto auto;

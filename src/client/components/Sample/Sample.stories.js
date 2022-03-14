@@ -14,8 +14,10 @@ export default {
 };
 
 export function Component() {
-  return <Sample
-    title={text('Title', 'Test title')}
-    onClick={action('You have clicked the button')}
-  />
+  return (
+    <Sample
+      title={text('Title', 'Test title')}
+      onClick={action('You have clicked the button')}
+    />
+  );
 }

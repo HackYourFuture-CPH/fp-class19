@@ -15,7 +15,7 @@ const template = (args) => {
   const [propProducts, setPropProducts] = useState([]);
   // eslint-disable-next-line
   const [currentRange, setCurrentRange] = useState(
-    args.products.slice(0, args.productsPerPage)
+    args.products.slice(0, args.productsPerPage),
   );
   // eslint-disable-next-line
   const [currentPageIndex, setCurrentPageIndex] = useState(0);

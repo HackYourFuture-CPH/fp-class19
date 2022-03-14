@@ -4,23 +4,21 @@ import './Products.styles.css';
 import Product from '../Product/Product.component';
 import Sort from '../SortComponent/Sorting.component';
 
-
 export default function Products({ products }) {
   const [sortedProducts, setSortedProducts] = useState(products);
-  
 
   const addFavorites = () => {
     // eslint-disable-next-line no-console
     console.log('added to favorites');
   };
-    const addToCart = () => {
+  const addToCart = () => {
     // eslint-disable-next-line no-console
     console.log('added to cart');
-    };
-     
+  };
+
   return (
     <div className="products-component">
-      <Sort products={products} setSortedProducts={setSortedProducts} /> 
+      <Sort products={products} setSortedProducts={setSortedProducts} />
 
       <div>
         <ul className="product-list">
@@ -35,12 +33,11 @@ export default function Products({ products }) {
                 addToFavorites={addFavorites}
                 discount={product.discount_percent}
                 onClick={addToCart}
-                
               />
             </li>
           ))}
         </ul>
-      </div> 
+      </div>
     </div>
   );
 }
@@ -52,8 +49,8 @@ Products.propTypes = {
     name: PropTypes.string,
     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     image: PropTypes.string,
-    discount:PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    currency:PropTypes.string
+    discount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    currency: PropTypes.string,
   }),
 };
 

@@ -59,7 +59,9 @@ export default function ProductPage() {
       </div>
       <div className="product-page-carousel-block">
         <div className="product-page-carousel-container">
-          {!isProductsLoading && !productsError && <Carousel products={products.items} show={2} />}
+          {!isProductsLoading && !productsError && (
+            <Carousel products={products.items} show={2} />
+          )}
         </div>
       </div>
     </div>

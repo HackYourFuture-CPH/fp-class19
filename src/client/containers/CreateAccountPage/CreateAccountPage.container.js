@@ -14,7 +14,8 @@ export default function SignUpContainer() {
 
   const { signUp } = useFirebase();
 
-  const onSubmit = async ({ email,
+  const onSubmit = async ({
+    email,
     password,
     passwordConfirm,
     fullName,
@@ -22,7 +23,8 @@ export default function SignUpContainer() {
     address,
     city,
     country,
-    zipCode, }) => {
+    zipCode,
+  }) => {
     setIsLoading(true);
     const doesPasswordsMatch = getDoesPasswordsMatch({
       password,
@@ -34,12 +36,16 @@ export default function SignUpContainer() {
       alert("Passwords doesn't match"); // eslint-disable-line no-alert
       return;
     }
-    const isSignedUp = await signUp({ email, password,fullName,
+    const isSignedUp = await signUp({
+      email,
+      password,
+      fullName,
       mobile,
       address,
       city,
       country,
-      zipCode, });
+      zipCode,
+    });
     setIsLoading(false);
     if (isSignedUp) setIsSuccessful(true);
   };
@@ -56,7 +62,7 @@ export default function SignUpContainer() {
       <div style={{ flex: '2' }}>
         <CreateAccount onSubmit={onSubmit} />
       </div>
-      <div className="create-account-image" style={{ flex: "1" }} />
+      <div className="create-account-image" style={{ flex: '1' }} />
     </div>
   );
 }

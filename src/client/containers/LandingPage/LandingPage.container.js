@@ -31,7 +31,7 @@ export default function LandingPage(props) {
       />
       {isLoading && <Loader />}
       {!!products && products.length > 0 && (
-        <ProductsView products={products} user={props.user}/>
+        <ProductsView products={products} user={props.user} />
       )}
       {totalCount > 0 && (
         <Pagination

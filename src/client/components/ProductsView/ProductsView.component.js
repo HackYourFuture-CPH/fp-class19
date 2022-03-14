@@ -3,7 +3,7 @@ import './ProductsView.styles.css';
 import Product from '../Product/Product.component';
 import PropTypes from 'prop-types';
 
-export default function ProductsView({ products,user }) {
+export default function ProductsView({ products, user }) {
   return (
     <div className="products-view">
       <div>
@@ -38,4 +38,4 @@ ProductsView.propTypes = {
       discount: PropTypes.number,
     }),
   ).isRequired,
-  }
+};

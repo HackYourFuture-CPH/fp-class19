@@ -1,6 +1,7 @@
 ## Prerequisites
 
 #### Mysql workbench
+
 Install it from here:
 
 Windows: https://dev.mysql.com/downloads/windows/installer/
@@ -8,11 +9,13 @@ Windows: https://dev.mysql.com/downloads/windows/installer/
 Mac: https://dev.mysql.com/doc/refman/5.7/en/osx-installation-pkg.html
 
 #### Setting up on Windows
+
 Only thing Windows users have to do is run the following command anywhere in their terminal (not necessarily the project folder): npm install -g win-node-env
 
 Refer to this post on stackoverflow for more info.
 
 #### Install Node
+
 Refer to this points on how to install on your OS:
 
 Linux
@@ -21,8 +24,8 @@ Mac
 Installing
 Run npm install to install all required dependencies.
 
-
 #### Prettier
+
 The Project comes pre setup with Prettier, which is a tool that will automatically format your code. Prettier is currently set up to format your code right before committing to git, so there should be no risk of someone committing something that does not live up to our coding style.
 
 You may, however, optionally install the Prettier VS Code extension to format your code on every single save. This has the benefit that you will always be looking at code in the right format and you will know exactly what gets committed at any time.
@@ -30,7 +33,6 @@ You may, however, optionally install the Prettier VS Code extension to format yo
 In VS Code you can press CTRL+P (CMD+P on Mac) and type ext install esbenp.prettier-vscode to install the extension directly or you can browser and find it in the Marketplace.
 
 Remember to enable "format on save" in VS Code settings. You can also enable formatting on pasting or while editing, depending on your taste.
-
 
 #### Environment variables
 

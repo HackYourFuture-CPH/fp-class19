@@ -1,15 +1,16 @@
 # Guideline to change the DB Diagram
 
-### The DB Diagram might change over the duration of the project and it's important that 
+### The DB Diagram might change over the duration of the project and it's important that
+
 you follow some guidelines if you need to change the DB you must change the diagram.
 
-- First make sure you actually need to change the DB. 
+- First make sure you actually need to change the DB.
 
-- Write a migration using Knex.js that will perform the needed Schema updates. 
+- Write a migration using Knex.js that will perform the needed Schema updates.
 
 - Make sure to test it thoroughly on your own branch.
 
-- Take the file /db/Schema.dbml and copy into the editor on dbdiagram.io. 
+- Take the file /db/Schema.dbml and copy into the editor on dbdiagram.io.
 
 - Make changes according to what you changed in your migration.
 

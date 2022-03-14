@@ -41,7 +41,6 @@ export default function OfferProduct({
   const discountPrice = price - (price * discount) / 100;
 
   const addToFavorites = () => {
-    
     if (!user) {
       // eslint-disable-next-line no-alert
       alert('Please login to add to your Favorites');

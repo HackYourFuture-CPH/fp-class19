@@ -11,9 +11,7 @@ export default {
 };
 
 // eslint-disable-next-line react/prop-types
-const template = ({ products }) => (
-    <ProductsComponent products={products} />
-  );
+const template = ({ products }) => <ProductsComponent products={products} />;
 
 export const showProducts = template.bind({});
 

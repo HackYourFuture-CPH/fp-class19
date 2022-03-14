@@ -41,10 +41,10 @@ const favoritesController = require('../controllers/favorites.controller');
  *
  */
 router.post('/add', (req, res, next) => {
-    favoritesController
-        .addToFavorites(req.body)
-        .then((result) => res.json(result))
-        .catch((next))
+  favoritesController
+    .addToFavorites(req.body)
+    .then((result) => res.json(result))
+    .catch(next);
 });
 
 /**
@@ -73,13 +73,13 @@ router.post('/add', (req, res, next) => {
  *        description: Bad request. uId should be a string
  *      404:
  *        description: Bad request. userID or productID doesn't exist
- *      
+ *
  *
  */
 router.delete('/', (req, res, next) => {
-    favoritesController
-        .deleteFromFavorites(req.query.uid, req.query.product_id)
-        .then((result) => res.json(result))
-        .catch(next);
+  favoritesController
+    .deleteFromFavorites(req.query.uid, req.query.product_id)
+    .then((result) => res.json(result))
+    .catch(next);
 });
 module.exports = router;
