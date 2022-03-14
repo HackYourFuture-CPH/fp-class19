@@ -111,7 +111,8 @@ const getOrdersByUserId = async (raw_user_id) => {
       .groupBy('orders.id')
       .count('orders.id as nr_of_items');
     if (orders.length === 0) {
-      throw new HttpError('The user have no orders yet', 404);
+      return [];
+      // throw new HttpError('The user have no orders yet', 404);
     }
 
     return orders;
