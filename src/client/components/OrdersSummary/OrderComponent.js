@@ -8,7 +8,24 @@ export default function OrderComponent({ order }) {
   const viewOrder = () => {
     setFullView(!fullView);
   };
-  const details = order ? fetch(`/api/orders/${order.order_number}`) : [];
+  const [details, setDetails] = React.useState([]);
+  React.useEffect(() => {
+    
+    fetch(`/api/orders/${order.order_number}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data) {
+          throw new Error('Could not check if user present in Database:', 404);
+        }
+        setDetails(data);
+      })
+      .catch((error) => {
+        if (error instanceof Error) {
+          throw error;
+        }
+        throw new Error('Unexpected error', 500);
+      })
+  }, [order]);
 
   return (
     <div>

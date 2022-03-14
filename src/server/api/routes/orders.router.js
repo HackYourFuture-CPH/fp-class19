@@ -22,11 +22,11 @@ const ordersController = require('../controllers/orders.controller');
  *        schema:
  *          type: object
  *          required:
- *            - user_id
+ *            - uid
  *            - product_id
  *          properties:
- *            user_id:
- *              type: integer
+ *            uid:
+ *              type: string
  *            items:
  *              type: array
  *              items:

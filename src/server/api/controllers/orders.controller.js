@@ -1,21 +1,21 @@
 const knex = require('../../config/db');
 const HttpError = require('../lib/utils/http-error');
 
-const newOrder = async ({ user_id, items }) => {
-  const userId = parseInt(user_id, 10);
-  if (isNaN(userId) || userId < 1) {
-    throw new HttpError(
-      'Bad request. User ID must be an integer and larger than 0',
-      400,
-    );
-  }
+const newOrder = async ({ uid, items }) => {
+  // const userId = parseInt(user_id, 10);
+  // if (isNaN(userId) || userId < 1) {
+  //   throw new HttpError(
+  //     'Bad request. User ID must be an integer and larger than 0',
+  //     400,
+  //   );
+  // }
   if (items.length === 0) {
-    throw new HttpError(`Order with the user id of ${userId} not found `, 404);
+    throw new HttpError(`Order with the user id of ${uid} not found `, 404);
   }
   try {
     const orderId = await knex('orders')
       .insert({
-        user_id,
+        uid,
         created_at: knex.fn.now(),
         status: 'NEW',
       })
