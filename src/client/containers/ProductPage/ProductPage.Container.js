@@ -17,7 +17,10 @@ export default function ProductPage() {
 
   const fetchProduct = (id) => {
     const url = `/api/products/${id}`;
-    return fetch(url).then((response) => response.json());
+    
+    const result = fetch(url).then((response) => response.json());
+    
+    return result;
   };
 
   const fetchProducts = () => {

@@ -22,11 +22,11 @@ const ordersController = require('../controllers/orders.controller');
  *        schema:
  *          type: object
  *          required:
- *            - user_id
+ *            - uid
  *            - product_id
  *          properties:
- *            user_id:
- *              type: integer
+ *            uid:
+ *              type: string
  *            items:
  *              type: array
  *              items:
@@ -85,7 +85,7 @@ router.get('/:id', (req, res, next) => {
 
 /**
  * @swagger
- * /orders?user=user_id:
+ * /orders/user/{user_id}:
  *  get:
  *    tags:
  *    - Orders
@@ -94,10 +94,10 @@ router.get('/:id', (req, res, next) => {
  *      Will return all orders for specific user.
  *    produces: application/json
  *    parameters:
- *     - in: query
+ *     - in: path
  *       name: user_id
  *       schema:
- *         type: integer
+ *         type: string
  *         required: true
  *         description: Get all orders of specific user with user_id
  *
@@ -110,9 +110,9 @@ router.get('/:id', (req, res, next) => {
  *        description: Unexpected error.
  */
 
-router.get('/', (req, res, next) => {
+router.get('/user/:user_id', (req, res, next) => {
   ordersController
-    .getOrdersByUserId(req.query.user_id)
+    .getOrdersByUserId(req.params.user_id)
     .then((result) => res.json(result))
     .catch(next);
 });

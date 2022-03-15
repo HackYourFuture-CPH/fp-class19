@@ -3,15 +3,33 @@ import './OrdersSummary.styles.css';
 import moment from 'moment-timezone';
 import OrderDetails from './OrderDetails';
 
-export default function OrderComponent({ order, details }) {
+export default function OrderComponent({ order }) {
   const [fullView, setFullView] = React.useState(false);
   const viewOrder = () => {
     setFullView(!fullView);
   };
+  const [details, setDetails] = React.useState([]);
+  React.useEffect(() => {
+    
+    fetch(`/api/orders/${order.order_number}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data) {
+          throw new Error('Could not check if user present in Database:', 404);
+        }
+        setDetails(data);
+      })
+      .catch((error) => {
+        if (error instanceof Error) {
+          throw error;
+        }
+        throw new Error('Unexpected error', 500);
+      })
+  }, [order]);
 
   return (
     <div>
-      <li>
+      {order ? <li>
         <div className="flex-container">
           <div>
             <h3>
@@ -30,8 +48,8 @@ export default function OrderComponent({ order, details }) {
             </button>
           </div>
         </div>
-        {fullView && <OrderDetails details={details}/>}
-      </li>
+        {fullView && order.order_number ? <OrderDetails details={details}/> : ""}
+      </li>: ''}
     </div>
   );
 }

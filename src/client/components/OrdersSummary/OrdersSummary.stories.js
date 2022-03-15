@@ -12,7 +12,11 @@ export default {
 const template = ({ orders, orderDetails}) => <OrdersSummary orders={orders} orderDetails={orderDetails}/>;
 
 export const OrdersDisplay = template.bind({});
-
+export const OrdersDisplay2 = template.bind({});
+OrdersDisplay2.args = {
+  orders: [],
+  orderDetails: []
+}
 OrdersDisplay.args = {
   orders: [
     {
