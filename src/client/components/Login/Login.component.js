@@ -32,10 +32,10 @@ export default function Login() {
     setIsLoading(false);
   };
 
-  const handleLogin = async () => {
-    /* history.push('/');
-    await signInWithGoogle({auth,provider}); */
-  };
+  // const handleLogin = async () => {
+  //   history.push('/');
+  //   await signInWithGoogle({auth,provider}); 
+  // };
 
   if (isAuthenticated) {
     return <Redirect />;
