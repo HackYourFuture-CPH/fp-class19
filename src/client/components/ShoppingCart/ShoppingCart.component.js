@@ -93,7 +93,7 @@ export default function ShoppingCart(props) {
 
             <div>
               {checkout ? (
-                <Paypal />
+                <Paypal userDetail={userDetail} totalPayment={totalPayment} />
               ) : (
                 <button
                   type="button"
