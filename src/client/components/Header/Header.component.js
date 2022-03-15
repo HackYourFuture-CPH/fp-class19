@@ -86,7 +86,7 @@ export default function Header({
                 alt="login"
               />
             </Link>
-            <Link to="/log-in">
+            <Link to="/login">
               <button
                 onClick={() => signOut()}
                 onMouseEnter={() => setLogOut(true)}
@@ -106,7 +106,7 @@ export default function Header({
                         logOut ? 'displayActive' : 'displayHidden'
                       }
                     >
-                      Log out {userName}
+                      Log out ? {userName}
                     </div>
                   </>
                 ) : (
@@ -132,7 +132,7 @@ export default function Header({
               src={faUser}
               alt="login"
             />
-            <Link className="login icons" to="/log-in">
+            <Link className="login icons" to="/login">
               Log In
             </Link>
           </>
