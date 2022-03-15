@@ -32,10 +32,10 @@ export default function Login() {
     setIsLoading(false);
   };
 
-  const handleLogin = async () => {
-    /* history.push('/');
-    await signInWithGoogle({auth,provider}); */
-  };
+ /*  const handleLogin = async () => {
+     history.push('/');
+    await signInWithGoogle({auth,provider}); 
+  }; */
 
   if (isAuthenticated) {
     return <Redirect />;
@@ -93,7 +93,7 @@ export default function Login() {
             <br />
 
             <div>
-              <Link to="/google-signin">
+              {/* <Link to="/google-signin">
                 <button type="button" onClick={handleLogin} className="btn2">
                   <img
                     className="img2"
@@ -102,7 +102,7 @@ export default function Login() {
                   />
                   Log In with Google
                 </button>
-              </Link>
+              </Link> */}
             </div>
 
             <div>
