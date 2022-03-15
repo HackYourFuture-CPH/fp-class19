@@ -1,10 +1,11 @@
+/* eslint-disable no-alert */
 /* eslint-disable react/prop-types */
 import React, { useEffect, useRef } from 'react';
 import { PropTypes } from 'prop-types';
 
 export default function Paypal({
   orderId,
-  toalAmount,
+  totalPayment,
   userName,
   onSuccess,
   onError,
@@ -24,7 +25,7 @@ export default function Paypal({
               {
                 description: orderId,
                 amount: {
-                  value: '100',
+                  value: totalPayment,
                 },
               },
             ],
@@ -39,13 +40,13 @@ export default function Paypal({
         },
       })
       .render(paypalRef.current);
-  }, [orderId, toalAmount, userName, onSuccess, onError]);
+  }, [orderId, totalPayment, userName, onSuccess, onError]);
   return <div ref={paypalRef} />;
 }
 
 Paypal.PropType = {
   orderId: PropTypes.string.isRequired,
-  totalAmount: PropTypes.number.isRequired,
+  totalPayment: PropTypes.number.isRequired,
   userName: PropTypes.string,
   onSuccess: PropTypes.func,
   onError: PropTypes.func,
@@ -54,7 +55,12 @@ Paypal.PropType = {
 Paypal.defaultProps = {
   userName: 'John Doe',
   // eslint-disable-next-line no-return-assign
-  onSuccess: () => (window.location.href = '/order-confirmation'),
+  onSuccess: (response) =>
+    // eslint-disable-next-line no-alert
+    setTimeout(
+      () => window.alert(JSON.stringify(response)),
+      (location.href = '/order-confirmation'),
+    ),
   onError: () => {
     window.location.href = '*';
   },

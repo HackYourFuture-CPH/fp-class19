@@ -16,5 +16,6 @@ PaypalButton.args = {
   totalAmount: 'totalAmount',
   userName: 'john doe',
   onSuccess: (response) =>
+    // eslint-disable-next-line no-alert
     setTimeout(() => window.alert(JSON.stringify(response))),
 };

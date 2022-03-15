@@ -5,12 +5,14 @@ import './ShoppingCart.styles.css';
 import ShoppingCartImage from './ShoppingCartImage';
 import ModifyProductQuantity from './ModifyProductQuantity';
 import RemoveFromShoppingCart from './RemoveFromShoppingCart';
+import Paypal from '../Paypal/Paypal.component';
 
 export default function ShoppingCart(props) {
   const { shoppingCart, setShoppingCart, userDetail } = props;
   const [totalPrice, setTotalPrice] = useState(getTotalPrice());
   const [totalDiscount, setTotalDiscount] = useState(getTotalDiscount());
   const [totalPayment, setTotalPayment] = useState(getTotalPayment());
+  const [checkout, setCheckout] = useState(false);
 
   function getTotalPrice() {
     const totalPriceOfProducts = shoppingCart.reduce(
@@ -90,18 +92,24 @@ export default function ShoppingCart(props) {
             </div>
 
             <div>
-              
-              <button type="button" className="proceed-payment">
-                Proceed to payment
-              </button>
-              
+              {checkout ? (
+                <Paypal userDetail={userDetail} totalPayment={totalPayment} />
+              ) : (
+                <button
+                  type="button"
+                  className="proceed-payment"
+                  onClick={() => setCheckout(true)}
+                >
+                  Proceed to payment
+                </button>
+              )}
             </div>
           </div>
           <div>
-          <Link to="/">
-            <button type="button" className="continue-shop">
-              Continue Shopping
-            </button>
+            <Link to="/">
+              <button type="button" className="continue-shop">
+                Continue Shopping
+              </button>
             </Link>
           </div>
         </div>
