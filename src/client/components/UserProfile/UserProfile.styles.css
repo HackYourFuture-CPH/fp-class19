@@ -29,10 +29,11 @@
 
 .user-details-content,
 .user-details-info {
-  width: 10rem;
-  text-align: start;
-  font-weight: 600;
-  padding-bottom: 1rem;
+    width: 10rem;
+    text-align: start;
+    font-weight: 600;
+    padding-bottom: 1rem;
+    list-style: none;
 }
 
 .user-details-content {
@@ -40,7 +41,8 @@
 }
 
 .text-capitalize {
-  text-transform: capitalize;
+    text-transform: capitalize;
+    list-style: none;
 }
 
 .user-contact-edit-details {
