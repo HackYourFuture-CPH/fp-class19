@@ -1,73 +1,71 @@
 .product-container {
-  background-color: #ffffff;
-  box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  width: 273px;
-  padding: 7px;
-  border: 1px solid #c4c4c4;
-  margin: 5px;
-  height: 397;
-  padding: 10px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 273px;
+    padding: 7px;
+    border: 1px solid #c4c4c4;
+    margin: 5px;
+    height: 397;
+    padding: 10px;
 }
 
 .product-name {
-  color: #687808;
-  margin-bottom: 3px;
+    color: #687808;
+    margin-bottom: 3px;
+    margin-right:-5px
 }
+
 .product-price {
-  color: black;
-  margin-bottom: 5px;
+    color: black;
+    margin-bottom: 5px;
 }
 
 .add-fav-button {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
-.add-fav-button > div {
-  font-size: 30px;
+.add-fav-button>div {
+    font-size: 30px;
 }
 
 .product-add-button {
-  background: #687808;
-
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: bolder;
-  border: none;
-  border-radius: 0.3rem;
-  padding: 0.5rem;
-
-  color: #ffffff;
-  font-size: 25px;
-  padding-bottom: 5px;
+    background: #687808;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: bolder;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    color: #ffffff;
+    font-size: 25px;
+    padding-bottom: 5px;
 }
+
 .product-add-button:active {
-  background-color: #414b0b;
+    background-color: #414b0b;
 }
 
 .fav-button-div {
-  margin: auto 1rem auto auto;
+    margin: auto 1rem auto auto;
 }
 
 .vector-bucket {
-  color: #ffffff;
-  margin-left: 20px;
-  padding-top: 5px;
+    color: #ffffff;
+    margin-left: 20px;
+    padding-top: 5px;
 }
 
 .favorite-button {
-  border: none;
-  color: #687808;
-
-  background-color: #fff;
-
-  background-color: #ffffff;
-  cursor: pointer;
+    border: none;
+    color: #687808;
+    background-color: #fff;
+    background-color: #ffffff;
+    cursor: pointer;
 }
 
 .favorite-button:active {
-  background-color: white;
-  transform: translateY(2px);
+    background-color: white;
+    transform: translateY(2px);
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './OfferProductModel.styles.css';
 import cartBucketImage from '../../assets/images/cart_bucket.png';
@@ -57,6 +58,7 @@ export default function OfferProduct({
       }}
     >
       <div className="image-and-discount">
+      <Link to={`/product/${id}`}>
         <img
           className="offer-product-image"
           src={image}
@@ -64,6 +66,7 @@ export default function OfferProduct({
           width={257}
           height={226}
         />
+        </Link>
         <div className="discount-box">
           <h3>{discount}% OFF</h3>
         </div>
