@@ -8,7 +8,7 @@ function authRedirect() {
     window.location.pathname === '/sign-in' ||
     window.location.pathname === '/'
   ) {
-    window.location.href = '/user-profile';
+    window.location.href = '/';
   }
 }
 
