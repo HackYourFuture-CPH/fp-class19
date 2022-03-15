@@ -2,13 +2,17 @@ import { useEffect, useState } from 'react';
 import { getAuth } from 'firebase/auth';
 import { getApps } from 'firebase/app';
 import { useFirebase } from '../firebase/FirebaseContext';
+import reactRouterHistory from '../router-history';
 
 function authRedirect() {
-  if (
-    window.location.pathname === '/sign-in' ||
-    window.location.pathname === '/'
-  ) {
-    window.location.href = '/';
+  // if (
+  //   window.location.pathname === '/sign-in' ||
+  //   window.location.pathname === '/'
+  // ) {
+  //   window.location.href = '/';
+  // }
+  if (reactRouterHistory.window.location.pathname === '/sign-in') {
+    reactRouterHistory.push('/profile');
   }
 }
 
